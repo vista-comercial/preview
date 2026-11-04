@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#081226" />
+  <title>Página web profesional</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Cpath d='M9 17l5 5 9-11' stroke='%23fff' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    window.tailwind = window.tailwind || {};
+    (() => {
+    const c = n => `rgb(var(--${n}) / <alpha-value>)`;
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"], display: ["var(--ft)"] },
+        colors: { page: c("base"), alt: c("alt"), card: c("card"), line: c("line"), ink: c("ink"), muted: c("muted"),
+                  acc: c("acc"), acc2: c("acc2"), onacc: c("onacc"), hero: c("hero"), tx: c("tx") }
+      } }
+    };
+    })();
+  </script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <style>
+    /* Los colores y la tipografía se llenan según el giro (?giro=). Por defecto: servicios profesionales / contratistas. */
+    :root { --base: 255 255 255; --alt: 244 246 250; --card: 255 255 255; --line: 226 232 240; --ink: 11 22 48; --muted: 91 103 130;
+            --acc: 255 183 3; --acc2: 251 133 0; --onacc: 11 22 48; --hero: 8 18 38; --tx: 180 83 9; --shadow: 15 23 42;
+            --accLight: #ffd97a; --glass: rgba(255,255,255,.72); --glass-line: rgba(226,232,240,.9);
+            --ft: "Outfit", system-ui, sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 126px; }
+    body { font-family: "Plus Jakarta Sans", system-ui, sans-serif; background: rgb(var(--base)); color: rgb(var(--ink));
+           -webkit-font-smoothing: antialiased; overflow-x: hidden; opacity: 0; transition: opacity .5s; animation: mostrar 0s 2.5s forwards; }
+    body.listo { opacity: 1; }
+    @keyframes mostrar { to { opacity: 1; } }
+
+    /* ---------- íconos SVG (Lucide, trazo fino) ---------- */
+    svg.lucide { width: 1.15em; height: 1.15em; flex-shrink: 0; stroke-width: 1.6; }
+    .estrella { color: #fbbf24; fill: #fbbf24; }
+    .wa-svg { width: 1.3em; height: 1.3em; fill: currentColor; flex-shrink: 0; }
+
+    /* ---------- tipografía editorial ---------- */
+    .font-display, .h2, .h1 { font-family: var(--ft); }
+    .h2 { font-size: clamp(32px, 5.6vw, 56px); }
+    .tech .h1 { font-weight: 900; letter-spacing: -.045em; line-height: .95; }
+    .tech .h2 { font-weight: 800; letter-spacing: -.035em; line-height: 1.02;
+                background: linear-gradient(180deg, rgb(var(--ink)) 35%, rgb(var(--ink) / .62)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .tech.oscuro .h2 { background-image: linear-gradient(180deg, #ffffff 20%, #b4b8c2 70%, #8b909c); }
+    .serif .h1 { font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+    .serif .h2 { font-weight: 600; letter-spacing: -.015em; line-height: 1.08; }
+    .kw { background: linear-gradient(100deg, rgb(var(--tx)), rgb(var(--acc)) 55%, rgb(var(--acc2))); -webkit-background-clip: text; background-clip: text; color: transparent;
+          -webkit-text-fill-color: transparent; padding-right: .06em; }
+    .serif .kw { font-style: italic; font-weight: 500; }
+    .h1 .kw, .claro .kw { background-image: linear-gradient(100deg, var(--accLight), rgb(var(--acc)) 55%, rgb(var(--acc2))); }
+    .tech .h1 .kw { background-image: linear-gradient(180deg, #fff 0%, var(--accLight) 35%, rgb(var(--acc)) 75%, rgb(var(--acc2))); }
+
+    /* ---------- color y vidrio ---------- */
+    .grad { background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); }
+    .num { background: linear-gradient(135deg, rgb(var(--tx)), rgb(var(--acc2))); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .glass { background: var(--glass); border: 1px solid var(--glass-line); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); }
+    .glass-strong { background: rgb(var(--card) / .92); border: 1px solid var(--glass-line); backdrop-filter: blur(22px) saturate(170%); -webkit-backdrop-filter: blur(22px) saturate(170%); }
+    .glass-dark { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: #fff;
+                  backdrop-filter: blur(16px) saturate(160%); -webkit-backdrop-filter: blur(16px) saturate(160%); }
+    .shadow-soft { box-shadow: 0 1px 2px rgb(var(--shadow) / .05), 0 12px 32px -14px rgb(var(--shadow) / .2); }
+    .shadow-deep { box-shadow: 0 2px 4px rgb(var(--shadow) / .06), 0 24px 48px -20px rgb(var(--shadow) / .35), 0 50px 100px -40px rgb(var(--shadow) / .35); }
+    .ico-box { background: rgb(var(--acc) / .1); color: rgb(var(--tx)); box-shadow: inset 0 0 0 1px rgb(var(--acc) / .25); }
+    .ico-box-d { background: rgba(255,255,255,.07); color: var(--accLight); box-shadow: inset 0 0 0 1px rgba(255,255,255,.15); }
+    .blob { position: absolute; width: 440px; height: 440px; border-radius: 50%; filter: blur(100px); opacity: .16; background: rgb(var(--acc)); pointer-events: none; }
+
+    /* ---------- header único (cintillo + navbar) ---------- */
+    .hdr { background: rgb(var(--hero) / .8); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08);
+           backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); transition: box-shadow .3s; }
+    html.solid .hdr { box-shadow: 0 18px 40px -20px rgba(0,0,0,.55); }
+    .cinta { border-bottom: 1px solid rgba(255,255,255,.07); background: linear-gradient(90deg, transparent, rgb(var(--acc) / .16), transparent); }
+    .nav-links a { opacity: .78; transition: .2s; }
+    .nav-links a:hover { opacity: 1; color: var(--accLight); }
+    .lang { display: inline-flex; padding: 3px; border-radius: 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); font-size: 12px; font-weight: 800; }
+    .lang span { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; border-radius: 9px; transition: .25s; white-space: nowrap; opacity: .7; }
+    .lang span.on { background: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); color: rgb(var(--onacc)); opacity: 1; box-shadow: 0 4px 14px -4px rgb(var(--acc) / .7); }
+    .lang .flag { width: 16px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+
+    /* ---------- portada ---------- */
+    .hero-velo { background:
+      linear-gradient(180deg, rgb(var(--hero) / .35) 0%, transparent 25%, rgb(var(--hero) / .5) 76%, rgb(var(--hero)) 100%),
+      linear-gradient(100deg, rgb(var(--hero) / .88) 0%, rgb(var(--hero) / .6) 48%, rgb(var(--hero) / .18) 100%),
+      radial-gradient(700px 500px at 15% 40%, rgb(var(--acc) / .22), transparent 70%); }
+    .kb { animation: kb 18s ease-out both; }
+    @keyframes kb { from { transform: scale(1.15); } to { transform: scale(1); } }
+    .float-y { animation: flotar 6s ease-in-out infinite; }
+    @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* ---------- botones: brillo y pulso ---------- */
+    .btn-shine { position: relative; overflow: hidden; isolation: isolate; }
+    .btn-shine::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.55) 50%, transparent 80%);
+      transform: translateX(-130%); animation: brillo 3.4s ease-in-out infinite; }
+    @keyframes brillo { 0%, 55% { transform: translateX(-130%); } 100% { transform: translateX(130%); } }
+    .pulse { animation: pulso 2.4s infinite; }
+    @keyframes pulso { 0% { box-shadow: 0 0 0 0 rgb(var(--acc) / .55); } 70% { box-shadow: 0 0 0 16px rgb(var(--acc) / 0); } 100% { box-shadow: 0 0 0 0 rgb(var(--acc) / 0); } }
+    .btn-wa { background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; box-shadow: 0 16px 30px -12px rgba(37,211,102,.7); }
+    .btn-card { background: rgb(var(--ink)); color: rgb(var(--base)); }
+    .btn-card:hover, .top .btn-card { background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); color: rgb(var(--onacc)); }
+
+    /* ---------- tarjetas de servicio ---------- */
+    .tag-top { position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px;
+               padding: 6px 12px; font-size: 12px; font-weight: 800; box-shadow: 0 10px 24px -8px rgba(0,0,0,.5); }
+    .tag-star { background: linear-gradient(135deg, #fde68a, #f59e0b); color: #422006; }
+    .check { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: rgba(16,185,129,.14); color: #10b981; font-size: 12px; flex-shrink: 0; }
+    .check svg.lucide { stroke-width: 2.4; }
+
+    /* ---------- portafolio bento ---------- */
+    .bento { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+    .bento .t-a, .bento .t-cta { grid-column: span 2; }
+    .bento .t-a { grid-row: span 2; }
+    @media (min-width: 768px) {
+      .bento { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 18px; }
+      .bento .t-b, .bento .t-e { grid-column: span 2; }
+    }
+    /* La galería siempre visible: nunca depende de la animación de entrada */
+    .bento, .bento .tile, .bento .tile img { opacity: 1 !important; visibility: visible; }
+    .tile img { transition: transform 1.4s cubic-bezier(.2,.7,.2,1); }
+    .tile:hover img { transform: scale(1.08); }
+    .tile .flecha { opacity: 0; transform: translate(-6px, 6px); transition: .4s; }
+    .tile:hover .flecha { opacity: 1; transform: none; }
+
+    /* ---------- antes y después ---------- */
+    .ba-antes { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+    .ba-antes img { filter: grayscale(.85) sepia(.35) brightness(.68) contrast(.85) blur(.6px); }
+    .ba-linea { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 18px rgba(0,0,0,.45); pointer-events: none; }
+    .ba-mango { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+                background: #fff; color: rgb(var(--tx)); font-size: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+    .ba-rango { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; touch-action: pan-y; }
+
+    /* ---------- sellos de pago ---------- */
+    .pagos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+    .pago { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 11px; border-radius: 10px; background: #fff; border: 1px solid #e5e7eb;
+            font: 800 12.5px/1 "Plus Jakarta Sans", sans-serif; color: #111; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+    .pago svg.lucide { width: 15px; height: 15px; }
+
+    /* ---------- comparativa ---------- */
+    .comparativa th, .comparativa td { padding: 14px 10px; text-align: center; border-top: 1px solid rgb(var(--line)); }
+    .comparativa thead th { border-top: 0; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: rgb(var(--muted)); }
+    .comparativa td:first-child, .comparativa th:first-child { text-align: left; padding-left: 22px; font-weight: 600; }
+    .comparativa .nos { background: rgb(var(--acc) / .09); }
+    .comparativa thead .nos { color: rgb(var(--ink)); }
+    .si, .no { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font-size: 14px; }
+    .si { background: #10b981; color: #fff; box-shadow: 0 6px 14px -6px rgba(16,185,129,.8); }
+    .si svg.lucide, .no svg.lucide { stroke-width: 2.6; }
+    .no { background: rgba(239,68,68,.12); color: #ef4444; }
+    .tal { font-size: 12px; font-weight: 700; color: #d97706; }
+
+    /* ---------- reseñas ---------- */
+    .barra { height: 8px; border-radius: 99px; background: rgb(var(--line)); overflow: hidden; }
+    .barra i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+
+    /* ---------- FAQ ---------- */
+    summary::-webkit-details-marker { display: none; }
+    .acc { background: rgb(var(--card)); border: 1px solid rgb(var(--line)); transition: border-color .3s, box-shadow .3s; }
+    .acc:hover { border-color: rgb(var(--acc) / .45); }
+    .acc[open] { border-color: rgb(var(--acc) / .8); box-shadow: 0 0 0 4px rgb(var(--acc) / .1), 0 20px 44px -20px rgb(var(--acc) / .6); }
+    .faq-ico { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; flex-shrink: 0; transition: transform .35s, background .3s; }
+    .acc[open] .faq-ico { transform: rotate(45deg); background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); color: rgb(var(--onacc)); box-shadow: none; }
+
+    /* ---------- cotizador tipo app nativa ---------- */
+    .cot-bg { background:
+      radial-gradient(600px 420px at 8% 8%, rgb(var(--acc) / .32), transparent 62%),
+      radial-gradient(560px 520px at 95% 95%, rgb(var(--acc2) / .28), transparent 62%),
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 44px 44px,
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 44px 44px; }
+    .marco { padding: 1.5px; border-radius: 2rem;
+             background: linear-gradient(140deg, rgb(var(--acc) / .95), rgba(255,255,255,.18) 38%, rgba(255,255,255,.06) 62%, rgb(var(--acc2) / .9));
+             box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 10px 20px -6px rgba(0,0,0,.25), 0 34px 70px -24px rgba(0,0,0,.55), 0 70px 140px -50px rgb(var(--acc) / .45); }
+    .marco > form { border-radius: calc(2rem - 1.5px); }
+    .paso { display: flex; align-items: center; gap: 10px; font-family: var(--ft); font-weight: 700; font-size: 17px; margin-bottom: 12px; }
+    .paso .n { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; font: 800 13px "Plus Jakarta Sans", sans-serif; flex-shrink: 0; }
+    .chips { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .chips.serv { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+    .chip { position: relative; display: flex; align-items: center; gap: 10px; text-align: left; padding: 9px 12px 9px 9px; border-radius: 18px;
+            border: 1.5px solid rgb(var(--line)); background: rgb(var(--card)); color: rgb(var(--ink)); font-weight: 650; font-size: 14px; line-height: 1.25;
+            cursor: pointer; box-shadow: 0 1px 2px rgb(var(--shadow) / .06); transition: transform .2s, border-color .2s, box-shadow .25s, background .25s; }
+    .chip:hover { border-color: rgb(var(--acc) / .6); transform: translateY(-2px); box-shadow: 0 10px 20px -12px rgb(var(--shadow) / .35); }
+    .chip:active { transform: scale(.97); }
+    .chip .ci { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-size: 17px;
+                background: rgb(var(--acc) / .1); color: rgb(var(--tx)); box-shadow: inset 0 0 0 1px rgb(var(--acc) / .2); transition: .3s; }
+    .chip > .flex-1 { hyphens: auto; -webkit-hyphens: auto; overflow-wrap: anywhere; }
+    .chip .mini { width: 46px; height: 46px; border-radius: 13px; object-fit: cover; flex-shrink: 0; }
+    .chip.on { border-color: rgb(var(--acc)); background: rgb(var(--acc) / .08); box-shadow: 0 0 0 4px rgb(var(--acc) / .14), 0 14px 28px -14px rgb(var(--acc) / .85); }
+    .chip.on .ci { background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); color: rgb(var(--onacc)); box-shadow: none; }
+    .chip .ok { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; flex-shrink: 0;
+                border: 1.5px solid rgb(var(--line)); color: transparent; transition: background .25s, border-color .25s; }
+    .chip .ok svg.lucide { stroke-width: 3; stroke-dasharray: 24; stroke-dashoffset: 24; }
+    .chip.on .ok { border-color: transparent; background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); color: rgb(var(--onacc)); animation: pop .4s cubic-bezier(.3,1.6,.5,1); }
+    .chip.on .ok svg.lucide { animation: dibujar .35s .1s ease-out forwards; }
+    @keyframes pop { 0% { transform: scale(.4); } 100% { transform: scale(1); } }
+    @keyframes dibujar { to { stroke-dashoffset: 0; } }
+    .lbl { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .inp { width: 100%; border: 1.5px solid rgb(var(--line)); background: rgb(var(--alt) / .7); color: rgb(var(--ink)); border-radius: 14px;
+           padding: 13px 14px 13px 42px; font-size: 15px; outline: none; transition: .2s; }
+    .inp::placeholder { color: rgb(var(--muted) / .8); }
+    .inp:focus { border-color: rgb(var(--acc)); background: rgb(var(--card)); box-shadow: 0 0 0 4px rgb(var(--acc) / .15); }
+    textarea.inp { padding-left: 14px; min-height: 110px; resize: vertical; }
+    .inp-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: rgb(var(--tx)); font-size: 15px; pointer-events: none; }
+    .campo.error .inp, .campo.error .chip { border-color: #ef4444; }
+    .campo.error .paso, .campo.error .lbl { color: #ef4444; }
+
+    /* ---------- WhatsApp flotante ---------- */
+    .wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center;
+                background: linear-gradient(135deg, #25d366, #128c7e); color: #fff; font-size: 26px; border: 0; cursor: pointer; transition: transform .2s;
+                animation: waPulso 2s infinite; }
+    .wa-float:hover { transform: scale(1.08); }
+    /* ---------- barra fija para contactar a Marcos (solo en la muestra) ---------- */
+    .barra-marcos { position: fixed; left: 0; right: 0; bottom: 0; z-index: 65; display: flex; align-items: center; justify-content: center; gap: 8px;
+                    padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: linear-gradient(90deg, #111827, #1f2937); color: #fff;
+                    font: 700 14px/1.35 "Plus Jakarta Sans", sans-serif; text-align: center; text-decoration: none; box-shadow: 0 -8px 24px -8px rgba(0,0,0,.45); }
+    .barra-marcos u { color: #fcd34d; text-underline-offset: 3px; }
+    body.con-barra .wa-float { bottom: 86px; }
+    @keyframes waPulso { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.65), 0 14px 30px -8px rgba(37,211,102,.6); }
+                         70% { box-shadow: 0 0 0 20px rgba(37,211,102,0), 0 14px 30px -8px rgba(37,211,102,.6); }
+                         100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 14px 30px -8px rgba(37,211,102,.6); } }
+    .wa-badge { position: absolute; top: -3px; right: -3px; min-width: 23px; height: 23px; border-radius: 999px; background: #ef4444; color: #fff;
+                font: 800 12px/19px "Plus Jakarta Sans", sans-serif; text-align: center; border: 2px solid #fff; animation: saltito 2.6s ease-in-out infinite; }
+    @keyframes saltito { 0%, 80%, 100% { transform: scale(1); } 88% { transform: scale(1.25); } }
+    .aviso { position: fixed; left: 50%; top: 120px; z-index: 70; transform: translate(-50%, -12px); opacity: 0; pointer-events: none; transition: all .3s;
+             display: flex; align-items: center; gap: 8px; background: rgb(var(--ink)); color: rgb(var(--base)); font-weight: 700; font-size: 14px; padding: 11px 18px;
+             border-radius: 999px; max-width: calc(100% - 32px); box-shadow: 0 16px 40px -12px rgba(0,0,0,.5); }
+    .aviso.ver { opacity: 1; transform: translate(-50%, 0); }
+    .aviso svg { width: 18px; height: 18px; color: #10b981; flex-shrink: 0; }
+
+    /* ---------- animaciones al hacer scroll ---------- */
+    .reveal { opacity: 0; }
+    .reveal.in { opacity: 1; animation: subir .9s cubic-bezier(.2,.7,.2,1) backwards; animation-delay: var(--d, 0ms); }
+    @keyframes subir { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+    .ya .reveal { opacity: 1; animation: none; }
+    .ya .kb { animation: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; animation: none !important; }
+      .kb, .float-y, .pulse, .btn-shine::after, .wa-float, .wa-badge { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <button class="wa-float" id="waFlotante" type="button" aria-label="Cotizar por WhatsApp">
+    <svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.42 9.42M20.06 3.98A11.3 11.3 0 0 0 12.05.67C5.8.67.7 5.76.7 12.02c0 2 .52 3.95 1.52 5.67L.6 23.33l5.77-1.51a11.3 11.3 0 0 0 5.67 1.45h.01c6.25 0 11.34-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.02"/></svg>
+    <span class="wa-badge">1</span>
+  </button>
+  <div class="aviso" id="aviso" role="status"></div>
+
+  <script>
+    // ====== CONFIGURACIÓN ======
+    // Cambia este número por el WhatsApp del negocio (código de país + número, sin + ni espacios)
+    // (si el link trae &tel=, el cotizador usa ese número: así el dueño se lo autoprueba en su celular)
+    const WHATSAPP_DEMO = "13055550123";
+    // Tu WhatsApp para el botón "Activar mi web ($80/mes)" del cintillo
+    const MI_WHATSAPP = "529841828426";
+    // Radar: avisa a tu panel cuando un prospecto abre su página (debe ser igual a RADAR_TOPIC en server.js)
+    const RADAR_TOPIC = "vc-radar-8h3kq7z2mw5x";
+
+    const foto = (id, w = 800) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+    // ====== PALETAS (una por giro) ======
+    const TEMAS = {
+      construccion: { dark: false, base: "#ffffff", alt: "#f4f6fa", card: "#ffffff", line: "#e2e8f0", ink: "#0b1630", muted: "#5b6782", acc: "#ffb703", acc2: "#fb8500", onacc: "#0b1630", hero: "#081226", tx: "#b45309" },
+      emergencia:   { dark: false, base: "#ffffff", alt: "#f3f6fc", card: "#ffffff", line: "#dfe5f1", ink: "#0b1636", muted: "#56617d", acc: "#ef233c", acc2: "#b5121b", onacc: "#ffffff", hero: "#0a1638", tx: "#dc2626" },
+      azul:         { dark: false, base: "#ffffff", alt: "#f1f7fd", card: "#ffffff", line: "#dbe7f3", ink: "#0b2545", muted: "#58708b", acc: "#2563eb", acc2: "#0891b2", onacc: "#ffffff", hero: "#061a3a", tx: "#2563eb" },
+      bosque:       { dark: false, base: "#fcfcf8", alt: "#f2f1e8", card: "#ffffff", line: "#e3dfcf", ink: "#14241a", muted: "#5f6b58", acc: "#16a34a", acc2: "#3f6212", onacc: "#ffffff", hero: "#0b1f11", tx: "#15803d" },
+      deportivo:    { dark: true,  base: "#09090b", alt: "#111114", card: "#16161a", line: "#27272d", ink: "#f4f4f5", muted: "#a1a1aa", acc: "#ef4444", acc2: "#b91c1c", onacc: "#ffffff", hero: "#000000", tx: "#f87171" },
+      logistico:    { dark: false, base: "#ffffff", alt: "#f4f5f7", card: "#ffffff", line: "#e3e6eb", ink: "#111827", muted: "#5f6775", acc: "#f97316", acc2: "#c2410c", onacc: "#ffffff", hero: "#0f1623", tx: "#ea580c" },
+      crema:        { dark: false, base: "#fffcf7", alt: "#f8f1e6", card: "#ffffff", line: "#eee3d1", ink: "#33261a", muted: "#8a7660", acc: "#c8a165", acc2: "#9c7536", onacc: "#24180c", hero: "#241a10", tx: "#9c7536" },
+      dorado:       { dark: true,  base: "#0a0a0a", alt: "#121110", card: "#171614", line: "#2a2620", ink: "#f5f0e6", muted: "#a89f8d", acc: "#e0b94a", acc2: "#a8802a", onacc: "#111111", hero: "#000000", tx: "#e0b94a" },
+      rosa:         { dark: false, base: "#fffafa", alt: "#fdf0f2", card: "#ffffff", line: "#f3dde1", ink: "#47262d", muted: "#946f77", acc: "#d65f86", acc2: "#a93f66", onacc: "#ffffff", hero: "#2e1219", tx: "#be4b74" },
+      naranja:      { dark: true,  base: "#0c0806", alt: "#15100c", card: "#1b140f", line: "#30231a", ink: "#faf1e8", muted: "#b9a593", acc: "#ff8a1f", acc2: "#e5450a", onacc: "#1a0e05", hero: "#0c0806", tx: "#ff9a3d" }
+    };
+
+    // ====== SELLOS (se traducen con el botón EN / ES) ======
+    const SELLO = {
+      licensed:   ["fa-shield-halved",  ["Licencia y Seguro", "Licensed & Insured"], ["Protección total", "Fully protected"]],
+      estimados:  ["fa-file-signature", ["Estimados Gratis", "Free Estimates"], ["Sin compromiso", "No obligation"]],
+      garantia:   ["fa-award",          ["Satisfacción 100%", "100% Satisfaction"], ["Trabajo garantizado", "Guaranteed work"]],
+      emergencia: ["fa-bolt",           ["Emergencias 24/7", "24/7 Emergency"], ["Noches y fines de semana", "Nights & weekends"]],
+      movil:      ["fa-van-shuttle",    ["Vamos a Ti", "We Come to You"], ["Casa u oficina", "Home or office"]],
+      entrega:    ["fa-motorcycle",     ["Pick-up y Delivery", "Pick-up & Delivery"], ["Para llevar o a domicilio", "Takeout or delivery"]],
+      citas:      ["fa-calendar-check", ["Reserva en Línea", "Book Online"], ["Sin esperas", "No waiting"]]
+    };
+
+    // ====== CAMPOS COMUNES DEL COTIZADOR ======
+    // tipo: servicio (chips con foto de cada servicio) | chips | entrega | texto | tel | zip | fecha | hora | numero | area
+    const NOMBRE = { id: "nombre", label: ["Nombre", "Full name"], tipo: "texto", req: true, ph: ["Tu nombre", "Your name"] };
+    const TEL = { id: "telefono", label: ["Teléfono", "Phone"], tipo: "tel", req: true, ph: "(305) 555-0123" };
+    const ZIP = { id: "zip", label: "Zip Code", tipo: "zip", req: true, ph: ["Ej. 33012", "e.g. 33012"] };
+    const URGENCIA = { id: "urgencia", label: ["¿Qué tan urgente es?", "How urgent is it?"], tipo: "chips", req: true,
+      iconos: ["siren", "calendar-clock", "calendar", "message-circle"],
+      opciones: [["Urgente", "Urgent"], ["Esta semana", "This week"], ["Este mes", "This month"], ["Solo cotizando", "Just a quote"]] };
+    const SERV = (label, id = "servicio") => ({ id, label, tipo: "servicio", req: true });
+    const CTA_COTIZAR = ["Cotizar Gratis", "Get Free Estimate"];
+
+    // ====== LOS 10 GIROS (+ el perfil por defecto) ======
+    // Textos en pares [español, inglés]. En servicios: top 1 = "Más Solicitado", top 2 = "Servicio Estrella";
+    // o = opción del cotizador que se marca al tocar la tarjeta (solo cuando el cotizador no usa la lista de servicios).
+    const GIROS = {
+      // ---------- POR DEFECTO (sin ?giro= o giro desconocido) ----------
+      general: {
+        tema: "construccion", nombre: "Pro Services USA", logo: "fa-screwdriver-wrench", emoji: "🛠️",
+        etiqueta: ["Servicios Profesionales · Contratistas", "Professional Services · Contractors"],
+        slogan: ["Reparaciones, remodelación y mantenimiento para casas y negocios.", "Repairs, remodeling and maintenance for homes and businesses."],
+        sub: ["Contratistas latinos con licencia y seguro. Estimados gratis y trabajo garantizado.", "Licensed & insured Latino contractors. Free estimates and guaranteed work."],
+        portada: "1504307651254-35680f356dfd", cta: CTA_COTIZAR, sellos: ["licensed", "estimados", "garantia"],
+        stat: [1200, ["Proyectos exitosos", "Successful projects"]],
+        sobre: { titulo: ["Contratistas de confianza en tu área", "Trusted contractors in your area"], img: "1621905252507-b35492cc74b4",
+          texto: ["somos un equipo latino con años de experiencia en reparaciones, remodelación y mantenimiento. Te atendemos en español e inglés, con precios claros y trabajo hecho a tiempo.",
+                  "we are a Latino team with years of experience in repairs, remodeling and maintenance. We serve you in English and Spanish, with clear pricing and work done on time."],
+          puntos: [["fa-language", ["Atención en español e inglés", "English & Spanish service"], ["Te explicamos todo sin enredos.", "Everything explained clearly."]],
+                   ["fa-file-invoice-dollar", ["Precio claro por escrito", "Clear written pricing"], ["Sin costos escondidos.", "No hidden fees."]],
+                   ["fa-shield-halved", ["Licencia y seguro", "Licensed & insured"], ["Tu proyecto protegido de principio a fin.", "Your project protected start to finish."]]] },
+        serv: { pre: ["Nuestros servicios", "Our services"], titulo: ["Todo lo que tu propiedad necesita", "Everything your property needs"],
+          sub: ["Precios de referencia. Te damos un estimado exacto sin costo.", "Reference pricing. We'll give you an exact estimate at no cost."],
+          lista: [
+            { n: ["Reparaciones y handyman", "Handyman & repairs"], ref: "$95", tag: "Handyman", img: "1513467535987-fd81bc7d62f8", top: 1,
+              d: ["Puertas, drywall, repisas, instalación de muebles y arreglos generales.", "Doors, drywall, shelves, furniture assembly and general fixes."],
+              inc: [["Puertas y drywall", "Doors & drywall"], ["Armado de muebles", "Furniture assembly"], ["Arreglos generales", "General fixes"]] },
+            { n: ["Remodelación", "Remodeling"], ref: "$4,500", tag: "Remodel", img: "1484154218962-a197022b5858", top: 2,
+              d: ["Cocinas, baños y espacios completos con acabados modernos.", "Kitchens, bathrooms and full spaces with modern finishes."],
+              inc: [["Diseño y planos", "Design & layout"], ["Materiales de calidad", "Quality materials"], ["Limpieza final", "Final clean-up"]] },
+            { n: ["Pintura", "Painting"], ref: "$1,200", tag: ["Pintura", "Painting"], img: "1562259949-e8e7689d7828",
+              d: ["Interior y exterior con preparación profesional y pintura de calidad.", "Interior and exterior with pro prep and quality paint."],
+              inc: [["Preparación y resanado", "Surface prep & patching"], ["Pintura premium", "Premium paint"], ["Protección de muebles", "Furniture protection"]] },
+            { n: ["Plomería y electricidad", "Plumbing & electrical"], ref: "$119", tag: ["Reparaciones", "Repairs"], img: "1621905251189-08b45d6a269e",
+              d: ["Fugas, instalaciones, contactos y lámparas con técnicos certificados.", "Leaks, installs, outlets and fixtures by certified techs."],
+              inc: [["Fugas y tuberías", "Leaks & pipes"], ["Contactos y lámparas", "Outlets & fixtures"], ["Técnicos certificados", "Certified techs"]] },
+            { n: ["Pisos y concreto", "Flooring & concrete"], ref: "$2,500", tag: ["Pisos", "Floors"], img: "1581858726788-75bc0f6a952d",
+              d: ["Madera, vinil, porcelanato, patios y entradas de concreto.", "Hardwood, vinyl, porcelain tile, patios and concrete driveways."],
+              inc: [["Madera y vinil", "Hardwood & vinyl"], ["Porcelanato", "Porcelain tile"], ["Patios y entradas", "Patios & driveways"]] },
+            { n: ["Techos", "Roofing"], ref: "$350", tag: ["Techos", "Roofing"], img: "1635424710928-0544e8512eae",
+              d: ["Reparación de goteras, tejas y techos nuevos con garantía.", "Leak repairs, shingles and new roofs with warranty."],
+              inc: [["Reparación de goteras", "Leak repair"], ["Cambio de tejas", "Shingle replacement"], ["Garantía por escrito", "Written warranty"]] }
+          ] },
+        porQue: { titulo: ["Trabajo bien hecho, a la primera", "Done right the first time"], lista: [
+          ["fa-file-signature", ["Estimado gratis", "Free estimate"], ["Vamos, revisamos y te damos el precio por escrito sin compromiso.", "We visit, inspect and give you a written price, no obligation."]],
+          ["fa-clock", ["Puntualidad", "Always on time"], ["Llegamos a la hora acordada y terminamos en la fecha prometida.", "We arrive on time and finish on the promised date."]],
+          ["fa-award", ["Garantía", "Guaranteed work"], ["Si algo no queda bien, regresamos a corregirlo sin costo.", "If something isn't right, we come back and fix it free."]]] },
+        resenas: [["María G.", ["Cliente residencial", "Homeowner"], "Remodelaron mi cocina en tiempo récord y quedó hermosa. Muy limpios y respetuosos."],
+          ["James R.", ["Dueño de negocio", "Business owner"], "Great communication and fair prices. They fixed everything in one visit."],
+          ["Carlos M.", ["Cliente residencial", "Homeowner"], "Por fin unos contratistas que cumplen lo que prometen. 100% recomendados."]],
+        faq: [[["¿El estimado tiene costo?", "Is the estimate free?"], ["No, el estimado es gratis y sin compromiso.", "Yes, estimates are free with no obligation."]],
+          [["¿Tienen licencia y seguro?", "Are you licensed and insured?"], ["Sí, trabajamos con licencia y seguro de responsabilidad.", "Yes, we're fully licensed and carry liability insurance."]],
+          [["¿Atienden en español?", "Do you speak Spanish?"], ["Sí, todo nuestro equipo habla español e inglés.", "Yes, our whole team speaks English and Spanish."]],
+          [["¿Dan garantía?", "Do you offer a warranty?"], ["Sí, todos nuestros trabajos tienen garantía de mano de obra.", "Yes, all our work includes a labor warranty."]]],
+        form: { pre: ["Estimado gratis", "Free estimate"], titulo: ["Pide tu estimado gratis", "Get your free estimate"],
+          sub: ["Cuéntanos qué necesitas y te respondemos hoy mismo.", "Tell us what you need and we'll reply today."],
+          icono: "fa-screwdriver-wrench", tituloForm: ["Solicitud de estimado", "Estimate request"],
+          beneficios: [["Estimado gratis por escrito", "Free written estimate"], ["Respuesta el mismo día", "Same-day response"], ["Trabajo garantizado", "Guaranteed work"]],
+          campos: [SERV(["¿Qué servicio necesitas?", "What service do you need?"]), URGENCIA, NOMBRE, TEL, ZIP,
+            { id: "detalle", label: ["Describe tu proyecto (opcional)", "Describe your project (optional)"], tipo: "area",
+              ph: ["Ej. Necesito pintar 3 recámaras y arreglar una puerta...", "e.g. I need 3 bedrooms painted and a door fixed..."] }] }
+      },
+
+      tecnicos: {
+        tema: "emergencia", nombre: "Rapid Fix 24/7", logo: "fa-wrench", emoji: "🔧", ctaIcon: "fa-bolt",
+        etiqueta: ["Plomería · Electricidad · A/C HVAC 24/7", "Plumbing · Electrical · A/C HVAC 24/7"],
+        slogan: ["Plomeros, electricistas y técnicos de A/C cuando más los necesitas.", "Plumbers, electricians and A/C techs when you need them most."],
+        sub: ["Servicio de emergencia 24/7. Llegamos rápido, con precio claro antes de empezar.", "24/7 emergency service. Fast arrival and a clear price before we start."],
+        portada: "1621905252472-943afaa20e20", cta: CTA_COTIZAR, sellos: ["licensed", "estimados", "emergencia"],
+        stat: [3500, ["Reparaciones realizadas", "Repairs completed"]],
+        sobre: { titulo: ["Técnicos certificados a tu servicio", "Certified technicians at your service"], img: "1607472586893-edb57bdc0e39",
+          texto: ["somos un equipo de plomeros, electricistas y técnicos de aire acondicionado con años de experiencia en reparaciones de emergencia e instalaciones. Atendemos casas y negocios todos los días del año.",
+                  "we are a team of plumbers, electricians and A/C technicians with years of experience in emergency repairs and installations. We serve homes and businesses every day of the year."],
+          puntos: [["fa-bolt", ["Emergencias 24/7", "24/7 emergencies"], ["Noches, fines de semana y días festivos.", "Nights, weekends and holidays."]],
+                   ["fa-file-invoice-dollar", ["Precio antes de reparar", "Price before we repair"], ["Te damos el costo por escrito.", "Written quote up front."]],
+                   ["fa-shield-halved", ["Licencia y seguro", "Licensed & insured"], ["Técnicos certificados y asegurados.", "Certified, insured technicians."]]] },
+        serv: { pre: ["Servicio 24/7", "24/7 service"], titulo: ["Reparaciones de emergencia e instalaciones", "Emergency repairs & installations"],
+          sub: ["Visita de diagnóstico con precio fijo. Te cotizamos antes de reparar.", "Flat-rate diagnostic visit. We quote before we repair."],
+          lista: [
+            { n: ["Plomería de emergencia", "Emergency plumbing"], ref: "$129", tag: ["Plomería", "Plumbing"], img: "1607472586893-edb57bdc0e39", top: 1, o: 0,
+              d: ["Fugas, tuberías rotas, calentadores de agua y drenajes tapados.", "Leaks, burst pipes, water heaters and clogged drains."],
+              inc: [["Llegada rápida", "Fast arrival"], ["Fugas y tuberías", "Leaks & pipes"], ["Calentadores de agua", "Water heaters"]] },
+            { n: ["Destape de drenajes", "Drain cleaning"], ref: "$99", tag: ["Plomería", "Plumbing"], img: "1585704032915-c3400ca199e7", o: 0,
+              d: ["Lavabos, regaderas, inodoros y líneas principales con equipo profesional.", "Sinks, showers, toilets and main lines with pro equipment."],
+              inc: [["Cámara de inspección", "Camera inspection"], ["Hidrojet", "Hydro-jetting"], ["Sin desorden", "No mess"]] },
+            { n: ["Servicio eléctrico", "Electrical service"], ref: "$119", tag: ["Electricidad", "Electrical"], img: "1621905251189-08b45d6a269e", o: 1,
+              d: ["Contactos, apagadores, lámparas, cortos y fallas eléctricas.", "Outlets, switches, fixtures, shorts and electrical faults."],
+              inc: [["Contactos y apagadores", "Outlets & switches"], ["Lámparas y ventiladores", "Lights & fans"], ["Detección de fallas", "Fault finding"]] },
+            { n: ["Panel eléctrico y breakers", "Electrical panel & breakers"], ref: "$1,200", tag: ["Instalación", "Installation"], img: "1635335874521-7987db781153", top: 2, o: 1,
+              d: ["Cambio y actualización de panel, breakers y cableado según código.", "Panel upgrades, breakers and wiring up to code."],
+              inc: [["Panel nuevo", "New panel"], ["Breakers y cableado", "Breakers & wiring"], ["Según código", "Up to code"]] },
+            { n: ["Reparación de A/C", "A/C repair"], ref: "$149", tag: "HVAC", img: "1617103996702-96ff29b1c467", o: 2,
+              d: ["Tu aire no enfría, hace ruido o gotea. Diagnóstico y reparación el mismo día.", "A/C not cooling, noisy or leaking? Same-day diagnosis and repair."],
+              inc: [["Diagnóstico el mismo día", "Same-day diagnosis"], ["Recarga de gas", "Refrigerant recharge"], ["Garantía en piezas", "Parts warranty"]] },
+            { n: ["Instalación y mantenimiento de A/C", "A/C install & tune-up"], ref: "$89", tag: "Tune-up", img: "1581092160562-40aa08e78837", o: 2,
+              d: ["Instalación de equipos nuevos, limpieza, revisión de gas y filtros.", "New system installs, cleaning, refrigerant check and filters."],
+              inc: [["Limpieza de equipo", "System cleaning"], ["Revisión de gas", "Refrigerant check"], ["Cambio de filtros", "Filter change"]] }
+          ] },
+        porQue: { titulo: ["Ayuda rápida, precio honesto", "Fast help, honest pricing"], lista: [
+          ["fa-bolt", ["Emergencias 24/7", "24/7 emergencies"], ["Un técnico en camino cuando lo necesitas, a cualquier hora.", "A tech on the way whenever you need it, day or night."]],
+          ["fa-file-invoice-dollar", ["Sin sorpresas", "No surprises"], ["Te damos el costo por escrito antes de empezar.", "Written price before any work begins."]],
+          ["fa-award", ["Garantía", "Guaranteed"], ["Todas las reparaciones tienen garantía de mano de obra.", "Every repair comes with a labor warranty."]]] },
+        resenas: [["Rosa P.", ["Emergencia de plomería", "Plumbing emergency"], "Se me rompió una tubería a las 11 de la noche y en menos de una hora ya estaban aquí. ¡Excelentes!"],
+          ["Mike T.", ["Reparación de A/C", "A/C repair"], "Fixed our AC the same day in the middle of summer. Honest price, very professional."],
+          ["Luis H.", ["Servicio eléctrico", "Electrical service"], "Cambiaron mi panel eléctrico rápido y dejaron todo limpio. Muy recomendados."]],
+        faq: [[["¿De verdad atienden 24/7?", "Are you really available 24/7?"], ["Sí, tenemos técnicos de guardia para emergencias de plomería, electricidad y A/C todos los días.", "Yes, we have on-call techs for plumbing, electrical and A/C emergencies every day."]],
+          [["¿Cuánto cuesta la visita?", "How much is the service call?"], ["La visita de diagnóstico tiene precio fijo y se descuenta si realizas la reparación con nosotros.", "The diagnostic visit is a flat rate, credited toward your repair if you hire us."]],
+          [["¿Trabajan con home warranty?", "Do you work with home warranties?"], ["Sí, trabajamos con varias compañías. Pregúntanos al pedir tu servicio.", "Yes, we work with several companies. Just ask when you book."]],
+          [["¿Dan garantía?", "Is the work guaranteed?"], ["Sí, todas nuestras reparaciones tienen garantía de mano de obra.", "Yes, every repair includes a labor warranty."]]],
+        form: { pre: ["Despacho 24/7", "24/7 dispatch"], titulo: ["Pide un técnico ahora", "Request a technician now"],
+          sub: ["Responde unas preguntas y enviamos al técnico más cercano.", "Answer a few questions and we'll send the nearest tech."],
+          icono: "fa-truck-fast", tituloForm: ["Despacho 24/7", "24/7 Dispatch"],
+          beneficios: [["Técnico en camino rápido", "Tech on the way fast"], ["Precio por escrito antes de reparar", "Written price before repair"], ["Garantía en mano de obra", "Labor warranty"]],
+          campos: [{ id: "especialidad", label: ["¿Qué especialista necesitas?", "Which specialist do you need?"], tipo: "chips", req: true, serv: true,
+              iconos: ["droplet", "zap", "snowflake"],
+              opciones: [["Plomero", "Plumber"], ["Electricista", "Electrician"], ["Aire acondicionado (A/C)", "A/C - HVAC"]] },
+            { id: "urgencia", label: ["¿Qué tan urgente es?", "How urgent is it?"], tipo: "chips", req: true,
+              iconos: ["siren", "calendar-clock"],
+              opciones: [["Emergencia hoy", "Emergency today"], ["Programar visita", "Schedule a visit"]] },
+            NOMBRE, TEL, ZIP,
+            { id: "falla", label: ["¿Qué está pasando? (opcional)", "What's going on? (optional)"], tipo: "area",
+              ph: ["Ej. Fuga debajo del lavabo, el A/C no enfría...", "e.g. Leak under the sink, A/C not cooling..."] }] }
+      },
+
+      roofing: {
+        tema: "construccion", nombre: "Pro Builders Roofing", logo: "fa-house-chimney", emoji: "🏗️",
+        etiqueta: ["Techos · Remodelación · Construcción", "Roofing · Remodeling · Construction"],
+        slogan: ["Techos, remodelaciones y construcción hechos para durar.", "Roofs, remodels and construction built to last."],
+        sub: ["Inspección gratis, trabajo garantizado y ayuda con tu reclamo de seguro.", "Free inspection, guaranteed work and help with your insurance claim."],
+        portada: "1632759145351-1d592919f522", cta: CTA_COTIZAR, sellos: ["licensed", "estimados", "garantia"],
+        stat: [850, ["Techos instalados", "Roofs installed"]],
+        sobre: { titulo: ["Protegemos lo que más quieres: tu casa", "We protect what matters most: your home"], img: "1635424710928-0544e8512eae",
+          texto: ["somos contratistas especializados en techos, remodelación y construcción. Trabajamos con materiales de primera y te acompañamos en todo el proceso, desde la inspección hasta el último detalle.",
+                  "we are contractors specialized in roofing, remodeling and construction. We use top-quality materials and guide you through every step, from inspection to the final detail."],
+          puntos: [["fa-magnifying-glass", ["Inspección gratis", "Free inspection"], ["Con fotos y reporte de daños.", "With photos and a damage report."]],
+                   ["fa-file-contract", ["Ayuda con tu seguro", "Insurance claim help"], ["Te guiamos en el reclamo por tormenta.", "We guide your storm-damage claim."]],
+                   ["fa-award", ["Garantía por escrito", "Written warranty"], ["Mano de obra y materiales garantizados.", "Labor and materials guaranteed."]]] },
+        serv: { pre: ["Nuestros servicios", "Our services"], titulo: ["Techos, remodelación y construcción", "Roofing, remodeling & construction"],
+          sub: ["Precios de referencia. Estimado exacto después de la inspección.", "Reference pricing. Exact estimate after inspection."],
+          lista: [
+            { n: ["Reparación de techo", "Roof repair"], ref: "$350", tag: ["Goteras", "Leaks"], img: "1635424710928-0544e8512eae", top: 1, o: 0,
+              d: ["Goteras, tejas dañadas por tormenta, flashing y ventilación.", "Leaks, storm-damaged shingles, flashing and ventilation."],
+              inc: [["Inspección con fotos", "Photo inspection"], ["Cambio de tejas", "Shingle replacement"], ["Sellado de goteras", "Leak sealing"]] },
+            { n: ["Techo nuevo", "New roof"], ref: "$8,500", tag: "Roof replacement", img: "1632759145351-1d592919f522", top: 2, o: 0,
+              d: ["Shingles, metal o teja con garantía del fabricante.", "Shingle, metal or tile with manufacturer warranty."],
+              inc: [["Retiro del techo viejo", "Old roof tear-off"], ["Materiales de marca", "Name-brand materials"], ["Garantía del fabricante", "Manufacturer warranty"]] },
+            { n: ["Remodelación de cocina y baño", "Kitchen & bath remodel"], ref: "$6,500", tag: "Remodel", img: "1484154218962-a197022b5858", o: 1,
+              d: ["Gabinetes, cubiertas, azulejo, regaderas y acabados modernos.", "Cabinets, countertops, tile, showers and modern finishes."],
+              inc: [["Gabinetes y cubiertas", "Cabinets & countertops"], ["Azulejo y regaderas", "Tile & showers"], ["Acabados modernos", "Modern finishes"]] },
+            { n: ["Pintura interior y exterior", "Interior & exterior painting"], ref: "$1,200", tag: ["Pintura", "Painting"], img: "1562259949-e8e7689d7828", o: 3,
+              d: ["Preparación, resanado y pintura de calidad para casas y negocios.", "Prep, patching and quality paint for homes and businesses."],
+              inc: [["Resanado", "Patching"], ["Pintura premium", "Premium paint"], ["Limpieza final", "Final clean-up"]] },
+            { n: ["Pisos y concreto", "Flooring & concrete"], ref: "$2,500", tag: ["Pisos", "Floors"], img: "1581858726788-75bc0f6a952d", o: 2,
+              d: ["Pisos de madera, vinil y porcelanato. Patios y entradas de concreto.", "Hardwood, vinyl and porcelain floors. Concrete patios and driveways."],
+              inc: [["Madera y vinil", "Hardwood & vinyl"], ["Porcelanato", "Porcelain tile"], ["Patios de concreto", "Concrete patios"]] },
+            { n: ["Construcción y ampliaciones", "Construction & additions"], ref: "$4,500", tag: ["Construcción", "Construction"], img: "1517581177682-a085bb7ffb15", o: 4,
+              d: ["Ampliaciones, drywall, carpintería y renovación completa.", "Additions, drywall, carpentry and full renovations."],
+              inc: [["Ampliaciones", "Room additions"], ["Drywall y carpintería", "Drywall & carpentry"], ["Trámite de permisos", "Permits handled"]] }
+          ] },
+        porQue: { titulo: ["Construimos con confianza", "Built on trust"], lista: [
+          ["fa-magnifying-glass", ["Inspección gratis", "Free inspection"], ["Revisamos tu techo o proyecto sin costo y te explicamos con fotos.", "We inspect your roof or project for free and explain it with photos."]],
+          ["fa-file-contract", ["Ayuda con tu seguro", "Insurance claim help"], ["Te acompañamos en el reclamo para que no pagues de más.", "We walk you through the claim so you don't overpay."]],
+          ["fa-award", ["Garantía por escrito", "Written warranty"], ["Trabajo garantizado y materiales con garantía del fabricante.", "Guaranteed labor plus manufacturer-backed materials."]]] },
+        resenas: [["Ana L.", ["Techo nuevo", "New roof"], "Después de la tormenta nos ayudaron con el seguro y nos pusieron techo nuevo en 2 días."],
+          ["Robert K.", ["Remodelación de cocina", "Kitchen remodel"], "Our kitchen looks amazing. On time, on budget and very clean work."],
+          ["Jorge S.", ["Reparación de techo", "Roof repair"], "Arreglaron la gotera a la primera y a buen precio. Gente seria."]],
+        faq: [[["¿La inspección tiene costo?", "Is the inspection free?"], ["No. La inspección y el estimado son gratis y sin compromiso.", "Yes. Inspection and estimate are free with no obligation."]],
+          [["¿Trabajan con aseguranzas?", "Do you work with insurance?"], ["Sí, te ayudamos con el reclamo por daños de tormenta, granizo o viento.", "Yes, we help with storm, hail and wind damage claims."]],
+          [["¿Ofrecen financiamiento?", "Do you offer financing?"], ["Sí, tenemos opciones de pago para proyectos grandes.", "Yes, we offer payment options for larger projects."]],
+          [["¿Cuánto tarda un techo nuevo?", "How long does a new roof take?"], ["La mayoría de las casas se terminan en 1 a 3 días, según el tamaño y el clima.", "Most homes are done in 1 to 3 days, depending on size and weather."]]],
+        form: { pre: ["Inspección gratis", "Free inspection"], titulo: ["Agenda tu inspección gratis", "Book your free inspection"],
+          sub: ["Cuéntanos de tu proyecto y te contactamos hoy mismo.", "Tell us about your project and we'll contact you today."],
+          icono: "fa-magnifying-glass", tituloForm: ["Inspección gratis", "Free Inspection"],
+          beneficios: [["Inspección y estimado sin costo", "Free inspection & estimate"], ["Fotos y reporte de daños", "Photos & damage report"], ["Respuesta el mismo día", "Same-day response"]],
+          campos: [{ id: "proyecto", label: ["¿Qué tipo de proyecto es?", "What type of project?"], tipo: "chips", req: true, serv: true,
+              iconos: ["house", "hammer", "layers", "paint-roller", "building-2"],
+              opciones: [["Techo", "Roofing"], ["Remodelación", "Remodeling"], ["Pisos / Concreto", "Floors / Concrete"], ["Pintura", "Painting"], ["Construcción", "Construction"]] },
+            { id: "urgencia", label: ["¿Qué tan urgente es?", "How urgent is it?"], tipo: "chips", req: true,
+              iconos: ["cloud-lightning", "calendar-clock", "message-circle"],
+              opciones: [["Urgente (goteras o tormenta)", "Urgent (leak or storm)"], ["Próximas semanas", "Next few weeks"], ["Solo cotizando", "Just a quote"]] },
+            NOMBRE, TEL, ZIP] }
+      },
+
+      servicios: {
+        tema: "azul", nombre: "Sparkle Pro Cleaning", logo: "fa-broom", emoji: "🧽",
+        etiqueta: ["Limpieza · Casas · Oficinas · Airbnb", "Cleaning · Homes · Offices · Airbnb"],
+        slogan: ["Casas, oficinas y Airbnbs impecables, sin que muevas un dedo.", "Spotless homes, offices and Airbnbs without lifting a finger."],
+        sub: ["Equipo de confianza, productos incluidos y horarios flexibles en tu área.", "Trusted team, supplies included and flexible scheduling in your area."],
+        portada: "1513694203232-719a280e022f", cta: CTA_COTIZAR, sellos: ["licensed", "estimados", "garantia"],
+        stat: [2400, ["Casas limpiadas", "Homes cleaned"]],
+        sobre: { titulo: ["Limpieza profesional con toque familiar", "Professional cleaning with a family touch"], img: "1581578731548-c64695cc6952",
+          texto: ["somos una empresa de limpieza con personal de confianza, entrenado y asegurado. Cuidamos tu casa, tu oficina o tu Airbnb como si fueran nuestros.",
+                  "we are a cleaning company with a trusted, trained and insured team. We care for your home, office or Airbnb as if it were our own."],
+          puntos: [["fa-user-shield", ["Personal verificado", "Background-checked staff"], ["Equipo revisado y asegurado.", "Vetted and insured team."]],
+                   ["fa-spray-can-sparkles", ["Todo incluido", "All supplies included"], ["Llevamos productos y equipo.", "We bring products and equipment."]],
+                   ["fa-circle-check", ["Garantía de 24 horas", "24-hour guarantee"], ["Si algo no quedó, regresamos.", "Missed a spot? We come back."]]] },
+        serv: { pre: ["Nuestros servicios", "Our services"], titulo: ["Limpieza para cada espacio", "Cleaning for every space"],
+          sub: ["Precios de referencia según tamaño y tipo de limpieza.", "Reference pricing based on size and type of cleaning."],
+          lista: [
+            { n: ["Limpieza residencial estándar", "Standard House Cleaning"], ref: "$129", tag: ["Residencial", "Residential"], img: "1581578731548-c64695cc6952", top: 1,
+              d: ["Polvo, pisos, cocina, baños y recámaras. Semanal, quincenal o una vez.", "Dusting, floors, kitchen, bathrooms and bedrooms. Weekly, biweekly or one-time."],
+              inc: [["Cocina y baños", "Kitchen & bathrooms"], ["Pisos y polvo", "Floors & dusting"], ["Tendido de camas", "Bed making"]] },
+            { n: ["Limpieza profunda", "Deep Clean"], ref: "$229", tag: ["A fondo", "Top to bottom"], img: "1628177142898-93e36e4e3a50", top: 2,
+              d: ["Zoclos, puertas, lámparas, gabinetes, sarro en baños y rincones olvidados.", "Baseboards, doors, light fixtures, cabinets, bathroom buildup and forgotten corners."],
+              inc: [["Zoclos y puertas", "Baseboards & doors"], ["Sarro en baños", "Bathroom buildup"], ["Gabinetes por fuera", "Cabinet fronts"]] },
+            { n: ["Limpieza entre huéspedes Airbnb", "Airbnb Turnover Clean"], ref: "$89", tag: ["Renta corta", "Short-term rental"], img: "1631049307264-da0ec9d70304",
+              d: ["Cambio de sábanas y toallas, amenidades y fotos de control entre huéspedes.", "Linen and towel change, amenity restock and checklist photos between guests."],
+              inc: [["Cambio de blancos", "Linen change"], ["Reposición de amenidades", "Amenity restock"], ["Fotos de control", "Checklist photos"]] },
+            { n: ["Limpieza de oficinas y comercios", "Commercial / Office Cleaning"], ref: "$199", tag: ["Comercial", "Commercial"], img: "1497366216548-37526070297c",
+              d: ["Oficinas, consultorios y locales, fuera de horario para no interrumpir.", "Offices, clinics and storefronts, after hours so you're never interrupted."],
+              inc: [["Fuera de horario", "After hours"], ["Escritorios y baños", "Desks & restrooms"], ["Basura y reciclaje", "Trash & recycling"]] },
+            { n: ["Limpieza de mudanza (entrada / salida)", "Move-In / Move-Out Clean"], ref: "$279", tag: ["Mudanzas", "Moving"], img: "1522708323590-d24dbb6b0267",
+              d: ["Propiedad lista para entregar o estrenar, con gabinetes y closets por dentro.", "Property ready to hand over or move in, including inside cabinets and closets."],
+              inc: [["Gabinetes por dentro", "Inside cabinets"], ["Closets", "Closets"], ["Electrodomésticos", "Appliances"]] },
+            { n: ["Extras: refri, horno y ventanas", "Add-Ons: Inside Fridge, Oven & Windows"], ref: "$35", tag: "Add-on", img: "1556911220-bff31c812dba",
+              d: ["Interior de refrigerador, horno, ventanas y lavandería.", "Inside fridge, oven, windows and laundry."],
+              inc: [["Refrigerador por dentro", "Inside fridge"], ["Horno", "Oven"], ["Ventanas", "Windows"]] }
+          ] },
+        porQue: { titulo: ["Tu espacio limpio, sin preocupaciones", "A clean space, zero worries"], lista: [
+          ["fa-user-shield", ["Personal asegurado", "Insured staff"], ["Equipo con experiencia, revisado y con seguro de responsabilidad.", "Experienced, vetted team with liability insurance."]],
+          ["fa-spray-can-sparkles", ["Productos incluidos", "Supplies included"], ["Llevamos todo. Opciones eco-friendly si las prefieres.", "We bring everything. Eco-friendly options available."]],
+          ["fa-circle-check", ["Garantía de 24 horas", "24-hour guarantee"], ["Si algo no quedó perfecto, regresamos sin costo.", "If anything isn't perfect, we return free of charge."]]] },
+        resenas: [["Patricia V.", ["Limpieza residencial", "House cleaning"], "Mi casa nunca había estado tan limpia. Son puntuales y súper detallistas."],
+          ["Sarah M.", ["Anfitriona de Airbnb", "Airbnb host"], "They handle all my Airbnb turnovers. 5-star cleanliness reviews every time."],
+          ["Daniel O.", ["Limpieza de oficina", "Office cleaning"], "Limpian nuestra oficina cada semana y siempre queda impecable."]],
+        faq: [[["¿Tengo que estar en casa?", "Do I need to be home?"], ["No es necesario. Muchos clientes nos dejan acceso con código o llave.", "No. Many clients give us a door code or key."]],
+          [["¿Llevan sus propios productos?", "Do you bring your own supplies?"], ["Sí, llevamos todos los productos y equipo.", "Yes, we bring all products and equipment."]],
+          [["¿Limpian Airbnb el mismo día?", "Do you do same-day Airbnb turnovers?"], ["Sí, coordinamos con tus check-outs y check-ins.", "Yes, we work around your check-outs and check-ins."]],
+          [["¿Cómo se calcula el precio?", "How is the price calculated?"], ["Según tamaño, recámaras, baños y tipo de limpieza. Llena el cotizador y te damos el precio exacto.", "By size, bedrooms, bathrooms and cleaning type. Fill out the quote form for an exact price."]]],
+        form: { pre: ["Estimado gratis", "Free estimate"], titulo: ["Solicita tu estimado gratis", "Request your free estimate"],
+          sub: ["Responde y te enviamos el precio por WhatsApp en minutos.", "Answer a few questions and get your price on WhatsApp in minutes."],
+          icono: "fa-broom", tituloForm: ["Estimado de limpieza", "Cleaning estimate"],
+          beneficios: [["Precio claro antes de empezar", "Clear price up front"], ["Disponibilidad esta semana", "Availability this week"], ["Sin contratos forzosos", "No long-term contracts"]],
+          campos: [SERV(["¿Qué limpieza necesitas?", "What cleaning do you need?"], "limpieza"),
+            { id: "propiedad", label: ["Tipo de propiedad", "Property type"], tipo: "chips", req: true,
+              iconos: ["house", "building", "briefcase", "key-round"],
+              opciones: [["Casa", "House"], ["Apartamento / Condo", "Apartment / Condo"], ["Oficina / Comercial", "Office / Commercial"], ["Airbnb", "Airbnb"]] },
+            { id: "cuartos", label: ["Habitaciones / Baños", "Bedrooms / Baths"], tipo: "chips", req: true,
+              iconos: ["bed-single", "bed-single", "bed", "bed-double", "bed-double", "store"],
+              opciones: [["Estudio / 1 baño", "Studio / 1 bath"], ["1 rec / 1 baño", "1 bed / 1 bath"], ["2 rec / 1-2 baños", "2 bed / 1-2 bath"], ["3 rec / 2 baños", "3 bed / 2 bath"], ["4+ rec / 3+ baños", "4+ bed / 3+ bath"], ["Espacio comercial", "Commercial space"]] },
+            NOMBRE, TEL, ZIP] }
+      },
+
+      landscaping: {
+        tema: "bosque", nombre: "Green Roots Landscaping", logo: "fa-tree", emoji: "🌳",
+        etiqueta: ["Jardinería · Árboles · Lavado a presión", "Landscaping · Tree Service · Pressure Washing"],
+        slogan: ["Árboles sanos, jardines hermosos y entradas como nuevas.", "Healthy trees, beautiful yards and like-new driveways."],
+        sub: ["Poda, diseño de jardín, mantenimiento de césped y lavado a presión.", "Tree trimming, landscape design, lawn care and pressure washing."],
+        portada: "1585320806297-9794b3e4eeae", cta: CTA_COTIZAR, sellos: ["licensed", "estimados", "garantia"],
+        stat: [1100, ["Patios transformados", "Yards transformed"]],
+        sobre: { titulo: ["Expertos en exteriores", "Outdoor experts"], img: "1598902108854-10e335adac99",
+          texto: ["somos un equipo de jardineros y arbolistas con experiencia en poda, remoción de árboles, diseño de jardín y lavado a presión. Dejamos tu patio limpio y bonito.",
+                  "we are a team of landscapers and arborists experienced in tree trimming, tree removal, landscape design and pressure washing. We leave your yard clean and beautiful."],
+          puntos: [["fa-tree", ["Trabajo de altura seguro", "Safe tree work"], ["Equipo y seguro para árboles grandes.", "Gear and insurance for large trees."]],
+                   ["fa-broom", ["Limpieza total", "Full clean-up"], ["Nos llevamos ramas y desechos.", "We haul away branches and debris."]],
+                   ["fa-calendar-check", ["Planes recurrentes", "Recurring plans"], ["Semanal o quincenal.", "Weekly or biweekly."]]] },
+        serv: { pre: ["Nuestros servicios", "Our services"], titulo: ["Todo para tu patio y exteriores", "Everything for your yard"],
+          sub: ["Precios de referencia. Estimado exacto después de ver tu patio.", "Reference pricing. Exact estimate after we see your yard."],
+          lista: [
+            { n: ["Poda de árboles", "Tree trimming"], ref: "$250", tag: ["Árboles", "Trees"], img: "1617576683096-00fc8eecb3af", top: 1,
+              d: ["Poda segura para árboles sanos y sin ramas peligrosas.", "Safe trimming for healthy trees with no dangerous branches."],
+              inc: [["Poda segura", "Safe trimming"], ["Ramas peligrosas", "Hazard limbs"], ["Retiro de ramas", "Branch haul-away"]] },
+            { n: ["Remoción de árboles", "Tree removal"], ref: "$600", tag: ["Árboles", "Trees"], img: "1502082553048-f009c37129b9",
+              d: ["Retiro de árboles completos, troncos y limpieza del área.", "Full tree removal, stumps and area clean-up."],
+              inc: [["Remoción completa", "Full removal"], ["Destoconado", "Stump grinding"], ["Limpieza del área", "Site clean-up"]] },
+            { n: ["Diseño de jardín", "Landscape design"], ref: "$1,500", tag: ["Diseño", "Design"], img: "1598902108854-10e335adac99", top: 2,
+              d: ["Plantas, flores, mulch, piedra decorativa y riego.", "Plants, flowers, mulch, decorative rock and irrigation."],
+              inc: [["Plantas y flores", "Plants & flowers"], ["Mulch y piedra", "Mulch & rock"], ["Sistema de riego", "Irrigation"]] },
+            { n: ["Mantenimiento de césped", "Lawn care"], ref: "$45", tag: ["Césped", "Lawn"], img: "1558904541-efa843a96f01",
+              d: ["Corte, orillado y soplado semanal o quincenal.", "Mowing, edging and blowing, weekly or biweekly."],
+              inc: [["Corte", "Mowing"], ["Orillado", "Edging"], ["Soplado", "Blowing"]] },
+            { n: ["Lavado a presión", "Pressure washing"], ref: "$175", tag: ["Exteriores", "Exterior"], img: "1600047509807-ba8f99d2cdde",
+              d: ["Entradas, banquetas, patios y fachadas como nuevos.", "Driveways, sidewalks, patios and facades like new."],
+              inc: [["Entradas y banquetas", "Driveways & sidewalks"], ["Patios", "Patios"], ["Fachadas", "Facades"]] },
+            { n: ["Plantación y sembrado", "Planting"], ref: "$120", tag: ["Plantación", "Planting"], img: "1621460248083-6271cc4437a8",
+              d: ["Árboles, arbustos y flores de temporada para tu clima.", "Trees, shrubs and seasonal flowers suited to your climate."],
+              inc: [["Árboles y arbustos", "Trees & shrubs"], ["Flores de temporada", "Seasonal flowers"], ["Tierra preparada", "Soil prep"]] }
+          ] },
+        porQue: { titulo: ["Exteriores que dan gusto ver", "Curb appeal you'll love"], lista: [
+          ["fa-tree", ["Expertos en árboles", "Tree experts"], ["Remoción y poda seguras con equipo profesional.", "Safe removal and trimming with pro equipment."]],
+          ["fa-broom", ["Dejamos todo limpio", "Spotless clean-up"], ["Tu patio queda mejor que como lo encontramos.", "We leave your yard better than we found it."]],
+          ["fa-calendar-check", ["Planes a tu medida", "Plans that fit you"], ["Mantenimiento recurrente con precio fijo.", "Recurring maintenance at a fixed price."]]] },
+        resenas: [["Guadalupe R.", ["Diseño de jardín", "Landscape design"], "Transformaron mi patio por completo. Los vecinos no dejan de preguntar quién lo hizo."],
+          ["Tom B.", ["Remoción de árbol", "Tree removal"], "Removed a huge oak safely and left the yard spotless. Highly recommend."],
+          ["Ramón F.", ["Lavado a presión", "Pressure washing"], "Mi entrada y mi fachada quedaron como nuevas. Muy buen precio."]],
+        faq: [[["¿El estimado tiene costo?", "Is the estimate free?"], ["No, vamos a ver tu patio y te damos el estimado gratis.", "Yes, we visit your yard and give you a free estimate."]],
+          [["¿Se llevan las ramas?", "Do you haul away branches?"], ["Sí, el retiro de ramas y desechos está incluido.", "Yes, branch and debris removal is included."]],
+          [["¿Tienen seguro para trabajos de árboles?", "Are you insured for tree work?"], ["Sí, contamos con seguro para trabajos de altura y remoción.", "Yes, we're insured for climbing and removal work."]],
+          [["¿Ofrecen mantenimiento por mes?", "Do you offer monthly maintenance?"], ["Sí, planes semanales y quincenales con precio fijo.", "Yes, weekly and biweekly plans at a fixed price."]]],
+        form: { pre: ["Estimado gratis", "Free estimate"], titulo: ["Pide tu estimado gratis", "Get your free estimate"],
+          sub: ["Cuéntanos qué necesitas y el tamaño de tu patio.", "Tell us what you need and your yard size."],
+          icono: "fa-tree", tituloForm: ["Estimado de jardinería", "Landscaping estimate"],
+          beneficios: [["Visita y estimado sin costo", "Free visit & estimate"], ["Limpieza total al terminar", "Full clean-up when done"], ["Trabajo asegurado", "Insured work"]],
+          campos: [SERV(["¿Qué servicio necesitas?", "What service do you need?"]),
+            { id: "patio", label: ["Tamaño del patio", "Yard size"], tipo: "chips", req: true, iconos: ["sprout", "trees", "mountain", "circle-help"],
+              opciones: [["Pequeño (< 2,500 sq ft)", "Small (< 2,500 sq ft)"], ["Mediano (2,500 - 10,000 sq ft)", "Medium (2,500 - 10,000 sq ft)"], ["Grande (> 10,000 sq ft)", "Large (> 10,000 sq ft)"], ["No estoy seguro", "Not sure"]] },
+            URGENCIA, NOMBRE, TEL, ZIP] }
+      },
+
+      detailing: {
+        tema: "deportivo", nombre: "Elite Mobile Detailing", logo: "fa-car-side", emoji: "🚗",
+        etiqueta: ["Detallado móvil · Mecánica a domicilio", "Mobile Auto Detailing · Mobile Mechanic"],
+        slogan: ["Tu auto como de agencia, sin salir de casa.", "Showroom shine without leaving home."],
+        sub: ["Detallado, polarizado y mecánica ligera donde tú estés.", "Detailing, window tint and light mechanical work wherever you are."],
+        portada: "1607860108855-64acf2078ed9", cta: ["Cotizar Gratis", "Get Free Quote"], sellos: ["licensed", "estimados", "movil"],
+        stat: [4800, ["Autos detallados", "Cars detailed"]],
+        sobre: { titulo: ["Calidad de agencia en tu puerta", "Dealership quality at your door"], img: "1520340356584-f9917d1eea6f",
+          texto: ["somos especialistas en detallado automotriz, polarizado y mecánica móvil. Llegamos a tu casa u oficina con todo el equipo para que no pierdas tiempo.",
+                  "we specialize in auto detailing, window tint and mobile mechanics. We come to your home or office fully equipped so you never lose time."],
+          puntos: [["fa-van-shuttle", ["Unidad móvil completa", "Fully equipped van"], ["Llevamos agua y energía propias.", "Our own water and power."]],
+                   ["fa-gem", ["Productos premium", "Premium products"], ["Ceras, cerámicos y películas profesionales.", "Pro waxes, ceramics and films."]],
+                   ["fa-wrench", ["Mecánica a domicilio", "Mobile mechanic"], ["Aceite, frenos y diagnósticos.", "Oil, brakes and diagnostics."]]] },
+        serv: { pre: ["Paquetes", "Packages"], titulo: ["Brillo, protección y cuidado", "Shine, protection & care"],
+          sub: ["Precios para sedán. SUV y pickup tienen un pequeño cargo extra.", "Sedan pricing. SUVs and trucks have a small surcharge."],
+          lista: [
+            { n: ["Detallado exterior", "Exterior detail"], ref: "$79", tag: "Wash & Wax", img: "1520340356584-f9917d1eea6f", top: 1,
+              d: ["Lavado a mano con foam, rines, llantas, cera y vidrios sin manchas.", "Hand wash with foam, wheels, tires, wax and streak-free glass."],
+              inc: [["Lavado a mano", "Hand wash"], ["Rines y llantas", "Wheels & tires"], ["Cera protectora", "Protective wax"]] },
+            { n: ["Detallado interior", "Interior detail"], ref: "$99", tag: "Interior", img: "1449965408869-eaa3f722e40d",
+              d: ["Aspirado profundo, vestiduras, tapetes, tablero y olores.", "Deep vacuum, upholstery, mats, dashboard and odor removal."],
+              inc: [["Aspirado profundo", "Deep vacuum"], ["Vestiduras", "Upholstery"], ["Eliminación de olores", "Odor removal"]] },
+            { n: ["Full detail + cerámica", "Full detail + ceramic"], ref: "$349", tag: "Premium", img: "1503376780353-7e6692767b70", top: 2,
+              d: ["Pulido, corrección de pintura y recubrimiento cerámico.", "Polishing, paint correction and ceramic coating."],
+              inc: [["Pulido", "Polishing"], ["Corrección de pintura", "Paint correction"], ["Recubrimiento cerámico", "Ceramic coating"]] },
+            { n: ["Polarizado", "Window tint"], ref: "$199", tag: "Tint", img: "1580273916550-e323be2ae537",
+              d: ["Película de calidad que reduce calor y rayos UV, con garantía.", "Quality film that cuts heat and UV rays, with warranty."],
+              inc: [["Menos calor", "Less heat"], ["Protección UV", "UV protection"], ["Con garantía", "Warranty included"]] },
+            { n: ["Mecánica a domicilio", "Mobile mechanic"], ref: "$89", tag: ["Mecánica", "Mechanic"], img: "1487754180451-c456f719a1fc",
+              d: ["Cambio de aceite, frenos, batería y mantenimiento sin ir al taller.", "Oil change, brakes, battery and maintenance without a shop visit."],
+              inc: [["Cambio de aceite", "Oil change"], ["Frenos", "Brakes"], ["Batería", "Battery"]] },
+            { n: ["Diagnóstico de motor", "Engine diagnostic"], ref: "$69", exacto: true, tag: "Check engine", img: "1625047509168-a7026f36de04",
+              d: ["Escaneo de códigos y revisión antes de gastar en reparaciones.", "Code scan and inspection before you spend on repairs."],
+              inc: [["Escaneo de códigos", "Code scan"], ["Reporte claro", "Clear report"], ["Sin compromiso", "No obligation"]] }
+          ] },
+        porQue: { titulo: ["Tu auto en las mejores manos", "Your car in the best hands"], lista: [
+          ["fa-van-shuttle", ["Vamos a ti", "We come to you"], ["Casa u oficina: llevamos todo el equipo.", "Home or office, we bring all the gear."]],
+          ["fa-gem", ["Acabado de agencia", "Showroom finish"], ["Productos y técnicas profesionales.", "Professional products and techniques."]],
+          ["fa-award", ["Garantía", "Warranty"], ["Polarizado y cerámica con garantía.", "Tint and ceramic backed by warranty."]]] },
+        resenas: [["Eduardo C.", "Full detail", "Mi troca quedó como recién salida de la agencia. Y sin moverme de mi casa."],
+          ["Jessica W.", ["Detallado interior", "Interior detail"], "They got every stain out of my SUV seats. Amazing job!"],
+          ["Víctor A.", ["Mecánica a domicilio", "Mobile mechanic"], "Me cambiaron los frenos en mi trabajo. Rápido y a buen precio."]],
+        faq: [[["¿Necesitan agua o luz en mi casa?", "Do you need my water or power?"], ["No, nuestra unidad lleva agua y energía propias.", "No, our van carries its own water and power."]],
+          [["¿Cuánto tarda un detallado completo?", "How long does a full detail take?"], ["Entre 2 y 4 horas según el paquete y el estado del vehículo.", "2 to 4 hours depending on the package and vehicle condition."]],
+          [["¿El polarizado es legal en mi estado?", "Is window tint legal in my state?"], ["Usamos los porcentajes permitidos por la ley de tu estado.", "We only install tint levels allowed by your state's law."]],
+          [["¿Qué hace la mecánica a domicilio?", "What does the mobile mechanic do?"], ["Aceite, frenos, baterías, bandas, bujías y diagnósticos.", "Oil, brakes, batteries, belts, spark plugs and diagnostics."]]],
+        form: { pre: ["Cotización", "Quote"], titulo: ["Cotiza tu servicio", "Get your quote"],
+          sub: ["Dinos dónde estás y qué vehículo tienes.", "Tell us where you are and what you drive."],
+          icono: "fa-car-side", tituloForm: ["Cotización de auto", "Vehicle quote"],
+          beneficios: [["Vamos a tu casa u oficina", "We come to your home or office"], ["Precio claro antes de empezar", "Clear price up front"], ["Citas esta semana", "Appointments this week"]],
+          campos: [SERV(["¿Qué paquete quieres?", "Which package?"], "paquete"),
+            { id: "vehiculo", label: ["Tipo de vehículo", "Vehicle type"], tipo: "chips", req: true,
+              iconos: ["car", "car-front", "truck", "bus"],
+              opciones: [["Sedán", "Sedan"], ["SUV", "SUV"], ["Pickup", "Pickup truck"], ["Van / Minivan", "Van / Minivan"]] },
+            URGENCIA, NOMBRE, TEL,
+            { id: "ubicacion", label: ["Ubicación / Zip Code", "Location / Zip Code"], tipo: "texto", req: true, icon: "fa-location-dot", ph: ["Ej. Hialeah, 33012", "e.g. Hialeah, 33012"] }] }
+      },
+
+      moving: {
+        tema: "logistico", nombre: "Swift Moving & Junk Removal", logo: "fa-truck-moving", emoji: "🚚",
+        etiqueta: ["Mudanzas · Retiro de basura", "Moving · Junk Removal"],
+        slogan: ["Mudanzas sin estrés y retiro de lo que ya no usas.", "Stress-free moves and removal of what you no longer need."],
+        sub: ["Mudanzas locales y de larga distancia, empaque y retiro de escombros.", "Local and long-distance moves, packing and debris removal."],
+        portada: "1600518464441-9154a4dea21b", cta: CTA_COTIZAR, sellos: ["licensed", "estimados", "garantia"],
+        stat: [1600, ["Mudanzas exitosas", "Successful moves"]],
+        sobre: { titulo: ["Movemos tu vida con cuidado", "We move your life with care"], img: "1612630741022-b29ec17d013d",
+          texto: ["somos una compañía de mudanzas y junk removal con movers cuidadosos y camiones equipados. Protegemos tus muebles y cumplimos tus fechas.",
+                  "we are a moving and junk removal company with careful movers and fully equipped trucks. We protect your furniture and keep your dates."],
+          puntos: [["fa-people-carry-box", ["Movers con experiencia", "Experienced movers"], ["Mantas, plástico y cuidado en cada pieza.", "Blankets, wrap and care for every piece."]],
+                   ["fa-file-invoice-dollar", ["Precio por adelantado", "Upfront pricing"], ["Sin cargos escondidos.", "No hidden fees."]],
+                   ["fa-recycle", ["Retiro responsable", "Responsible disposal"], ["Donamos y reciclamos lo que se puede.", "We donate and recycle when possible."]]] },
+        serv: { pre: ["Nuestros servicios", "Our services"], titulo: ["Movemos lo que necesites", "We move whatever you need"],
+          sub: ["Precios de referencia según volumen y distancia.", "Reference pricing based on volume and distance."],
+          lista: [
+            { n: ["Mudanza local", "Local move"], ref: "$349", tag: ["2 movers + camión", "2 movers + truck"], img: "1612630741022-b29ec17d013d", top: 1,
+              d: ["Camión y 2 movers para departamentos y casas en tu ciudad.", "Truck and 2 movers for apartments and homes in your city."],
+              inc: [["Camión equipado", "Equipped truck"], ["2 movers", "2 movers"], ["Armado de muebles", "Furniture assembly"]] },
+            { n: ["Mudanza de larga distancia", "Long-distance move"], ref: "$1,800", tag: ["Otro estado", "Out of state"], img: "1519003722824-194d4455a60c", top: 2,
+              d: ["Mudanzas a otro estado con entrega programada.", "Out-of-state moves with scheduled delivery."],
+              inc: [["Entrega programada", "Scheduled delivery"], ["Seguro de carga", "Cargo insurance"], ["Seguimiento", "Tracking"]] },
+            { n: ["Empaque y desempaque", "Packing & unpacking"], ref: "$199", tag: "Packing", img: "1609143739217-01b60dad1c67",
+              d: ["Cajas y empaque profesional para que nada se rompa.", "Boxes and professional packing so nothing breaks."],
+              inc: [["Cajas incluidas", "Boxes included"], ["Empaque de frágiles", "Fragile packing"], ["Desempaque", "Unpacking"]] },
+            { n: "Junk removal", ref: "$149", tag: ["Retiro", "Removal"], img: "1532996122724-e3c354a0b15b",
+              d: ["Muebles viejos, electrodomésticos y cosas que ya no usas.", "Old furniture, appliances and things you no longer use."],
+              inc: [["Muebles viejos", "Old furniture"], ["Electrodomésticos", "Appliances"], ["Reciclaje", "Recycling"]] },
+            { n: ["Retiro de escombros", "Debris removal"], ref: "$299", tag: ["Construcción", "Construction"], img: "1517581177682-a085bb7ffb15",
+              d: ["Escombro de remodelación, madera, drywall y material de obra.", "Remodel debris, wood, drywall and construction material."],
+              inc: [["Escombro de obra", "Construction debris"], ["Madera y drywall", "Wood & drywall"], ["Barrido final", "Final sweep"]] },
+            { n: ["Almacenaje", "Storage"], ref: ["$99/mes", "$99/mo"], tag: "Storage", img: "1587293852726-70cdb56c2866",
+              d: ["Guardamos tus cosas en bodega segura mientras te mudas.", "We store your belongings in a secure unit while you move."],
+              inc: [["Bodega segura", "Secure unit"], ["Acceso fácil", "Easy access"], ["Mes a mes", "Month to month"]] }
+          ] },
+        porQue: { titulo: ["Tu mudanza en buenas manos", "Your move in good hands"], lista: [
+          ["fa-people-carry-box", ["Equipo cuidadoso", "Careful crew"], ["Protegemos tus muebles con mantas y plástico.", "We protect your furniture with blankets and wrap."]],
+          ["fa-file-invoice-dollar", ["Precio sin sorpresas", "No-surprise pricing"], ["Cotización clara por adelantado.", "Clear quote up front."]],
+          ["fa-calendar-check", ["Cumplimos fechas", "We keep our dates"], ["Llegamos el día y la hora acordados.", "We show up on the agreed day and time."]]] },
+        resenas: [["Claudia N.", ["Mudanza local", "Local move"], "Nos mudaron en una mañana y no se rompió nada. Súper amables."],
+          ["Kevin D.", "Junk removal", "Cleared out my garage in an hour. Fair price and very fast."],
+          ["Andrés T.", ["Larga distancia", "Long distance"], "De Texas a Florida sin problemas. Todo llegó perfecto y a tiempo."]],
+        faq: [[["¿Con cuánto tiempo debo reservar?", "How far ahead should I book?"], ["Idealmente 1 a 2 semanas. Para fin de mes, con más tiempo.", "Ideally 1 to 2 weeks. Book earlier for end-of-month moves."]],
+          [["¿Mis cosas están aseguradas?", "Are my belongings insured?"], ["Sí, contamos con seguro de carga y protección básica incluida.", "Yes, we carry cargo insurance and basic protection is included."]],
+          [["¿Cómo se cobra el junk removal?", "How is junk removal priced?"], ["Por volumen: carga pequeña, media o completa.", "By volume: small, half or full load."]],
+          [["¿Desarman y arman muebles?", "Do you take apart and reassemble furniture?"], ["Sí, sin costo extra.", "Yes, at no extra cost."]]],
+        form: { pre: ["Cotización gratis", "Free quote"], titulo: ["Cotiza tu mudanza o retiro", "Quote your move or junk removal"],
+          sub: ["Con estos datos te mandamos el precio por WhatsApp.", "With these details we'll send your price on WhatsApp."],
+          icono: "fa-truck-moving", tituloForm: ["Cotización de mudanza", "Moving quote"],
+          beneficios: [["Precio por adelantado", "Upfront pricing"], ["Movers asegurados", "Insured movers"], ["Fechas disponibles esta semana", "Dates available this week"]],
+          campos: [SERV(["¿Qué servicio necesitas?", "What service do you need?"]),
+            { id: "tamano", label: ["Tamaño de la mudanza o retiro", "Move or junk size"], tipo: "chips", req: true,
+              iconos: ["sofa", "house", "building", "briefcase", "trash", "trash-2", "container", "construction"],
+              opciones: [["Estudio / 1 rec", "Studio / 1 bed"], ["2-3 recámaras", "2-3 bedrooms"], ["4+ recámaras", "4+ bedrooms"], ["Oficina", "Office"],
+                         ["Junk: carga pequeña", "Junk: small load"], ["Junk: media carga", "Junk: half load"], ["Junk: carga completa", "Junk: full load"], ["Escombro de obra", "Construction debris"]] },
+            NOMBRE, TEL,
+            { id: "zipOrigen", label: ["Zip Code de origen", "Origin Zip Code"], tipo: "zip", req: true, ph: ["Ej. 77002", "e.g. 77002"] },
+            { id: "zipDestino", label: ["Zip Code de destino", "Destination Zip Code"], tipo: "zip", req: true, ph: ["Ej. 77494", "e.g. 77494"] },
+            { id: "fecha", label: ["Fecha de la mudanza", "Move date"], tipo: "fecha", req: true }] }
+      },
+
+      estetica: {
+        tema: "crema", nombre: "Glow Beauty Studio", logo: "fa-spa", emoji: "💅", modo: "cita", ctaIcon: "fa-calendar-check",
+        etiqueta: ["Salón de belleza · Uñas · Pestañas · Spa", "Beauty Salon · Nails · Lashes · Spa"],
+        slogan: ["Tu momento para verte y sentirte increíble.", "Your moment to look and feel amazing."],
+        sub: ["Uñas, pestañas, cabello y tratamientos de spa con productos profesionales.", "Nails, lashes, hair and spa treatments with professional products."],
+        portada: "1560750588-73207b1ef5b8", cta: ["Agendar Cita", "Book Appointment"], sellos: ["licensed", "estimados", "citas"],
+        stat: [5000, ["Clientas felices", "Happy clients"]],
+        sobre: { titulo: ["Belleza con detalle y cuidado", "Beauty with care and detail"], img: "1562322140-8baeececf3df",
+          texto: ["somos un salón de belleza con profesionales certificadas en uñas, pestañas, cabello y spa. Usamos productos de calidad y cuidamos cada detalle de tu cita.",
+                  "we are a beauty salon with certified professionals in nails, lashes, hair and spa. We use quality products and care for every detail of your visit."],
+          puntos: [["fa-gem", ["Profesionales certificadas", "Certified professionals"], ["Técnicas con licencia y experiencia.", "Licensed, experienced techs."]],
+                   ["fa-pump-soap", ["Higiene impecable", "Spotless hygiene"], ["Herramientas esterilizadas.", "Sterilized tools."]],
+                   ["fa-heart", ["Te encanta o lo arreglamos", "Love it or we fix it"], ["Corrección sin costo en 5 días.", "Free touch-up within 5 days."]]] },
+        serv: { pre: ["Servicios", "Services"], titulo: ["Consiéntete como mereces", "Treat yourself"],
+          sub: ["Precios de referencia. El precio final depende del diseño y largo.", "Reference pricing. Final price depends on design and length."],
+          lista: [
+            { n: ["Pestañas clásicas: juego completo", "Classic Lash Full Set"], ref: "$120", tag: ["Más pedido", "Full set"], img: "1631214540553-ff044a3ff1d4", top: 1,
+              d: ["Una extensión por cada pestaña natural para un look definido y natural.", "One extension per natural lash for a clean, natural look."],
+              inc: [["Mapeo de pestañas", "Custom lash mapping"], ["Look natural", "Natural look"], ["Dura 2-3 semanas", "Lasts 2-3 weeks"]] },
+            { n: ["Relleno híbrido / volumen", "Hybrid / Volume Fill"], ref: "$65", tag: ["Relleno", "2-3 week fill"], img: "1562322140-8baeececf3df", top: 2,
+              d: ["Retoque de tus extensiones híbridas o de volumen cada 2 a 3 semanas.", "Refresh your hybrid or volume set every 2-3 weeks."],
+              inc: [["Hasta 3 semanas", "Up to 3 weeks out"], ["Limpieza de pestañas", "Lash bath included"], ["Volumen parejo", "Even, full volume"]] },
+            { n: ["Lifting de pestañas + tinte", "Lash Lift & Tint"], ref: "$75", tag: ["Sin extensiones", "No extensions"], img: "1631214540553-ff044a3ff1d4",
+              d: ["Curvatura y color a tus pestañas naturales que dura de 6 a 8 semanas.", "Curl and darken your natural lashes for 6-8 weeks."],
+              inc: [["Lifting", "Lift"], ["Tinte", "Tint"], ["Dura 6-8 semanas", "Lasts 6-8 weeks"]] },
+            { n: ["Laminado de cejas + tinte", "Brow Lamination & Tint"], ref: "$65", tag: ["Tendencia", "Trending"], img: "1487412947147-5cebf100ffc2",
+              d: ["Laminado, diseño con cera y tinte para cejas perfectas.", "Lamination, wax shaping and tint for fluffy, defined brows."],
+              inc: [["Laminado", "Lamination"], ["Diseño con cera", "Wax shaping"], ["Tinte", "Tint"]] },
+            { n: ["Uñas Gel-X / acrílicas", "Gel-X / Acrylic Full Set"], ref: "$55", tag: ["Uñas", "Nails"], img: "1519014816548-bf5fe059798b",
+              d: ["Juego completo con la forma, el largo y el diseño que quieras.", "Full set in the shape, length and design you want."],
+              inc: [["Forma a tu gusto", "Your choice of shape"], ["Diseño personalizado", "Custom nail art"], ["Duran 3 semanas", "Last 3 weeks"]] },
+            { n: "Hydrafacial", ref: "$150", tag: "Glow", img: "1570172619644-dfd03ed5d881",
+              d: ["Limpieza profunda, extracción e hidratación con sueros.", "Deep cleansing, extraction and serum hydration."],
+              inc: [["Limpieza profunda", "Deep cleanse"], ["Extracción", "Extraction"], ["Sueros hidratantes", "Hydrating serums"]] }
+          ] },
+        porQue: { titulo: ["Tu momento, a tu manera", "Your moment, your way"], lista: [
+          ["fa-gem", ["Expertas en lo que hacen", "True experts"], ["Años de experiencia en uñas, pestañas y piel.", "Years of experience in nails, lashes and skin."]],
+          ["fa-pump-soap", ["Higiene impecable", "Spotless hygiene"], ["Materiales desechables y herramientas esterilizadas.", "Disposable materials and sterilized tools."]],
+          ["fa-calendar-check", ["Agenda fácil", "Easy booking"], ["Eliges día y horario en segundos desde tu celular.", "Pick your day and time in seconds from your phone."]]] },
+        resenas: [["Daniela S.", ["Uñas acrílicas", "Acrylic nails"], "Las uñas más bonitas que me han hecho y me duraron 3 semanas perfectas."],
+          ["Ashley P.", "Lash extensions", "Best lash tech in town! Natural look and super comfortable."],
+          ["Karla M.", "Hydrafacial", "Mi piel quedó luminosa desde la primera sesión. El lugar es hermoso."]],
+        faq: [[["¿Cuánto duran las uñas acrílicas?", "How long do acrylic nails last?"], ["Entre 2 y 3 semanas antes del relleno.", "2 to 3 weeks before a fill."]],
+          [["¿Las extensiones dañan mis pestañas?", "Do extensions damage my lashes?"], ["No, si se aplican correctamente con el peso adecuado.", "No, when applied correctly with the right weight."]],
+          [["¿Piden depósito?", "Do you require a deposit?"], ["Para servicios largos, un pequeño depósito que se descuenta del total.", "For longer services, a small deposit credited to your total."]],
+          [["¿Puedo llegar sin cita?", "Do you take walk-ins?"], ["Atendemos walk-ins cuando hay espacio, pero con cita te garantizamos tu horario.", "When there's space, but booking guarantees your time slot."]]],
+        form: { pre: ["Reserva", "Book now"], titulo: ["Agenda tu cita", "Book your appointment"],
+          sub: ["Elige tratamiento, día y horario. Te confirmamos por WhatsApp.", "Choose treatment, day and time. We'll confirm on WhatsApp."],
+          icono: "fa-calendar-check", tituloForm: ["Solicitud de cita", "Appointment request"], btn: ["Enviar Reserva por WhatsApp", "Send Booking via WhatsApp"],
+          beneficios: [["Confirmación rápida por WhatsApp", "Fast WhatsApp confirmation"], ["Recordatorio un día antes", "Reminder the day before"], ["Cambios de horario sin costo", "Free rescheduling"]],
+          campos: [SERV(["¿Qué servicio quieres?", "Which service?"]),
+            { id: "horario", label: ["Horario preferido", "Preferred time"], tipo: "chips", req: true,
+              iconos: ["sunrise", "sun", "moon"],
+              opciones: [["Mañana (9-12)", "Morning (9-12)"], ["Tarde (12-4)", "Afternoon (12-4)"], ["Noche (4-8)", "Evening (4-8)"]] },
+            NOMBRE, TEL, { id: "fecha", label: ["Fecha", "Date"], tipo: "fecha", req: true }] }
+      },
+
+      barberia: {
+        tema: "dorado", nombre: "El Patrón Barber Shop", logo: "fa-scissors", emoji: "💈", modo: "cita", ctaIcon: "fa-calendar-check",
+        etiqueta: ["Barbería · Reservas en línea", "Barber Shop · Online Booking"],
+        slogan: ["Cortes con estilo, navaja y buena plática.", "Sharp cuts, straight razor and good conversation."],
+        sub: ["Reserva tu turno en línea y llega directo a la silla, sin esperar.", "Book online and go straight to the chair, no waiting."],
+        portada: "1585747860715-2ba37e788b70", cta: ["Reservar Turno", "Book Now"], sellos: ["licensed", "estimados", "citas"],
+        stat: [12000, ["Cortes realizados", "Cuts delivered"]],
+        sobre: { titulo: ["Más que un corte, una experiencia", "More than a cut, an experience"], img: "1622287162716-f311baa1a2b8",
+          texto: ["somos una barbería latina especializada en fades, diseños y barba con navaja. Un lugar con buena música, buena plática y barberos que cuidan cada detalle.",
+                  "we are a Latino barber shop specializing in fades, designs and straight-razor beard work. Good music, good conversation and barbers who care about every detail."],
+          puntos: [["fa-scissors", ["Barberos expertos", "Expert barbers"], ["Fades, diseños y navaja.", "Fades, designs and razor work."]],
+                   ["fa-stopwatch", ["Cero esperas", "Zero wait"], ["Reservas y llegas directo a la silla.", "Book and go straight to the chair."]],
+                   ["fa-champagne-glasses", ["Ambiente VIP", "VIP vibe"], ["Bebida de cortesía en paquetes.", "Complimentary drink with packages."]]] },
+        serv: { pre: ["Servicios", "Services"], titulo: ["Tu estilo, nuestro arte", "Your style, our craft"],
+          sub: ["Pregunta por paquetes para papá e hijo.", "Ask about father & son packages."],
+          lista: [
+            { n: ["Fade / Degradado", "Fade"], ref: "$35", exacto: true, tag: "Fade", img: "1622286342621-4bd786c2447c", top: 1,
+              d: ["Low, mid o high fade con acabado perfecto y diseño de línea.", "Low, mid or high fade with a perfect finish and line-up."],
+              inc: [["Low, mid o high", "Low, mid or high"], ["Diseño de línea", "Line-up"], ["Lavado y producto", "Wash & product"]] },
+            { n: ["Corte clásico", "Classic cut"], ref: "$28", exacto: true, tag: ["Tradicional", "Classic"], img: "1593702288056-7927b442d0fa",
+              d: ["Tijera y máquina a tu gusto, lavado y peinado con producto.", "Scissors and clippers your way, wash and styling."],
+              inc: [["Tijera y máquina", "Scissors & clippers"], ["Lavado", "Wash"], ["Peinado", "Styling"]] },
+            { n: ["Perfilado de barba", "Beard trim"], ref: "$20", exacto: true, tag: ["Barba", "Beard"], img: "1599351431202-1e0f0137899a",
+              d: ["Recorte, navaja, toalla caliente y aceite para barba.", "Trim, straight razor, hot towel and beard oil."],
+              inc: [["Navaja", "Straight razor"], ["Toalla caliente", "Hot towel"], ["Aceite para barba", "Beard oil"]] },
+            { n: ["Cejas con navaja", "Razor eyebrows"], ref: "$10", exacto: true, tag: ["Detalle", "Detail"], img: "1503951914875-452162b0f3f1",
+              d: ["Limpieza y perfilado de cejas para una mirada definida.", "Clean-up and shaping for sharp brows."],
+              inc: [["Limpieza", "Clean-up"], ["Perfilado", "Shaping"], ["5 minutos", "5 minutes"]] },
+            { n: ["Corte + Barba", "Cut + Beard"], ref: "$50", exacto: true, tag: "Combo", img: "1622287162716-f311baa1a2b8", top: 2,
+              d: ["Tu fade o corte favorito más perfilado de barba con navaja.", "Your favorite fade or cut plus a razor beard line-up."],
+              inc: [["Fade o corte", "Fade or cut"], ["Barba con navaja", "Razor beard"], ["Toalla caliente", "Hot towel"]] },
+            { n: ["Paquete VIP", "VIP Package"], ref: "$70", exacto: true, tag: "VIP", img: "1605497788044-5a32c7078486",
+              d: ["Corte, barba, cejas, mascarilla, lavado con masaje y bebida.", "Cut, beard, brows, face mask, shampoo massage and a drink."],
+              inc: [["Corte + barba + cejas", "Cut + beard + brows"], ["Mascarilla", "Face mask"], ["Bebida de cortesía", "Complimentary drink"]] }
+          ] },
+        porQue: { titulo: ["La experiencia que mereces", "The experience you deserve"], lista: [
+          ["fa-scissors", ["Detalle en cada corte", "Detail in every cut"], ["Especialistas en fades y barba con navaja.", "Fade and straight-razor specialists."]],
+          ["fa-stopwatch", ["Tu tiempo vale", "Your time matters"], ["Reservas tu turno y te atendemos a tu hora.", "Book your slot and get served on time."]],
+          ["fa-champagne-glasses", ["Te sientes en casa", "Feel at home"], ["Buena música, buena plática y buen ambiente.", "Good music, good talk, great vibe."]]] },
+        resenas: [["Brian L.", "Fade", "El mejor fade que me han hecho. Reservé en línea y no esperé nada."],
+          ["Chris J.", ["Paquete VIP", "VIP package"], "Great vibe, great barbers. The VIP package is worth every dollar."],
+          ["Óscar V.", ["Corte + barba", "Cut + beard"], "Mi barba nunca se había visto tan bien. Ya es mi barbería de confianza."]],
+        faq: [[["¿Aceptan walk-ins?", "Do you take walk-ins?"], ["Sí, pero con turno reservado te atendemos a tu hora sin esperar.", "Yes, but with a booking you're served on time with no wait."]],
+          [["¿Cortan a niños?", "Do you cut kids' hair?"], ["Claro, cortes para niños desde $20.", "Of course, kids' cuts from $20."]],
+          [["¿Qué incluye el paquete VIP?", "What's in the VIP package?"], ["Corte, barba, cejas, mascarilla, lavado con masaje y bebida de cortesía.", "Cut, beard, brows, face mask, shampoo massage and a complimentary drink."]],
+          [["¿Cómo pago?", "How can I pay?"], ["Efectivo, tarjeta, Zelle o Cash App.", "Cash, card, Zelle or Cash App."]]],
+        form: { pre: ["Reserva", "Book now"], titulo: ["Reserva tu turno", "Book your spot"],
+          sub: ["Elige tu corte, día y hora. Te confirmamos por WhatsApp.", "Pick your cut, day and time. We'll confirm on WhatsApp."],
+          icono: "fa-scissors", tituloForm: ["Reserva de turno", "Booking request"], btn: ["Enviar Reserva por WhatsApp", "Send Booking via WhatsApp"],
+          beneficios: [["Te atendemos a tu hora", "Served right on time"], ["Recordatorio antes de tu cita", "Reminder before your visit"], ["Cambios sin costo", "Free changes"]],
+          campos: [SERV(["Corte / Paquete", "Cut / Package"], "paquete"), NOMBRE, TEL,
+            { id: "dia", label: ["Día", "Day"], tipo: "fecha", req: true },
+            { id: "hora", label: ["Hora", "Time"], tipo: "hora", req: true }] }
+      },
+
+      pasteleria: {
+        tema: "rosa", nombre: "Dulce Arte Cakes", logo: "fa-cake-candles", emoji: "🎂",
+        etiqueta: ["Pasteles personalizados · Repostería para eventos", "Custom Cakes · Event Desserts"],
+        slogan: ["Pasteles personalizados que se ven tan bien como saben.", "Custom cakes that look as good as they taste."],
+        sub: ["Bodas, XV años, baby showers y cumpleaños. Diseñamos tu pastel a tu gusto.", "Weddings, quinceañeras, baby showers and birthdays. Designed your way."],
+        portada: "1562777717-dc6984f65a63", cta: ["Cotizar Gratis", "Get Free Quote"], sellos: ["licensed", "estimados", "garantia"],
+        stat: [2300, ["Pasteles entregados", "Cakes delivered"]],
+        sobre: { titulo: ["Repostería fina hecha a mano", "Fine handmade baking"], img: "1627834377411-8da5f4f09de8",
+          texto: ["somos una pastelería especializada en custom cakes y mesas de postres para eventos. Horneamos fresco para tu fecha y diseñamos cada pastel según tu idea.",
+                  "we are a bakery specializing in custom cakes and dessert tables for events. We bake fresh for your date and design every cake around your idea."],
+          puntos: [["fa-palette", ["Diseño personalizado", "Custom design"], ["Tu idea hecha realidad.", "Your idea brought to life."]],
+                   ["fa-cookie-bite", ["Ingredientes de calidad", "Quality ingredients"], ["Rellenos y betunes caseros.", "Homemade fillings and frostings."]],
+                   ["fa-truck", ["Entrega y montaje", "Delivery & setup"], ["Llevamos y montamos en tu salón.", "We deliver and set up at your venue."]]] },
+        serv: { pre: ["Pasteles y postres", "Cakes & desserts"], titulo: ["Hecho a mano para tu evento", "Handmade for your event"],
+          sub: ["Precios de referencia. Cotizamos según diseño y porciones.", "Reference pricing. Quoted by design and servings."],
+          lista: [
+            { n: ["Custom cake 1 piso", "1-tier custom cake"], ref: "$95", tag: ["20 porciones", "20 servings"], img: "1627834377411-8da5f4f09de8", top: 1,
+              d: ["Pastel personalizado con el tema, colores y sabor que quieras.", "Custom cake with the theme, colors and flavor you want."],
+              inc: [["Tema a tu gusto", "Your theme"], ["Sabor a elegir", "Choice of flavor"], ["Topper incluido", "Topper included"]] },
+            { n: ["Pastel de 2 o 3 pisos", "2–3 tier cake"], ref: "$280", tag: ["Bodas · XV años", "Weddings · Quince"], img: "1535254973040-607b474cb50d", top: 2,
+              d: ["Varios pisos con flores, fondant o buttercream.", "Multi-tier with flowers, fondant or buttercream."],
+              inc: [["Fondant o buttercream", "Fondant or buttercream"], ["Flores decorativas", "Decorative flowers"], ["Entrega y montaje", "Delivery & setup"]] },
+            { n: ["Mesa de postres", "Dessert table"], ref: "$220", tag: ["Eventos", "Events"], img: "1488477181946-6428a0291777",
+              d: ["Shots, mini cheesecakes y brownies con los colores de tu evento.", "Dessert shots, mini cheesecakes and brownies in your event colors."],
+              inc: [["Shots y mini cheesecakes", "Shots & mini cheesecakes"], ["Colores de tu evento", "Your event colors"], ["Montaje", "Setup"]] },
+            { n: ["Cupcakes personalizados", "Custom cupcakes"], ref: ["$45/docena", "$45/dozen"], tag: ["Temáticos", "Themed"], img: "1614707267537-b85aaf00c4b7",
+              d: ["Cupcakes decorados con el tema de tu fiesta.", "Cupcakes decorated with your party theme."],
+              inc: [["Decorado temático", "Themed decor"], ["Sabores variados", "Assorted flavors"], ["Caja de regalo", "Gift box"]] },
+            { n: ["Cheesecake entero", "Whole cheesecake"], ref: "$48", tag: ["Cremoso", "Creamy"], img: "1533134242443-d4fd215305ad",
+              d: ["Estilo New York con mora azul, fresa o cajeta.", "New York style with blueberry, strawberry or cajeta."],
+              inc: [["Estilo New York", "New York style"], ["Topping a elegir", "Choice of topping"], ["10-12 rebanadas", "10-12 slices"]] },
+            { n: ["Galletas decoradas", "Decorated cookies"], ref: ["$40/docena", "$40/dozen"], tag: ["Para regalar", "Great gifts"], img: "1558961363-fa8fdf82db35",
+              d: ["Galletas de mantequilla con nombre, logo o tema.", "Butter cookies with a name, logo or theme."],
+              inc: [["Nombre o logo", "Name or logo"], ["Glaseado real", "Royal icing"], ["Empaque individual", "Individually wrapped"]] }
+          ] },
+        porQue: { titulo: ["Tu evento merece un pastel inolvidable", "Your event deserves an unforgettable cake"], lista: [
+          ["fa-palette", ["100% personalizado", "100% custom"], ["Nos mandas tu idea o foto y la hacemos realidad.", "Send us your idea or photo and we'll make it real."]],
+          ["fa-cookie-bite", ["Horneado fresco", "Baked fresh"], ["Para tu fecha, con rellenos hechos en casa.", "For your date, with homemade fillings."]],
+          ["fa-truck", ["Llega perfecto", "Arrives perfect"], ["Entregamos y montamos en tu salón.", "We deliver and set up at your venue."]]] },
+        resenas: [["Fernanda G.", ["Pastel de XV años", "Quinceañera cake"], "El pastel de los XV de mi hija fue la sensación de la fiesta. ¡Y delicioso!"],
+          ["Emily R.", ["Pastel de boda", "Wedding cake"], "Our wedding cake was exactly what we dreamed of. Beautiful and delicious."],
+          ["Sofía D.", ["Mesa de postres", "Dessert table"], "La mesa de postres combinó perfecto con la decoración. Todos preguntaron por ella."]],
+        faq: [[["¿Con cuánto tiempo debo pedir?", "How far ahead should I order?"], ["2 semanas para pasteles personalizados y 1 mes para bodas o XV años.", "2 weeks for custom cakes and 1 month for weddings or quinceañeras."]],
+          [["¿Piden anticipo?", "Do you require a deposit?"], ["Sí, el 50% para apartar tu fecha.", "Yes, 50% to reserve your date."]],
+          [["¿Qué sabores tienen?", "What flavors do you offer?"], ["Vainilla, chocolate, red velvet, tres leches, zanahoria y más.", "Vanilla, chocolate, red velvet, tres leches, carrot and more."]],
+          [["¿Hacen entregas?", "Do you deliver?"], ["Sí, entregamos y montamos en tu salón o casa.", "Yes, we deliver and set up at your venue or home."]]],
+        form: { pre: ["Cotización gratis", "Free quote"], titulo: ["Cotiza tu pastel", "Quote your cake"],
+          sub: ["Cuéntanos de tu evento y te mandamos la cotización.", "Tell us about your event and we'll send your quote."],
+          icono: "fa-cake-candles", tituloForm: ["Cotización de pastel", "Cake quote"],
+          beneficios: [["Boceto del diseño sin costo", "Free design sketch"], ["Cotización el mismo día", "Same-day quote"], ["Apartas tu fecha con 50%", "Reserve your date with 50%"]],
+          campos: [SERV(["¿Qué necesitas?", "What do you need?"], "tipo"),
+            { id: "sabor", label: ["Sabor / Relleno", "Flavor / Filling"], tipo: "chips", req: true,
+              iconos: ["cherry", "cake-slice", "heart", "milk", "carrot", "message-circle"],
+              opciones: [["Vainilla con fresa", "Vanilla & strawberry"], ["Chocolate con Nutella", "Chocolate & Nutella"], ["Red velvet", "Red velvet"], ["Tres leches", "Tres leches"], ["Zanahoria", "Carrot"], ["Otro (lo platicamos)", "Other (let's talk)"]] },
+            NOMBRE, TEL,
+            { id: "fecha", label: ["Fecha del evento", "Event date"], tipo: "fecha", req: true },
+            { id: "invitados", label: ["Invitados", "Guests"], tipo: "numero", req: true, ph: ["Ej. 60", "e.g. 60"] },
+            { id: "idea", label: ["Idea del diseño (opcional)", "Design idea (optional)"], tipo: "area",
+              ph: ["Ej. 2 pisos blanco con flores rosas, tema mariposas...", "e.g. 2 tiers, white with pink flowers, butterfly theme..."] }] }
+      },
+
+      comida: {
+        tema: "naranja", nombre: "Sabor Latino", logo: "fa-utensils", emoji: "🌮", modo: "pedido", ctaIcon: "fa-bag-shopping",
+        etiqueta: ["Restaurante latino · Pedidos a domicilio", "Latin Restaurant · Takeout & Delivery"],
+        slogan: ["Comida latina con sabor de casa, para llevar o a domicilio.", "Home-style Latin food for pick-up or delivery."],
+        sub: ["Haz tu pedido en línea y te avisamos cuando esté listo.", "Order online and we'll let you know when it's ready."],
+        portada: "1586511925558-a4c6376fe65f", cta: ["Hacer Pedido", "Order Now"], sellos: ["licensed", "estimados", "entrega"],
+        stat: [25000, ["Pedidos entregados", "Orders delivered"]],
+        sobre: { titulo: ["Sabor auténtico desde nuestra cocina", "Authentic flavor from our kitchen"], img: "1551504734-5ee1c4a1479b",
+          texto: ["somos un restaurante latino familiar. Cocinamos cada platillo al momento con recetas de casa e ingredientes frescos del día.",
+                  "we are a family-owned Latin restaurant. Every dish is cooked to order with home recipes and fresh daily ingredients."],
+          puntos: [["fa-fire", ["Hecho al momento", "Cooked to order"], ["Ingredientes frescos del día.", "Fresh daily ingredients."]],
+                   ["fa-mobile-screen", ["Pide en segundos", "Order in seconds"], ["Tu pedido llega a nuestro WhatsApp.", "Your order goes straight to our WhatsApp."]],
+                   ["fa-motorcycle", ["Pick-up o delivery", "Pick-up or delivery"], ["Como más te convenga.", "Whatever works for you."]]] },
+        serv: { pre: ["Menú", "Our menu"], titulo: ["Nuestros platillos", "Our dishes"],
+          sub: ["Precios de referencia. Escribe tu pedido en el formulario de abajo.", "Reference prices. Write your order in the form below."],
+          lista: [
+            { n: ["Tacos de asada o pastor", "Asada or pastor tacos"], ref: ["3 por $12.99", "3 for $12.99"], exacto: true, tag: "Tacos", img: "1551504734-5ee1c4a1479b", top: 1,
+              d: ["Con cebolla, cilantro y salsa de la casa. Incluyen bebida.", "With onion, cilantro and house salsa. Drink included."],
+              inc: [["Cebolla y cilantro", "Onion & cilantro"], ["Salsa de la casa", "House salsa"], ["Bebida incluida", "Drink included"]] },
+            { n: ["Quesabirria con consomé", "Quesabirria with consomé"], ref: ["3 por $15.99", "3 for $15.99"], exacto: true, tag: "Birria", img: "1599974579688-8dbdd335c77f", top: 2,
+              d: ["Doraditos con queso derretido y consomé calientito.", "Crispy with melted cheese and hot consomé."],
+              inc: [["Queso derretido", "Melted cheese"], ["Consomé", "Consomé"], ["Limón y cebolla", "Lime & onion"]] },
+            { n: "Burritos", ref: "$14.99", exacto: true, tag: ["Llenador", "Hearty"], img: "1626700051175-6818013e1d4f",
+              d: ["De tu carne favorita con arroz, frijoles y queso.", "Your favorite meat with rice, beans and cheese."],
+              inc: [["Carne a elegir", "Choice of meat"], ["Arroz y frijoles", "Rice & beans"], ["Queso", "Cheese"]] },
+            { n: "Chilaquiles", ref: "$12.49", exacto: true, tag: ["Desayuno", "Breakfast"], img: "1640719028782-8230f1bdc42a",
+              d: ["Rojos o verdes, con huevo, crema, queso y aguacate.", "Red or green, with egg, cream, cheese and avocado."],
+              inc: [["Rojos o verdes", "Red or green"], ["Huevo", "Egg"], ["Aguacate", "Avocado"]] },
+            { n: ["Nachos supremos", "Supreme nachos"], ref: "$11.99", exacto: true, tag: ["Para compartir", "To share"], img: "1513456852971-30c0b8199d4d",
+              d: ["Queso fundido, carne, frijoles, pico de gallo y jalapeños.", "Melted cheese, meat, beans, pico de gallo and jalapeños."],
+              inc: [["Queso fundido", "Melted cheese"], ["Carne", "Meat"], ["Pico de gallo", "Pico de gallo"]] },
+            { n: "Aguas frescas", ref: "$4.99", exacto: true, tag: "Natural", img: "1551024709-8f23befc6f87",
+              d: ["Horchata, jamaica o limón con chía, preparadas al día.", "Horchata, hibiscus or lime-chia, made fresh daily."],
+              inc: [["Horchata", "Horchata"], ["Jamaica", "Hibiscus"], ["Limón con chía", "Lime-chia"]] }
+          ] },
+        porQue: { titulo: ["Sabor auténtico, sin complicaciones", "Authentic flavor, zero hassle"], lista: [
+          ["fa-fire", ["Recetas de casa", "Home recipes"], ["Cocinamos como en casa, cada día.", "We cook like home, every day."]],
+          ["fa-mobile-screen", ["Pedido directo", "Order direct"], ["Sin apps ni comisiones: nos escribes directo.", "No apps, no fees: message us directly."]],
+          ["fa-motorcycle", ["Pick-up o delivery", "Pick-up or delivery"], ["Pasa por él o te lo llevamos.", "Pick it up or we'll bring it."]]] },
+        resenas: [["Alejandra T.", ["Pedido a domicilio", "Delivery order"], "La birria es la mejor que he probado aquí. Llegó calientita y rápido."],
+          ["Mark S.", "Pick-up", "Authentic flavor and huge portions. Ordering is super easy."],
+          ["Miguel R.", ["Cliente frecuente", "Regular customer"], "Pido cada semana. Sabor de casa y siempre puntuales."]],
+        faq: [[["¿Cuánto tarda mi pedido?", "How long will my order take?"], ["De 15 a 25 minutos para pick-up. Delivery según la distancia.", "15 to 25 minutes for pick-up. Delivery depends on distance."]],
+          [["¿Hasta dónde hacen delivery?", "How far do you deliver?"], ["Varias millas a la redonda. Te confirmamos el costo de envío.", "Several miles around. We'll confirm the delivery fee."]],
+          [["¿Qué formas de pago aceptan?", "What payment methods do you accept?"], ["Efectivo, tarjeta, Zelle y Cash App.", "Cash, card, Zelle and Cash App."]],
+          [["¿Hacen pedidos para eventos?", "Do you cater events?"], ["Sí, taquizas y charolas para fiestas.", "Yes, taco bars and party trays."]]],
+        form: { pre: ["Pide en línea", "Order online"], titulo: ["Haz tu pedido", "Place your order"],
+          sub: ["Escribe lo que quieres y elige pick-up o delivery.", "Write what you want and choose pick-up or delivery."],
+          icono: "fa-receipt", tituloForm: ["Nuevo pedido", "New order"], btn: ["Enviar Pedido por WhatsApp", "Send Order via WhatsApp"],
+          beneficios: [["Sin apps ni comisiones", "No apps, no fees"], ["Te avisamos cuando esté listo", "We'll text you when it's ready"], ["Pago al recibir", "Pay at pick-up or delivery"]],
+          campos: [{ id: "entrega", label: ["¿Cómo lo quieres?", "How do you want it?"], tipo: "entrega", req: true },
+            { id: "pedido", label: ["Tu pedido", "Your order"], tipo: "area", req: true,
+              ph: ["Ej. 3 tacos de pastor, 1 quesabirria y 1 horchata", "e.g. 3 pastor tacos, 1 quesabirria and 1 horchata"] },
+            NOMBRE, TEL] }
+      }
+    };
+
+    // ====== GALERÍA DE TRABAJOS RECIENTES (bento) — 5 fotos por giro ======
+    const PORTAFOLIO = {
+      general: [["1600585154340-be6161a56a0c", ["Remodelación integral de casa", "Modern Home Remodel"]], ["1600585152220-90363fe7e115", ["Cocina a la medida", "Custom Kitchen Build"]],
+                ["1584622650111-993a426fbf0a", ["Baño tipo spa", "Spa Bathroom Upgrade"]], ["1621905251918-48416bd8575a", ["Panel eléctrico nuevo", "Electrical Panel Upgrade"]],
+                ["1503387762-592deb58ef4e", ["Planeación de proyecto", "Project Planning"]]],
+      tecnicos: [["1621905251918-48416bd8575a", ["Cambio de panel eléctrico", "Electrical Panel Upgrade"]], ["1585704032915-c3400ca199e7", ["Reparación de fuga de emergencia", "Emergency Leak Repair"]],
+                 ["1617103996702-96ff29b1c467", ["Minisplit en sala", "Living Room Mini-Split"]], ["1584622650111-993a426fbf0a", ["Instalación de baño completo", "Bathroom Fixture Install"]],
+                 ["1558618666-fcd25c85cd64", ["Soldadura de tubería de cobre", "Copper Pipe Soldering"]]],
+      roofing: [["1632759145351-1d592919f522", ["Cambio total de techo", "Full Roof Replacement"]], ["1570129477492-45c003edd2be", ["Techo nuevo estilo colonial", "Colonial Home Re-Roof"]],
+                ["1564013799919-ab600027ffc6", ["Renovación exterior", "Exterior Renovation"]], ["1541888946425-d81bb19240f5", ["Obra comercial", "Commercial Site Build"]],
+                ["1600585154340-be6161a56a0c", ["Construcción moderna", "Modern Home Build"]]],
+      servicios: [["1600585152220-90363fe7e115", ["Limpieza profunda de cocina", "Deep Kitchen Clean"]], ["1584622650111-993a426fbf0a", ["Baño impecable", "Spotless Bathroom Detail"]],
+                  ["1484101403633-562f891dc89a", ["Sala como nueva", "Living Room Refresh"]], ["1502672260266-1c1ef2d93688", ["Airbnb listo para huéspedes", "Airbnb Turnover"]],
+                  ["1527515637462-cff94eecc1ac", ["Aspirado profundo de alfombra", "Carpet Deep Vacuum"]]],
+      landscaping: [["1570129477492-45c003edd2be", ["Jardín frontal renovado", "Front Yard Makeover"]], ["1598902108854-10e335adac99", ["Diseño de jardín a la medida", "Custom Garden Design"]],
+                    ["1592150621744-aca64f48394a", ["Instalación de plantas", "Plant Installation"]], ["1523348837708-15d4a09cfac2", ["Siembra de temporada", "Seasonal Planting"]],
+                    ["1558904541-efa843a96f01", ["Mantenimiento de césped", "Weekly Lawn Care"]]],
+      detailing: [["1601362840469-51e4d8d58785", ["Recubrimiento cerámico", "Showroom Ceramic Coat"]], ["1494976388531-d1058494cdd8", ["Corrección de pintura", "Paint Correction"]],
+                  ["1552519507-da3b142c6e3d", ["Detallado exterior completo", "Full Exterior Detail"]], ["1542362567-b07e54358753", ["Encerado premium", "Premium Wax & Shine"]],
+                  ["1544636331-e26879cd4d9b", ["Detallado de lujo", "Luxury Full Detail"]]],
+      moving: [["1612630741022-b29ec17d013d", ["Mudanza de casa familiar", "Family Home Move"]], ["1609143739217-01b60dad1c67", ["Empaque profesional", "Pro Packing Service"]],
+               ["1519003722824-194d4455a60c", ["Mudanza a otro estado", "Cross-Country Move"]], ["1532996122724-e3c354a0b15b", ["Limpieza de garaje", "Garage Junk Clear-Out"]],
+               ["1586528116311-ad8dd3c8310d", ["Bodega de almacenaje", "Secure Storage Facility"]]],
+      estetica: [["1604654894610-df63bc536371", ["Set acrílico de autor", "Signature Acrylic Set"]], ["1610992015732-2449b76344bc", ["Manicure gel natural", "Natural Gel Manicure"]],
+                 ["1522337360788-8b13dee7a37e", ["Balayage y peinado", "Balayage & Blowout"]], ["1560066984-138dadb4c035", ["Nuestro estudio", "Our Studio"]],
+                 ["1516975080664-ed2fc6a32937", ["Maquillaje para eventos", "Event Makeup"]]],
+      barberia: [["1567894340315-735d7c361db0", ["Fade con diseño", "Skin Fade + Design"]], ["1517832606299-7ae9b720a186", ["Afeitado con toalla caliente", "Hot Towel Shave"]],
+                 ["1512690459411-b9245aed614b", ["La silla VIP", "The VIP Chair"]], ["1621605815971-fbc98d665033", ["Herramientas de precisión", "Precision Tools"]],
+                 ["1622286342621-4bd786c2447c", ["Fade clásico", "Classic Fade"]]],
+      pasteleria: [["1578985545062-69928b1d9587", ["Pastel de chocolate drip", "Chocolate Drip Cake"]], ["1464349095431-e9a21285b5f3", ["Pastel de cumpleaños confeti", "Funfetti Birthday Cake"]],
+                   ["1606890737304-57a1ca8a5b62", ["Selva negra naked cake", "Black Forest Naked Cake"]], ["1563729784474-d77dbb933a9e", ["Torre de cupcakes", "Custom Cupcake Tower"]],
+                   ["1571115177098-24ec42ed204d", ["Pastel tiramisú en capas", "Tiramisu Layer Cake"]]],
+      comida: [["1565299585323-38d6b0865b47", ["Tacos de la casa", "House Tacos"]], ["1613514785940-daed07799d9b", ["Charola de tacos", "Street Taco Platter"]],
+               ["1504544750208-dc0358e63f7f", ["Tacos de asada", "Carne Asada Tacos"]], ["1615870216519-2f9fa575fa5c", ["Tacos con salsa de la casa", "Tacos with House Salsa"]],
+               ["1600891964092-4316c288032e", ["Arrachera con papas", "Steak & Fries Plate"]]]
+    };
+
+    // Fotos de muestra para las reseñas de ejemplo (randomuser.me)
+    const AVATAR = { "María G.": "women/44", "James R.": "men/32", "Carlos M.": "men/75", "Rosa P.": "women/65", "Mike T.": "men/41", "Luis H.": "men/52",
+      "Ana L.": "women/68", "Robert K.": "men/46", "Jorge S.": "men/61", "Patricia V.": "women/57", "Sarah M.": "women/26", "Daniel O.": "men/22",
+      "Guadalupe R.": "women/79", "Tom B.": "men/85", "Ramón F.": "men/67", "Eduardo C.": "men/36", "Jessica W.": "women/33", "Víctor A.": "men/18",
+      "Claudia N.": "women/50", "Kevin D.": "men/11", "Andrés T.": "men/29", "Daniela S.": "women/21", "Ashley P.": "women/12", "Karla M.": "women/90",
+      "Brian L.": "men/3", "Chris J.": "men/94", "Óscar V.": "men/57", "Fernanda G.": "women/17", "Emily R.": "women/8", "Sofía D.": "women/31",
+      "Alejandra T.": "women/63", "Mark S.": "men/7", "Miguel R.": "men/48" };
+
+    // ====== TEXTOS DE LA INTERFAZ (ES / EN) ======
+    const UI = {
+      es: {
+        banner: "Vista Previa Oficial preparada para", nav: ["Nosotros", "Servicios", "Galería", "Reseñas", "FAQ"],
+        badge: (r, n) => `${r}/5 Calificación${n ? ` · ${n} reseñas` : ""} · Profesionales con Licencia y Seguro`, verServicios: "Ver Servicios",
+        reservado: "Diseño reservado • Instalación $0 USD", activar: "Activar mi web ($80/mes)", activarCorto: "Activar ($80/mes)",
+        sirviendo: c => `Servicio en ${c} y alrededores`,
+        cobPre: "Cobertura local", cobTitulo: c => c ? `Zonas de cobertura en ${c} y alrededores` : "Zonas de cobertura",
+        cobSub: "Llegamos rápido a tu casa o negocio.", cobPuntos: c => [["map-pin", `${c || "Tu ciudad"} y 25 millas a la redonda`], ["house", "Servicio a domicilio y en sitio"], ["clock", "Respuesta en 15 minutos"], ["calendar-check", "Atención los 7 días"]],
+        cobLlamar: "Llamar ahora",
+        baPre: "Antes y Después", baSub: "Desliza la barra para ver la diferencia.", antes: "Antes", despues: "Después",
+        btnSms: "Enviar por SMS (Text Message)", btnLlamarYa: "Llamar Ahora", aceptamos: "Aceptamos", tarjetas: "Tarjetas",
+        enLinea: "En línea · Respondemos en 15 min", stats: ["Garantía de satisfacción", "Tiempo de respuesta", "Años de experiencia"],
+        sobrePre: "Sobre nosotros", en: "En", desde: "Desde", masSolicitado: "Más Solicitado", estrella: "Servicio Estrella",
+        btnCard: { cotizar: "Cotizar este servicio", cita: "Reservar este servicio", pedido: "Agregar a mi pedido" },
+        portPre: "Portafolio", portTitulo: "Galería de trabajos recientes", portSub: "Resultados reales que hablan por nosotros.",
+        portEtiqueta: "Trabajo reciente", ctaTile: "Tú puedes ser el siguiente",
+        porQuePre: "Por qué elegirnos", porQueSub: "Lo que nos hace diferentes, en pocas palabras.",
+        comparaTitulo: "La diferencia es clara", competencia: "la competencia", otros: "Otros", aVeces: "A veces",
+        filas: ["Licencia y seguro", "Respuesta en 15 minutos", "Atención en español e inglés"],
+        resPre: "Reseñas", resTitulo: "Lo que dicen nuestros clientes", resBase: "Reseñas de clientes", basado: n => n ? `Basado en ${n} reseñas` : "Calificación en Google",
+        enGoogle: "Publicada en Google", fechas: ["hace 2 días", "hace 5 días", "hace 1 semana"],
+        resNota: "Reseñas de ejemplo para esta muestra. En su página real se muestran sus reseñas de Google.",
+        faqPre: "Preguntas frecuentes", faqTitulo: "Resolvemos tus dudas",
+        faqCardTitulo: "¿Tienes otra pregunta?", faqCardTexto: n => `Habla directo con un experto de ${n}. Te respondemos en minutos por WhatsApp.`,
+        faqCardBtn: "Hablar con un experto",
+        progreso: "Tu solicitud", tusDatos: "Tus datos", formSub: "Respuesta inmediata por WhatsApp",
+        btnWa: "Enviar Cotización por WhatsApp", btnLlamar: "Solicitar que me llamen",
+        notaForm: "Sin compromiso · Tus datos solo los recibe este negocio", respuesta: "Respondemos en menos de 15 minutos",
+        completa: "Completa los campos marcados en rojo", agregado: "agregado al cotizador",
+        entrega: ["Pick-up (paso por él)", "Delivery (a domicilio)"], direccion: "Dirección de entrega",
+        pickupMsg: "Pick-up (paso a recogerlo)", deliveryMsg: "Delivery a",
+        para: "Para", gracias: "¡Gracias! Quedo atento(a) a su respuesta 🙌", llamada: "Solicitud de llamada",
+        llamame: t => `🙏 Por favor llámenme al *${t}* para darme más información. ¡Gracias!`,
+        saludo: n => `¡Hola ${n}! 👋 Vi su página web y me gustaría más información.`,
+        pieLinks: "Enlaces", pieContacto: "Contacto", pieWa: "Escríbenos por WhatsApp", horario: "Atención todos los días",
+        derechos: "Todos los derechos reservados", waAria: "Ir al cotizador"
+      },
+      en: {
+        banner: "Official Preview prepared for", nav: ["About", "Services", "Gallery", "Reviews", "FAQ"],
+        badge: (r, n) => `${r}/5 Rated${n ? ` · ${n} reviews` : ""} · Licensed & Insured Professional`, verServicios: "View Services",
+        reservado: "Design reserved • $0 setup", activar: "Activate my site ($80/mo)", activarCorto: "Activate ($80/mo)",
+        sirviendo: c => `Serving ${c} & surrounding areas`,
+        cobPre: "Local coverage", cobTitulo: c => c ? `Service areas in ${c} & nearby` : "Service areas",
+        cobSub: "We get to your home or business fast.", cobPuntos: c => [["map-pin", `${c || "Your city"} + 25-mile radius`], ["house", "On-site & in-home service"], ["clock", "15-minute response"], ["calendar-check", "Open 7 days a week"]],
+        cobLlamar: "Call now",
+        baPre: "Before & After", baSub: "Drag the bar to see the difference.", antes: "Before", despues: "After",
+        btnSms: "Send via SMS (Text Message)", btnLlamarYa: "Call Now", aceptamos: "We accept", tarjetas: "Cards",
+        enLinea: "Online · We reply in 15 min", stats: ["Satisfaction guarantee", "Response time", "Years of experience"],
+        sobrePre: "About us", en: "At", desde: "From", masSolicitado: "Most Requested", estrella: "Star Service",
+        btnCard: { cotizar: "Quote this service", cita: "Book this service", pedido: "Add to my order" },
+        portPre: "Portfolio", portTitulo: "Recent work gallery", portSub: "Real results that speak for themselves.",
+        portEtiqueta: "Recent work", ctaTile: "You could be next",
+        porQuePre: "Why choose us", porQueSub: "What makes us different, in a nutshell.",
+        comparaTitulo: "The difference is clear", competencia: "the competition", otros: "Others", aVeces: "Sometimes",
+        filas: ["Licensed & insured", "15-minute response", "English & Spanish service"],
+        resPre: "Reviews", resTitulo: "What our customers say", resBase: "Customer reviews", basado: n => n ? `Based on ${n} reviews` : "Google rating",
+        enGoogle: "Posted on Google", fechas: ["2 days ago", "5 days ago", "1 week ago"],
+        resNota: "Sample reviews for this preview. Your real page shows your actual Google reviews.",
+        faqPre: "FAQ", faqTitulo: "Your questions, answered",
+        faqCardTitulo: "Still have a question?", faqCardTexto: n => `Talk directly with an expert at ${n}. We reply on WhatsApp within minutes.`,
+        faqCardBtn: "Talk to an expert",
+        progreso: "Your request", tusDatos: "Your info", formSub: "Instant reply on WhatsApp",
+        btnWa: "Send Quote via WhatsApp", btnLlamar: "Request a Call Back",
+        notaForm: "No obligation · Your info goes only to this business", respuesta: "We reply in under 15 minutes",
+        completa: "Please complete the fields marked in red", agregado: "added to your quote",
+        entrega: ["Pick-up", "Delivery"], direccion: "Delivery address",
+        pickupMsg: "Pick-up (I'll pick it up)", deliveryMsg: "Delivery to",
+        para: "To", gracias: "Thank you! Looking forward to your reply 🙌", llamada: "Call back request",
+        llamame: t => `🙏 Please call me at *${t}* with more information. Thank you!`,
+        saludo: n => `Hi ${n}! 👋 I saw your website and I'd like more information.`,
+        pieLinks: "Links", pieContacto: "Contact", pieWa: "Message us on WhatsApp", horario: "Open every day",
+        derechos: "All rights reserved", waAria: "Go to the quote form"
+      }
+    };
+
+    // ====== LEER LA URL (?giro=...&cliente=...&lang=...) ======
+    const quitarAcentos = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const params = new URLSearchParams(location.search);
+    const giroURL = quitarAcentos((params.get("giro") || "").trim().toLowerCase()).replace(/[^a-z]/g, "");
+    // Solo los 10 giros exactos. Sin giro o giro desconocido = web corporativa de servicios profesionales / contratistas.
+    const GIRO_ID = giroURL in GIROS && giroURL !== "general" ? giroURL : "general";
+    const G = GIROS[GIRO_ID];
+    const T = TEMAS[G.tema];
+    const PORT = PORTAFOLIO[GIRO_ID];
+    const SERIF = ["estetica", "pasteleria", "comida"].includes(GIRO_ID);   // giros elegantes: títulos Playfair Display con cursiva
+    const clienteURL = (params.get("cliente") || "").trim().slice(0, 60);
+    const NEGOCIO = clienteURL || G.nombre;
+    // Datos reales del prospecto: &rating=4.9&reviews=84&ciudad=Miami&tel=17867286325
+    const telURL = (params.get("tel") || "").replace(/\D/g, "");
+    const TEL_DUENO = telURL.length === 10 ? "1" + telURL : telURL.length >= 11 && telURL.length <= 15 ? telURL : "";
+    const WHATSAPP = TEL_DUENO || WHATSAPP_DEMO;   // el cotizador le llega al celular del dueño (autoprueba)
+    const RATING = (() => { const r = parseFloat(String(params.get("rating") || "").replace(",", ".")); return r > 0 && r <= 5 ? r.toFixed(1) : "4.9"; })();
+    const RESENAS = (() => { const n = parseInt(params.get("reviews"), 10); return n > 0 ? n : params.get("rating") ? 0 : 128; })();
+    const CIUDAD = (params.get("ciudad") || "").replace(/[<>"]/g, "").trim().slice(0, 50);
+    const VISTA = params.get("vista") || "";        // "final" = página real del cliente (sin cintillo de muestra)
+    const FINAL = VISTA === "final";
+    const telBonito = t => t.length === 11 && t[0] === "1" ? `(${t.slice(1, 4)}) ${t.slice(4, 7)}-${t.slice(7)}` : "+" + t;
+    // Barras de calificación según su rating real
+    const BARRAS = (() => { const r = +RATING; const p5 = Math.max(30, Math.min(96, Math.round((r - 3.8) * 85)));
+      const p4 = Math.round((100 - p5) * .65), p3 = Math.round((100 - p5 - p4) * .6), p2 = Math.round((100 - p5 - p4 - p3) * .5);
+      return [[5, p5], [4, p4], [3, p3], [2, p2], [1, 100 - p5 - p4 - p3 - p2]]; })();
+    let LANG = (params.get("lang") || "").toLowerCase();
+    // Prospecto de EE. UU. (tel empieza con 1): inglés desde el primer segundo; el español queda como botón secundario
+    if (!["es", "en"].includes(LANG) && TEL_DUENO.startsWith("1")) LANG = "en";
+    if (!["es", "en"].includes(LANG)) { try { LANG = localStorage.getItem("vc_lang") || "es"; } catch (e) { LANG = "es"; } }
+    if (!["es", "en"].includes(LANG)) LANG = "es";
+
+    const $ = id => document.getElementById(id);
+    const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+    const L = v => Array.isArray(v) ? v[LANG === "en" ? 1 : 0] : (v ?? "");
+
+    // Íconos: Lucide (SVG de trazo fino). Los nombres viejos de los datos se traducen aquí.
+    const LU = { "fa-shield-halved": "shield-check", "fa-file-signature": "clipboard-check", "fa-award": "award", "fa-bolt": "zap", "fa-van-shuttle": "truck",
+      "fa-motorcycle": "bike", "fa-calendar-check": "calendar-check", "fa-screwdriver-wrench": "hammer", "fa-language": "languages", "fa-file-invoice-dollar": "receipt",
+      "fa-clock": "clock", "fa-wrench": "wrench", "fa-truck-fast": "siren", "fa-house-chimney": "house", "fa-magnifying-glass": "search", "fa-file-contract": "file-text",
+      "fa-broom": "sparkles", "fa-user-shield": "user-check", "fa-spray-can-sparkles": "spray-can", "fa-circle-check": "badge-check", "fa-tree": "trees", "fa-car-side": "car",
+      "fa-gem": "gem", "fa-truck-moving": "truck", "fa-people-carry-box": "package", "fa-recycle": "recycle", "fa-spa": "flower-2", "fa-pump-soap": "droplets",
+      "fa-heart": "heart", "fa-scissors": "scissors", "fa-stopwatch": "timer", "fa-champagne-glasses": "wine", "fa-cake-candles": "cake", "fa-palette": "palette",
+      "fa-cookie-bite": "cookie", "fa-truck": "truck", "fa-utensils": "utensils-crossed", "fa-fire": "flame", "fa-mobile-screen": "smartphone", "fa-receipt": "receipt",
+      "fa-bag-shopping": "shopping-bag", "fa-location-dot": "map-pin" };
+    const ic = (n, cls = "") => `<i data-lucide="${LU[n] || n}" class="${cls}" aria-hidden="true"></i>`;
+    const pintarIconos = () => { if (window.lucide) lucide.createIcons(); };
+    const WA_D = document.querySelector("#waFlotante path").getAttribute("d");
+    const wa = (cls = "") => `<svg class="wa-svg ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${WA_D}"/></svg>`;
+    const ESTRELLAS = ic("star", "estrella").repeat(5);
+    const hoyISO = new Date().toISOString().slice(0, 10);
+    const avatarURL = n => AVATAR[n] ? `https://randomuser.me/api/portraits/${AVATAR[n]}.jpg` : "";
+    const avatar = (n, cls = "w-12 h-12") => `<span class="relative ${cls} rounded-full grad text-onacc grid place-items-center font-bold shrink-0 overflow-hidden ring-2 ring-card shadow-md">${esc(n.charAt(0))}${avatarURL(n) ? `<img src="${avatarURL(n)}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">` : ""}</span>`;
+    const gG = (cls = "w-4 h-4") => `<svg viewBox="0 0 48 48" class="${cls} shrink-0" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>`;
+    const GOOGLE = `<span class="font-bold tracking-tight" style="font-family:Arial,Helvetica,sans-serif"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>`;
+    const BANDERA = {
+      en: `<svg class="flag" viewBox="0 0 19 10" aria-hidden="true"><rect width="19" height="10" fill="#b22234"/><path d="M0 1.15h19M0 2.7h19M0 4.23h19M0 5.77h19M0 7.3h19M0 8.85h19" stroke="#fff" stroke-width=".77"/><rect width="7.6" height="5.4" fill="#3c3b6e"/></svg>`,
+      es: `<svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg>`
+    };
+    const CHECK_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`;
+    // Título editorial: las últimas palabras van resaltadas (cursiva en giros elegantes, degradado en técnicos)
+    const kw = t => { const p = String(t).split(" "); if (p.length < 2) return `<span class="kw">${esc(t)}</span>`;
+      const n = p.length >= 5 ? 2 : 1; return `${esc(p.slice(0, -n).join(" "))} <span class="kw">${esc(p.slice(-n).join(" "))}</span>`; };
+
+    // ====== APLICAR LA PALETA Y TIPOGRAFÍA DEL GIRO ======
+    const rgb = h => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+    const trip = h => rgb(h).join(" ");
+    const aclarar = (h, f) => { const [r, g, b] = rgb(h); return `rgb(${[r, g, b].map(x => Math.round(x + (255 - x) * f)).join(" ")})`; };
+    const raiz = document.documentElement.style;
+    ["base", "alt", "card", "line", "ink", "muted", "acc", "acc2", "onacc", "hero", "tx"].forEach(k => raiz.setProperty("--" + k, trip(T[k])));
+    raiz.setProperty("--accLight", aclarar(T.acc, .45));
+    raiz.setProperty("--glass", T.dark ? "rgba(255,255,255,.045)" : "rgba(255,255,255,.72)");
+    raiz.setProperty("--glass-line", T.dark ? "rgba(255,255,255,.09)" : `rgb(${trip(T.line)} / .9)`);
+    raiz.setProperty("--shadow", T.dark ? "0 0 0" : "15 23 42");
+    raiz.setProperty("--ft", SERIF ? '"Playfair Display", Georgia, serif' : '"Outfit", system-ui, sans-serif');
+    raiz.colorScheme = T.dark ? "dark" : "light";
+    document.documentElement.classList.add(SERIF ? "serif" : "tech");
+    if (T.dark) document.documentElement.classList.add("oscuro");
+    document.querySelector('meta[name="theme-color"]').content = T.hero;
+
+    // ====== ESTADO DEL COTIZADOR (se conserva al cambiar de idioma) ======
+    const ESTADO = {};
+    if (G.form.campos.some(c => c.tipo === "entrega")) ESTADO.entrega = 0;
+    const CAMPO_SERV = G.form.campos.find(c => c.tipo === "servicio" || c.serv);
+    const MODO = G.modo || "cotizar";
+    const SECC = ["nosotros", "servicios", "portafolio", "resenas", "faq"];
+
+    // ====== SECCIONES ======
+    const pre = (t, claro) => `<span class="reveal inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[11px] sm:text-xs font-extrabold uppercase tracking-[.16em] ${claro ? "bg-white/10 text-white border border-white/15" : "bg-acc/10 text-tx border border-acc/20"}"><span class="w-1.5 h-1.5 rounded-full grad"></span>${t}</span>`;
+    const cabeza = (p, h, s) => `<div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">${pre(p)}<h2 class="reveal h2 mt-5">${kw(h)}</h2>${s ? `<p class="reveal mt-4 text-muted text-base sm:text-lg">${s}</p>` : ""}</div>`;
+    const sello = k => { const [i, t, s] = SELLO[k];
+      return `<div class="sello glass-dark flex items-center gap-3 rounded-2xl pl-2.5 pr-4 py-2.5"><span class="ico-box-d grid place-items-center w-10 h-10 rounded-xl text-lg shrink-0">${ic(i)}</span><span class="leading-tight"><b class="block text-sm">${L(t)}</b><small class="text-white/60 text-xs">${L(s)}</small></span></div>`; };
+
+    function hdr(U) {
+      return `
+      <header id="topbar" class="hdr sticky top-0 z-50">
+        ${FINAL ? "" : `<div class="cinta"><div class="max-w-6xl mx-auto px-3 sm:px-6 min-h-[40px] py-1.5 flex items-center justify-between gap-2 sm:gap-4 text-[11px] sm:text-xs font-semibold text-white/85">
+          <span class="flex items-center gap-2 min-w-0">
+            <span class="relative flex h-2 w-2 shrink-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
+            <span class="hidden sm:inline" style="color:var(--accLight)">${ic("sparkles")}</span>
+            <span class="truncate">${U.banner} <b class="font-extrabold text-white">${esc(NEGOCIO)}</b></span>
+          </span>
+          <span class="hidden md:inline-flex items-center gap-1.5 text-white/75 shrink-0">${ic("lock")} ${U.reservado}</span>
+          <a id="btnActivar" href="https://wa.me/${MI_WHATSAPP}?text=${encodeURIComponent(`Hola, vi la muestra web de ${NEGOCIO} y quiero activarla`)}" target="_blank" rel="noopener"
+             class="btn-shine btn-wa shrink-0 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-extrabold text-[11px] sm:text-xs">${wa()} <span class="hidden sm:inline">${U.activar}</span><span class="sm:hidden">${U.activarCorto}</span></a>
+        </div></div>`}
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+          <a href="#inicio" class="flex items-center gap-2.5 min-w-0">
+            <span class="grad grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl text-onacc text-lg shadow-lg shrink-0">${ic(G.logo)}</span>
+            <b class="font-display font-bold text-[15px] sm:text-lg truncate">${esc(NEGOCIO)}</b>
+          </a>
+          <div class="nav-links hidden lg:flex items-center gap-7 text-sm font-semibold">
+            ${U.nav.map((t, i) => `<a href="#${SECC[i]}">${t}</a>`).join("")}
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="langBtn" type="button" class="lang" aria-label="English / Español">
+              <span class="${LANG === "en" ? "on" : ""}">${BANDERA.en} EN</span><span class="${LANG === "es" ? "on" : ""}">${BANDERA.es} ES</span>
+            </button>
+            <a href="#cotizar" class="hidden sm:inline-flex btn-shine grad text-onacc items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold shadow-lg">${ic(G.ctaIcon || "fa-file-signature")} ${L(G.cta)}</a>
+          </div>
+        </nav>
+      </header>`;
+    }
+
+    function hero(U) {
+      const palabras = NEGOCIO.split(" ");
+      const titulo = palabras.length > 1
+        ? `${esc(palabras.slice(0, -1).join(" "))} <span class="kw">${esc(palabras.at(-1))}</span>` : `<span class="kw">${esc(NEGOCIO)}</span>`;
+      const [rn, rs, rt] = G.resenas[0];
+      return `
+      <section id="inicio" class="relative isolate overflow-hidden bg-hero text-white">
+        <div class="absolute inset-0 -z-20 overflow-hidden"><div id="heroFoto" class="kb absolute inset-0 bg-cover bg-center" style="background-image:url('${foto(G.portada, 1920)}')"></div></div>
+        <div class="hero-velo absolute inset-0 -z-10"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 sm:pt-24 pb-40 sm:pb-48 grid lg:grid-cols-[1fr_340px] gap-12 items-center">
+          <div class="min-w-0">
+            <div class="reveal inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full glass-dark pl-1.5 pr-4 py-1.5 text-[12px] sm:text-sm font-semibold">
+              <span class="grid place-items-center w-7 h-7 rounded-full bg-white shrink-0">${gG()}</span>
+              <span class="flex text-xs">${ESTRELLAS}</span><span>${U.badge(RATING, RESENAS)}</span>
+            </div>
+            <p class="reveal mt-7 flex items-center gap-2 text-[11px] sm:text-sm font-bold uppercase tracking-[.18em] text-white/75" style="--d:80ms"><span style="color:var(--accLight)">${ic(G.logo)}</span>${esc(L(G.etiqueta))}</p>
+            <h1 id="heroTitulo" class="h1 reveal text-[46px] sm:text-6xl lg:text-[88px] mt-3 break-words" style="--d:140ms">${titulo}</h1>
+            <p class="reveal mt-5 text-lg sm:text-2xl font-medium text-white/90 max-w-2xl" style="--d:200ms">${esc(L(G.slogan))}</p>
+            <p class="reveal mt-3 text-sm sm:text-base text-white/70 max-w-xl" style="--d:240ms">${esc(L(G.sub))}</p>
+            ${CIUDAD ? `<p class="reveal mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/85" style="--d:260ms"><span style="color:var(--accLight)">${ic("map-pin")}</span>${esc(U.sirviendo(CIUDAD))}</p>` : ""}
+            <div class="reveal mt-8 flex flex-col sm:flex-row gap-3" style="--d:300ms">
+              <a href="#cotizar" class="btn-shine pulse grad text-onacc inline-flex items-center justify-center gap-2.5 rounded-2xl px-7 py-4 text-base font-extrabold shadow-xl hover:scale-[1.03] transition">${ic(G.ctaIcon || "fa-file-signature")} ${L(G.cta)} ${ic("arrow-right")}</a>
+              <a href="#servicios" class="glass-dark inline-flex items-center justify-center gap-2.5 rounded-2xl px-7 py-4 text-base font-bold hover:bg-white/20 transition">${U.verServicios} ${ic("arrow-down")}</a>
+            </div>
+            <div class="reveal mt-8 flex flex-wrap gap-2.5" style="--d:360ms">${G.sellos.map(sello).join("")}</div>
+          </div>
+          <aside class="reveal hidden lg:block" style="--d:400ms">
+            <div class="float-y glass-dark rounded-3xl p-6 shadow-2xl">
+              <div class="flex items-center gap-3">
+                <span class="grid place-items-center w-11 h-11 rounded-full bg-white">${gG("w-6 h-6")}</span>
+                <div><b class="block">Google Reviews</b><span class="flex text-xs">${ESTRELLAS}</span></div>
+                <span class="ml-auto font-display text-4xl font-extrabold">${RATING}</span>
+              </div>
+              <p class="mt-5 text-white/85 leading-relaxed">“${esc(rt)}”</p>
+              <div class="mt-5 flex items-center gap-3">${avatar(rn, "w-10 h-10")}
+                <div class="leading-tight"><b class="block text-sm">${esc(rn)}</b><small class="text-white/60">${esc(L(rs))}</small></div>
+              </div>
+              <div class="mt-5 pt-4 border-t border-white/15 flex items-center gap-2.5 text-sm text-white/80">
+                <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span></span>${U.enLinea}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>`;
+    }
+
+    function stats(U) {
+      const lista = [[G.stat[0], "+", "", L(G.stat[1])], [100, "", "%", U.stats[0]], [15, "", " Min", U.stats[1]], [10, "", "+", U.stats[2]]];
+      return `
+      <section id="stats" aria-label="stats" class="relative z-10 -mt-24 sm:-mt-28 px-4 sm:px-6">
+        <div class="reveal max-w-5xl mx-auto glass-strong shadow-deep rounded-3xl grid grid-cols-2 md:grid-cols-4">
+          ${lista.map(([n, a, b, t], k) => `
+          <div class="p-5 sm:p-7 text-center ${k % 2 ? "" : "border-r border-line md:border-r-0"} ${k < 2 ? "border-b border-line md:border-b-0" : ""} ${k ? "md:border-l md:border-line" : ""}">
+            <div class="font-display font-extrabold text-3xl sm:text-[42px] leading-none num whitespace-nowrap">${a}<span data-count="${n}">0</span>${b}</div>
+            <p class="mt-2 text-xs sm:text-sm text-muted font-semibold">${esc(t)}</p>
+          </div>`).join("")}
+        </div>
+      </section>`;
+    }
+
+    function nosotros(U) {
+      return `
+      <section id="nosotros" class="relative py-24 sm:py-32 overflow-hidden">
+        <div class="blob -top-40 -left-40"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <div class="reveal relative">
+            <div class="rounded-[2rem] overflow-hidden shadow-deep aspect-[4/3] lg:aspect-[4/5] bg-alt">
+              <img id="sobreFoto" src="${foto(G.sobre.img, 1000)}" alt="${esc(NEGOCIO)}" class="w-full h-full object-cover" loading="lazy" onerror="this.style.visibility='hidden'">
+            </div>
+            <div class="glass-strong shadow-deep absolute -bottom-7 right-3 sm:-right-6 rounded-2xl p-4 sm:p-5 flex items-center gap-3 float-y">
+              <span class="ico-box w-12 h-12 rounded-xl grid place-items-center text-xl">${ic("award")}</span>
+              <div><b class="font-display text-2xl font-extrabold block leading-none">10+</b><small class="text-muted text-xs font-semibold">${U.stats[2]}</small></div>
+            </div>
+            <div class="glass-strong shadow-soft absolute top-4 left-4 rounded-full px-3.5 py-2 text-xs font-bold flex items-center gap-2"><span class="text-emerald-500">${ic("shield-check")}</span> ${L(SELLO.licensed[1])}</div>
+          </div>
+          <div>
+            ${pre(U.sobrePre)}
+            <h2 class="reveal h2 mt-5">${kw(L(G.sobre.titulo))}</h2>
+            <p class="reveal mt-5 text-muted text-base sm:text-lg leading-relaxed">${U.en} <b class="text-ink">${esc(NEGOCIO)}</b>, ${esc(L(G.sobre.texto))}</p>
+            <div class="mt-8 grid gap-4">
+              ${G.sobre.puntos.map(([i, t, d], k) => `
+              <div class="reveal glass shadow-soft rounded-2xl p-4 flex gap-4 items-center hover:-translate-y-0.5 transition" style="--d:${k * 90}ms">
+                <span class="ico-box w-12 h-12 rounded-xl grid place-items-center text-xl shrink-0">${ic(i)}</span>
+                <div><b class="block font-display text-lg leading-tight">${esc(L(t))}</b><span class="text-muted text-sm">${esc(L(d))}</span></div>
+              </div>`).join("")}
+            </div>
+            <a href="#cotizar" class="reveal mt-8 inline-flex items-center gap-2 font-bold text-tx hover:gap-3 transition-all">${L(G.cta)} ${ic("arrow-right")}</a>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    function servicios(U) {
+      const card = (s, k) => {
+        const top = s.top === 1 ? `<span class="tag-top grad text-onacc">${ic("flame")} ${U.masSolicitado}</span>`
+                  : s.top === 2 ? `<span class="tag-top tag-star">${ic("star")} ${U.estrella}</span>` : "";
+        return `
+        <article class="card reveal group ${s.top ? "top ring-2 ring-acc/60" : ""} relative flex flex-col rounded-3xl overflow-hidden bg-card border border-line shadow-soft hover:-translate-y-1.5 hover:shadow-deep transition duration-500" style="--d:${(k % 3) * 90}ms">
+          <div class="relative aspect-[4/3] overflow-hidden bg-alt">
+            <img src="${foto(s.img)}" alt="${esc(L(s.n))}" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.style.visibility='hidden'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+            ${top}
+            <span class="absolute top-4 right-4 glass-dark rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider max-w-[45%] truncate">${esc(L(s.tag))}</span>
+            <div class="absolute bottom-4 left-5 text-white leading-none">
+              ${s.exacto ? "" : `<small class="block text-[11px] uppercase tracking-wider text-white/70 font-bold mb-1">${U.desde}</small>`}
+              <b class="font-display text-[28px] font-extrabold">${esc(L(s.ref))}</b> <small class="text-white/70 font-bold">USD</small>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-xl font-bold leading-snug">${esc(L(s.n))}</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">${esc(L(s.d))}</p>
+            <ul class="mt-5 space-y-2.5 flex-1">
+              ${s.inc.map(x => `<li class="flex items-center gap-2.5 text-sm font-semibold"><span class="check">${ic("check")}</span>${esc(L(x))}</li>`).join("")}
+            </ul>
+            <button type="button" data-elegir="${k}" class="btn-card mt-6 w-full inline-flex justify-center items-center gap-2 rounded-xl py-3.5 font-bold text-sm transition">${U.btnCard[MODO]} ${ic("arrow-right")}</button>
+          </div>
+        </article>`;
+      };
+      return `
+      <section id="servicios" class="relative py-24 sm:py-32 bg-alt overflow-hidden">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+          ${cabeza(esc(L(G.serv.pre)), L(G.serv.titulo), esc(L(G.serv.sub)))}
+          <div id="rejilla" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">${G.serv.lista.map(card).join("")}</div>
+        </div>
+      </section>`;
+    }
+
+    function portafolio(U) {
+      const clases = ["t-a", "t-b", "t-c", "t-d", "t-e"];
+      return `
+      <section id="portafolio" class="relative py-24 sm:py-32 overflow-hidden">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+          ${cabeza(U.portPre, U.portTitulo, U.portSub)}
+          <div class="bento">
+            ${PORT.map(([id, t], k) => `
+            <figure class="tile ${clases[k]} relative rounded-3xl overflow-hidden bg-hero shadow-soft cursor-pointer">
+              <img src="${foto(id, k === 0 ? 1400 : 900)}" alt="${esc(L(t))}" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover"
+                   onerror="if (!this.dataset.r) { this.dataset.r = 1; this.src = '${foto(G.serv.lista[k].img, 900)}'; } else { this.style.visibility = 'hidden'; }">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent"></div>
+              <span class="flecha absolute top-4 right-4 w-10 h-10 rounded-full glass-dark grid place-items-center">${ic("arrow-up-right")}</span>
+              <figcaption class="absolute inset-x-0 bottom-0 p-4 sm:p-6 text-white">
+                <span class="${k === 0 ? "inline-flex" : "hidden sm:inline-flex"} items-center gap-1.5 rounded-full bg-white/15 border border-white/20 backdrop-blur px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider">${ic("camera")} ${U.portEtiqueta}</span>
+                <b class="block mt-2 font-display ${k === 0 ? "text-2xl sm:text-4xl" : "text-base sm:text-2xl"} font-bold leading-tight">${esc(L(t))}</b>
+              </figcaption>
+            </figure>`).join("")}
+            <a href="#cotizar" class="tile t-cta relative rounded-3xl overflow-hidden grad text-onacc p-6 sm:p-8 flex flex-col justify-between shadow-soft">
+              <span class="w-11 h-11 rounded-full bg-black/10 grid place-items-center text-xl">${ic(G.logo)}</span>
+              <div><b class="block font-display text-2xl sm:text-3xl font-bold leading-tight">${U.ctaTile}</b>
+              <span class="mt-3 inline-flex items-center gap-2 font-bold">${L(G.cta)} ${ic("arrow-right")}</span></div>
+            </a>
+          </div>
+          ${antesDespues(U)}
+        </div>
+      </section>`;
+    }
+
+    // Deslizador táctil "Antes y Después" (la foto de "Antes" es la misma con filtro: en la página real van sus fotos)
+    function antesDespues(U) {
+      const [id, t] = PORT[0];
+      const src = foto(id, 1400);
+      return `
+      <div class="mt-8 grid lg:grid-cols-[1.45fr_.55fr] gap-6 lg:gap-10 items-center">
+        <div id="baCaja" class="ba relative rounded-3xl overflow-hidden shadow-deep aspect-[16/11] sm:aspect-[16/10] bg-hero select-none" style="--pos:50%">
+          <img src="${src}" alt="${U.despues}" loading="eager" class="absolute inset-0 w-full h-full object-cover" draggable="false">
+          <div class="ba-antes absolute inset-0"><img src="${src}" alt="${U.antes}" loading="eager" class="absolute inset-0 w-full h-full object-cover" draggable="false"></div>
+          <span class="absolute top-4 left-4 rounded-full bg-black/60 backdrop-blur px-3 py-1.5 text-xs font-extrabold uppercase tracking-wider text-white">${U.antes}</span>
+          <span class="absolute top-4 right-4 rounded-full grad text-onacc px-3 py-1.5 text-xs font-extrabold uppercase tracking-wider">${U.despues}</span>
+          <div class="ba-linea"><span class="ba-mango">${ic("chevrons-left-right")}</span></div>
+          <input id="baRango" type="range" min="0" max="100" value="50" class="ba-rango" aria-label="${U.antes} / ${U.despues}">
+        </div>
+        <div>
+          ${pre(U.baPre)}
+          <h3 class="h2 mt-4 !text-[30px] sm:!text-[40px]">${kw(L(t))}</h3>
+          <p class="mt-3 text-muted text-base sm:text-lg flex items-center gap-2">${ic("move-horizontal")} ${U.baSub}</p>
+          <a href="#cotizar" class="btn-shine grad text-onacc mt-6 inline-flex items-center gap-2 rounded-xl px-5 py-3 font-bold text-sm">${L(G.cta)} ${ic("arrow-right")}</a>
+        </div>
+      </div>`;
+    }
+
+    function porQue(U) {
+      const filas = [
+        ...G.porQue.lista.map(([, t], k) => [L(t), ["no", "tal", "no"][k]]),
+        [U.filas[0], "tal"], [U.filas[1], "no"], [U.filas[2], "no"]
+      ];
+      const marca = v => v === "si" ? `<span class="si">${ic("check")}</span>` : v === "no" ? `<span class="no">${ic("x")}</span>` : `<span class="tal">${U.aVeces}</span>`;
+      return `
+      <section id="por-que" class="relative py-24 sm:py-32 bg-alt overflow-hidden">
+        <div class="blob -bottom-40 -right-40"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+          ${cabeza(U.porQuePre, L(G.porQue.titulo), U.porQueSub)}
+          <div class="grid md:grid-cols-3 gap-5">
+            ${G.porQue.lista.map(([i, t, d], k) => `
+            <div class="reveal glass shadow-soft rounded-3xl p-7 relative overflow-hidden hover:-translate-y-1 transition duration-300" style="--d:${k * 100}ms">
+              <span class="absolute -top-3 right-4 font-display font-black text-8xl text-ink/5 select-none">0${k + 1}</span>
+              <span class="ico-box w-14 h-14 rounded-2xl grid place-items-center text-2xl">${ic(i)}</span>
+              <h3 class="mt-5 font-display text-xl font-bold">${esc(L(t))}</h3>
+              <p class="mt-2 text-muted leading-relaxed">${esc(L(d))}</p>
+            </div>`).join("")}
+          </div>
+          <div class="reveal mt-14 max-w-3xl mx-auto glass-strong shadow-deep rounded-3xl overflow-hidden">
+            <div class="px-6 pt-7 pb-3 text-center">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold">${U.comparaTitulo}</h3>
+              <p class="text-muted text-sm mt-1">${esc(NEGOCIO)} vs. ${U.competencia}</p>
+            </div>
+            <table class="comparativa w-full table-fixed text-sm">
+              <colgroup><col><col style="width:30%"><col style="width:22%"></colgroup>
+              <thead><tr><th></th><th class="nos"><span class="inline-flex flex-col items-center gap-1"><span class="grad text-onacc w-7 h-7 rounded-lg grid place-items-center text-sm">${ic(G.logo)}</span><span class="line-clamp-2 normal-case tracking-normal font-extrabold text-[12px]">${esc(NEGOCIO)}</span></span></th><th>${U.otros}</th></tr></thead>
+              <tbody>${filas.map(([t, otro]) => `<tr><td>${esc(t)}</td><td class="nos">${marca("si")}</td><td>${marca(otro)}</td></tr>`).join("")}</tbody>
+            </table>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    function resenas(U) {
+      const barras = BARRAS;
+      return `
+      <section id="resenas" class="relative py-24 sm:py-32 overflow-hidden">
+        <div class="blob -top-40 right-0"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+          ${cabeza(U.resPre, U.resTitulo, "")}
+          <div class="grid lg:grid-cols-[340px_1fr] gap-6 lg:gap-8 items-start">
+            <aside class="reveal glass-strong shadow-deep rounded-3xl p-7 lg:sticky lg:top-32">
+              <div class="flex items-center gap-3">
+                <span class="w-12 h-12 rounded-2xl bg-white shadow-soft grid place-items-center">${gG("w-7 h-7")}</span>
+                <div class="leading-tight"><div class="text-xl">${GOOGLE}</div><small class="text-muted font-semibold">${U.resBase}</small></div>
+              </div>
+              <div class="mt-6 flex items-end gap-3">
+                <b class="font-display text-6xl font-bold leading-none">${RATING}</b>
+                <div class="pb-1"><div class="flex">${ESTRELLAS}</div><small class="text-muted font-semibold">${U.basado(RESENAS)}</small></div>
+              </div>
+              <div class="mt-6 space-y-2.5">
+                ${barras.map(([e, p]) => `<div class="flex items-center gap-2.5 text-sm font-semibold"><span class="w-3 text-right">${e}</span><span class="text-xs">${ic("star", "estrella")}</span><div class="barra flex-1"><i style="width:${p}%"></i></div><span class="w-9 text-right text-muted">${p}%</span></div>`).join("")}
+              </div>
+              <a href="#cotizar" class="btn-shine grad text-onacc mt-7 w-full inline-flex items-center justify-center gap-2 rounded-xl py-3.5 font-bold text-sm">${L(G.cta)} ${ic("arrow-right")}</a>
+            </aside>
+            <div class="grid sm:grid-cols-2 gap-6">
+              ${G.resenas.map(([n, s, t], k) => `
+              <figure class="resena reveal glass-strong shadow-soft rounded-3xl p-6 sm:p-7 flex flex-col hover:-translate-y-1 transition duration-300 ${k === 2 ? "sm:col-span-2" : ""}" style="--d:${k * 100}ms">
+                <div class="flex items-center gap-3">
+                  ${avatar(n)}
+                  <div class="min-w-0 leading-tight"><b class="block">${esc(n)}</b><small class="text-muted">${esc(L(s))} · ${U.fechas[k]}</small></div>
+                  <span class="ml-auto">${gG("w-6 h-6")}</span>
+                </div>
+                <div class="mt-4 flex flex-wrap items-center gap-2"><span class="flex text-sm">${ESTRELLAS}</span>
+                  <span class="inline-flex items-center gap-1 text-[11px] font-bold text-muted bg-alt rounded-full px-2.5 py-1 border border-line">${gG("w-3 h-3")} ${U.enGoogle}</span></div>
+                <blockquote class="mt-4 leading-relaxed text-[15px] flex-1">“${esc(t)}”</blockquote>
+              </figure>`).join("")}
+            </div>
+          </div>
+          <p class="text-center text-xs text-muted mt-8">${U.resNota}</p>
+        </div>
+      </section>`;
+    }
+
+    function faq(U) {
+      return `
+      <section id="faq" class="relative py-24 sm:py-32 bg-alt overflow-hidden">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+          ${cabeza(U.faqPre, U.faqTitulo, "")}
+          <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-6 lg:gap-8 items-stretch">
+            <div class="reveal relative rounded-[2rem] overflow-hidden min-h-[440px] shadow-deep text-white flex bg-hero">
+              <img src="${foto(PORT[3][0], 1000)}" alt="" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.visibility='hidden'">
+              <div class="absolute inset-0 bg-gradient-to-t from-hero via-hero/75 to-hero/5"></div>
+              <div class="claro relative mt-auto p-7 sm:p-9">
+                <div class="flex flex-wrap items-center gap-3">
+                  <div class="flex -space-x-3">${G.resenas.map(([n]) => avatar(n, "w-10 h-10")).join("")}</div>
+                  <span class="inline-flex items-center gap-2 text-xs font-bold rounded-full bg-emerald-400/15 text-emerald-300 border border-emerald-300/30 px-3 py-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>${U.enLinea}</span>
+                </div>
+                <h3 class="h2 mt-5 !text-[34px] sm:!text-[42px]" style="background:none;-webkit-text-fill-color:#fff;color:#fff">${kw(U.faqCardTitulo)}</h3>
+                <p class="mt-3 text-white/80 max-w-md">${esc(U.faqCardTexto(NEGOCIO))}</p>
+                <button id="faqWa" type="button" class="btn-shine btn-wa mt-6 inline-flex items-center gap-2.5 rounded-2xl px-6 py-3.5 font-bold">${wa()} ${U.faqCardBtn}</button>
+              </div>
+            </div>
+            <div class="space-y-3">
+              ${G.faq.map(([q, a], n) => `
+              <details class="acc reveal rounded-2xl" ${n === 0 ? "open" : ""} style="--d:${n * 70}ms">
+                <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 sm:px-6 py-5 font-display font-semibold text-base sm:text-lg">${esc(L(q))}<span class="faq-ico ico-box">${ic("plus")}</span></summary>
+                <p class="px-5 sm:px-6 pb-6 -mt-1 text-muted leading-relaxed">${esc(L(a))}</p>
+              </details>`).join("")}
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ---------- cotizador tipo app nativa ----------
+    const ICONOS = { texto: "user", tel: "phone", zip: "map-pin", fecha: "calendar", hora: "clock", numero: "users" };
+    const esChip = c => ["chips", "servicio", "entrega"].includes(c.tipo);
+    const chip = (texto, i, id, lead) =>
+      `<button type="button" class="chip ${ESTADO[id] === i ? "on" : ""}" data-i="${i}">${lead}<span class="min-w-0 flex-1">${texto}</span><span class="ok">${ic("check")}</span></button>`;
+    const circulo = n => `<span class="ci">${ic(n)}</span>`;
+
+    function controlChips(c, U) {
+      if (c.tipo === "servicio") return `<div class="chips serv" id="f_${c.id}" data-chips="${c.id}">${G.serv.lista.map((s, i) => chip(
+        `${esc(L(s.n))}<small class="block text-muted font-semibold text-[11px] mt-0.5">${s.exacto ? "" : U.desde + " "}${esc(L(s.ref))} USD</small>`, i, c.id,
+        `<img src="${foto(s.img, 140)}" alt="" loading="lazy" class="mini">`)).join("")}</div>`;
+      if (c.tipo === "entrega") return `<div class="chips" id="f_${c.id}" data-chips="${c.id}">${U.entrega.map((t, i) => chip(t, i, c.id, circulo(["shopping-bag", "bike"][i]))).join("")}</div>
+        <div id="dirCaja" class="relative mt-3 ${ESTADO.entrega === 1 ? "" : "hidden"}"><span class="inp-ico">${ic("map-pin")}</span><input id="f_direccion" class="inp" autocomplete="street-address" placeholder="${U.direccion}" value="${esc(ESTADO.direccion)}"></div>`;
+      return `<div class="chips" id="f_${c.id}" data-chips="${c.id}">${c.opciones.map((o, i) => chip(esc(L(o)), i, c.id, circulo((c.iconos || [])[i] || "circle-dot"))).join("")}</div>`;
+    }
+
+    function controlInput(c) {
+      const v = esc(ESTADO[c.id]), ph = esc(L(c.ph || ""));
+      const base = `id="f_${c.id}" class="inp" placeholder="${ph}"`;
+      switch (c.tipo) {
+        case "area": return `<textarea ${base}>${v}</textarea>`;
+        case "fecha": return `<input ${base} type="date" min="${hoyISO}" value="${v}">`;
+        case "hora": return `<input ${base} type="time" min="08:00" max="21:00" step="900" value="${v}">`;
+        case "numero": return `<input ${base} type="number" min="1" inputmode="numeric" value="${v}">`;
+        case "tel": return `<input ${base} type="tel" inputmode="tel" autocomplete="tel" value="${v}">`;
+        case "zip": return `<input ${base} inputmode="numeric" maxlength="10" autocomplete="postal-code" value="${v}">`;
+        default: return `<input ${base} autocomplete="${c.id === "nombre" ? "name" : "off"}" value="${v}">`;
+      }
+    }
+
+    function camposHTML(U) {
+      const ast = c => c.req ? ` <span class="text-red-500">*</span>` : "";
+      const areas = G.form.campos.filter(c => c.tipo === "area");
+      const datos = G.form.campos.filter(c => !esChip(c) && c.tipo !== "area");
+      let n = 0;
+      const paso = t => `<div class="paso"><span class="n grad text-onacc">${++n}</span><span>${t}</span></div>`;
+      const bloqueArea = c => `<div class="campo" data-campo="${c.id}">${paso(esc(L(c.label)) + ast(c))}${controlInput(c)}</div>`;
+      return [
+        ...G.form.campos.filter(esChip).map(c => `<div class="campo" data-campo="${c.id}">${paso(esc(L(c.label)) + ast(c))}${controlChips(c, U)}</div>`),
+        ...areas.filter(c => c.req).map(bloqueArea),
+        `<div>${paso(U.tusDatos)}<div class="grid sm:grid-cols-2 gap-4">${datos.map(c => `
+          <div class="campo" data-campo="${c.id}"><label for="f_${c.id}" class="lbl">${esc(L(c.label))}${ast(c)}</label>
+          <div class="relative"><span class="inp-ico">${ic(c.icon || ICONOS[c.tipo] || "pencil")}</span>${controlInput(c)}</div></div>`).join("")}</div></div>`,
+        ...areas.filter(c => !c.req).map(bloqueArea)
+      ].join("");
+    }
+
+    function cotizar(U) {
+      return `
+      <section id="cotizar" class="relative isolate overflow-hidden bg-hero text-white py-24 sm:py-32">
+        <div class="cot-bg absolute inset-0 -z-10"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-start">
+          <div class="claro lg:sticky lg:top-36">
+            ${pre(esc(L(G.form.pre)), true)}
+            <h2 class="reveal h2 mt-5" style="background:none;-webkit-text-fill-color:#fff;color:#fff">${kw(L(G.form.titulo))}</h2>
+            <p class="reveal mt-4 text-white/75 text-lg">${esc(L(G.form.sub))}</p>
+            <ul class="mt-8 space-y-4">
+              ${G.form.beneficios.map((b, k) => `<li class="reveal flex items-center gap-3 font-semibold" style="--d:${k * 80}ms"><span class="grid place-items-center w-8 h-8 rounded-full bg-emerald-400/15 text-emerald-400 shrink-0">${ic("check")}</span>${esc(L(b))}</li>`).join("")}
+            </ul>
+            <div class="reveal mt-10 glass-dark rounded-2xl p-5 flex items-center gap-4">
+              <span class="grid place-items-center w-12 h-12 rounded-xl bg-white shrink-0">${gG("w-7 h-7")}</span>
+              <div><div class="flex items-center gap-2"><b class="font-display text-xl">${RATING}</b><span class="flex text-xs">${ESTRELLAS}</span></div>
+              <small class="text-white/70 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>${U.respuesta}</small></div>
+            </div>
+          </div>
+          <div class="marco reveal" style="--d:120ms">
+            <form id="formulario" novalidate class="bg-card text-ink p-5 sm:p-8">
+              <div class="flex items-center gap-3">
+                <span class="ico-box w-12 h-12 rounded-2xl grid place-items-center text-xl shrink-0">${ic(G.form.icono)}</span>
+                <div class="min-w-0"><div id="formTitulo" class="font-display text-xl font-bold leading-tight">${esc(L(G.form.tituloForm))}</div>
+                <p class="text-muted text-xs sm:text-sm truncate">${esc(NEGOCIO)} · ${U.formSub}</p></div>
+              </div>
+              <div class="mt-6">
+                <div class="flex justify-between text-xs font-bold text-muted mb-1.5"><span>${U.progreso}</span><span id="progTxt">0%</span></div>
+                <div class="h-2 rounded-full bg-alt overflow-hidden"><div id="progBar" class="h-full grad rounded-full transition-all duration-500" style="width:0%"></div></div>
+              </div>
+              <div id="campos" class="mt-7 space-y-7">${camposHTML(U)}</div>
+              <div class="mt-8 grid gap-3">
+                <button id="btnEnviarWa" type="button" class="btn-shine btn-wa w-full inline-flex items-center justify-center gap-2.5 rounded-2xl py-4 px-5 font-extrabold text-base hover:scale-[1.02] transition">${wa("text-xl")} ${L(G.form.btn) || U.btnWa}</button>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <button id="btnSms" type="button" class="w-full inline-flex items-center justify-center gap-2 rounded-2xl py-3.5 px-4 font-bold text-[15px] border-2 border-line hover:border-acc transition"><span class="text-tx">${ic("message-square")}</span> ${U.btnSms}</button>
+                  <a id="btnLlamarYa" href="tel:+${WHATSAPP}" class="w-full inline-flex items-center justify-center gap-2 rounded-2xl py-3.5 px-4 font-bold text-[15px] border-2 border-line hover:border-acc transition"><span class="text-tx">${ic("phone")}</span> ${U.btnLlamarYa}</a>
+                </div>
+                <button id="btnLlamar" type="button" class="mx-auto inline-flex items-center gap-1.5 text-sm font-semibold text-muted hover:text-tx underline underline-offset-4 transition">${ic("phone-call")} ${U.btnLlamar}</button>
+              </div>
+              <p class="mt-4 text-center text-xs text-muted flex items-center justify-center gap-1.5">${ic("lock")} ${U.notaForm}</p>
+              <div class="mt-5 pt-5 border-t border-line">
+                <p class="text-center text-[11px] font-bold uppercase tracking-[.16em] text-muted mb-3">${U.aceptamos}</p>
+                ${pagos(U)}
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // Sellos de pago de EE. UU.
+    const pagos = U => `<div class="pagos">
+      <span class="pago"><span style="color:#6D1ED4">Zelle</span></span>
+      <span class="pago"><span style="color:#008CFF;font-style:italic;letter-spacing:-.02em">venmo</span></span>
+      <span class="pago"><span class="grid place-items-center w-[18px] h-[18px] rounded-[5px] text-white text-[11px]" style="background:#00D632">$</span>Cash App</span>
+      <span class="pago">${ic("apple")}Pay</span>
+      <span class="pago">${ic("credit-card")}${U.tarjetas}</span>
+    </div>`;
+
+    // Zonas de cobertura con mapa de la ciudad del prospecto
+    function cobertura(U) {
+      const q = encodeURIComponent(CIUDAD ? CIUDAD + ", USA" : "United States");
+      return `
+      <section id="cobertura" class="relative py-24 sm:py-32 overflow-hidden">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+          ${cabeza(U.cobPre, U.cobTitulo(CIUDAD), U.cobSub)}
+          <div class="grid lg:grid-cols-[1.35fr_.65fr] gap-6 items-stretch">
+            <div class="rounded-[2rem] overflow-hidden shadow-deep border border-line bg-alt h-[340px] sm:h-[440px]">
+              <iframe title="Mapa" src="https://maps.google.com/maps?q=${q}&z=${CIUDAD ? 11 : 4}&output=embed" class="w-full h-full" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="glass-strong shadow-deep rounded-[2rem] p-7 flex flex-col">
+              <ul class="space-y-4">
+                ${U.cobPuntos(CIUDAD).map(([i, t]) => `<li class="flex items-center gap-3 font-semibold"><span class="ico-box w-11 h-11 rounded-xl grid place-items-center text-lg shrink-0">${ic(i)}</span>${esc(t)}</li>`).join("")}
+              </ul>
+              <a href="tel:+${WHATSAPP}" class="btn-shine grad text-onacc mt-auto pt-0 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-bold" style="margin-top:28px">${ic("phone")} <span>${U.cobLlamar} · <span class="whitespace-nowrap">${telBonito(WHATSAPP)}</span></span></a>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    function pie(U) {
+      return `
+      <footer class="bg-[#07080c] text-white/65 pt-16 pb-28">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            <div class="flex items-center gap-3"><span class="grad grid place-items-center w-10 h-10 rounded-xl text-onacc text-lg">${ic(G.logo)}</span><b class="font-display text-xl text-white">${esc(NEGOCIO)}</b></div>
+            <p class="mt-4 text-sm max-w-sm">${esc(L(G.slogan))}</p>
+            <div class="mt-5 flex flex-wrap gap-2">${G.sellos.slice(0, 2).map(k => `<span class="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs font-semibold text-white/80"><span style="color:var(--accLight)">${ic(SELLO[k][0])}</span> ${L(SELLO[k][1])}</span>`).join("")}</div>
+          </div>
+          <div><b class="text-white font-display">${U.pieLinks}</b>
+            <ul class="mt-4 space-y-2 text-sm">${U.nav.map((t, i) => `<li><a class="hover:text-white transition" href="#${SECC[i]}">${t}</a></li>`).join("")}</ul></div>
+          <div><b class="text-white font-display">${U.pieContacto}</b>
+            <p class="mt-4 text-sm">${esc(L(G.etiqueta))}</p>
+            ${CIUDAD ? `<p class="text-sm mt-1 flex items-center gap-1.5">${ic("map-pin")} ${esc(CIUDAD)}</p>` : ""}
+            <p class="text-sm mt-1 flex items-center gap-1.5">${ic("phone")} <a class="hover:text-white" href="tel:+${WHATSAPP}">${telBonito(WHATSAPP)}</a></p>
+            <p class="text-sm mt-1">${U.horario}</p>
+            <button id="pieWa" type="button" class="mt-5 btn-wa inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold">${wa()} ${U.pieWa}</button></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-10"><p class="text-center text-[11px] font-bold uppercase tracking-[.16em] text-white/50 mb-3">${U.aceptamos}</p>${pagos(U)}</div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-white/10 text-xs flex flex-wrap gap-2 justify-between">
+          <span>© ${new Date().getFullYear()} ${esc(NEGOCIO)} · ${U.derechos}</span><span>${L(SELLO.licensed[1])} · ${L(SELLO.estimados[1])}</span>
+        </div>
+      </footer>`;
+    }
+
+    // Barra fija abajo: el prospecto le manda SMS a Marcos para cargar sus precios reales (no sale en la web final ni en la captura)
+    const SMS_MARCOS = "+13059269442";
+    const CON_BARRA = !FINAL && VISTA !== "captura";
+    function barraMarcos() {
+      if (!CON_BARRA) return "";
+      const texto = L([`✨ Demo hecha para ${NEGOCIO} — <u>Toca aquí para cargar tus precios reales y tu logo gratis</u>`,
+                       `✨ Demo built for ${NEGOCIO} — <u>Tap here to load your real prices &amp; logo for free</u>`]);
+      const cuerpo = L([`Hola Marcos, acabo de ver la página de muestra de ${NEGOCIO} y quiero cargar mis precios reales.`,
+                        `Hi Marcos, I just checked out the demo page for ${NEGOCIO} and want to load my real prices.`]);
+      return `<a class="barra-marcos" href="sms:${SMS_MARCOS}?&body=${encodeURIComponent(cuerpo)}">${texto.replace(NEGOCIO, esc(NEGOCIO))}</a>`;
+    }
+
+    // ====== DIBUJAR LA PÁGINA ======
+    let primera = true, contado = false;
+    function render() {
+      const U = UI[LANG];
+      const y = scrollY;
+      document.documentElement.lang = LANG;
+      document.title = `${NEGOCIO} | ${L(G.etiqueta)}`;
+      $("app").innerHTML = [hdr(U), hero(U), stats(U), nosotros(U), servicios(U), portafolio(U), porQue(U), resenas(U), faq(U), cobertura(U), cotizar(U), pie(U), barraMarcos()].join("");
+      document.body.classList.toggle("con-barra", CON_BARRA);
+      pintarIconos();
+      $("waFlotante").setAttribute("aria-label", U.waAria);
+      if (primera) { primera = false; observar(); }
+      else { document.querySelectorAll(".reveal").forEach(e => e.classList.add("in")); contar(true); scrollTo(0, y); }
+      progreso();
+    }
+
+    // Animación al hacer scroll (fade-up) + contadores
+    function observar() {
+      if (!("IntersectionObserver" in window)) { document.querySelectorAll(".reveal").forEach(e => e.classList.add("in")); contar(true); return; }
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
+        { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+      document.querySelectorAll(".reveal").forEach(e => io.observe(e));
+      const ioS = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { contar(); ioS.disconnect(); } }, { threshold: .35 });
+      ioS.observe($("stats"));
+    }
+    function contar(final) {
+      document.querySelectorAll("[data-count]").forEach(el => {
+        const n = +el.dataset.count;
+        if (final || contado) { el.textContent = n.toLocaleString("en-US"); return; }
+        const t0 = performance.now(), dur = 1900;
+        const paso = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))).toLocaleString("en-US"); if (p < 1) requestAnimationFrame(paso); };
+        requestAnimationFrame(paso);
+      });
+      contado = true;
+    }
+
+    // ====== LÓGICA DEL COTIZADOR ======
+    function valor(c) {
+      const U = UI[LANG], v = ESTADO[c.id];
+      if (c.tipo === "servicio") return v === undefined ? "" : L(G.serv.lista[v].n);
+      if (c.tipo === "chips") return v === undefined ? "" : L(c.opciones[v]);
+      if (c.tipo === "entrega") { const dir = String(ESTADO.direccion || "").trim(); return v === 1 ? `${U.deliveryMsg}${dir ? ": " + dir : ""}` : U.pickupMsg; }
+      const s = String(v || "").trim();
+      if (c.tipo === "fecha" && s) { const [a, m, d] = s.split("-"); return `${m}/${d}/${a}`; }
+      if (c.tipo === "hora" && s) { let [h, mi] = s.split(":").map(Number); const ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return `${h}:${String(mi).padStart(2, "0")} ${ap}`; }
+      return s;
+    }
+    function falta(c) {
+      if (c.tipo === "entrega") return ESTADO.entrega === 1 && !String(ESTADO.direccion || "").trim();
+      if (c.tipo === "tel") return String(ESTADO.telefono || "").replace(/\D/g, "").length < 10;
+      return !!c.req && !valor(c);
+    }
+    function progreso() {
+      const req = G.form.campos.filter(c => c.req);
+      const pct = Math.round(100 * req.filter(c => !falta(c)).length / req.length);
+      if ($("progBar")) { $("progBar").style.width = pct + "%"; $("progTxt").textContent = pct + "%"; }
+    }
+    const marcarChips = id => document.querySelectorAll(`[data-chips="${id}"] .chip`).forEach(b => b.classList.toggle("on", +b.dataset.i === ESTADO[id]));
+    const limpiarError = id => document.querySelector(`[data-campo="${id}"]`)?.classList.remove("error");
+
+    function validar() {
+      let primero = null;
+      G.form.campos.forEach(c => {
+        const caja = document.querySelector(`[data-campo="${c.id}"]`), malo = falta(c);
+        caja.classList.toggle("error", malo);
+        if (malo && !primero) primero = caja;
+      });
+      if (primero) { avisar(UI[LANG].completa, false); primero.scrollIntoView({ behavior: "smooth", block: "center" }); return false; }
+      return true;
+    }
+    function armarMensaje(tipo) {
+      const U = UI[LANG];
+      const orden = [...G.form.campos].sort((a, b) => (a.id === "nombre" ? 0 : a.id === "telefono" ? 1 : 2) - (b.id === "nombre" ? 0 : b.id === "telefono" ? 1 : 2));
+      const cuerpo = orden.map(c => {
+        const lab = L(c.label).replace(/\s*\((opcional|optional)\)/i, "");
+        return `*${lab}${lab.endsWith("?") ? "" : ":"}* ${valor(c) || "—"}`;
+      }).join("\n");
+      const tel = String(ESTADO.telefono || "").trim();
+      return tipo === "llamada"
+        ? `📞 *${U.llamada} — ${L(G.form.tituloForm)}*\n*${U.para}:* ${NEGOCIO}\n\n${cuerpo}\n\n${U.llamame(tel)}`
+        : `${G.emoji} *${L(G.form.tituloForm)}*\n*${U.para}:* ${NEGOCIO}\n\n${cuerpo}\n\n${U.gracias}`;
+    }
+    const abrirWa = texto => window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+
+    // Tarjeta de servicio → marca ese servicio en el cotizador y baja
+    function elegir(k) {
+      const s = G.serv.lista[k];
+      if (CAMPO_SERV) { ESTADO[CAMPO_SERV.id] = CAMPO_SERV.tipo === "servicio" ? k : s.o; marcarChips(CAMPO_SERV.id); limpiarError(CAMPO_SERV.id); }
+      else if ($("f_pedido")) {
+        const p = String(ESTADO.pedido || "").trim();
+        ESTADO.pedido = (p ? p + "\n" : "") + "1 × " + L(s.n);
+        $("f_pedido").value = ESTADO.pedido; limpiarError("pedido");
+      }
+      progreso();
+      $("cotizar").scrollIntoView({ behavior: "smooth" });
+      avisar(`${L(s.n)} ${UI[LANG].agregado}`);
+    }
+
+    // ====== EVENTOS (una sola vez; la página se redibuja al cambiar de idioma) ======
+    document.addEventListener("click", e => {
+      const t = e.target;
+      if (t.closest("#langBtn")) {
+        LANG = LANG === "es" ? "en" : "es";
+        try { localStorage.setItem("vc_lang", LANG); } catch (err) {}
+        document.documentElement.classList.add("ya");
+        render(); return;
+      }
+      const card = t.closest("[data-elegir]");
+      if (card) { elegir(+card.dataset.elegir); return; }
+      const ch = t.closest(".chip");
+      if (ch) {
+        const id = ch.closest("[data-chips]").dataset.chips;
+        ESTADO[id] = +ch.dataset.i; marcarChips(id); limpiarError(id);
+        if (id === "entrega") { $("dirCaja").classList.toggle("hidden", ESTADO.entrega !== 1); if (ESTADO.entrega === 1) $("f_direccion").focus(); }
+        progreso(); return;
+      }
+      if (t.closest("#btnEnviarWa")) { if (validar()) abrirWa(armarMensaje("whatsapp")); return; }
+      if (t.closest("#btnLlamar")) { if (validar()) abrirWa(armarMensaje("llamada")); return; }
+      // SMS (Text Message): mismo pedido, sin los asteriscos de WhatsApp. "?&body=" funciona en iPhone y Android.
+      if (t.closest("#btnSms")) { if (validar()) location.href = `sms:+${WHATSAPP}?&body=${encodeURIComponent(armarMensaje("whatsapp").replace(/\*/g, ""))}`; return; }
+      if (t.closest("#pieWa") || t.closest("#faqWa")) { abrirWa(UI[LANG].saludo(NEGOCIO)); return; }
+      if (t.closest("#waFlotante")) { $("cotizar").scrollIntoView({ behavior: "smooth" }); }
+    });
+    document.addEventListener("input", e => {
+      const el = e.target;
+      if (el.id === "baRango") { $("baCaja").style.setProperty("--pos", el.value + "%"); return; }
+      if (!el.classList.contains("inp")) return;
+      const id = el.id.replace(/^f_/, "");
+      ESTADO[id] = el.value;
+      limpiarError(id === "direccion" ? "entrega" : id);
+      progreso();
+    });
+    addEventListener("scroll", () => document.documentElement.classList.toggle("solid", scrollY > 10), { passive: true });
+
+    let tAviso;
+    function avisar(txt, ok = true) {
+      const a = $("aviso");
+      a.innerHTML = (ok ? CHECK_SVG : "") + "<span></span>";
+      a.querySelector("span").textContent = txt;
+      a.classList.add("ver");
+      clearTimeout(tAviso); tAviso = setTimeout(() => a.classList.remove("ver"), 2000);
+    }
+
+    render();
+    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add("listo")));
+
+    // ====== RADAR: avisa a tu panel que el prospecto abrió su web (una vez por visita) ======
+    // No avisa en tu computadora (localhost), en la captura del robot ni en la página final del cliente (&vista=...).
+    if (clienteURL && !VISTA && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) {
+      let nueva = true;
+      try { const k = "vc_radar" + location.search; nueva = !sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); } catch (e) {}
+      if (nueva) fetch(`https://ntfy.sh/${RADAR_TOPIC}`, { method: "POST", body: JSON.stringify({ t: TEL_DUENO, c: NEGOCIO, g: GIRO_ID }), keepalive: true }).catch(() => {});
+    }
+  </script>
+</body>
+</html>
