@@ -125,13 +125,85 @@
     .tile .flecha { opacity: 0; transform: translate(-6px, 6px); transition: .4s; }
     .tile:hover .flecha { opacity: 1; transform: none; }
 
-    /* ---------- antes y después ---------- */
-    .ba-antes { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
-    .ba-antes img { filter: grayscale(.85) sepia(.35) brightness(.68) contrast(.85) blur(.6px); }
-    .ba-linea { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 18px rgba(0,0,0,.45); pointer-events: none; }
-    .ba-mango { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
-                background: #fff; color: rgb(var(--tx)); font-size: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
-    .ba-rango { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; touch-action: pan-y; }
+    /* ---------- cabecera: estado en vivo + sello de Google ---------- */
+    .vivo { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .01em;
+            background: rgba(16,185,129,.16); border: 1px solid rgba(52,211,153,.45); color: #a7f3d0; }
+    .gbadge { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #1f2937; border-radius: 18px; padding: 8px 16px 8px 8px; text-decoration: none;
+              box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 14px 34px -12px rgba(0,0,0,.55); transition: transform .2s; }
+    .gbadge:hover { transform: translateY(-2px); }
+    .gbadge-g { width: 42px; height: 42px; border-radius: 13px; background: #f1f3f4; display: grid; place-items: center; flex-shrink: 0; }
+    .gbadge b { font: 900 24px/1 "Plus Jakarta Sans", sans-serif; color: #202124; }
+    .gbadge small { display: block; margin-top: 3px; color: #5f6368; font-size: 12px; font-weight: 700; }
+
+    /* ---------- selector visual de destacados (3 fotos conectadas al cotizador) ---------- */
+    .dest-fila { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    @media (min-width: 640px) { .dest-fila { gap: 18px; } }
+    .dest { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 22px; overflow: hidden; border: 0; padding: 0; cursor: pointer; text-align: left;
+            background: rgb(var(--hero)); box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 22px 44px -18px rgba(0,0,0,.6); outline: 3px solid transparent; outline-offset: 0;
+            transition: transform .25s, outline-color .25s, box-shadow .3s; -webkit-tap-highlight-color: transparent; }
+    @media (min-width: 640px) { .dest { aspect-ratio: 4 / 3; } }
+    .dest img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+    .dest:hover img { transform: scale(1.07); }
+    .dest:active { transform: scale(.97); }
+    .dest-velo { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.82)); }
+    .dest-txt { position: absolute; left: 10px; right: 10px; bottom: 10px; color: #fff; line-height: 1.15; }
+    .dest-txt b { display: block; font-family: var(--ft); font-size: 13px; font-weight: 800; }
+    .dest-txt small { display: block; margin-top: 3px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.8); }
+    @media (min-width: 640px) { .dest-txt { left: 16px; bottom: 14px; } .dest-txt b { font-size: 18px; } .dest-txt small { font-size: 13px; } }
+    .dest-ok { position: absolute; top: 9px; right: 9px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+               background: rgba(255,255,255,.22); border: 1.5px solid rgba(255,255,255,.75); color: transparent; backdrop-filter: blur(6px); transition: .25s; }
+    .dest-ok svg.lucide { stroke-width: 3; }
+    .dest.on { outline-color: rgb(var(--acc)); outline-offset: 3px; box-shadow: 0 0 0 7px rgb(var(--acc) / .2), 0 24px 48px -18px rgb(var(--acc) / .8); }
+    .dest.on .dest-ok { background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); border-color: transparent; color: rgb(var(--onacc)); animation: pop .4s cubic-bezier(.3,1.6,.5,1); }
+
+    /* ---------- cotizador estilo Uber Eats (bento cards) ---------- */
+    .menu { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (min-width: 640px) { .menu { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; } }
+    .bcard { position: relative; display: flex; flex-direction: column; text-align: left; padding: 0; border-radius: 20px; overflow: hidden; cursor: pointer;
+             border: 1.5px solid rgb(var(--line)); background: rgb(var(--card)); color: rgb(var(--ink)); box-shadow: 0 1px 2px rgb(var(--shadow) / .06);
+             transition: transform .2s, border-color .3s, box-shadow .35s; -webkit-tap-highlight-color: transparent; }
+    .bcard:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -14px rgb(var(--shadow) / .45); }
+    .bcard:active { transform: scale(.97); }
+    .bcard .bimg { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: rgb(var(--alt)); }
+    .bcard .bbody { display: flex; flex-direction: column; gap: 8px; flex: 1; padding: 10px 12px 12px; min-width: 0; }
+    .bcard .bname { font-weight: 800; font-size: 14px; line-height: 1.25; overflow-wrap: anywhere; }
+    .bcard .bmeta { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px; margin-top: auto; }
+    .bcard .bdur { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: rgb(var(--alt)); color: rgb(var(--muted)); white-space: nowrap; }
+    .bcard .bprice { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 900; font-size: 18px; line-height: 1; color: rgb(var(--tx)); white-space: nowrap; }
+    .bcard .bprice small { display: block; font-size: 9.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: rgb(var(--muted)); margin-bottom: 2px; }
+    .bcard .bpop { position: absolute; top: 8px; left: 8px; font-size: 11px; font-weight: 800; padding: 4px 9px; border-radius: 999px;
+                   background: linear-gradient(135deg, #fde68a, #f59e0b); color: #422006; box-shadow: 0 8px 18px -8px rgba(0,0,0,.6); }
+    .bcard .bok { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+                  background: rgba(255,255,255,.92); border: 1.5px solid rgba(0,0,0,.12); color: transparent; transition: background .25s, color .25s; }
+    .bcard .bok svg.lucide { stroke-width: 3; }
+    .bcard.on { border-color: rgb(var(--acc)); background: linear-gradient(rgb(var(--acc) / .07), rgb(var(--acc) / .07)), rgb(var(--card));
+                box-shadow: 0 0 0 4px rgb(var(--acc) / .16), 0 18px 34px -16px rgb(var(--acc) / .9); }
+    .bcard.on .bok { background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); border-color: transparent; color: rgb(var(--onacc)); animation: pop .4s cubic-bezier(.3,1.6,.5,1); }
+    /* bento: en el celular la primera (y la última si hace falta) ocupan todo el ancho */
+    @media (max-width: 639px) {
+      .bcard.ancho { grid-column: span 2; flex-direction: row; }
+      .bcard.ancho .bimg { width: 42%; aspect-ratio: auto; min-height: 128px; flex-shrink: 0; }
+      .bcard.ancho .bname { font-size: 15px; padding-right: 30px; }
+    }
+    /* en el cotizador se esconde el botón flotante de WhatsApp para no tapar el total */
+    .wa-float { transition: transform .2s, opacity .25s; }
+    body.en-cotizador .wa-float { opacity: 0; pointer-events: none; transform: scale(.6); }
+    .campo.error .bcard { border-color: #ef4444; }
+    /* barra del total (se queda pegada abajo mientras eliges) */
+    .tbar { position: sticky; bottom: 12px; z-index: 5; margin-top: 14px; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 18px;
+            background: rgb(var(--ink)); color: rgb(var(--base)); box-shadow: 0 18px 40px -16px rgba(0,0,0,.55); }
+    body.con-barra .tbar { bottom: 74px; }
+    .tbar-ico { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; font-size: 18px; flex-shrink: 0;
+                background-image: linear-gradient(135deg, rgb(var(--acc)), rgb(var(--acc2))); }
+    .tbar b { display: block; font-size: 14px; line-height: 1.2; }
+    .tbar small { display: block; font-size: 11px; font-weight: 700; opacity: .7; }
+    .tbar-num { margin-left: auto; text-align: right; font: 900 22px/1 "Plus Jakarta Sans", sans-serif; white-space: nowrap; }
+    .tbar-num.bump { animation: bump .45s cubic-bezier(.3,1.6,.5,1); }
+    @keyframes bump { 0% { transform: scale(1); } 40% { transform: scale(1.18); color: var(--accLight); } 100% { transform: scale(1); } }
+    /* toques de lujo (estética) */
+    [data-tema="lujo"] .bcard, [data-tema="lujo"] .chip { border-color: #eadccb; }
+    [data-tema="lujo"] .bcard.on { border-color: rgb(var(--acc)); }
+    [data-tema="lujo"] .bcard .bpop { background: linear-gradient(135deg, #f6d5c8, #c9967a); color: #3d2016; }
 
     /* ---------- sellos de pago ---------- */
     .pagos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
@@ -236,7 +308,7 @@
     .ya .kb { animation: none; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; animation: none !important; }
-      .kb, .float-y, .pulse, .btn-shine::after, .wa-float, .wa-badge { animation: none !important; }
+      .kb, .float-y, .pulse, .btn-shine::after, .wa-float, .wa-badge, .tbar-num.bump { animation: none !important; }
     }
   </style>
 </head>
@@ -272,7 +344,38 @@
       crema:        { dark: false, base: "#fffcf7", alt: "#f8f1e6", card: "#ffffff", line: "#eee3d1", ink: "#33261a", muted: "#8a7660", acc: "#c8a165", acc2: "#9c7536", onacc: "#24180c", hero: "#241a10", tx: "#9c7536" },
       dorado:       { dark: true,  base: "#0a0a0a", alt: "#121110", card: "#171614", line: "#2a2620", ink: "#f5f0e6", muted: "#a89f8d", acc: "#e0b94a", acc2: "#a8802a", onacc: "#111111", hero: "#000000", tx: "#e0b94a" },
       rosa:         { dark: false, base: "#fffafa", alt: "#fdf0f2", card: "#ffffff", line: "#f3dde1", ink: "#47262d", muted: "#946f77", acc: "#d65f86", acc2: "#a93f66", onacc: "#ffffff", hero: "#2e1219", tx: "#be4b74" },
-      naranja:      { dark: true,  base: "#0c0806", alt: "#15100c", card: "#1b140f", line: "#30231a", ink: "#faf1e8", muted: "#b9a593", acc: "#ff8a1f", acc2: "#e5450a", onacc: "#1a0e05", hero: "#0c0806", tx: "#ff9a3d" }
+      naranja:      { dark: true,  base: "#0c0806", alt: "#15100c", card: "#1b140f", line: "#30231a", ink: "#faf1e8", muted: "#b9a593", acc: "#ff8a1f", acc2: "#e5450a", onacc: "#1a0e05", hero: "#0c0806", tx: "#ff9a3d" },
+      // ---- Diseño camaleón: 3 estilos según el giro ----
+      // Estética / belleza / salud: salón de lujo (crema nude, rose-gold y dorado oscuro, tarjetas blancas)
+      lujo:         { dark: false, base: "#faf5ef", alt: "#f3e9df", card: "#ffffff", line: "#eadccb", ink: "#3a2a22", muted: "#8a7264", acc: "#b76e79", acc2: "#9a7b3c", onacc: "#ffffff", hero: "#2a1c17", tx: "#9e5862" },
+      // Limpieza / plomería / hogar: fresco y clínico (blanco y gris hielo, azul intenso y verde esmeralda)
+      fresco:       { dark: false, base: "#ffffff", alt: "#f0f4f8", card: "#ffffff", line: "#dfe6ee", ink: "#0f172a", muted: "#5d6b80", acc: "#1d4ed8", acc2: "#059669", onacc: "#ffffff", hero: "#071a36", tx: "#1d4ed8" },
+      // Autos / mecánica / construcción / otros: alto contraste (dark mode elegante; el acento vibrante cambia por giro)
+      contraste:    { dark: true,  base: "#0a0a0f", alt: "#111118", card: "#17171f", line: "#2a2a36", ink: "#f5f5f7", muted: "#a3a3b2", hero: "#050508" }
+    };
+    const GRUPO_TEMA = { estetica: "lujo", servicios: "fresco", tecnicos: "fresco", landscaping: "fresco" };
+    const ACENTOS = {   // acentos vibrantes del estilo de alto contraste
+      general:    { acc: "#ffb703", acc2: "#fb8500", onacc: "#111111", tx: "#ffc94d" },
+      roofing:    { acc: "#ffb703", acc2: "#fb8500", onacc: "#111111", tx: "#ffc94d" },
+      detailing:  { acc: "#ef4444", acc2: "#b91c1c", onacc: "#ffffff", tx: "#f87171" },
+      moving:     { acc: "#f97316", acc2: "#c2410c", onacc: "#ffffff", tx: "#fb923c" },
+      barberia:   { acc: "#e0b94a", acc2: "#a8802a", onacc: "#111111", tx: "#e0b94a" },
+      pasteleria: { acc: "#f472b6", acc2: "#db2777", onacc: "#ffffff", tx: "#f9a8d4" },
+      comida:     { acc: "#ff8a1f", acc2: "#e5450a", onacc: "#1a0e05", tx: "#ff9a3d" }
+    };
+    // Duración estimada de cada servicio (mismo orden que serv.lista de cada giro)
+    const DURACION = {
+      general:     ["1-3 hrs", "2-6 wks", "2-4 days", "1-2 hrs", "2-5 days", "Half day"],
+      tecnicos:    ["60-90 min", "45-60 min", "60-90 min", "4-6 hrs", "60-90 min", "60-90 min"],
+      roofing:     ["2-4 hrs", "2-3 days", "3-6 wks", "3-5 days", "2-5 days", "4-8 wks"],
+      servicios:   ["2-3 hrs", "4-6 hrs", "60-90 min", "2-3 hrs", "4-6 hrs", "30-45 min"],
+      landscaping: ["2-4 hrs", "Half day", "1-2 days", "45-60 min", "2-3 hrs", "2-4 hrs"],
+      detailing:   ["60-90 min", "90-120 min", "6-8 hrs", "2-3 hrs", "1-2 hrs", "30-45 min"],
+      moving:      ["3-5 hrs", "1-3 days", "3-6 hrs", "1-2 hrs", "2-4 hrs", "Monthly"],
+      estetica:    ["2-2.5 hrs", "60-90 min", "45-60 min", "45-60 min", "60-90 min", "45-60 min"],
+      barberia:    ["45 min", "30 min", "20 min", "10 min", "60 min", "90 min"],
+      pasteleria:  ["3-5 days", "1-2 wks", "1 wk", "2-3 days", "48 hrs", "2-3 days"],
+      comida:      ["10-15 min", "15-20 min", "10-15 min", "10-15 min", "10 min", "5 min"]
     };
 
     // ====== SELLOS (se traducen con el botón EN / ES) ======
@@ -997,7 +1100,12 @@
         cobPre: "Cobertura local", cobTitulo: c => c ? `Zonas de cobertura en ${c} y alrededores` : "Zonas de cobertura",
         cobSub: "Llegamos rápido a tu casa o negocio.", cobPuntos: c => [["map-pin", `${c || "Tu ciudad"} y 25 millas a la redonda`], ["house", "Servicio a domicilio y en sitio"], ["clock", "Respuesta en 15 minutos"], ["calendar-check", "Atención los 7 días"]],
         cobLlamar: "Llamar ahora",
-        baPre: "Antes y Después", baSub: "Desliza la barra para ver la diferencia.", antes: "Antes", despues: "Después",
+        vivo: "Aceptando citas esta semana", vivoPedido: "Recibiendo pedidos hoy",
+        reviewsG: n => n ? `${n.toLocaleString("en-US")} reseñas en Google` : "Reseñas de Google",
+        destTitulo: "Lo más pedido · toca para agregar", destSub: "Se suma solo a tu cotización de abajo 👇",
+        menuTitulo: "Elige tus servicios", popular: "🔥 Más popular", desdeCorto: "Desde", totalTxt: "Total estimado", totalDesde: "Total estimado desde",
+        nSel: n => n ? `${n} servicio${n > 1 ? "s" : ""} seleccionado${n > 1 ? "s" : ""}` : "Toca los servicios para armar tu cotización",
+        quitado: "quitado de tu cotización", selMsg: "Servicios seleccionados",
         btnSms: "Enviar por SMS (Text Message)", btnLlamarYa: "Llamar Ahora", aceptamos: "Aceptamos", tarjetas: "Tarjetas",
         enLinea: "En línea · Respondemos en 15 min", stats: ["Garantía de satisfacción", "Tiempo de respuesta", "Años de experiencia"],
         sobrePre: "Sobre nosotros", en: "En", desde: "Desde", masSolicitado: "Más Solicitado", estrella: "Servicio Estrella",
@@ -1033,7 +1141,12 @@
         cobPre: "Local coverage", cobTitulo: c => c ? `Service areas in ${c} & nearby` : "Service areas",
         cobSub: "We get to your home or business fast.", cobPuntos: c => [["map-pin", `${c || "Your city"} + 25-mile radius`], ["house", "On-site & in-home service"], ["clock", "15-minute response"], ["calendar-check", "Open 7 days a week"]],
         cobLlamar: "Call now",
-        baPre: "Before & After", baSub: "Drag the bar to see the difference.", antes: "Before", despues: "After",
+        vivo: "Accepting appointments this week", vivoPedido: "Taking orders today",
+        reviewsG: n => n ? `${n.toLocaleString("en-US")} Google reviews` : "Google Reviews",
+        destTitulo: "Most booked · tap to add", destSub: "Added straight to your quote below 👇",
+        menuTitulo: "Pick your services", popular: "🔥 Most Popular", desdeCorto: "From", totalTxt: "Estimated total", totalDesde: "Est. total from",
+        nSel: n => n ? `${n} service${n > 1 ? "s" : ""} selected` : "Tap services to build your quote",
+        quitado: "removed from your quote", selMsg: "Selected services",
         btnSms: "Send via SMS (Text Message)", btnLlamarYa: "Call Now", aceptamos: "We accept", tarjetas: "Cards",
         enLinea: "Online · We reply in 15 min", stats: ["Satisfaction guarantee", "Response time", "Years of experience"],
         sobrePre: "About us", en: "At", desde: "From", masSolicitado: "Most Requested", estrella: "Star Service",
@@ -1070,7 +1183,9 @@
     // Solo los 10 giros exactos. Sin giro o giro desconocido = web corporativa de servicios profesionales / contratistas.
     const GIRO_ID = giroURL in GIROS && giroURL !== "general" ? giroURL : "general";
     const G = GIROS[GIRO_ID];
-    const T = TEMAS[G.tema];
+    // Diseño camaleón: lujo (estética), fresco (limpieza / plomería / hogar) o alto contraste (todo lo demás)
+    const GRUPO = GRUPO_TEMA[GIRO_ID] || "contraste";
+    const T = GRUPO === "contraste" ? { ...TEMAS.contraste, ...(ACENTOS[GIRO_ID] || ACENTOS.general) } : TEMAS[GRUPO];
     const PORT = PORTAFOLIO[GIRO_ID];
     const SERIF = ["estetica", "pasteleria", "comida"].includes(GIRO_ID);   // giros elegantes: títulos Playfair Display con cursiva
     const clienteURL = (params.get("cliente") || "").trim().slice(0, 60);
@@ -1141,6 +1256,7 @@
     raiz.colorScheme = T.dark ? "dark" : "light";
     document.documentElement.classList.add(SERIF ? "serif" : "tech");
     if (T.dark) document.documentElement.classList.add("oscuro");
+    document.documentElement.dataset.tema = GRUPO;
     document.querySelector('meta[name="theme-color"]').content = T.hero;
 
     // ====== ESTADO DEL COTIZADOR (se conserva al cambiar de idioma) ======
@@ -1148,6 +1264,18 @@
     if (G.form.campos.some(c => c.tipo === "entrega")) ESTADO.entrega = 0;
     const CAMPO_SERV = G.form.campos.find(c => c.tipo === "servicio" || c.serv);
     const MODO = G.modo || "cotizar";
+    ESTADO.sel = [];   // servicios elegidos en las tarjetas (varios a la vez)
+
+    // ---- precios, duración y nombres para las tarjetas del cotizador ----
+    const precioNum = s => { const m = String(L(s.ref)).match(/\$\s?([\d,]+(?:\.\d+)?)/); return m ? parseFloat(m[1].replace(/,/g, "")) : 0; };
+    const dinero = n => "$" + n.toLocaleString("en-US", { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
+    const durTxt = i => { const d = (DURACION[GIRO_ID] || [])[i]; if (!d) return "";
+      return LANG === "en" ? d : d.replace("Half day", "Medio día").replace("Monthly", "Mensual").replace("hrs", "h").replace("wks", "sem").replace("wk", "sem").replace("days", "días"); };
+    const MENORES = new Set(["or", "and", "of", "with", "the", "a", "to", "in", "on", "for"]);
+    const mayusEN = t => LANG !== "en" ? t : String(t).split(" ").map((w, i) => i && MENORES.has(w.toLowerCase()) ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+    const nombreServ = s => mayusEN(L(s.n));
+    const sumaTotal = () => ESTADO.sel.reduce((t, i) => t + precioNum(G.serv.lista[i]), 0);
+    const totalDesde = () => ESTADO.sel.some(i => !G.serv.lista[i].exacto);
     const SECC = ["nosotros", "servicios", "portafolio", "resenas", "faq"];
 
     // ====== SECCIONES ======
@@ -1198,11 +1326,12 @@
         <div class="hero-velo absolute inset-0 -z-10"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 sm:pt-24 pb-40 sm:pb-48 grid lg:grid-cols-[1fr_340px] gap-12 items-center">
           <div class="min-w-0">
-            <div class="reveal inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full glass-dark pl-1.5 pr-4 py-1.5 text-[12px] sm:text-sm font-semibold">
-              <span class="grid place-items-center w-7 h-7 rounded-full bg-white shrink-0">${gG()}</span>
-              <span class="flex text-xs">${ESTRELLAS}</span><span>${U.badge(RATING, RESENAS)}</span>
-            </div>
-            <p class="reveal mt-7 flex items-center gap-2 text-[11px] sm:text-sm font-bold uppercase tracking-[.18em] text-white/75" style="--d:80ms"><span style="color:var(--accLight)">${ic(G.logo)}</span>${esc(L(G.etiqueta))}</p>
+            <a href="#resenas" class="gbadge reveal" aria-label="Google Reviews ${RATING}">
+              <span class="gbadge-g">${gG("w-6 h-6")}</span>
+              <span class="leading-none"><span class="flex items-center gap-2"><b>${RATING}</b><span class="flex text-[15px]">${ESTRELLAS}</span></span><small>${U.reviewsG(RESENAS)}</small></span>
+            </a>
+            <p class="reveal mt-6 flex items-center gap-2 text-[11px] sm:text-sm font-bold uppercase tracking-[.18em] text-white/75" style="--d:80ms"><span style="color:var(--accLight)">${ic(G.logo)}</span>${esc(L(G.etiqueta))}</p>
+            <p class="reveal mt-4" style="--d:110ms"><span class="vivo"><span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span></span>${MODO === "pedido" ? U.vivoPedido : U.vivo}</span></p>
             <h1 id="heroTitulo" class="h1 reveal text-[46px] sm:text-6xl lg:text-[88px] mt-3 break-words" style="--d:140ms">${titulo}</h1>
             <p class="reveal mt-5 text-lg sm:text-2xl font-medium text-white/90 max-w-2xl" style="--d:200ms">${esc(L(G.slogan))}</p>
             <p class="reveal mt-3 text-sm sm:text-base text-white/70 max-w-xl" style="--d:240ms">${esc(L(G.sub))}</p>
@@ -1233,10 +1362,31 @@
       </section>`;
     }
 
+    // 3 fotos de los servicios estrella: al tocarlas se suman al cotizador
+    function destacados(U) {
+      const vistos = new Set(), top = [];
+      G.serv.lista.forEach((s, i) => { if (top.length < 3 && !vistos.has(s.img)) { vistos.add(s.img); top.push(i); } });
+      return `
+      <section id="destacados" aria-label="${esc(U.destTitulo)}" class="relative z-10 -mt-32 sm:-mt-36 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+          <p class="text-center text-white text-[11px] sm:text-sm font-extrabold uppercase tracking-[.16em] mb-3" style="text-shadow:0 2px 10px rgba(0,0,0,.6)">${U.destTitulo}</p>
+          <div class="dest-fila">${top.map(i => { const s = G.serv.lista[i]; return `
+            <button type="button" class="dest ${ESTADO.sel.includes(i) ? "on" : ""}" data-dest="${i}" aria-pressed="${ESTADO.sel.includes(i)}">
+              <img src="${foto(s.img, 700)}" alt="${esc(nombreServ(s))}" loading="eager" decoding="async" onerror="this.style.visibility='hidden'">
+              <span class="dest-velo"></span>
+              <span class="dest-ok">${ic("check")}</span>
+              <span class="dest-txt"><b>${esc(nombreServ(s))}</b><small>${s.exacto ? "" : U.desdeCorto + " "}${esc(L(s.ref))}</small></span>
+            </button>`; }).join("")}
+          </div>
+          <p class="text-center text-muted text-xs sm:text-sm font-semibold mt-3">${U.destSub}</p>
+        </div>
+      </section>`;
+    }
+
     function stats(U) {
       const lista = [[G.stat[0], "+", "", L(G.stat[1])], [100, "", "%", U.stats[0]], [15, "", " Min", U.stats[1]], [10, "", "+", U.stats[2]]];
       return `
-      <section id="stats" aria-label="stats" class="relative z-10 -mt-24 sm:-mt-28 px-4 sm:px-6">
+      <section id="stats" aria-label="stats" class="relative z-10 mt-10 sm:mt-14 px-4 sm:px-6">
         <div class="reveal max-w-5xl mx-auto glass-strong shadow-deep rounded-3xl grid grid-cols-2 md:grid-cols-4">
           ${lista.map(([n, a, b, t], k) => `
           <div class="p-5 sm:p-7 text-center ${k % 2 ? "" : "border-r border-line md:border-r-0"} ${k < 2 ? "border-b border-line md:border-b-0" : ""} ${k ? "md:border-l md:border-line" : ""}">
@@ -1338,32 +1488,8 @@
               <span class="mt-3 inline-flex items-center gap-2 font-bold">${L(G.cta)} ${ic("arrow-right")}</span></div>
             </a>
           </div>
-          ${antesDespues(U)}
         </div>
       </section>`;
-    }
-
-    // Deslizador táctil "Antes y Después" (la foto de "Antes" es la misma con filtro: en la página real van sus fotos)
-    function antesDespues(U) {
-      const [id, t] = PORT[0];
-      const src = foto(id, 1400);
-      return `
-      <div class="mt-8 grid lg:grid-cols-[1.45fr_.55fr] gap-6 lg:gap-10 items-center">
-        <div id="baCaja" class="ba relative rounded-3xl overflow-hidden shadow-deep aspect-[16/11] sm:aspect-[16/10] bg-hero select-none" style="--pos:50%">
-          <img src="${src}" alt="${U.despues}" loading="eager" class="absolute inset-0 w-full h-full object-cover" draggable="false">
-          <div class="ba-antes absolute inset-0"><img src="${src}" alt="${U.antes}" loading="eager" class="absolute inset-0 w-full h-full object-cover" draggable="false"></div>
-          <span class="absolute top-4 left-4 rounded-full bg-black/60 backdrop-blur px-3 py-1.5 text-xs font-extrabold uppercase tracking-wider text-white">${U.antes}</span>
-          <span class="absolute top-4 right-4 rounded-full grad text-onacc px-3 py-1.5 text-xs font-extrabold uppercase tracking-wider">${U.despues}</span>
-          <div class="ba-linea"><span class="ba-mango">${ic("chevrons-left-right")}</span></div>
-          <input id="baRango" type="range" min="0" max="100" value="50" class="ba-rango" aria-label="${U.antes} / ${U.despues}">
-        </div>
-        <div>
-          ${pre(U.baPre)}
-          <h3 class="h2 mt-4 !text-[30px] sm:!text-[40px]">${kw(L(t))}</h3>
-          <p class="mt-3 text-muted text-base sm:text-lg flex items-center gap-2">${ic("move-horizontal")} ${U.baSub}</p>
-          <a href="#cotizar" class="btn-shine grad text-onacc mt-6 inline-flex items-center gap-2 rounded-xl px-5 py-3 font-bold text-sm">${L(G.cta)} ${ic("arrow-right")}</a>
-        </div>
-      </div>`;
     }
 
     function porQue(U) {
@@ -1480,10 +1606,30 @@
       `<button type="button" class="chip ${ESTADO[id] === i ? "on" : ""}" data-i="${i}">${lead}<span class="min-w-0 flex-1">${texto}</span><span class="ok">${ic("check")}</span></button>`;
     const circulo = n => `<span class="ci">${ic(n)}</span>`;
 
+    // Tarjetas táctiles estilo Uber Eats: varias a la vez, con duración, precio y total animado
+    function menuHTML(U) {
+      const n = G.serv.lista.length;
+      const ancho = i => i === 0 || (i === n - 1 && (n + 1) % 2 === 1);   // bento: en el celular cuadran a 2 columnas
+      return `<div class="menu" id="menuServ">${G.serv.lista.map((s, i) => `
+        <button type="button" class="bcard ${ancho(i) ? "ancho" : ""} ${ESTADO.sel.includes(i) ? "on" : ""}" data-serv="${i}" aria-pressed="${ESTADO.sel.includes(i)}">
+          <img class="bimg" src="${foto(s.img, 500)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+          ${i < 2 ? `<span class="bpop">${U.popular}</span>` : ""}
+          <span class="bok">${ic("check")}</span>
+          <span class="bbody">
+            <span class="bname">${esc(nombreServ(s))}</span>
+            <span class="bmeta">${durTxt(i) ? `<span class="bdur">⏱️ ${esc(durTxt(i))}</span>` : ""}
+              <span class="bprice">${s.exacto ? "" : `<small>${U.desdeCorto}</small>`}${esc(L(s.ref))}</span></span>
+          </span>
+        </button>`).join("")}</div>
+        <div class="tbar" id="tbar" aria-live="polite">
+          <span class="tbar-ico">🧾</span>
+          <span class="min-w-0"><b id="tCount">${U.nSel(ESTADO.sel.length)}</b><small id="tLbl">${totalDesde() ? U.totalDesde : U.totalTxt}</small></span>
+          <span id="tTotal" class="tbar-num">${dinero(sumaTotal())}</span>
+        </div>`;
+    }
+
     function controlChips(c, U) {
-      if (c.tipo === "servicio") return `<div class="chips serv" id="f_${c.id}" data-chips="${c.id}">${G.serv.lista.map((s, i) => chip(
-        `${esc(L(s.n))}<small class="block text-muted font-semibold text-[11px] mt-0.5">${s.exacto ? "" : U.desde + " "}${esc(L(s.ref))} USD</small>`, i, c.id,
-        `<img src="${foto(s.img, 140)}" alt="" loading="lazy" class="mini">`)).join("")}</div>`;
+      if (c.tipo === "servicio") return `<div id="f_${c.id}">${menuHTML(U)}</div>`;
       if (c.tipo === "entrega") return `<div class="chips" id="f_${c.id}" data-chips="${c.id}">${U.entrega.map((t, i) => chip(t, i, c.id, circulo(["shopping-bag", "bike"][i]))).join("")}</div>
         <div id="dirCaja" class="relative mt-3 ${ESTADO.entrega === 1 ? "" : "hidden"}"><span class="inp-ico">${ic("map-pin")}</span><input id="f_direccion" class="inp" autocomplete="street-address" placeholder="${U.direccion}" value="${esc(ESTADO.direccion)}"></div>`;
       return `<div class="chips" id="f_${c.id}" data-chips="${c.id}">${c.opciones.map((o, i) => chip(esc(L(o)), i, c.id, circulo((c.iconos || [])[i] || "circle-dot"))).join("")}</div>`;
@@ -1510,7 +1656,10 @@
       let n = 0;
       const paso = t => `<div class="paso"><span class="n grad text-onacc">${++n}</span><span>${t}</span></div>`;
       const bloqueArea = c => `<div class="campo" data-campo="${c.id}">${paso(esc(L(c.label)) + ast(c))}${controlInput(c)}</div>`;
+      // giros sin campo de servicio (especialista, proyecto o pedido): las tarjetas van primero como bloque propio
+      const sinServ = !G.form.campos.some(c => c.tipo === "servicio");
       return [
+        sinServ ? `<div class="campo" data-campo="menu">${paso(U.menuTitulo)}${menuHTML(U)}</div>` : "",
         ...G.form.campos.filter(esChip).map(c => `<div class="campo" data-campo="${c.id}">${paso(esc(L(c.label)) + ast(c))}${controlChips(c, U)}</div>`),
         ...areas.filter(c => c.req).map(bloqueArea),
         `<div>${paso(U.tusDatos)}<div class="grid sm:grid-cols-2 gap-4">${datos.map(c => `
@@ -1522,7 +1671,7 @@
 
     function cotizar(U) {
       return `
-      <section id="cotizar" class="relative isolate overflow-hidden bg-hero text-white py-24 sm:py-32">
+      <section id="cotizar" class="relative isolate overflow-clip bg-hero text-white py-24 sm:py-32">
         <div class="cot-bg absolute inset-0 -z-10"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-start">
           <div class="claro lg:sticky lg:top-36">
@@ -1644,8 +1793,13 @@
       const y = scrollY;
       document.documentElement.lang = LANG;
       document.title = `${NEGOCIO} | ${L(G.etiqueta)}`;
-      $("app").innerHTML = [hdr(U), hero(U), stats(U), nosotros(U), servicios(U), portafolio(U), porQue(U), resenas(U), faq(U), cobertura(U), cotizar(U), pie(U), barraMarcos()].join("");
+      $("app").innerHTML = [hdr(U), hero(U), destacados(U), stats(U), nosotros(U), servicios(U), portafolio(U), porQue(U), resenas(U), faq(U), cobertura(U), cotizar(U), pie(U), barraMarcos()].join("");
       document.body.classList.toggle("con-barra", CON_BARRA);
+      if (window.IntersectionObserver) {
+        if (window.__ioCot) __ioCot.disconnect();
+        window.__ioCot = new IntersectionObserver(es => document.body.classList.toggle("en-cotizador", es[0].isIntersecting), { threshold: .05 });
+        __ioCot.observe($("cotizar"));
+      }
       pintarIconos();
       $("waFlotante").setAttribute("aria-label", U.waAria);
       if (primera) { primera = false; observar(); }
@@ -1676,7 +1830,7 @@
     // ====== LÓGICA DEL COTIZADOR ======
     function valor(c) {
       const U = UI[LANG], v = ESTADO[c.id];
-      if (c.tipo === "servicio") return v === undefined ? "" : L(G.serv.lista[v].n);
+      if (c.tipo === "servicio") return listaSel();
       if (c.tipo === "chips") return v === undefined ? "" : L(c.opciones[v]);
       if (c.tipo === "entrega") { const dir = String(ESTADO.direccion || "").trim(); return v === 1 ? `${U.deliveryMsg}${dir ? ": " + dir : ""}` : U.pickupMsg; }
       const s = String(v || "").trim();
@@ -1684,7 +1838,9 @@
       if (c.tipo === "hora" && s) { let [h, mi] = s.split(":").map(Number); const ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return `${h}:${String(mi).padStart(2, "0")} ${ap}`; }
       return s;
     }
+    const listaSel = () => ESTADO.sel.map(i => `${nombreServ(G.serv.lista[i])} (${L(G.serv.lista[i].ref)})`).join(", ");
     function falta(c) {
+      if (c.id === "pedido" && ESTADO.sel.length) return false;   // ya eligió platillos en las tarjetas
       if (c.tipo === "entrega") return ESTADO.entrega === 1 && !String(ESTADO.direccion || "").trim();
       if (c.tipo === "tel") return String(ESTADO.telefono || "").replace(/\D/g, "").length < 10;
       return !!c.req && !valor(c);
@@ -1710,10 +1866,14 @@
     function armarMensaje(tipo) {
       const U = UI[LANG];
       const orden = [...G.form.campos].sort((a, b) => (a.id === "nombre" ? 0 : a.id === "telefono" ? 1 : 2) - (b.id === "nombre" ? 0 : b.id === "telefono" ? 1 : 2));
-      const cuerpo = orden.map(c => {
+      let cuerpo = orden.map(c => {
         const lab = L(c.label).replace(/\s*\((opcional|optional)\)/i, "");
         return `*${lab}${lab.endsWith("?") ? "" : ":"}* ${valor(c) || "—"}`;
       }).join("\n");
+      if (ESTADO.sel.length) {
+        if (!G.form.campos.some(c => c.tipo === "servicio")) cuerpo = `*${U.selMsg}:* ${listaSel()}\n` + cuerpo;
+        cuerpo += `\n*${totalDesde() ? U.totalDesde : U.totalTxt}:* ${dinero(sumaTotal())}`;
+      }
       const tel = String(ESTADO.telefono || "").trim();
       return tipo === "llamada"
         ? `📞 *${U.llamada} — ${L(G.form.tituloForm)}*\n*${U.para}:* ${NEGOCIO}\n\n${cuerpo}\n\n${U.llamame(tel)}`
@@ -1721,18 +1881,39 @@
     }
     const abrirWa = texto => window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
 
-    // Tarjeta de servicio → marca ese servicio en el cotizador y baja
+    // Total animado de la barra de cotización
+    let totalMostrado = 0, rafTotal;
+    function animarTotal() {
+      const el = $("tTotal"); if (!el) return;
+      const U = UI[LANG], meta = sumaTotal(), desde = totalMostrado, t0 = performance.now();
+      $("tCount").textContent = U.nSel(ESTADO.sel.length);
+      $("tLbl").textContent = totalDesde() ? U.totalDesde : U.totalTxt;
+      el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump");
+      cancelAnimationFrame(rafTotal);
+      const paso = t => { const p = Math.min(1, (t - t0) / 450), v = desde + (meta - desde) * (1 - Math.pow(1 - p, 3));
+        el.textContent = dinero(p < 1 ? Math.round(v) : meta); if (p < 1) rafTotal = requestAnimationFrame(paso); else totalMostrado = meta; };
+      rafTotal = requestAnimationFrame(paso);
+    }
+    // Pinta tarjetas y fotos destacadas según la selección
+    function marcarServ() {
+      document.querySelectorAll("[data-serv]").forEach(b => { const on = ESTADO.sel.includes(+b.dataset.serv); b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+      document.querySelectorAll("[data-dest]").forEach(b => { const on = ESTADO.sel.includes(+b.dataset.dest); b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+    }
+    // Agrega o quita un servicio del cotizador (forzar = solo agregar)
+    function alternar(k, forzar) {
+      const s = G.serv.lista[k], ya = ESTADO.sel.includes(k);
+      if (ya && forzar) return;
+      ESTADO.sel = ya ? ESTADO.sel.filter(i => i !== k) : [...ESTADO.sel, k];
+      if (!ya && CAMPO_SERV && CAMPO_SERV.tipo !== "servicio" && s.o !== undefined) { ESTADO[CAMPO_SERV.id] = s.o; marcarChips(CAMPO_SERV.id); limpiarError(CAMPO_SERV.id); }
+      if (CAMPO_SERV && CAMPO_SERV.tipo === "servicio") limpiarError(CAMPO_SERV.id);
+      if (ESTADO.sel.length) limpiarError("pedido");
+      marcarServ(); animarTotal(); progreso();
+      avisar(`${nombreServ(s)} ${ya ? UI[LANG].quitado : UI[LANG].agregado}`, !ya);
+    }
+    // Botón de la tarjeta grande de servicios → lo suma al cotizador y baja
     function elegir(k) {
-      const s = G.serv.lista[k];
-      if (CAMPO_SERV) { ESTADO[CAMPO_SERV.id] = CAMPO_SERV.tipo === "servicio" ? k : s.o; marcarChips(CAMPO_SERV.id); limpiarError(CAMPO_SERV.id); }
-      else if ($("f_pedido")) {
-        const p = String(ESTADO.pedido || "").trim();
-        ESTADO.pedido = (p ? p + "\n" : "") + "1 × " + L(s.n);
-        $("f_pedido").value = ESTADO.pedido; limpiarError("pedido");
-      }
-      progreso();
+      alternar(k, true);
       $("cotizar").scrollIntoView({ behavior: "smooth" });
-      avisar(`${L(s.n)} ${UI[LANG].agregado}`);
     }
 
     // ====== EVENTOS (una sola vez; la página se redibuja al cambiar de idioma) ======
@@ -1746,6 +1927,10 @@
       }
       const card = t.closest("[data-elegir]");
       if (card) { elegir(+card.dataset.elegir); return; }
+      const bc = t.closest("[data-serv]");
+      if (bc) { alternar(+bc.dataset.serv); return; }
+      const ds = t.closest("[data-dest]");
+      if (ds) { alternar(+ds.dataset.dest); return; }
       const ch = t.closest(".chip");
       if (ch) {
         const id = ch.closest("[data-chips]").dataset.chips;
@@ -1762,7 +1947,6 @@
     });
     document.addEventListener("input", e => {
       const el = e.target;
-      if (el.id === "baRango") { $("baCaja").style.setProperty("--pos", el.value + "%"); return; }
       if (!el.classList.contains("inp")) return;
       const id = el.id.replace(/^f_/, "");
       ESTADO[id] = el.value;
