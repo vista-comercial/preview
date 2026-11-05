@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F6F5F0" />
+  <title>Outdoor Living Studio</title>
+  <meta name="description" content="Garden rooms, hardscaping and landscape lighting. Instant online estimate." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23112A20'/%3E%3Cpath d='M16 7c5 3 7 7 5 12-1 3-3 5-5 6-2-1-4-3-5-6-2-5 0-9 5-12z' fill='%23D9A05B'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================================
+       PLANTILLA MAESTRA · Negocios de EE. UU. (editorial orgánico)
+       Paleta: hueso #F6F5F0 · verde bosque #112A20 · ocre #D9A05B
+       ========================================================= */
+    :root {
+      --bone: #F6F5F0; --bone-2: #EDEBE3; --paper: #FBFAF7;
+      --forest: #112A20; --forest-2: #1A3A2C; --forest-3: #0B1D16;
+      --ochre: #D9A05B; --ochre-2: #C88B44; --ochre-soft: rgba(217,160,91,.14);
+      --ink: #15201B; --muted: #5B655F; --muted-d: rgba(246,245,240,.66);
+      --line: rgba(17,42,32,.11); --line-2: rgba(17,42,32,.18); --line-d: rgba(246,245,240,.14);
+      --serif: "Instrument Serif", "Playfair Display", Georgia, serif;
+      --sans: "Plus Jakarta Sans", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --r-sm: 12px; --r: 18px; --r-lg: 24px; --r-xl: 32px;
+      --shadow: 0 1px 2px rgba(17,42,32,.05), 0 18px 40px -22px rgba(17,42,32,.35);
+      --ease: cubic-bezier(.22,.8,.24,1);
+      color-scheme: light;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { overflow-x: hidden; scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bone); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; color: inherit; }
+    button { cursor: pointer; background: none; border: 0; padding: 0; }
+    :focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; border-radius: 8px; }
+    .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+    .ic { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+    [hidden] { display: none !important; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* ---------- tipografía ---------- */
+    .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -.01em; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.015em; }
+    h1 em, h2 em, .brand-xl em { font-style: italic; color: var(--forest-2); }
+    .dark h2 em, .dark .brand-xl em { color: var(--ochre); }
+    .h2 { font-size: clamp(40px, 6.2vw, 76px); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px var(--ochre-soft); }
+    .dark .eyebrow { color: var(--muted-d); }
+    .lead { font-size: clamp(16px, 1.6vw, 19px); color: var(--muted); max-width: 54ch; }
+    .dark .lead { color: var(--muted-d); }
+    .sec { padding: clamp(80px, 11vw, 140px) 0; position: relative; }
+    .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px 40px; flex-wrap: wrap; margin-bottom: clamp(32px, 5vw, 56px); }
+    .sec-head > * { min-width: 0; max-width: 100%; }
+    .sec-head .h2 { margin-top: 18px; max-width: 14ch; }
+    .dark { background: var(--forest); color: var(--bone); }
+
+    /* ---------- botones (estilo shadcn) ---------- */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px;
+           font: 700 15px/1 var(--sans); letter-spacing: -.005em; white-space: nowrap; transition: transform .25s var(--ease), background .25s, box-shadow .25s, color .25s, border-color .25s; }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background: var(--ochre); color: var(--forest-3); box-shadow: 0 1px 0 rgba(255,255,255,.35) inset, 0 10px 24px -10px rgba(200,139,68,.8); }
+    .btn-primary:hover { background: #E1AC6C; transform: translateY(-1px); }
+    .btn-ghost { border: 1px solid var(--line-2); background: rgba(255,255,255,.5); color: var(--forest); }
+    .btn-ghost:hover { background: #fff; border-color: rgba(17,42,32,.3); }
+    .dark .btn-ghost { background: rgba(246,245,240,.06); border-color: var(--line-d); color: var(--bone); }
+    .dark .btn-ghost:hover { background: rgba(246,245,240,.12); }
+    .btn .arr { transition: transform .3s var(--ease); }
+    .btn:hover .arr { transform: translateX(3px); }
+    .btn[disabled] { opacity: .4; pointer-events: none; }
+    .wa-svg { width: 1.2em; height: 1.2em; fill: currentColor; flex-shrink: 0; }
+
+    /* ---------- barra flotante tipo cápsula (glassmorphism) ---------- */
+    .nav { position: fixed; z-index: 60; top: max(12px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%);
+           width: min(1120px, 100% - 24px); height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 8px 0 10px; border-radius: 999px;
+           background: rgba(246,245,240,.68); border: 1px solid rgba(17,42,32,.1);
+           backdrop-filter: blur(18px) saturate(170%); -webkit-backdrop-filter: blur(18px) saturate(170%);
+           box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 12px 32px -18px rgba(17,42,32,.35); transition: background .3s, box-shadow .3s; }
+    .nav.scrolled { background: rgba(246,245,240,.82); }
+    .logo { display: flex; align-items: center; gap: 10px; min-width: 0; margin-right: auto; }
+    .logo-mark { width: 42px; height: 42px; border-radius: 50%; background: var(--forest); display: grid; place-items: center; flex-shrink: 0; }
+    .logo-mark svg { width: 20px; height: 20px; }
+    .logo b { min-width: 0; font: 400 22px/1 var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
+    .nav-links { display: none; gap: 4px; font-size: 14px; font-weight: 600; color: var(--muted); }
+    .nav-links a { padding: 8px 14px; border-radius: 999px; transition: background .2s, color .2s; }
+    .nav-links a:hover { background: rgba(17,42,32,.06); color: var(--forest); }
+    .lang { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; height: 40px; padding: 4px; border-radius: 999px; background: rgba(17,42,32,.07);
+            font: 800 12px/1 var(--sans); letter-spacing: .06em; flex-shrink: 0; }
+    .lang span { position: relative; z-index: 1; display: grid; place-items: center; width: 40px; color: var(--muted); transition: color .3s; }
+    .lang::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 4px; width: 40px; border-radius: 999px; background: #fff;
+                    box-shadow: 0 1px 3px rgba(17,42,32,.18); transition: transform .35s var(--ease); }
+    .lang[aria-checked="true"]::before { transform: translateX(40px); }
+    .lang[aria-checked="false"] span:first-child, .lang[aria-checked="true"] span:last-child { color: var(--forest); }
+    .call { height: 46px; padding: 0 18px 0 14px; font-size: 14px; }
+    .call .txt { display: none; }
+    .call { width: 46px; padding: 0; }
+
+    /* ---------- portada ---------- */
+    .hero { padding: 120px 0 clamp(64px, 9vw, 110px); position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: auto -20% 30% auto; width: 620px; height: 620px; border-radius: 50%;
+                    background: radial-gradient(closest-side, rgba(217,160,91,.18), transparent); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; align-items: center; }
+    .g-badge { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border-radius: 999px; background: #fff; border: 1px solid var(--line);
+               box-shadow: var(--shadow); font-size: 13px; font-weight: 600; color: var(--muted); max-width: 100%; flex-wrap: wrap; row-gap: 2px; }
+    .g-badge .g { width: 28px; height: 28px; border-radius: 50%; background: var(--bone); display: grid; place-items: center; flex-shrink: 0; }
+    .g-badge b { color: var(--ink); font-weight: 800; }
+    .stars { display: inline-flex; gap: 1px; color: #F4B400; }
+    .stars svg { width: 13px; height: 13px; fill: currentColor; }
+    .g-badge .vf { display: inline-flex; align-items: center; gap: 4px; color: #1E7A4C; font-weight: 700; }
+    .hero h1 { font-size: clamp(54px, 9.4vw, 116px); line-height: .94; margin: 26px 0 24px; letter-spacing: -.025em; }
+    .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+    .trust span { display: inline-flex; align-items: center; gap: 7px; }
+    .trust .ic { color: var(--forest-2); }
+    .hero-visual { position: relative; }
+    .hero-img { position: relative; border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 4 / 4.6; background: var(--bone-2); box-shadow: 0 40px 80px -40px rgba(17,42,32,.55); }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); animation: settle 1.8s var(--ease) forwards; }
+    @keyframes settle { to { transform: scale(1); } }
+    .chip-float { position: absolute; top: 18px; right: 18px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+                  background: rgba(17,42,32,.45); color: #fff; border: 1px solid rgba(255,255,255,.2); font-size: 12.5px; font-weight: 700;
+                  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: #7BE0A5; box-shadow: 0 0 0 0 rgba(123,224,165,.7); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(123,224,165,0); } 100% { box-shadow: 0 0 0 0 rgba(123,224,165,0); } }
+    .metrics { position: relative; margin: -70px 14px 0; z-index: 2; border-radius: var(--r-lg); padding: 20px 8px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+               background: rgba(17,42,32,.9); color: var(--bone); border: 1px solid rgba(255,255,255,.1);
+               backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 24px 48px -24px rgba(11,29,22,.7); }
+    .metrics > div { padding: 2px 12px; text-align: center; }
+    .metrics > div + div { border-left: 1px solid var(--line-d); }
+    .metrics strong { display: block; font: 400 clamp(34px, 4.4vw, 48px)/1 var(--serif); color: var(--ochre); }
+    .metrics span { display: block; margin-top: 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: var(--muted-d); line-height: 1.3; }
+
+    /* ---------- galería bento ---------- */
+    .tabs { display: inline-flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(17,42,32,.06); border: 1px solid var(--line);
+            max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--muted);
+           white-space: nowrap; transition: background .25s, color .25s, box-shadow .25s; }
+    .tab small { font-size: 11px; font-weight: 800; min-width: 22px; height: 20px; padding: 0 6px; border-radius: 999px; display: grid; place-items: center; background: rgba(17,42,32,.07); }
+    .tab[aria-selected="true"] { background: #fff; color: var(--forest); box-shadow: 0 1px 3px rgba(17,42,32,.14), 0 4px 12px -6px rgba(17,42,32,.2); }
+    .tab[aria-selected="true"] small { background: var(--ochre); color: var(--forest-3); }
+    .bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 170px; gap: 12px; grid-auto-flow: dense; }
+    .tile { position: relative; margin: 0; border-radius: var(--r-lg); overflow: hidden; background: var(--bone-2); isolation: isolate;
+            transition: opacity .35s var(--ease), transform .45s var(--ease); }
+    .tile.big { grid-column: span 2; grid-row: span 2; }
+    .tile.wide { grid-column: span 2; }
+    .tile.tall { grid-row: span 2; }
+    .tile.out, .js .tile.rv.out { opacity: 0; transform: scale(.96); }
+    .tile[hidden] { display: none; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s var(--ease); }
+    .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(11,29,22,.55)); opacity: .7; transition: opacity .5s; z-index: 1; }
+    .tile:hover img { transform: scale(1.07); }
+    .tile:hover::after { opacity: 1; }
+    .tag { position: absolute; z-index: 2; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px;
+           background: rgba(17,42,32,.34); color: #fff; border: 1px solid rgba(255,255,255,.26); text-shadow: 0 1px 2px rgba(0,0,0,.25); font-size: 11.5px; font-weight: 700; letter-spacing: .02em;
+           backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%); }
+    .tag i { width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); }
+    .tile figcaption { position: absolute; z-index: 2; left: 16px; right: 16px; bottom: 14px; color: #fff; font: 400 clamp(19px, 2vw, 26px)/1.1 var(--serif);
+                       display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+    .tile figcaption .go { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.18); flex-shrink: 0;
+                           backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transform: translateY(6px); opacity: 0; transition: .4s var(--ease); }
+    .tile:hover .go { transform: none; opacity: 1; }
+
+    /* ---------- antes y después ---------- */
+    .ba-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: center; }
+    .ba { position: relative; border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 4 / 4.4; user-select: none; -webkit-user-select: none;
+          touch-action: pan-y; cursor: ew-resize; background: var(--forest-3); --pos: 50%; box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); }
+    .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-drag: none; }
+    .ba .before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+    .ba .line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: rgba(255,255,255,.9); box-shadow: 0 0 16px rgba(0,0,0,.35); pointer-events: none; }
+    .ba .knob { position: absolute; top: 50%; left: var(--pos); width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; display: grid; place-items: center;
+                background: rgba(246,245,240,.9); color: var(--forest); border: 1px solid rgba(255,255,255,.8); box-shadow: 0 10px 28px rgba(0,0,0,.35);
+                backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform .2s var(--ease); }
+    .ba.drag .knob { transform: scale(1.08); }
+    .ba .knob .ic { width: 22px; height: 22px; }
+    .ba .lbl { position: absolute; bottom: 16px; z-index: 2; padding: 7px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+               background: rgba(17,42,32,.5); color: #fff; border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); pointer-events: none; }
+    .ba .lbl.l { left: 16px; } .ba .lbl.r { right: 16px; background: rgba(217,160,91,.85); color: var(--forest-3); border-color: transparent; }
+    .ba-hint { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 2; padding: 7px 14px; border-radius: 999px; font-size: 12px; font-weight: 700;
+               background: rgba(246,245,240,.85); color: var(--forest); pointer-events: none; transition: opacity .4s; white-space: nowrap; }
+    .ba.used .ba-hint { opacity: 0; }
+    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 36px; border-top: 1px solid var(--line-d); }
+    .facts div { padding: 20px 14px 0 0; }
+    .facts strong { display: block; font: 400 clamp(28px, 3.4vw, 40px)/1 var(--serif); color: var(--bone); }
+    .facts span { display: block; margin-top: 8px; font-size: 12.5px; color: var(--muted-d); font-weight: 600; }
+
+    /* ---------- cotizador (estilo Lovable) ---------- */
+    .q-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: start; }
+    .q-aside .h2 { margin: 18px 0 20px; }
+    .q-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+    .q-list li { display: flex; gap: 12px; align-items: center; font-weight: 600; font-size: 15px; }
+    .q-list .ic { width: 30px; height: 30px; padding: 7px; border-radius: 50%; background: var(--ochre-soft); color: var(--ochre-2); }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: 0 1px 0 #fff inset, 0 40px 80px -48px rgba(17,42,32,.45); overflow: hidden; }
+    .q-top { padding: 22px clamp(18px, 3vw, 30px) 0; }
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .step-dot { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--muted); min-width: 0; }
+    .step-dot b { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-size: 12px; border: 1px solid var(--line-2); background: #fff; transition: .3s; }
+    .step-dot span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .step-dot.on { color: var(--forest); }
+    .step-dot.on b { background: var(--forest); color: var(--bone); border-color: var(--forest); }
+    .step-dot.done b { background: var(--ochre); border-color: var(--ochre); color: var(--forest-3); }
+    .bar { height: 4px; border-radius: 99px; background: rgba(17,42,32,.08); margin-top: 18px; overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 33.33%; background: linear-gradient(90deg, var(--forest-2), var(--ochre)); border-radius: inherit; transition: width .6s var(--ease); }
+    .q-body { padding: clamp(22px, 3vw, 32px) clamp(18px, 3vw, 30px); min-height: 430px; }
+    .pane { display: none; animation: paneIn .5s var(--ease); }
+    .pane.on { display: block; }
+    @keyframes paneIn { from { opacity: 0; transform: translateY(12px); } }
+    .pane h3 { font-size: clamp(28px, 3.2vw, 36px); }
+    .pane .sub { margin: 8px 0 22px; color: var(--muted); font-size: 14.5px; }
+    .svc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .opt { position: relative; text-align: left; padding: 16px; border-radius: var(--r); background: #fff; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px;
+           transition: border-color .2s, box-shadow .25s, transform .25s var(--ease), background .2s; }
+    .opt:hover { border-color: var(--line-2); transform: translateY(-2px); box-shadow: 0 12px 24px -16px rgba(17,42,32,.35); }
+    .opt .oi { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--bone); color: var(--forest-2); transition: .25s; }
+    .opt .oi .ic { width: 21px; height: 21px; }
+    .opt b { font-size: 14.5px; line-height: 1.25; }
+    .opt small { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+    .opt .tick { position: absolute; top: 12px; right: 12px; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--line-2); display: grid; place-items: center; color: transparent; transition: .25s; }
+    .opt .tick .ic { width: 13px; height: 13px; stroke-width: 3; }
+    .opt[aria-checked="true"] { border-color: var(--ochre); background: #FFFBF4; box-shadow: 0 0 0 3px var(--ochre-soft), 0 12px 24px -16px rgba(200,139,68,.6); }
+    .opt[aria-checked="true"] .oi { background: var(--forest); color: var(--ochre); }
+    .opt[aria-checked="true"] .tick { background: var(--ochre); border-color: var(--ochre); color: var(--forest-3); }
+    .field-lbl { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .sqft-val { font: 400 clamp(44px, 6vw, 60px)/1 var(--serif); color: var(--forest); margin: 12px 0 6px; letter-spacing: -.02em; }
+    .sqft-val small { font: 700 15px var(--sans); color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .range { -webkit-appearance: none; appearance: none; width: 100%; height: 32px; background: transparent; margin: 4px 0; touch-action: pan-y; --p: 30%; }
+    .range::-webkit-slider-runnable-track { height: 8px; border-radius: 99px; background: linear-gradient(90deg, var(--forest-2) 0 var(--p), rgba(17,42,32,.1) var(--p) 100%); }
+    .range::-moz-range-track { height: 8px; border-radius: 99px; background: rgba(17,42,32,.1); }
+    .range::-moz-range-progress { height: 8px; border-radius: 99px; background: var(--forest-2); }
+    .range::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; margin-top: -10px; border-radius: 50%; background: #fff; border: 2px solid var(--ochre);
+                                   box-shadow: 0 0 0 6px var(--ochre-soft), 0 4px 10px rgba(17,42,32,.25); transition: transform .2s; }
+    .range::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 2px solid var(--ochre); box-shadow: 0 0 0 6px var(--ochre-soft), 0 4px 10px rgba(17,42,32,.25); }
+    .range:active::-webkit-slider-thumb { transform: scale(1.12); }
+    .r-ends { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--muted); }
+    .presets { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 28px; }
+    .chip { height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-2); background: #fff; font-size: 13px; font-weight: 700; color: var(--muted); transition: .2s; }
+    .chip:hover { color: var(--forest); border-color: var(--forest-2); }
+    .chip.on { background: var(--forest); color: var(--bone); border-color: var(--forest); }
+    .urg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .urg .opt { padding: 13px 12px; gap: 6px; align-items: flex-start; }
+    .urg .opt .oi { width: 34px; height: 34px; border-radius: 10px; }
+    .urg .opt .oi .ic { width: 17px; height: 17px; }
+    .urg .opt b { font-size: 13.5px; }
+    .urg .opt small { font-size: 11.5px; }
+    .live { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; padding: 14px 16px; border-radius: var(--r); background: var(--bone); border: 1px dashed var(--line-2); }
+    .live span { font-size: 12.5px; font-weight: 700; color: var(--muted); }
+    .live b { font: 400 24px/1 var(--serif); color: var(--forest); white-space: nowrap; }
+    .result { border-radius: var(--r-lg); background: var(--forest); color: var(--bone); padding: 24px; position: relative; overflow: hidden; }
+    .result::before { content: ""; position: absolute; width: 300px; height: 300px; right: -120px; top: -140px; border-radius: 50%; background: radial-gradient(closest-side, rgba(217,160,91,.35), transparent); }
+    .result .k { position: relative; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-d); }
+    .result .price { position: relative; font: 400 clamp(40px, 6.4vw, 64px)/1 var(--serif); color: var(--ochre); margin: 12px 0 18px; letter-spacing: -.02em; }
+    .result .price span { color: var(--muted-d); font-size: .6em; margin: 0 .15em; }
+    .summary { position: relative; list-style: none; padding: 16px 0 0; margin: 0; border-top: 1px solid var(--line-d); display: grid; gap: 9px; font-size: 14px; }
+    .summary li { display: flex; justify-content: space-between; gap: 16px; }
+    .summary li span { color: var(--muted-d); }
+    .summary li b { font-weight: 700; text-align: right; }
+    .note { font-size: 12.5px; color: var(--muted); margin: 14px 2px 18px; }
+    .inp { width: 100%; height: 50px; padding: 0 16px; border-radius: 14px; border: 1px solid var(--line-2); background: #fff; font-size: 15px; transition: border-color .2s, box-shadow .2s; }
+    .inp:focus { outline: none; border-color: var(--forest-2); box-shadow: 0 0 0 4px rgba(26,58,44,.1); }
+    .send { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .send a { height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-radius: 14px; font-size: 12.5px; font-weight: 800;
+              border: 1px solid var(--line-2); background: #fff; color: var(--forest); transition: .2s var(--ease); }
+    .send a .ic, .send a .wa-svg { width: 19px; height: 19px; }
+    .send a:hover { transform: translateY(-2px); border-color: var(--forest-2); box-shadow: 0 10px 20px -14px rgba(17,42,32,.5); }
+    .send a.main { background: var(--ochre); border-color: var(--ochre); color: var(--forest-3); }
+    .q-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px clamp(18px, 3vw, 30px); border-top: 1px solid var(--line); background: rgba(246,245,240,.6); }
+    .q-foot .btn { height: 46px; padding: 0 20px; font-size: 14px; }
+    .link-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--muted); padding: 10px 4px; }
+    .link-btn:hover { color: var(--forest); }
+    .link-btn[hidden] { display: none; }
+
+    /* ---------- preguntas frecuentes ---------- */
+    .faq-cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 48px; }
+    .faq-col { border-top: 1px solid var(--line-2); }
+    .faq-col + .faq-col { border-top: 0; }
+    .qa { border-bottom: 1px solid var(--line-2); }
+    .qa button { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 0; text-align: left; font: 600 17px/1.35 var(--sans); color: var(--ink); }
+    .qa button:hover { color: var(--forest-2); }
+    .pm { position: relative; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line-2); flex-shrink: 0; transition: background .3s, border-color .3s, transform .4s var(--ease); }
+    .pm::before, .pm::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.8px; margin: -.9px 0 0 -6px; background: currentColor; border-radius: 2px; transition: transform .4s var(--ease); }
+    .pm::after { transform: rotate(90deg); }
+    .qa.open .pm { background: var(--forest); border-color: var(--forest); color: var(--ochre); transform: rotate(180deg); }
+    .qa.open .pm::after { transform: rotate(0deg); }
+    .ans { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+    .ans > div { overflow: hidden; }
+    .ans p { margin: 0; padding: 0 54px 24px 0; color: var(--muted); font-size: 15.5px; }
+    .qa.open .ans { grid-template-rows: 1fr; }
+
+    /* ---------- pie de página ---------- */
+    .foot { padding: clamp(72px, 9vw, 110px) 0 0; overflow: hidden; }
+    .foot-cta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 28px; padding-bottom: 56px; border-bottom: 1px solid var(--line-d); }
+    .foot-cta .h2 { max-width: 13ch; }
+    .foot-cta .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .foot-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; padding: 48px 0; font-size: 14.5px; }
+    .foot-cols h4 { margin: 0 0 14px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre); }
+    .foot-cols p, .foot-cols a, .foot-cols li { color: var(--muted-d); margin: 0; }
+    .foot-cols ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .foot-cols a { display: inline-flex; gap: 8px; align-items: center; transition: color .2s; }
+    .foot-cols a:hover { color: var(--bone); }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-cols > div:nth-child(2) { grid-column: 1 / -1; }
+    .foot-brand .logo b { color: var(--bone); }
+    .foot-brand .logo-mark { background: var(--ochre); }
+    .foot-brand p { margin-top: 16px; max-width: 36ch; }
+    .brand-xl { display: block; width: max-content; white-space: nowrap; text-align: center; font: 400 15vw/1 var(--serif); letter-spacing: -.035em; color: var(--bone); margin: 0 auto; padding: 8px 0 .06em;
+           background: linear-gradient(180deg, var(--bone) 40%, rgba(246,245,240,.25)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .brand-xl em { -webkit-text-fill-color: var(--ochre); }
+    .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding: 26px 0 calc(26px + env(safe-area-inset-bottom)); font-size: 12.5px; color: var(--muted-d); border-top: 1px solid var(--line-d); margin-top: 28px; }
+
+    /* ---------- aviso de muestra (se oculta con &vista=final) ---------- */
+    .demo { position: fixed; z-index: 70; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translate(-50%, 140%); width: max-content; max-width: calc(100% - 24px);
+            display: flex; align-items: center; gap: 10px; padding: 7px 7px 7px 16px; border-radius: 999px; background: var(--forest-3); color: var(--bone); font-size: 13px; font-weight: 600;
+            box-shadow: 0 18px 40px -12px rgba(0,0,0,.5); transition: transform .6s var(--ease); }
+    .demo.on { transform: translate(-50%, 0); }
+    .demo span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+    .demo a { height: 36px; padding: 0 14px; border-radius: 999px; background: var(--ochre); color: var(--forest-3); display: inline-flex; align-items: center; gap: 6px; font-weight: 800; flex-shrink: 0; }
+    .demo button { width: 30px; height: 30px; border-radius: 50%; color: var(--muted-d); flex-shrink: 0; display: grid; place-items: center; }
+
+    /* ---------- aparición al hacer scroll ---------- */
+    .js .rv { opacity: 0; transform: translateY(22px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+    .js .rv.in { opacity: 1; transform: none; }
+    .js .tile.rv { transition: opacity .45s var(--ease), transform .5s var(--ease); }
+    .js .rv.d1 { transition-delay: .08s; } .js .rv.d2 { transition-delay: .16s; } .js .rv.d3 { transition-delay: .24s; }
+
+    /* ---------- tamaños mayores ---------- */
+    @media (min-width: 560px) {
+      .call { width: auto; padding: 0 18px 0 14px; }
+      .call .txt { display: inline; }
+      .svc { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .foot-cols { grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); }
+      .foot-brand, .foot-cols > div:nth-child(2) { grid-column: auto; }
+    }
+    @media (min-width: 760px) {
+      .bento { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 14px; }
+      .faq-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .faq-col + .faq-col { border-top: 1px solid var(--line-2); }
+      .ba { aspect-ratio: 16 / 11; }
+    }
+    @media (min-width: 980px) {
+      .nav { padding-left: 12px; }
+      .nav-links { display: flex; margin-right: 6px; }
+      .logo { margin-right: 0; }
+      .nav-links { margin-left: auto; }
+      .hero { padding-top: 150px; }
+      .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 64px; }
+      .ba-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; }
+      .q-grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 64px; }
+      .q-aside { position: sticky; top: 110px; }
+    }
+    @media (max-width: 400px) {
+      .logo b { font-size: 19px; }
+      .lang span { width: 34px; } .lang::before { width: 34px; } .lang[aria-checked="true"]::before { transform: translateX(34px); }
+      .hero .cta .btn { width: 100%; }
+      .urg { grid-template-columns: 1fr; }
+      .urg .opt { flex-direction: row; align-items: center; }
+      .metrics span { font-size: 10.5px; }
+      .step-dot span { display: none; }
+      .steps { justify-items: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= BARRA FLOTANTE ================= -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo" aria-label="Home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c5.2 3.1 7.4 7.6 5.3 12.6-1 2.6-2.9 4.6-5.3 6.4-2.4-1.8-4.3-3.8-5.3-6.4C4.6 10.1 6.8 5.6 12 2.5z" fill="#D9A05B"/><path d="M12 7v14" stroke="#112A20" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <b data-name></b>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#work" data-i18n="navWork"></a>
+      <a href="#transform" data-i18n="navBA"></a>
+      <a href="#quote" data-i18n="navQuote"></a>
+      <a href="#faq" data-i18n="navFaq"></a>
+    </nav>
+    <button class="lang" id="lang" type="button" role="switch" aria-checked="false" aria-label="English / Español"><span>EN</span><span>ES</span></button>
+    <a class="btn btn-primary call" data-tel><i data-ic="phone"></i><span class="txt" data-i18n="call"></span></a>
+  </header>
+
+  <main id="top">
+    <!-- ================= PORTADA ================= -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <a class="g-badge rv" id="gBadge" target="_blank" rel="noopener">
+            <span class="g"><svg viewBox="0 0 48 48" width="16" height="16" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></span>
+            <b data-rating></b><span class="stars" data-stars></span><span data-reviews-txt></span>
+          </a>
+          <h1 class="rv d1" data-i18n-html="heroTitle"></h1>
+          <p class="lead rv d2" data-lead></p>
+          <div class="cta rv d3">
+            <a href="#quote" class="btn btn-primary"><span data-i18n="ctaQuote"></span><i data-ic="arrow" class="arr"></i></a>
+            <a class="btn btn-ghost" data-wa target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg><span data-i18n="ctaWa"></span></a>
+          </div>
+          <div class="trust rv d3">
+            <span><i data-ic="shield"></i><span data-i18n="trust1"></span></span>
+            <span><i data-ic="check"></i><span data-i18n="trust2"></span></span>
+            <span><i data-ic="pin"></i><span data-city-txt></span></span>
+          </div>
+        </div>
+        <div class="hero-visual rv d2">
+          <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=70" alt="" fetchpriority="high" width="1100" height="1265" />
+            <span class="chip-float"><span class="pulse"></span><span data-i18n="booking"></span></span>
+          </div>
+          <div class="metrics">
+            <div><strong data-count="15" data-suffix="+">15+</strong><span data-i18n="mYears"></span></div>
+            <div><strong data-count="850" data-suffix="+">850+</strong><span data-i18n="mProjects"></span></div>
+            <div><strong data-count="5" data-suffix="-yr" data-suffix-es="&nbsp;años">5-yr</strong><span data-i18n="mWarranty"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALERÍA BENTO ================= -->
+    <section class="sec" id="work" style="padding-top:clamp(40px,6vw,80px)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div><span class="eyebrow rv" data-i18n="workEyebrow"></span><h2 class="h2 rv d1" data-i18n-html="workTitle"></h2></div>
+          <div class="tabs rv d2" role="tablist" id="tabs">
+            <button class="tab" role="tab" data-f="all" aria-selected="true"><span data-i18n="fAll"></span><small></small></button>
+            <button class="tab" role="tab" data-f="garden" aria-selected="false"><span data-i18n="fGarden"></span><small></small></button>
+            <button class="tab" role="tab" data-f="hard" aria-selected="false"><span data-i18n="fHard"></span><small></small></button>
+            <button class="tab" role="tab" data-f="dark" aria-selected="false"><span data-i18n="fDark"></span><small></small></button>
+          </div>
+        </div>
+        <div class="bento" id="bento"></div>
+      </div>
+    </section>
+
+    <!-- ================= ANTES Y DESPUÉS ================= -->
+    <section class="sec dark" id="transform">
+      <div class="wrap ba-grid">
+        <div>
+          <span class="eyebrow rv" data-i18n="baEyebrow"></span>
+          <h2 class="h2 rv d1" style="margin:18px 0 22px" data-i18n-html="baTitle"></h2>
+          <p class="lead rv d2" data-i18n="baText"></p>
+          <div class="facts rv d3">
+            <div><strong data-i18n="baF1"></strong><span data-i18n="baF1l"></span></div>
+            <div><strong data-i18n="baF2"></strong><span data-i18n="baF2l"></span></div>
+            <div><strong data-i18n="baF3"></strong><span data-i18n="baF3l"></span></div>
+          </div>
+        </div>
+        <div class="ba rv d1" id="ba">
+          <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1300&q=70" alt="" loading="lazy" draggable="false" />
+          <img class="before" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1300&q=70" alt="" loading="lazy" draggable="false" />
+          <span class="line"></span>
+          <span class="knob" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-i18n-aria="baAria"><i data-ic="lr"></i></span>
+          <span class="lbl l" data-i18n="before"></span><span class="lbl r" data-i18n="after"></span>
+          <span class="ba-hint" data-i18n="drag"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COTIZADOR ================= -->
+    <section class="sec" id="quote">
+      <div class="wrap q-grid">
+        <div class="q-aside">
+          <span class="eyebrow rv" data-i18n="qEyebrow"></span>
+          <h2 class="h2 rv d1" data-i18n-html="qTitle"></h2>
+          <p class="lead rv d2" data-i18n="qText"></p>
+          <ul class="q-list rv d3">
+            <li><i data-ic="check"></i><span data-i18n="qL1"></span></li>
+            <li><i data-ic="check"></i><span data-i18n="qL2"></span></li>
+            <li><i data-ic="check"></i><span data-i18n="qL3"></span></li>
+          </ul>
+        </div>
+
+        <div class="card rv d1" id="q">
+          <div class="q-top">
+            <div class="steps">
+              <div class="step-dot on"><b>1</b><span data-i18n="s1"></span></div>
+              <div class="step-dot"><b>2</b><span data-i18n="s2"></span></div>
+              <div class="step-dot"><b>3</b><span data-i18n="s3"></span></div>
+            </div>
+            <div class="bar"><i id="qBar"></i></div>
+          </div>
+          <div class="q-body">
+            <!-- Paso 1 -->
+            <div class="pane on" data-pane="1">
+              <h3 data-i18n="p1t"></h3><p class="sub" data-i18n="p1s"></p>
+              <div class="svc" role="radiogroup" id="svc"></div>
+            </div>
+            <!-- Paso 2 -->
+            <div class="pane" data-pane="2">
+              <h3 data-i18n="p2t"></h3><p class="sub" data-i18n="p2s"></p>
+              <div class="field-lbl"><span data-i18n="area"></span><span id="svcName" style="text-transform:none;letter-spacing:0;color:var(--forest)"></span></div>
+              <div class="sqft-val"><span id="sqftNum">500</span><small>sq ft</small></div>
+              <input type="range" class="range" id="sqft" min="100" max="3000" step="50" value="500" data-i18n-aria="area" />
+              <div class="r-ends"><span id="rMin"></span><span id="rMax"></span></div>
+              <div class="presets" id="presets"></div>
+              <div class="field-lbl"><span data-i18n="urgency"></span></div>
+              <div class="urg" role="radiogroup" id="urg"></div>
+              <div class="live"><span data-i18n="liveLbl"></span><b id="liveVal">—</b></div>
+            </div>
+            <!-- Paso 3 -->
+            <div class="pane" data-pane="3">
+              <div class="result">
+                <div class="k" data-i18n="resK"></div>
+                <div class="price" id="price">—</div>
+                <ul class="summary" id="summary"></ul>
+              </div>
+              <p class="note" data-i18n="resNote"></p>
+              <label class="sr" for="qName" data-i18n="nameLbl"></label>
+              <input class="inp" id="qName" autocomplete="name" data-i18n-ph="namePh" />
+              <div class="send">
+                <a class="main" id="sendWa" target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg>WhatsApp</a>
+                <a id="sendSms"><i data-ic="msg"></i>SMS</a>
+                <a id="sendMail"><i data-ic="mail"></i><span data-i18n="email"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="q-foot">
+            <button class="link-btn" id="qBack" type="button" hidden><i data-ic="back"></i><span data-i18n="back"></span></button>
+            <span id="qHint" style="font-size:13px;color:var(--muted);font-weight:600" data-i18n="hint1"></span>
+            <button class="btn btn-primary" id="qNext" type="button" disabled><span data-i18n="next"></span><i data-ic="arrow" class="arr"></i></button>
+            <button class="link-btn" id="qReset" type="button" hidden><i data-ic="reset"></i><span data-i18n="reset"></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PREGUNTAS FRECUENTES ================= -->
+    <section class="sec" id="faq" style="background:var(--bone-2)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div><span class="eyebrow rv" data-i18n="faqEyebrow"></span><h2 class="h2 rv d1" data-i18n-html="faqTitle"></h2></div>
+          <a class="btn btn-ghost rv d2" data-wa target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg><span data-i18n="faqAsk"></span></a>
+        </div>
+        <div class="faq-cols" id="faqCols"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= PIE DE PÁGINA ================= -->
+  <footer class="foot dark">
+    <div class="wrap">
+      <div class="foot-cta">
+        <h2 class="h2 rv" data-i18n-html="footTitle"></h2>
+        <div class="cta rv d1">
+          <a href="#quote" class="btn btn-primary"><span data-i18n="ctaQuote"></span><i data-ic="arrow" class="arr"></i></a>
+          <a class="btn btn-ghost" data-tel><i data-ic="phone"></i><span data-tel-txt></span></a>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-brand">
+          <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c5.2 3.1 7.4 7.6 5.3 12.6-1 2.6-2.9 4.6-5.3 6.4-2.4-1.8-4.3-3.8-5.3-6.4C4.6 10.1 6.8 5.6 12 2.5z" fill="#112A20"/></svg></span><b data-name></b></a>
+          <p data-i18n="footBlurb"></p>
+        </div>
+        <div><h4 data-i18n="fContact"></h4><ul>
+          <li><a data-tel><i data-ic="phone"></i><span data-tel-txt></span></a></li>
+          <li><a data-wa target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg>WhatsApp</a></li>
+          <li><a data-mail><i data-ic="mail"></i><span data-mail-txt></span></a></li>
+        </ul></div>
+        <div><h4 data-i18n="fHours"></h4><ul><li data-i18n="h1"></li><li data-i18n="h2"></li><li data-i18n="h3"></li></ul></div>
+        <div><h4 data-i18n="fExplore"></h4><ul>
+          <li><a href="#work" data-i18n="navWork"></a></li><li><a href="#transform" data-i18n="navBA"></a></li>
+          <li><a href="#quote" data-i18n="navQuote"></a></li><li><a href="#faq" data-i18n="navFaq"></a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="brand-xl" id="big" aria-hidden="true" data-i18n-html="brandLine"></div>
+    <div class="wrap legal"><span>© <span id="yr"></span> <span data-name></span>. <span data-i18n="rights"></span></span><span data-city-foot></span></div>
+  </footer>
+
+  <div class="demo" id="demo" hidden>
+    <span data-demo-txt></span>
+    <a id="demoBtn" target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg><span data-i18n="activate"></span></a>
+    <button type="button" id="demoX" aria-label="Close"><i data-ic="x"></i></button>
+  </div>
+
+  <script>
+  (() => {
+    "use strict";
+    document.documentElement.classList.add("js");
+
+    /* =====================================================
+       1) DATOS DEL NEGOCIO — se llenan desde el link:
+       ?cliente=Nombre&tel=3055550123&rating=4.9&reviews=84&ciudad=Miami&email=info@x.com&lang=es&vista=final
+       ===================================================== */
+    const CONFIG = {
+      nombre: "Evergreen & Stone",
+      telDemo: "13055550123",          // si el link no trae &tel=
+      emailDemo: "hello@evergreenstone.com",
+      miWhatsapp: "529841828426",      // botón "Activar" del aviso de muestra
+      radarTopic: "vc-radar-8h3kq7z2mw5x", // igual que RADAR_TOPIC en servidor-whatsapp/server.js
+      giro: "landscaping"
+    };
+    const P = new URLSearchParams(location.search);
+    const clean = (v, n) => String(v || "").replace(/[<>"]/g, "").trim().slice(0, n);
+    const CLIENTE = clean(P.get("cliente"), 60);
+    const NEGOCIO = CLIENTE || CONFIG.nombre;
+    const telURL = (P.get("tel") || "").replace(/\D/g, "");
+    const TEL_DUENO = telURL.length === 10 ? "1" + telURL : telURL.length >= 11 && telURL.length <= 15 ? telURL : "";
+    const TEL = TEL_DUENO || CONFIG.telDemo;
+    const RATING = (() => { const r = parseFloat(String(P.get("rating") || "").replace(",", ".")); return r > 0 && r <= 5 ? r.toFixed(1) : "4.9"; })();
+    const RESENAS = (() => { const n = parseInt(P.get("reviews"), 10); return n > 0 ? n : 128; })();
+    const CIUDAD = clean(P.get("ciudad"), 50);
+    const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(P.get("email") || "") ? P.get("email").trim() : CONFIG.emailDemo;
+    const VISTA = P.get("vista") || "";
+    let LANG = (P.get("lang") || "").toLowerCase() === "es" ? "es" : "en";
+    const telBonito = t => t.length === 11 && t[0] === "1" ? `(${t.slice(1, 4)}) ${t.slice(4, 7)}-${t.slice(7)}` : "+" + t;
+    const money = n => "$" + Math.round(n).toLocaleString("en-US");
+
+    /* ===================== 2) ÍCONOS ===================== */
+    const ICON = {
+      phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
+      arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+      back: '<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>',
+      upr: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+      check: '<path d="M20 6 9 17l-5-5"/>',
+      x: '<path d="M18 6 6 18M6 6l12 12"/>',
+      mail: '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+      msg: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+      pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+      shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+      lr: '<path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/>',
+      reset: '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>',
+      star: '<path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>',
+      home: '<path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/>',
+      bricks: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.3h18M3 14.7h18M9 4v5.3M15 9.3v5.4M9 14.7V20"/>',
+      sprout: '<path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>',
+      bulb: '<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>',
+      flame: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
+      drop: '<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>',
+      leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+      cal: '<path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
+      zap: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>'
+    };
+    const ic = n => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n] || ""}</svg>`;
+    const WA_D = "M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.42 9.42M20.06 3.98A11.3 11.3 0 0 0 12.05.67C5.8.67.7 5.76.7 12.02c0 2 .52 3.95 1.52 5.67L.6 23.33l5.77-1.51a11.3 11.3 0 0 0 5.67 1.45h.01c6.25 0 11.34-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.02";
+
+    /* ===================== 3) TEXTOS EN/ES ===================== */
+    const T = {
+      en: {
+        navWork: "Work", navBA: "Before & After", navQuote: "Instant Quote", navFaq: "FAQ", call: "Call now",
+        reviewsTxt: n => `${n} verified Google reviews`,
+        heroTitle: "Outdoor living, <em>beautifully</em> grounded.",
+        lead: (n, c) => `${n} designs and builds garden rooms, stone patios and landscape lighting for homes ${c ? "in " + c : "across the area"} — with one crew, one price and zero surprises.`,
+        ctaQuote: "Get My Instant Quote", ctaWa: "WhatsApp or Call",
+        trust1: "Licensed & insured", trust2: "Free on-site visit", city: c => c ? `Serving ${c}` : "Serving your area",
+        booking: "Booking new projects", mYears: "Years of experience", mProjects: "Projects completed", mWarranty: "Workmanship warranty",
+        workEyebrow: "Selected work", workTitle: "Spaces made to be <em>lived in</em>",
+        fAll: "All", fGarden: "Garden Rooms", fHard: "Hardscaping", fDark: "After Dark",
+        baEyebrow: "The transformation", baTitle: "From bare dirt to <em>backyard retreat</em>",
+        baText: "Drag the handle to compare. Same backyard, five weeks apart: grading, drainage, native planting and a stone path that ties it all together.",
+        baF1: "5 wks", baF1l: "Start to finish", baF2: "1,200", baF2l: "Square feet", baF3: "62", baF3l: "Plants installed",
+        before: "Before", after: "After", drag: "← Drag to compare →", baAria: "Before and after comparison",
+        qEyebrow: "Instant quote", qTitle: "Your estimate in <em>30 seconds</em>",
+        qText: "No forms, no waiting for a callback. Pick a service, set the size and see a real price range based on our recent projects.",
+        qL1: "Ranges based on real local projects", qL2: "Send it to us in one tap", qL3: "Free on-site visit to lock the price",
+        s1: "Service", s2: "Size & timing", s3: "Estimate",
+        p1t: "What are we building?", p1s: "Choose the project that fits best. You can change it anytime.",
+        p2t: "How big is the space?", p2s: "An approximate size is fine — we measure on-site for free.",
+        area: "Approximate area", urgency: "When do you want to start?", liveLbl: "Live estimate",
+        presets: ["Small", "Medium", "Large"],
+        resK: "Estimated investment", resNote: "Final price is confirmed after a free on-site visit. Materials and site access can move the number.",
+        nameLbl: "Your name", namePh: "Your name (optional)", email: "Email",
+        sumSvc: "Service", sumArea: "Area", sumTime: "Timing",
+        back: "Back", next: "Continue", see: "See my estimate", reset: "Start over",
+        hint1: "Step 1 of 3", hint2: "Step 2 of 3",
+        msg: (o) => `Hi ${NEGOCIO}! I'd like a quote from your website.\n\n• Service: ${o.svc}\n• Approx. area: ${o.area}\n• Timing: ${o.time}\n• Estimated range: ${o.range}${o.name ? `\n\nName: ${o.name}` : ""}\n\nWhen can you come take a look?`,
+        mailSubj: "Quote request from your website",
+        faqEyebrow: "FAQ", faqTitle: "Good questions, <em>straight answers</em>", faqAsk: "Ask us on WhatsApp",
+        footTitle: "Let's build something <em>worth coming home to.</em>",
+        footBlurb: "Garden rooms, hardscaping and landscape lighting — designed, built and warrantied by one local team.",
+        fContact: "Contact", fHours: "Hours", fExplore: "Explore",
+        h1: "Mon–Fri · 7am – 6pm", h2: "Sat · 8am – 2pm", h3: "Sun · Closed",
+        brandLine: "Rooted in <em>craft.</em>", rights: "All rights reserved.",
+        demoTxt: n => `Website preview for ${n}`, activate: "Activate",
+        demoMsg: n => `Hi, I saw the demo website for ${n} and I want to activate it`,
+        waHello: `Hi ${NEGOCIO}! I saw your website and I'd like more information.`
+      },
+      es: {
+        navWork: "Proyectos", navBA: "Antes y Después", navQuote: "Cotizador", navFaq: "Preguntas", call: "Llamar",
+        reviewsTxt: n => `${n} reseñas verificadas en Google`,
+        heroTitle: "Exteriores para vivir, <em>hechos</em> para durar.",
+        lead: (n, c) => `${n} diseña y construye garden rooms, patios de piedra e iluminación de jardín para casas ${c ? "en " + c : "de toda la zona"} — un solo equipo, un solo precio y cero sorpresas.`,
+        ctaQuote: "Ir al Cotizador Instantáneo", ctaWa: "WhatsApp o Llamada",
+        trust1: "Con licencia y seguro", trust2: "Visita sin costo", city: c => c ? `Servimos en ${c}` : "Servimos en tu zona",
+        booking: "Agenda abierta", mYears: "Años de experiencia", mProjects: "Proyectos terminados", mWarranty: "De garantía en mano de obra",
+        workEyebrow: "Proyectos selectos", workTitle: "Espacios hechos para <em>vivirse</em>",
+        fAll: "Todos", fGarden: "Garden Rooms", fHard: "Hardscaping", fDark: "De Noche",
+        baEyebrow: "La transformación", baTitle: "De tierra vacía a <em>tu refugio</em>",
+        baText: "Arrastra el control para comparar. El mismo patio con cinco semanas de diferencia: nivelación, drenaje, plantas nativas y un camino de piedra que lo une todo.",
+        baF1: "5 sem", baF1l: "De inicio a fin", baF2: "1,200", baF2l: "Pies cuadrados", baF3: "62", baF3l: "Plantas sembradas",
+        before: "Antes", after: "Después", drag: "← Arrastra para comparar →", baAria: "Comparación antes y después",
+        qEyebrow: "Cotizador instantáneo", qTitle: "Tu estimado en <em>30 segundos</em>",
+        qText: "Sin formularios ni esperar a que te llamen. Elige un servicio, ajusta el tamaño y ve un rango de precio real basado en nuestros proyectos recientes.",
+        qL1: "Rangos basados en proyectos reales de la zona", qL2: "Nos lo envías con un toque", qL3: "Visita gratis para fijar el precio",
+        s1: "Servicio", s2: "Tamaño y fecha", s3: "Estimado",
+        p1t: "¿Qué vamos a construir?", p1s: "Elige el proyecto que más se parezca. Puedes cambiarlo cuando quieras.",
+        p2t: "¿Qué tan grande es el espacio?", p2s: "Un tamaño aproximado está bien — medimos gratis en tu casa.",
+        area: "Área aproximada", urgency: "¿Cuándo quieres empezar?", liveLbl: "Estimado en vivo",
+        presets: ["Chico", "Mediano", "Grande"],
+        resK: "Inversión estimada", resNote: "El precio final se confirma después de una visita gratis. Los materiales y el acceso al terreno pueden moverlo.",
+        nameLbl: "Tu nombre", namePh: "Tu nombre (opcional)", email: "Correo",
+        sumSvc: "Servicio", sumArea: "Área", sumTime: "Fecha",
+        back: "Atrás", next: "Continuar", see: "Ver mi estimado", reset: "Empezar de nuevo",
+        hint1: "Paso 1 de 3", hint2: "Paso 2 de 3",
+        msg: (o) => `¡Hola ${NEGOCIO}! Quiero una cotización desde su página web.\n\n• Servicio: ${o.svc}\n• Área aprox.: ${o.area}\n• Fecha: ${o.time}\n• Rango estimado: ${o.range}${o.name ? `\n\nNombre: ${o.name}` : ""}\n\n¿Cuándo pueden venir a verlo?`,
+        mailSubj: "Solicitud de cotización desde su página web",
+        faqEyebrow: "Preguntas frecuentes", faqTitle: "Buenas preguntas, <em>respuestas claras</em>", faqAsk: "Pregúntanos por WhatsApp",
+        footTitle: "Construyamos algo que <em>dé gusto volver a casa.</em>",
+        footBlurb: "Garden rooms, hardscaping e iluminación de jardín — diseñados, construidos y garantizados por un mismo equipo local.",
+        fContact: "Contacto", fHours: "Horario", fExplore: "Explorar",
+        h1: "Lun–Vie · 7am – 6pm", h2: "Sáb · 8am – 2pm", h3: "Dom · Cerrado",
+        brandLine: "Raíz y <em>oficio.</em>", rights: "Todos los derechos reservados.",
+        demoTxt: n => `Vista previa de la web de ${n}`, activate: "Activar",
+        demoMsg: n => `Hola, vi la muestra web de ${n} y quiero activarla`,
+        waHello: `¡Hola ${NEGOCIO}! Vi su página web y quiero más información.`
+      }
+    };
+
+    /* ===================== 4) GALERÍA ===================== */
+    const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=68`;
+    const GALERIA = [
+      { f: "garden", img: "1585320806297-9794b3e4eeae", t: ["Rose garden walk", "Paseo de rosales"] },
+      { f: "dark",   img: "1600585154363-67eb9e2e2099", t: ["Uplit oak & facade", "Roble iluminado"] },
+      { f: "hard",   img: "1600047509807-ba8f99d2cdde", t: ["Floating stone steps", "Escalones flotantes"] },
+      { f: "garden", img: "1600566753190-17f0baa2a6c3", t: ["Modern garden studio", "Estudio de jardín"] },
+      { f: "hard",   img: "1613490493576-7fde63acd811", t: ["Travertine pool deck", "Terraza de travertino"] },
+      { f: "dark",   img: "1416331108676-a22ccb276e35", t: ["Courtyard at dusk", "Patio al atardecer"] },
+      { f: "garden", img: "1598902108854-10e335adac99", t: ["Native woodland bed", "Jardín nativo"] },
+      { f: "hard",   img: "1512917774080-9991f1c4c750", t: ["Limestone terrace", "Terraza de piedra caliza"] },
+      { f: "dark",   img: "1599809275671-b5942cabc7a2", t: ["Firelit spa & patio", "Spa y patio con fuego"] },
+      { f: "garden", img: "1591825729269-caeb344f6df2", t: ["Cedar garden room", "Garden room de cedro"] },
+      { f: "hard",   img: "1628744448840-55bdb2497bd4", t: ["Paver driveway", "Entrada de adoquín"] },
+      { f: "dark",   img: "1600585154526-990dced4db0d", t: ["Facade wash lighting", "Iluminación de fachada"] }
+    ];
+    // Patrón bento: se reacomoda según las fotos visibles para que la cuadrícula siempre se vea asimétrica y llena
+    const PATRON = ["big", "tall", "", "", "", "tall", "big", ""];   // bloque A (grande a la izquierda) + bloque B (grande a la derecha)
+
+    /* ===================== 5) COTIZADOR ===================== */
+    // low/high = USD por pie cuadrado · piso = proyecto mínimo · min/max/def/step = rango del slider
+    const SERVICIOS = [
+      { id: "garden", ic: "home",   n: ["Garden Room", "Garden Room"],            s: ["Studio, office or guest suite", "Estudio, oficina o cuarto"], low: 130, high: 200, piso: 12000, min: 80,  max: 600,  def: 200,  step: 10 },
+      { id: "hard",   ic: "bricks", n: ["Patio & Hardscaping", "Patio y Hardscaping"], s: ["Pavers, walls & steps", "Adoquín, muros y escalones"], low: 20,  high: 34,  piso: 3500,  min: 100, max: 3000, def: 500,  step: 50 },
+      { id: "design", ic: "sprout", n: ["Landscape Design", "Diseño de Jardín"],    s: ["Planting, beds & mulch", "Plantas, camas y mulch"], low: 9,   high: 16,  piso: 2500,  min: 200, max: 6000, def: 1200, step: 50 },
+      { id: "light",  ic: "bulb",   n: ["Outdoor Lighting", "Iluminación Exterior"], s: ["After-dark design", "Diseño nocturno"], low: 4,   high: 7,   piso: 1800,  min: 200, max: 6000, def: 1500, step: 50 },
+      { id: "fire",   ic: "flame",  n: ["Outdoor Kitchen & Fire", "Cocina y Fogatero"], s: ["Grills, bars & fire pits", "Asadores, barras y fogateros"], low: 170, high: 280, piso: 6000, min: 40, max: 400, def: 120, step: 10 },
+      { id: "lawn",   ic: "drop",   n: ["Sod & Irrigation", "Pasto y Riego"],       s: ["New lawn + smart sprinklers", "Pasto nuevo + riego"], low: 3,   high: 5, piso: 1500, min: 500, max: 10000, def: 2500, step: 100 }
+    ];
+    const URGENCIA = [
+      { id: "flex", ic: "leaf", n: ["Flexible", "Flexible"], s: ["Best price", "Mejor precio"], k: 1 },
+      { id: "soon", ic: "cal",  n: ["Within 30 days", "En 30 días"], s: ["Standard", "Normal"], k: 1.06 },
+      { id: "asap", ic: "zap",  n: ["ASAP", "Lo antes posible"], s: ["Priority crew", "Equipo prioritario"], k: 1.15 }
+    ];
+
+    /* ===================== 6) PREGUNTAS ===================== */
+    const FAQ = [
+      [["Is the on-site visit really free?", "¿La visita a domicilio de verdad es gratis?"], ["Yes. We walk the space with you, take measurements and confirm your price — no cost and no obligation.", "Sí. Recorremos el espacio contigo, tomamos medidas y confirmamos tu precio, sin costo ni compromiso."]],
+      [["How accurate is the instant quote?", "¿Qué tan exacto es el cotizador?"], ["It's based on our recent local projects, so most final prices land inside the range. Access, soil and material choices can move it.", "Está basado en nuestros proyectos recientes de la zona, así que casi siempre el precio final queda dentro del rango. El acceso, el terreno y los materiales pueden moverlo."]],
+      [["Do I need a permit for a garden room or patio?", "¿Necesito permiso para un garden room o patio?"], ["Often, yes. We handle the drawings, permits and HOA approvals for you as part of the project.", "Muchas veces sí. Nosotros nos encargamos de planos, permisos y aprobación de la HOA como parte del proyecto."]],
+      [["How long does a typical project take?", "¿Cuánto tarda un proyecto normal?"], ["Lighting takes 1–3 days, patios 1–3 weeks and garden rooms 4–8 weeks. You get a written timeline before we start.", "La iluminación toma 1 a 3 días, los patios 1 a 3 semanas y los garden rooms 4 a 8 semanas. Te damos el calendario por escrito antes de empezar."]],
+      [["Are you licensed and insured?", "¿Tienen licencia y seguro?"], ["Yes — fully licensed and insured, and every crew member is our own employee. Certificates available on request.", "Sí, contamos con licencia y seguro, y todo el equipo es personal propio. Te mostramos los certificados si los pides."]],
+      [["What does the warranty cover?", "¿Qué cubre la garantía?"], ["Five years on workmanship and hardscape installation, plus one year on plants we install.", "Cinco años en mano de obra e instalación de hardscape, más un año en las plantas que sembramos."]]
+    ];
+
+    /* ===================== 7) PINTAR ===================== */
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+    const L = a => Array.isArray(a) ? a[LANG === "en" ? 0 : 1] : a;
+    const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    $$("[data-ic]").forEach(el => { el.outerHTML = ic(el.dataset.ic).replace('class="ic"', `class="ic ${el.className}"`); });
+    $$("[data-wa-path]").forEach(p => p.setAttribute("d", WA_D));
+    $$("[data-name]").forEach(el => el.textContent = NEGOCIO);
+    $$("[data-tel]").forEach(a => a.href = "tel:+" + TEL);
+    $$("[data-tel-txt]").forEach(el => el.textContent = telBonito(TEL));
+    $$("[data-mail]").forEach(a => a.href = "mailto:" + EMAIL);
+    $$("[data-mail-txt]").forEach(el => el.textContent = EMAIL);
+    $("[data-rating]").textContent = RATING;
+    $("[data-stars]").innerHTML = ic("star").repeat(5);
+    $("#gBadge").href = "https://www.google.com/maps/search/" + encodeURIComponent(NEGOCIO + (CIUDAD ? " " + CIUDAD : ""));
+    $("#yr").textContent = new Date().getFullYear();
+
+    // Galería
+    const bento = $("#bento");
+    bento.innerHTML = GALERIA.map((g, i) => `
+      <figure class="tile rv" data-f="${g.f}">
+        <img src="${U(g.img, 900)}" alt="" loading="lazy" decoding="async" />
+        <span class="tag"><i></i><span data-tag="${g.f}"></span></span>
+        <figcaption><span data-cap="${i}"></span><span class="go">${ic("upr")}</span></figcaption>
+      </figure>`).join("");
+    const tiles = $$(".tile");
+    const acomodar = () => { let k = 0; tiles.forEach(t => { t.classList.remove("big", "wide", "tall"); if (!t.hidden) { const c = PATRON[k++ % PATRON.length]; if (c) t.classList.add(c); } }); };
+    acomodar();
+    $$(".tab").forEach(tab => {
+      const f = tab.dataset.f;
+      tab.querySelector("small").textContent = f === "all" ? GALERIA.length : GALERIA.filter(g => g.f === f).length;
+      tab.addEventListener("click", () => {
+        if (tab.getAttribute("aria-selected") === "true") return;
+        $$(".tab").forEach(t => t.setAttribute("aria-selected", t === tab));
+        tiles.forEach(t => t.classList.add("out"));
+        setTimeout(() => {
+          tiles.forEach(t => { t.hidden = !(f === "all" || t.dataset.f === f); t.classList.add("in"); });
+          acomodar();
+          requestAnimationFrame(() => requestAnimationFrame(() => tiles.forEach(t => t.classList.remove("out"))));
+        }, 260);
+      });
+    });
+
+    // Preguntas frecuentes en dos columnas
+    const mitad = Math.ceil(FAQ.length / 2);
+    $("#faqCols").innerHTML = [FAQ.slice(0, mitad), FAQ.slice(mitad)].map((col, c) => `<div class="faq-col">${col.map((q, j) => {
+      const i = c * mitad + j;
+      return `<div class="qa rv"><button type="button" aria-expanded="false" aria-controls="ans${i}"><span data-q="${i}"></span><span class="pm" aria-hidden="true"></span></button>
+        <div class="ans" id="ans${i}" role="region"><div><p data-a="${i}"></p></div></div></div>`; }).join("")}</div>`).join("");
+    $$(".qa button").forEach(b => b.addEventListener("click", () => {
+      const qa = b.parentElement, open = !qa.classList.contains("open");
+      $$(".qa.open").forEach(o => { if (o !== qa) { o.classList.remove("open"); o.querySelector("button").setAttribute("aria-expanded", "false"); } });
+      qa.classList.toggle("open", open); b.setAttribute("aria-expanded", open);
+    }));
+
+    /* ---------- cotizador ---------- */
+    const Q = { step: 1, svc: null, sqft: 500, urg: "soon" };
+    const svcBox = $("#svc"), urgBox = $("#urg"), range = $("#sqft");
+    const opcion = (o, grupo, extra = "") => `<button type="button" class="opt" role="radio" aria-checked="false" data-${grupo}="${o.id}">
+        <span class="oi">${ic(o.ic)}</span><span class="tick">${ic("check")}</span><b data-n></b><small data-s>${extra}</small></button>`;
+    svcBox.innerHTML = SERVICIOS.map(s => opcion(s, "svc")).join("");
+    urgBox.innerHTML = URGENCIA.map(u => opcion(u, "urg")).join("");
+    const svcSel = () => SERVICIOS.find(s => s.id === Q.svc);
+    const redondear = n => n >= 10000 ? Math.round(n / 500) * 500 : Math.round(n / 100) * 100;
+    const calcular = () => {
+      const s = svcSel(); if (!s) return null;
+      const k = URGENCIA.find(u => u.id === Q.urg).k;
+      const lo = Math.max(s.piso, s.low * Q.sqft * k), hi = Math.max(s.piso * 1.4, s.high * Q.sqft * k);
+      return [redondear(lo), redondear(hi)];
+    };
+    const rangoTxt = r => r ? `${money(r[0])} – ${money(r[1])}` : "—";
+    const fmtSq = n => n.toLocaleString("en-US");
+    const pintarRange = () => {
+      const p = (range.value - range.min) / (range.max - range.min) * 100;
+      range.style.setProperty("--p", p + "%");
+      $("#sqftNum").textContent = fmtSq(+range.value);
+      $("#liveVal").textContent = rangoTxt(calcular());
+      $$(".chip").forEach(c => c.classList.toggle("on", +c.dataset.v === +range.value));
+    };
+    const prepararPaso2 = () => {
+      const s = svcSel();
+      range.min = s.min; range.max = s.max; range.step = s.step;
+      if (Q.sqft < s.min || Q.sqft > s.max || Q._svcPrev !== s.id) Q.sqft = s.def;
+      Q._svcPrev = s.id; range.value = Q.sqft;
+      $("#rMin").textContent = fmtSq(s.min) + " sq ft"; $("#rMax").textContent = fmtSq(s.max) + " sq ft";
+      const pre = [s.min + (s.max - s.min) * .12, s.def, s.min + (s.max - s.min) * .55].map(v => Math.round(v / s.step) * s.step);
+      $("#presets").innerHTML = pre.map((v, i) => `<button type="button" class="chip" data-v="${v}">${T[LANG].presets[i]} · ${fmtSq(v)}</button>`).join("");
+      $$(".chip").forEach(c => c.addEventListener("click", () => { range.value = Q.sqft = +c.dataset.v; pintarRange(); }));
+      $("#svcName").textContent = L(s.n);
+      pintarRange();
+    };
+    let animPrecio;
+    const pintarResultado = () => {
+      const r = calcular(), s = svcSel(), u = URGENCIA.find(x => x.id === Q.urg), t = T[LANG];
+      $("#summary").innerHTML = `<li><span>${t.sumSvc}</span><b>${esc(L(s.n))}</b></li><li><span>${t.sumArea}</span><b>${fmtSq(Q.sqft)} sq ft</b></li><li><span>${t.sumTime}</span><b>${esc(L(u.n))}</b></li>`;
+      // número que sube en vivo
+      cancelAnimationFrame(animPrecio); const t0 = performance.now(), el = $("#price");
+      const paso = now => { const k = Math.min(1, (now - t0) / 900), e = 1 - Math.pow(1 - k, 3);
+        el.innerHTML = `${money(redondear(r[0] * e))}<span>–</span>${money(redondear(r[1] * e))}`; if (k < 1) animPrecio = requestAnimationFrame(paso); };
+      animPrecio = requestAnimationFrame(paso);
+      actualizarEnvio();
+    };
+    const actualizarEnvio = () => {
+      const s = svcSel(); if (!s) return;
+      const u = URGENCIA.find(x => x.id === Q.urg), t = T[LANG];
+      const txt = t.msg({ svc: L(s.n), area: fmtSq(Q.sqft) + " sq ft", time: L(u.n), range: rangoTxt(calcular()), name: $("#qName").value.trim().slice(0, 60) });
+      $("#sendWa").href = `https://wa.me/${TEL}?text=${encodeURIComponent(txt)}`;
+      $("#sendSms").href = `sms:+${TEL}?&body=${encodeURIComponent(txt)}`;
+      $("#sendMail").href = `mailto:${EMAIL}?subject=${encodeURIComponent(t.mailSubj)}&body=${encodeURIComponent(txt)}`;
+    };
+    const irA = n => {
+      Q.step = n;
+      $$(".pane").forEach(p => p.classList.toggle("on", +p.dataset.pane === n));
+      $$(".step-dot").forEach((d, i) => { d.classList.toggle("on", i + 1 === n); d.classList.toggle("done", i + 1 < n); });
+      $("#qBar").style.width = (n / 3 * 100) + "%";
+      $("#qBack").hidden = n === 1; $("#qHint").hidden = n !== 1;
+      $("#qNext").hidden = n === 3; $("#qReset").hidden = n !== 3;
+      pintarBotones();
+      if (n === 2) prepararPaso2();
+      if (n === 3) pintarResultado();
+      const card = $("#q").getBoundingClientRect();
+      if (card.top < 70) window.scrollBy({ top: card.top - 96, behavior: "smooth" });
+    };
+    const pintarBotones = () => {
+      const t = T[LANG];
+      $("#qNext").disabled = Q.step === 1 && !Q.svc;
+      $("#qNext").querySelector("span").textContent = Q.step === 2 ? t.see : t.next;
+      $("#qHint").textContent = t.hint1;
+    };
+    svcBox.addEventListener("click", e => {
+      const b = e.target.closest(".opt"); if (!b) return;
+      Q.svc = b.dataset.svc;
+      $$("#svc .opt").forEach(o => o.setAttribute("aria-checked", o === b));
+      pintarBotones();
+      setTimeout(() => { if (Q.step === 1) irA(2); }, 380);   // avanza solo, estilo Lovable
+    });
+    urgBox.addEventListener("click", e => {
+      const b = e.target.closest(".opt"); if (!b) return;
+      Q.urg = b.dataset.urg;
+      $$("#urg .opt").forEach(o => o.setAttribute("aria-checked", o === b));
+      pintarRange();
+    });
+    range.addEventListener("input", () => { Q.sqft = +range.value; pintarRange(); });
+    $("#qNext").addEventListener("click", () => irA(Q.step + 1));
+    $("#qBack").addEventListener("click", () => irA(Q.step - 1));
+    $("#qReset").addEventListener("click", () => { Q.svc = null; $$("#svc .opt").forEach(o => o.setAttribute("aria-checked", "false")); irA(1); });
+    $("#qName").addEventListener("input", actualizarEnvio);
+    // flechas del teclado dentro de los grupos de radio
+    [svcBox, urgBox].forEach(g => g.addEventListener("keydown", e => {
+      const items = [...g.querySelectorAll(".opt")], i = items.indexOf(document.activeElement);
+      if (i < 0 || !["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) return;
+      e.preventDefault(); items[(i + (/Right|Down/.test(e.key) ? 1 : items.length - 1)) % items.length].focus();
+    }));
+    $(`#urg [data-urg="${Q.urg}"]`).setAttribute("aria-checked", "true");
+
+    /* ---------- antes y después (táctil + mouse + teclado) ---------- */
+    const ba = $("#ba"), knob = ba.querySelector(".knob");
+    let pos = 50, arrastrando = false;
+    const ponerPos = v => { pos = Math.max(0, Math.min(100, v)); ba.style.setProperty("--pos", pos + "%"); knob.setAttribute("aria-valuenow", Math.round(pos)); };
+    const desdeX = x => { const r = ba.getBoundingClientRect(); ponerPos((x - r.left) / r.width * 100); };
+    ba.addEventListener("pointerdown", e => { arrastrando = true; ba.classList.add("drag", "used"); ba.setPointerCapture(e.pointerId); desdeX(e.clientX); });
+    ba.addEventListener("pointermove", e => { if (arrastrando) desdeX(e.clientX); });
+    ["pointerup", "pointercancel", "lostpointercapture"].forEach(ev => ba.addEventListener(ev, () => { arrastrando = false; ba.classList.remove("drag"); }));
+    knob.addEventListener("keydown", e => {
+      const d = { ArrowLeft: -5, ArrowDown: -5, ArrowRight: 5, ArrowUp: 5, Home: -100, End: 100 }[e.key];
+      if (d !== undefined) { e.preventDefault(); ba.classList.add("used"); ponerPos(pos + d); }
+    });
+
+    /* ---------- idioma (cambia todo sin recargar) ---------- */
+    const fitBig = () => {
+      const el = $("#big"); el.style.fontSize = "100px";
+      const w = el.scrollWidth, max = document.documentElement.clientWidth * .96;
+      if (w) el.style.fontSize = Math.min(100 * max / w, 420) + "px";
+    };
+    const aplicarIdioma = () => {
+      const t = T[LANG];
+      document.documentElement.lang = LANG;
+      $("#lang").setAttribute("aria-checked", LANG === "es");
+      $$("[data-i18n]").forEach(el => { const v = t[el.dataset.i18n]; if (typeof v === "string") el.textContent = v; });
+      $$("[data-i18n-html]").forEach(el => el.innerHTML = t[el.dataset.i18nHtml]);
+      $$("[data-i18n-ph]").forEach(el => el.placeholder = t[el.dataset.i18nPh]);
+      $$("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.i18nAria]));
+      $("[data-reviews-txt]").textContent = "· " + t.reviewsTxt(RESENAS.toLocaleString("en-US"));
+      $("[data-lead]").textContent = t.lead(NEGOCIO, CIUDAD);
+      $("[data-city-txt]").textContent = t.city(CIUDAD);
+      $("[data-city-foot]").textContent = t.city(CIUDAD);
+      $$("[data-tag]").forEach(el => el.textContent = t[{ garden: "fGarden", hard: "fHard", dark: "fDark" }[el.dataset.tag]]);
+      $$("[data-cap]").forEach(el => el.textContent = L(GALERIA[+el.dataset.cap].t));
+      $$("[data-q]").forEach(el => el.textContent = L(FAQ[+el.dataset.q][0]));
+      $$("[data-a]").forEach(el => el.textContent = L(FAQ[+el.dataset.a][1]));
+      $$("#svc .opt").forEach((o, i) => { o.querySelector("[data-n]").textContent = L(SERVICIOS[i].n); o.querySelector("[data-s]").textContent = L(SERVICIOS[i].s); });
+      $$("#urg .opt").forEach((o, i) => { o.querySelector("[data-n]").textContent = L(URGENCIA[i].n); o.querySelector("[data-s]").textContent = L(URGENCIA[i].s); });
+      $$("[data-count]").forEach(el => { if (!el.dataset.anim) el.innerHTML = el.dataset.count + sufijo(el); });
+      $$("[data-wa]").forEach(a => a.href = `https://wa.me/${TEL}?text=${encodeURIComponent(t.waHello)}`);
+      $("[data-demo-txt]").textContent = t.demoTxt(NEGOCIO);
+      $("#demoBtn").href = `https://wa.me/${CONFIG.miWhatsapp}?text=${encodeURIComponent(t.demoMsg(NEGOCIO))}`;
+      document.title = `${NEGOCIO} · ${LANG === "en" ? "Garden Rooms, Hardscaping & Lighting" : "Garden Rooms, Hardscaping e Iluminación"}`;
+      pintarBotones();
+      if (Q.step === 2) prepararPaso2();
+      if (Q.step === 3) pintarResultado();
+      fitBig();
+    };
+    const sufijo = el => LANG === "es" && el.dataset.suffixEs ? el.dataset.suffixEs : el.dataset.suffix || "";
+    $("#lang").addEventListener("click", () => { LANG = LANG === "en" ? "es" : "en"; aplicarIdioma(); });
+    aplicarIdioma();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBig);
+    let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(fitBig, 120); });
+
+    /* ---------- barra al hacer scroll ---------- */
+    const nav = $("#nav");
+    addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), { passive: true });
+
+    /* ---------- aparición, contadores y pista del slider ---------- */
+    const contar = el => {
+      el.dataset.anim = 1; const fin = +el.dataset.count, t0 = performance.now();
+      const paso = now => { const k = Math.min(1, (now - t0) / 1400), e = 1 - Math.pow(1 - k, 3);
+        el.innerHTML = Math.round(fin * e).toLocaleString("en-US") + sufijo(el); if (k < 1) requestAnimationFrame(paso); else delete el.dataset.anim; };
+      requestAnimationFrame(paso);
+    };
+    const pista = () => { if (ba.classList.contains("used") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const t0 = performance.now();
+      const paso = now => { if (ba.classList.contains("used")) return; const k = Math.min(1, (now - t0) / 1600);
+        ponerPos(50 + Math.sin(k * Math.PI * 2) * 14 * (1 - k)); if (k < 1) requestAnimationFrame(paso); };
+      requestAnimationFrame(paso); };
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        if (e.target.classList.contains("metrics")) $$("[data-count]").forEach(contar);
+        if (e.target === ba) setTimeout(pista, 700);
+        io.unobserve(e.target);
+      }), { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+      $$(".rv, .metrics").forEach(el => io.observe(el));
+    } else $$(".rv").forEach(el => el.classList.add("in"));
+
+    /* ---------- aviso de muestra (no sale con &vista=final) ---------- */
+    if (!VISTA) {
+      const demo = $("#demo"); demo.hidden = false;
+      setTimeout(() => demo.classList.add("on"), 2500);
+      $("#demoX").addEventListener("click", () => { demo.classList.remove("on"); setTimeout(() => demo.hidden = true, 600); });
+    }
+
+    /* ---------- radar: avisa a tu panel que el prospecto abrió su web (una vez por visita) ---------- */
+    if (CLIENTE && !VISTA && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) {
+      let nueva = true;
+      try { const k = "vc_radar" + location.search; nueva = !sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); } catch (e) {}
+      if (nueva) fetch(`https://ntfy.sh/${CONFIG.radarTopic}`, { method: "POST", body: JSON.stringify({ t: TEL_DUENO, c: NEGOCIO, g: CONFIG.giro }), keepalive: true }).catch(() => {});
+    }
+  })();
+  </script>
+</body>
+</html>
