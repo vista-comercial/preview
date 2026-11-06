@@ -136,7 +136,9 @@
                backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 24px 48px -24px rgba(11,29,22,.7); }
     .metrics > div { padding: 2px 12px; text-align: center; }
     .metrics > div + div { border-left: 1px solid var(--line-d); }
-    .metrics strong { display: block; font: 400 clamp(34px, 4.4vw, 48px)/1 var(--serif); color: var(--ochre); white-space: nowrap; }
+    .metrics strong { display: block; font: 400 clamp(25px, 7vw, 44px)/1 var(--serif); color: var(--ochre); white-space: nowrap; }
+    @media (min-width: 980px) { .metrics strong { font-size: clamp(30px, 2.9vw, 44px); } }
+    .metrics > div { min-width: 0; }
     .metrics span { display: block; margin-top: 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: var(--muted-d); line-height: 1.3; }
 
     /* ---------- galería bento ---------- */
@@ -229,6 +231,20 @@
     .audit-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 24px; margin-top: 22px; padding-top: 20px; border-top: 1px dashed var(--line-2); }
     .audit-foot p { margin: 0; max-width: 56ch; font-weight: 600; font-size: 15px; }
 
+    /* ---------- insignias de élite: sello de garantía + qué incluye ---------- */
+    .sello-wrap { margin-top: clamp(-36px, -3vw, -20px); margin-bottom: clamp(8px, 2vw, 20px); position: relative; z-index: 3; }
+    .sello { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: var(--r-lg); background: #fff; border: 1px solid rgba(217,160,91,.45);
+             box-shadow: 0 1px 0 #fff inset, 0 18px 40px -26px rgba(200,139,68,.7); }
+    .sello-ic { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; flex-shrink: 0; background: var(--forest); color: var(--ochre); }
+    .sello-ic .ic { width: 24px; height: 24px; }
+    .sello small { display: block; font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre-2); }
+    .sello b { display: block; font: 400 clamp(19px, 2.2vw, 24px)/1.15 var(--serif); color: var(--forest); margin-top: 2px; }
+    .sello-q { margin-top: 26px; }
+    .incluye { position: relative; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line-d); }
+    .incluye ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+    .incluye li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--bone); }
+    .incluye li .ic { width: 20px; height: 20px; padding: 3px; border-radius: 50%; background: var(--ochre); color: var(--forest-3); stroke-width: 3; margin-top: 1px; }
+
     /* ---------- cotizador (estilo Lovable) ---------- */
     .q-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: start; }
     .q-aside .h2 { margin: 18px 0 20px; }
@@ -268,6 +284,7 @@
     .field-lbl { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
     .sqft-val { font: 400 clamp(44px, 6vw, 60px)/1 var(--serif); color: var(--forest); margin: 12px 0 6px; letter-spacing: -.02em; }
     .sqft-val small { font: 700 15px var(--sans); color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .sqft-val.txt { font-size: clamp(34px, 4.6vw, 46px); }
     .range { -webkit-appearance: none; appearance: none; width: 100%; height: 32px; background: transparent; margin: 4px 0; touch-action: pan-y; --p: 30%; }
     .range::-webkit-slider-runnable-track { height: 8px; border-radius: 99px; background: linear-gradient(90deg, var(--forest-2) 0 var(--p), rgba(17,42,32,.1) var(--p) 100%); }
     .range::-moz-range-track { height: 8px; border-radius: 99px; background: rgba(17,42,32,.1); }
@@ -548,6 +565,11 @@
       </div>
     </section>
 
+    <!-- ================= SELLO DE GARANTÍA DEL GIRO (insignia de élite) ================= -->
+    <div class="wrap sello-wrap">
+      <div class="sello rv"><span class="sello-ic"><i data-ic="shield"></i></span><div><small data-i18n="selloK"></small><b data-sello></b></div></div>
+    </div>
+
     <!-- ================= GALERÍA BENTO ================= -->
     <section class="sec" id="work" style="padding-top:clamp(40px,6vw,80px)">
       <div class="wrap">
@@ -637,6 +659,7 @@
             <li><i data-ic="check"></i><span data-i18n="qL2"></span></li>
             <li><i data-ic="check"></i><span data-i18n="qL3"></span></li>
           </ul>
+          <div class="sello sello-q rv d3"><span class="sello-ic"><i data-ic="shield"></i></span><div><small data-i18n="selloK"></small><b data-sello></b></div></div>
         </div>
 
         <div class="card rv d1" id="q">
@@ -672,6 +695,7 @@
                 <div class="k" data-i18n="resK"></div>
                 <div class="price" id="price">—</div>
                 <ul class="summary" id="summary"></ul>
+                <div class="incluye"><div class="k" data-i18n="incK"></div><ul id="incluye"></ul></div>
               </div>
               <p class="note" data-i18n="resNote"></p>
               <label class="sr" for="qName" data-i18n="nameLbl"></label>
@@ -832,12 +856,54 @@
       // giros anteriores del robot (leads.json)
       comida: "bakery", restaurante: "bakery", restaurant: "bakery", taqueria: "bakery", food: "bakery",
       tecnicos: "hvac", tecnico: "hvac",
-      servicios: "cleaning"
+      servicios: "cleaning",
+      // 9 giros nuevos (18 en total)
+      lashes: "lashes", lash: "lashes", lashstudio: "lashes", nails: "lashes", nail: "lashes", nailsalon: "lashes", brows: "lashes", pestanas: "lashes", unas: "lashes",
+      concrete: "concrete", concreto: "concrete", pavers: "concrete", driveway: "concrete", driveways: "concrete", masonry: "concrete",
+      fencing: "fencing", fence: "fencing", fences: "fencing", cercas: "fencing", deck: "fencing", decks: "fencing",
+      pool: "pool", pools: "pool", poolservice: "pool", piscina: "pool", alberca: "pool",
+      junk: "junk", junkremoval: "junk", hauling: "junk", escombro: "junk",
+      pest: "pest", pestcontrol: "pest", termites: "pest", fumigacion: "pest", plagas: "pest", exterminator: "pest",
+      detailing: "detailing", autodetailing: "detailing", ceramic: "detailing", carwash: "detailing",
+      barberia: "barberia", barber: "barberia", barbershop: "barberia", barbers: "barberia",
+      mudanzas: "mudanzas", mudanza: "mudanzas", moving: "mudanzas", movers: "mudanzas", mover: "mudanzas"
     };
-    const GIRO = ALIAS[norm(val("giro"))] || CONFIG.giro;
+    const GIROS18 = ["landscaping", "roofing", "spa", "painting", "cleaning", "plumbing", "hvac", "remodeling", "bakery",
+                     "lashes", "concrete", "fencing", "pool", "junk", "pest", "detailing", "barberia", "mudanzas"];
+    // Detección por el NOMBRE del negocio (mismo orden que servidor-whatsapp/lib/clientes.js): lo más específico primero
+    const POR_NOMBRE = [
+      ["lashes", /\b(lash(es)?|brows?|nails?|manicure|pedicure|pestañas|cejas|uñas)\b/i],
+      ["barberia", /barber|barbería|\bfades?\b/i],
+      ["detailing", /detail|ceramic coat|car wash|auto spa|window tint/i],
+      ["mudanzas", /\bmov(ers?|ing)\b|mudanza|relocat/i],
+      ["junk", /\bjunk|\bhaul(ing|ers?)?\b|debris|dumpster/i],
+      ["pool", /\bpools?\b|piscina|alberca/i],
+      ["pest", /\bpest|termite|extermin|\bbugs?\b|rodent|mosquito|fumiga/i],
+      ["fencing", /\bfenc(e|es|ing)\b|\bgates?\b|\bdeck(s|ing)?\b/i],
+      ["concrete", /concrete|concreto|paver|driveway|masonry|\bcement|stamped/i],
+      ["roofing", /\broof/i],
+      ["painting", /\bpaint|pintura/i],
+      ["plumbing", /plumb|rooter|\bdrain|water heater|plomer/i],
+      ["hvac", /hvac|\bair\b|a\/c|\bac\b|heating|cooling|refrigerat|aire acondicionado/i],
+      ["remodeling", /remodel|renovat|construction|contractor|builders?\b|handyman|kitchen (&|and) bath/i],
+      ["cleaning", /clean|\bmaids?\b|janitorial|limpieza|pressure wash|power wash/i],
+      ["landscaping", /landscap|\blawn|\btrees?\b|garden|\byard|jardin/i],
+      ["bakery", /bak(ery|ed|es)|\bcakes?\b|pastel|panader|\bcaf[eé]\b|coffee|donut|bread|taco|taquer|restaurant|food|grill/i],
+      ["spa", /\bspa\b|med ?spa|aesthetic|esthetic|facial|\bskin|botox|\bwax/i],
+    ];
+    const giroDelNombre = n => (POR_NOMBRE.find(([, re]) => re.test(n || "")) || [])[0] || null;
+    let GIRO = ALIAS[norm(val("giro"))] || CONFIG.giro;
 
     /* ===================== 3) DATOS DEL NEGOCIO ===================== */
     const CLIENTE = clean(val("cliente", "nombre"), 60);
+    // Si el link trae uno de los 18 giros exactos, se respeta (salvo spa con "Lash/Brows/Nails" en el nombre → lashes).
+    // Si trae un giro viejo del robot (estetica, servicios, tecnicos, comida…) o ninguno, manda el nombre del negocio.
+    {
+      const pedido = norm(val("giro")), porNombre = giroDelNombre(CLIENTE);
+      const exacto = GIROS18.includes(pedido);
+      if (porNombre === "lashes" && (!exacto || pedido === "spa")) GIRO = "lashes";
+      else if (!exacto && porNombre) GIRO = porNombre;
+    }
     const telURL = val("tel").replace(/\D/g, "");
     const TEL_DUENO = telURL.length === 10 ? "1" + telURL : telURL.length >= 11 && telURL.length <= 15 ? telURL : "";
     const TEL = TEL_DUENO || CONFIG.telDemo;
@@ -926,7 +992,16 @@
       alert: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/>',
       globe: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>',
       card: '<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/>',
-      info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>'
+      info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+      eye: '<path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/>',
+      car: '<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>',
+      scissors: '<circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/>',
+      truck: '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+      bug: '<path d="m8 2 1.88 1.88M14.12 3.88 16 2"/><path d="M9 7.13v-1a3 3 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9M6.53 9C4.6 8.8 3 7.1 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.97 5c0 2.1-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/>',
+      waves: '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
+      sofa: '<path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M4 18v2M20 18v2"/>',
+      music: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+      user: '<circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/>'
     };
     const ic = (n, extra = "") => `<svg class="ic${extra ? " " + extra : ""}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n] || ""}</svg>`;
     const WA_D = "M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.42 9.42M20.06 3.98A11.3 11.3 0 0 0 12.05.67C5.8.67.7 5.76.7 12.02c0 2 .52 3.95 1.52 5.67L.6 23.33l5.77-1.51a11.3 11.3 0 0 0 5.67 1.45h.01c6.25 0 11.34-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.02";
@@ -1509,6 +1584,620 @@
         brandLine: ["Baked with <em>love.</em>", "Horneado con <em>amor.</em>", "Feito com <em>amor.</em>"]
       }
     };
+    /* =====================================================
+       5b) 9 GIROS NUEVOS (18 en total)
+       ===================================================== */
+    const HR = ["-hr", " h", " h"], DIA = ["-day", " días", " dias"];
+    const HORAS_CITA = { h1: ["Mon–Sat · 9am – 7pm", "Lun–Sáb · 9am – 7pm", "Seg–Sáb · 9h – 19h"], h2: ["Sun · 10am – 4pm", "Dom · 10am – 4pm", "Dom · 10h – 16h"] };
+    const URG_CITA = [["Flexible", "Flexible", "Flexível"], ["This week", "Esta semana", "Esta semana"], ["Today or tomorrow", "Hoy o mañana", "Hoje ou amanhã"]];
+    const MENU = ["Prices from our real menu", "Precios de nuestro menú real", "Preços do nosso cardápio real"];
+    Object.assign(GIROS, {
+      /* ---------------- LASHES (pestañas, cejas y uñas) ---------------- */
+      lashes: {
+        demo: "Velvet Lash & Nail Studio", ic: "eye",
+        title: ["Lash, Brow & Nail Studio", "Estudio de Pestañas, Cejas y Uñas", "Estúdio de Cílios, Sobrancelhas e Unhas"],
+        plural: ["lash & nail studios", "estudios de pestañas y uñas", "estúdios de cílios e unhas"],
+        img: ["1589710751893-f9a6770ad71b", "1548902378-2ec44c906391", "1683719312734-e31de63957ab"],
+        heroTitle: ["Lashes that <em>wake up</em> with you.", "Pestañas que <em>despiertan</em> contigo.", "Cílios que <em>acordam</em> com você."],
+        lead: ["{n} creates custom lash extensions, brow laminations and Gel-X nails {z} — certified artists, medical-grade adhesive and a look designed for your face.",
+               "{n} crea extensiones de pestañas a la medida, laminado de cejas y uñas Gel-X {z} — artistas certificadas, adhesivo de grado médico y un look diseñado para tu rostro.",
+               "{n} cria extensões de cílios sob medida, laminação de sobrancelhas e unhas Gel-X {z} — artistas certificadas, adesivo de grau médico e um visual pensado para o seu rosto."],
+        m: [[8, PLUS, YRS], [6000, PLUS, ["Lash sets applied", "Sets de pestañas aplicados", "Sets de cílios aplicados"]], [12, PLUS, ["Certified artists", "Artistas certificadas", "Artistas certificadas"]]],
+        booking: ["Openings this week", "Citas esta semana", "Horários esta semana"],
+        workTitle: ["Details that <em>frame your face</em>", "Detalles que <em>enmarcan tu rostro</em>", "Detalhes que <em>valorizam seu rosto</em>"],
+        tabs: { a: ["Lashes", "Pestañas", "Cílios"], b: ["Brows", "Cejas", "Sobrancelhas"], c: ["Nails", "Uñas", "Unhas"] },
+        gal: [
+          ["a", "1772236617396-2f8460293c07", ["Volume lash application", "Aplicación de volumen", "Aplicação de volume"]],
+          ["b", "1674049406179-d7bf2c263e71", ["Brow lamination", "Laminado de cejas", "Laminação de sobrancelhas"]],
+          ["c", "1632345031435-8727f6897d53", ["Gel-X full set", "Set completo Gel-X", "Alongamento Gel-X"]],
+          ["a", "1639629509821-c54cdd984227", ["Classic natural set", "Set clásico natural", "Clássico natural"]],
+          ["b", "1718720410649-7524fcb0f0a5", ["Brow shaping & tint", "Diseño y tinte de cejas", "Design e tintura de sobrancelhas"]],
+          ["c", "1772322586785-3a34772cbc61", ["Custom nail art", "Diseño de uñas a la medida", "Nail art personalizada"]]
+        ],
+        baEyebrow: ["The glow-up", "El cambio", "A transformação"],
+        baTitle: ["From bare lashes to <em>wow</em>", "De pestañas sencillas a <em>wow</em>", "De cílios simples a <em>uau</em>"],
+        baText: ["Drag to compare. A hybrid set mapped to her eye shape — 2 hours, lightweight and made to last up to 4 weeks with fills.",
+                 "Arrastra para comparar. Un set híbrido diseñado según la forma de su ojo — 2 horas, ligero y hecho para durar hasta 4 semanas con retoques.",
+                 "Arraste para comparar. Um set híbrido desenhado para o formato do olho — 2 horas, leve e feito para durar até 4 semanas com manutenção."],
+        baF1: "2 h", baF1l: ["Full set", "Set completo", "Set completo"], baF2: ["4 wks", "4 sem", "4 sem"], baF2l: ["Retention with fills", "Duración con retoques", "Duração com manutenção"], baF3: "0", baF3l: ["Damage to natural lashes", "Daño a tus pestañas", "Dano aos cílios naturais"],
+        p1t: ["What would you like?", "¿Qué te gustaría hacerte?", "O que você gostaria de fazer?"],
+        p2t: ["How many sessions?", "¿Cuántas sesiones?", "Quantas sessões?"],
+        p2s: ["Packages and fills save you money — we confirm your plan when you book.", "Los paquetes y retoques te ahorran dinero — confirmamos tu plan al agendar.", "Pacotes e manutenções economizam — confirmamos seu plano ao agendar."],
+        urgency: ["When would you like to come in?", "¿Cuándo te gustaría venir?", "Quando você gostaria de vir?"], urgN: URG_CITA,
+        trust1: ["Certified lash artists", "Lash artists certificadas", "Lash artists certificadas"], trust2: ["Sanitized tools for every client", "Herramientas esterilizadas", "Ferramentas esterilizadas"],
+        qL1: MENU, qL3: ["Free consultation & patch test", "Consulta y prueba de alergia gratis", "Consulta e teste de alergia grátis"],
+        resNote: ["Final price is confirmed when you book. Style, length and add-ons can move the number.", "El precio final se confirma al agendar. El estilo, el largo y los extras pueden moverlo.", "O preço final é confirmado ao agendar. Estilo, comprimento e extras podem alterar o valor."],
+        ask: ["What's your next available appointment?", "¿Cuál es su próxima cita disponible?", "Qual é o próximo horário disponível?"],
+        ...HORAS_CITA, h3: ["Evening slots by request", "Horario nocturno con cita", "Horários à noite com agendamento"],
+        s: [
+          ["classic", "eye", "ses", ["Classic Lash Set", "Set Clásico de Pestañas", "Set Clássico de Cílios"], ["Natural, one-to-one", "Natural, pelo por pelo", "Natural, fio a fio"], 120, 180, 120, 1, 4, 1, 1],
+          ["volume", "sparkle", "ses", ["Volume / Hybrid Set", "Set Volumen / Híbrido", "Set Volume / Híbrido"], ["Fuller, fluffy look", "Más lleno y esponjoso", "Mais cheio e marcante"], 160, 260, 160, 1, 4, 1, 1],
+          ["fill", "cal", "ses", ["Lash Fill", "Retoque de Pestañas", "Manutenção de Cílios"], ["Every 2–3 weeks", "Cada 2–3 semanas", "A cada 2–3 semanas"], 55, 85, 55, 1, 8, 2, 1],
+          ["lift", "smile", "ses", ["Lash Lift & Brow Lamination", "Lifting de Pestañas y Laminado", "Lash Lifting e Laminação"], ["No extensions needed", "Sin extensiones", "Sem extensões"], 75, 130, 75, 1, 4, 1, 1],
+          ["nails", "brush", "ses", ["Gel-X / Acrylic Full Set", "Uñas Gel-X / Acrílicas", "Unhas Gel-X / Acrílicas"], ["Shape, length & design", "Forma, largo y diseño", "Formato, comprimento e design"], 55, 95, 55, 1, 4, 1, 1],
+          ["brows", "flower", "ses", ["Brow Wax & Tint", "Depilación y Tinte de Cejas", "Design e Tintura de Sobrancelhas"], ["Shaped to your face", "Diseñadas para tu rostro", "Desenhadas para o seu rosto"], 25, 55, 25, 1, 6, 1, 1]
+        ],
+        faq: [
+          [["How long do lash extensions last?", "¿Cuánto duran las extensiones?", "Quanto tempo duram as extensões?"],
+           ["They follow your natural lash cycle. With a fill every 2–3 weeks, your set stays full.", "Siguen el ciclo natural de tus pestañas. Con un retoque cada 2 a 3 semanas, tu set se mantiene lleno.", "Acompanham o ciclo natural dos seus cílios. Com manutenção a cada 2 a 3 semanas, o set continua cheio."]],
+          [["Will extensions damage my natural lashes?", "¿Las extensiones dañan mis pestañas?", "As extensões danificam meus cílios?"],
+           ["Not when applied correctly. We match weight and length to each natural lash and use medical-grade adhesive.", "No, si se aplican bien. Ajustamos el peso y el largo a cada pestaña natural y usamos adhesivo de grado médico.", "Não, quando bem aplicadas. Ajustamos peso e comprimento a cada fio natural e usamos adesivo de grau médico."]],
+          [["How should I prepare for my appointment?", "¿Cómo me preparo para mi cita?", "Como me preparo para o atendimento?"],
+           ["Come with clean lashes and no mascara. Plan to relax — a full set takes about 2 hours.", "Llega con las pestañas limpias y sin rímel. Ven a relajarte: un set completo toma unas 2 horas.", "Venha com os cílios limpos e sem rímel. Relaxe: um set completo leva cerca de 2 horas."]],
+          [["Can I get nails and brows the same day?", "¿Me hacen uñas y cejas el mismo día?", "Dá para fazer unhas e sobrancelhas no mesmo dia?"],
+           ["Yes — book a combo and we schedule your services back to back.", "Sí — agenda un combo y programamos tus servicios uno tras otro.", "Sim — agende um combo e marcamos seus serviços em sequência."]]
+        ],
+        rev: [
+          ["Kayla B.", ["Best lashes I've ever had. Light, fluffy and they lasted almost four weeks.", "Las mejores pestañas que me han puesto. Ligeras, esponjosas y me duraron casi cuatro semanas.", "Os melhores cílios que já fiz. Leves, volumosos e duraram quase quatro semanas."]],
+          ["Andrea M.", ["My brows finally look even. The lamination is a game changer.", "Mis cejas por fin se ven parejas. El laminado me cambió la cara.", "Minhas sobrancelhas finalmente ficaram iguais. A laminação mudou tudo."]],
+          ["Priscila S.", ["My Gel-X set lasted three weeks without a single chip. So clean and cute.", "Mis uñas Gel-X duraron tres semanas sin despostillarse. Súper limpias y lindas.", "As unhas Gel-X duraram três semanas sem lascar. Muito caprichadas."]]
+        ],
+        footTitle: ["Wake up <em>ready.</em>", "Despierta <em>lista.</em>", "Acorde <em>pronta.</em>"],
+        footBlurb: ["Lash extensions, lifts, brows and nails — by certified local artists who care about the details.", "Extensiones, lifting, cejas y uñas — por artistas locales certificadas que cuidan cada detalle.", "Extensões, lifting, sobrancelhas e unhas — por artistas locais certificadas que cuidam de cada detalhe."],
+        brandLine: ["Lash <em>love.</em>", "Amor por las <em>pestañas.</em>", "Amor pelos <em>cílios.</em>"]
+      },
+
+      /* ---------------- CONCRETE (concreto, adoquín y entradas) ---------------- */
+      concrete: {
+        demo: "SolidRock Concrete & Pavers", ic: "bricks",
+        title: ["Concrete, Pavers & Driveways", "Concreto, Adoquín y Entradas", "Concreto, Pavers e Entradas"],
+        plural: ["concrete contractors", "contratistas de concreto", "empresas de concreto"],
+        img: ["1783125127341-81112b795c23", "1706660143732-c1d14701114e", "1600456899121-68eda5705257"],
+        heroTitle: ["Driveways built to <em>outlast</em> the house.", "Entradas hechas para <em>durar más</em> que la casa.", "Entradas feitas para <em>durar mais</em> que a casa."],
+        lead: ["{n} pours driveways, patios and stamped concrete and installs paver walkways for homes {z} — proper base, steel reinforcement and clean, straight finishes.",
+               "{n} construye entradas de autos, patios y concreto estampado e instala adoquín para casas {z} — base bien compactada, refuerzo de acero y acabados limpios y rectos.",
+               "{n} faz entradas de garagem, pátios e concreto estampado e instala pavers em casas {z} — base bem compactada, reforço de aço e acabamento limpo e reto."],
+        m: [[18, PLUS, YRS], [1100, PLUS, ["Driveways poured", "Entradas construidas", "Entradas construídas"]], [5, YR, WAR]],
+        workTitle: ["Surfaces that <em>raise curb appeal</em>", "Superficies que <em>lucen tu fachada</em>", "Superfícies que <em>valorizam a fachada</em>"],
+        tabs: { a: ["Driveways", "Entradas", "Entradas"], b: ["Pavers", "Adoquín", "Pavers"], c: ["Walkways", "Caminos", "Caminhos"] },
+        gal: [
+          ["a", "1781637202423-33ec5b47e52e", ["Broom-finish driveway", "Entrada con acabado escobillado", "Entrada com acabamento vassourado"]],
+          ["b", "1786996561187-80e0cb5f8bb2", ["Interlocking pavers", "Adoquín entrelazado", "Pavers intertravados"]],
+          ["c", "1763462980602-07eb86874ac4", ["Hexagon stone path", "Camino de piedra hexagonal", "Caminho de pedra hexagonal"]],
+          ["a", "1783278092758-3d9713960a85", ["Desert-home driveway", "Entrada de casa desértica", "Entrada de casa no deserto"]],
+          ["b", "1780732658907-33c2e90a902c", ["Curved paver walkway", "Camino curvo de adoquín", "Caminho curvo de pavers"]],
+          ["c", "1764670325965-618c104b0b07", ["Tiled garden path", "Sendero de jardín", "Trilha de jardim"]]
+        ],
+        baTitle: ["From cracked to <em>curb appeal</em>", "De agrietado a <em>impecable</em>", "De rachado a <em>impecável</em>"],
+        baText: ["Drag to compare. Old slab removed, base regraded and compacted, steel-reinforced pour and a clean broom finish — ready to drive on in 7 days.",
+                 "Arrastra para comparar. Losa vieja retirada, base nivelada y compactada, colado con refuerzo de acero y acabado escobillado — lista para el auto en 7 días.",
+                 "Arraste para comparar. Laje velha removida, base nivelada e compactada, concretagem com aço e acabamento vassourado — pronta para o carro em 7 dias."],
+        baF1: ["3 days", "3 días", "3 dias"], baF1l: ["Demo to pour", "De demolición a colado", "Da demolição à concretagem"], baF2: "4,000", baF2l: ["PSI concrete", "PSI de resistencia", "PSI de resistência"], baF3: ["7 days", "7 días", "7 dias"], baF3l: ["Ready to drive on", "Lista para el auto", "Pronta para o carro"],
+        p1t: ["What are we building?", "¿Qué vamos a construir?", "O que vamos construir?"],
+        p2t: ["How big is the area?", "¿Qué tan grande es el área?", "Qual é o tamanho da área?"],
+        p2s: ["A two-car driveway is about 600 sq ft — we measure on-site for free.", "Una entrada para dos autos mide unos 600 sq ft — medimos gratis en sitio.", "Uma entrada para dois carros tem cerca de 600 sq ft — medimos no local grátis."],
+        s: [
+          ["driveway", "car", "sqft", ["Concrete Driveway", "Entrada de Concreto", "Entrada de Concreto"], ["Remove & replace, reinforced", "Retiro y reemplazo, reforzado", "Remoção e troca, reforçada"], 8, 14, 3500, 200, 2000, 600, 25],
+          ["pavers", "bricks", "sqft", ["Paver Patio & Walkway", "Patio y Camino de Adoquín", "Pátio e Caminho de Pavers"], ["Interlocking stone", "Piedra entrelazada", "Pedra intertravada"], 15, 30, 3000, 100, 1500, 400, 25],
+          ["stamped", "layers", "sqft", ["Stamped Concrete", "Concreto Estampado", "Concreto Estampado"], ["Stone & wood looks", "Acabado tipo piedra o madera", "Acabamento tipo pedra ou madeira"], 14, 22, 3000, 100, 1500, 400, 25],
+          ["patio", "home", "sqft", ["Concrete Patio / Slab", "Patio / Losa de Concreto", "Pátio / Laje de Concreto"], ["Patios, pads & sidewalks", "Patios, bases y banquetas", "Pátios, bases e calçadas"], 7, 12, 2000, 100, 1500, 300, 25],
+          ["repair", "wrench", "sqft", ["Crack Repair & Resurfacing", "Reparación de Grietas y Resanado", "Reparo de Rachaduras e Recapeamento"], ["Make old concrete new", "Deja el concreto como nuevo", "Concreto velho como novo"], 3, 7, 600, 100, 2000, 400, 25],
+          ["wall", "building", "ft", ["Retaining Wall", "Muro de Contención", "Muro de Arrimo"], ["Block or stone", "Block o piedra", "Bloco ou pedra"], 45, 90, 2500, 10, 200, 40, 5]
+        ],
+        faq: [
+          [["How soon can I drive on new concrete?", "¿Cuándo puedo usar la entrada nueva?", "Quando posso usar a entrada nova?"],
+           ["Walk on it after 24 hours and drive on it after 7 days. Full strength arrives at 28 days.", "Puedes caminar a las 24 horas y meter el auto a los 7 días. Alcanza su resistencia total a los 28 días.", "Dá para andar após 24 horas e colocar o carro após 7 dias. A resistência total chega aos 28 dias."]],
+          [["Concrete or pavers?", "¿Concreto o adoquín?", "Concreto ou pavers?"],
+           ["Concrete costs less up front; pavers cost more, but single stones can be replaced and they rarely crack. We quote both.", "El concreto cuesta menos al inicio; el adoquín cuesta más, pero se cambia pieza por pieza y casi no se agrieta. Cotizamos ambos.", "O concreto custa menos no início; os pavers custam mais, mas dá para trocar peça por peça e quase não racham. Orçamos os dois."]],
+          [["Do you handle permits and HOA approval?", "¿Tramitan permisos y la aprobación de la HOA?", "Vocês cuidam de licenças e aprovação da HOA?"],
+           ["Yes. We pull city permits when required and prepare the drawings your HOA asks for.", "Sí. Sacamos los permisos de la ciudad cuando se necesitan y preparamos los planos que pide tu HOA.", "Sim. Tiramos as licenças quando necessário e preparamos os desenhos que a HOA pedir."]],
+          [["Will my new concrete crack?", "¿Se va a agrietar mi concreto nuevo?", "Meu concreto novo vai rachar?"],
+           ["We cut control joints, reinforce with steel and compact the base to keep cracking to a minimum — backed by a 5-year warranty.", "Hacemos juntas de control, reforzamos con acero y compactamos la base para reducir las grietas al mínimo — con 5 años de garantía.", "Fazemos juntas de dilatação, reforçamos com aço e compactamos a base para minimizar rachaduras — com 5 anos de garantia."]]
+        ],
+        rev: [
+          ["Tom R.", ["They tore out our cracked driveway and poured a new one in three days. Looks brand new and the crew cleaned everything.", "Quitaron nuestra entrada agrietada y colaron una nueva en tres días. Quedó como nueva y el equipo limpió todo.", "Tiraram nossa entrada rachada e fizeram uma nova em três dias. Ficou novinha e a equipe limpou tudo."]],
+          ["Sandra P.", ["The paver patio is the best upgrade we've made to the house. Perfectly level with great drainage.", "El patio de adoquín es la mejor mejora que le hemos hecho a la casa. Perfectamente nivelado y con buen drenaje.", "O pátio de pavers foi a melhor melhoria da casa. Perfeitamente nivelado e com ótima drenagem."]],
+          ["Hector G.", ["Clear quote, on time, and the stamped concrete looks like real stone.", "Cotización clara, puntuales y el concreto estampado parece piedra de verdad.", "Orçamento claro, pontuais, e o concreto estampado parece pedra de verdade."]]
+        ],
+        footTitle: ["Let's pour something <em>solid.</em>", "Construyamos algo <em>sólido.</em>", "Vamos construir algo <em>sólido.</em>"],
+        footBlurb: ["Driveways, patios, pavers and stamped concrete — poured and warrantied by one local crew.", "Entradas, patios, adoquín y concreto estampado — construidos y garantizados por un mismo equipo local.", "Entradas, pátios, pavers e concreto estampado — feitos e garantidos por uma única equipe local."],
+        brandLine: ["Set in <em>stone.</em>", "Hecho de <em>piedra.</em>", "Feito de <em>pedra.</em>"]
+      },
+
+      /* ---------------- FENCING (cercas, portones y decks) ---------------- */
+      fencing: {
+        demo: "Timberline Fence & Deck", ic: "fence",
+        title: ["Fencing, Gates & Decks", "Cercas, Portones y Decks", "Cercas, Portões e Decks"],
+        plural: ["fence companies", "empresas de cercas", "empresas de cercas"],
+        img: ["1769831190663-95fe8454d8c9", "1785013925852-98039a305ebc", "1601042860368-debed90085e0"],
+        heroTitle: ["Privacy, <em>style</em> and peace of mind.", "Privacidad, <em>estilo</em> y tranquilidad.", "Privacidade, <em>estilo</em> e tranquilidade."],
+        lead: ["{n} builds wood, vinyl and aluminum fences, custom gates and decks for homes {z} — straight lines, posts set in concrete and a property-line check before we dig.",
+               "{n} construye cercas de madera, vinilo y aluminio, portones y decks para casas {z} — líneas rectas, postes anclados en concreto y revisión de la línea de propiedad antes de excavar.",
+               "{n} constrói cercas de madeira, vinil e alumínio, portões e decks para casas {z} — linhas retas, postes fixados em concreto e conferência do limite do terreno antes de cavar."],
+        m: [[15, PLUS, YRS], [2000, PLUS, ["Fences built", "Cercas construidas", "Cercas construídas"]], [5, YR, WAR]],
+        workTitle: ["Lines that <em>define your space</em>", "Líneas que <em>definen tu espacio</em>", "Linhas que <em>definem seu espaço</em>"],
+        tabs: { a: ["Wood", "Madera", "Madeira"], b: ["Vinyl & Gates", "Vinilo y Portones", "Vinil e Portões"], c: ["Decks", "Decks", "Decks"] },
+        gal: [
+          ["a", "1604015641586-6fa03629f976", ["Cedar privacy fence", "Cerca de cedro", "Cerca de cedro"]],
+          ["b", "1783002933106-273634f7b33e", ["White vinyl rail", "Cerca de vinilo blanca", "Cerca de vinil branca"]],
+          ["c", "1773430272653-375174373c4f", ["Deck framing in progress", "Estructura de deck en obra", "Estrutura do deck em obra"]],
+          ["a", "1537407034356-b8f5f1ac2aa8", ["Split-rail ranch fence", "Cerca rústica de rancho", "Cerca rústica de rancho"]],
+          ["b", "1691821331552-ab4f12500a24", ["Front-yard fence & gate", "Cerca frontal y portón", "Cerca frontal e portão"]],
+          ["c", "1792630862829-90f519d52d88", ["Composite backyard deck", "Deck de composite", "Deck de composite"]]
+        ],
+        baTitle: ["From falling down to <em>built to last</em>", "De caída a <em>hecha para durar</em>", "De caindo a <em>feita para durar</em>"],
+        baText: ["Drag to compare. Rotted boards and leaning posts replaced with a new privacy fence on concrete-set posts — done in two days.",
+                 "Arrastra para comparar. Tablas podridas y postes inclinados reemplazados por una cerca nueva con postes en concreto — lista en dos días.",
+                 "Arraste para comparar. Tábuas podres e postes tortos trocados por uma cerca nova com postes em concreto — pronta em dois dias."],
+        baF1: ["2 days", "2 días", "2 dias"], baF1l: START, baF2: "150", baF2l: ["Linear feet", "Pies lineales", "Pés lineares"], baF3: "6 ft", baF3l: ["Privacy height", "Altura de privacidad", "Altura de privacidade"],
+        p1t: ["What are we building?", "¿Qué vamos a construir?", "O que vamos construir?"],
+        p2t: ["How long is the fence line?", "¿Qué tan larga es la cerca?", "Qual é o comprimento da cerca?"],
+        p2s: ["A typical backyard is 150–250 linear ft — we measure and check property lines for free.", "Un patio típico tiene de 150 a 250 pies lineales — medimos y revisamos la línea de propiedad gratis.", "Um quintal típico tem de 150 a 250 pés lineares — medimos e conferimos o limite do terreno grátis."],
+        s: [
+          ["wood", "fence", "ft", ["Wood Privacy Fence", "Cerca de Madera", "Cerca de Madeira"], ["Cedar or pressure-treated", "Cedro o pino tratado", "Cedro ou pinus tratado"], 25, 45, 1800, 20, 500, 150, 5],
+          ["vinyl", "layers", "ft", ["Vinyl Fence", "Cerca de Vinilo", "Cerca de Vinil"], ["Zero maintenance", "Cero mantenimiento", "Zero manutenção"], 30, 55, 2000, 20, 500, 150, 5],
+          ["alu", "building", "ft", ["Aluminum / Ornamental", "Aluminio / Ornamental", "Alumínio / Ornamental"], ["Pool-code compliant", "Cumple código de alberca", "Dentro da norma de piscina"], 35, 65, 2200, 20, 500, 120, 5],
+          ["chain", "shield", "ft", ["Chain Link", "Malla Ciclónica", "Alambrado"], ["Budget-friendly & secure", "Económica y segura", "Econômica e segura"], 15, 30, 1000, 20, 600, 150, 5],
+          ["gate", "home", "un", ["Driveway & Walk Gates", "Portones y Puertas", "Portões e Portinhas"], ["Custom, manual or automatic", "A la medida, manual o eléctrico", "Sob medida, manual ou automático"], 600, 2200, 600, 1, 3, 1, 1],
+          ["deck", "sun", "sqft", ["Deck Build", "Construcción de Deck", "Construção de Deck"], ["Wood or composite", "Madera o composite", "Madeira ou composite"], 35, 65, 6000, 100, 800, 300, 10]
+        ],
+        faq: [
+          [["Do I need a permit for a fence?", "¿Necesito permiso para una cerca?", "Preciso de licença para uma cerca?"],
+           ["Most cities require one for fences over 4 ft. We pull the permit and follow your HOA rules.", "La mayoría de las ciudades lo piden para cercas de más de 4 pies. Nosotros sacamos el permiso y seguimos las reglas de tu HOA.", "A maioria das cidades exige para cercas acima de 4 pés. Tiramos a licença e seguimos as regras da sua HOA."]],
+          [["How do you know where my property line is?", "¿Cómo saben dónde está mi línea de propiedad?", "Como vocês sabem onde fica o limite do terreno?"],
+           ["We review your survey and call 811 to mark utilities before digging. If there's no survey, we can coordinate one.", "Revisamos tu plano del terreno y llamamos al 811 para marcar instalaciones antes de excavar. Si no tienes plano, coordinamos uno.", "Analisamos a planta do terreno e chamamos o 811 para marcar as redes antes de cavar. Se não houver planta, providenciamos uma."]],
+          [["Wood or vinyl?", "¿Madera o vinilo?", "Madeira ou vinil?"],
+           ["Wood costs less and looks warm; vinyl costs more but never needs paint or stain. We price both for you.", "La madera cuesta menos y se ve cálida; el vinilo cuesta más pero nunca necesita pintura ni sellador. Te cotizamos ambos.", "A madeira custa menos e é aconchegante; o vinil custa mais, mas nunca precisa de pintura ou verniz. Orçamos os dois."]],
+          [["How long does installation take?", "¿Cuánto tarda la instalación?", "Quanto tempo leva a instalação?"],
+           ["Most residential fences are done in 1–3 days. Decks take 1–2 weeks depending on size.", "La mayoría de las cercas residenciales quedan en 1 a 3 días. Los decks toman de 1 a 2 semanas según el tamaño.", "A maioria das cercas residenciais fica pronta em 1 a 3 dias. Decks levam de 1 a 2 semanas, conforme o tamanho."]]
+        ],
+        rev: [
+          ["Megan L.", ["Our new cedar fence is gorgeous and perfectly straight. They even saved the old rose bushes.", "Nuestra cerca de cedro quedó preciosa y perfectamente recta. Hasta salvaron los rosales.", "Nossa cerca de cedro ficou linda e perfeitamente reta. Ainda salvaram as roseiras."]],
+          ["Victor A.", ["They handled the permit and HOA approval. The fence was up in two days.", "Se encargaron del permiso y de la HOA. La cerca quedó en dos días.", "Cuidaram da licença e da HOA. A cerca ficou pronta em dois dias."]],
+          ["Grace H.", ["The deck is where we live all summer now. Solid work and a fair price.", "El deck es donde pasamos todo el verano. Trabajo sólido y precio justo.", "O deck virou nosso lugar no verão. Trabalho sólido e preço justo."]]
+        ],
+        footTitle: ["Good fences make <em>great neighbors.</em>", "Una buena cerca hace <em>buenos vecinos.</em>", "Boas cercas fazem <em>bons vizinhos.</em>"],
+        footBlurb: ["Wood, vinyl and aluminum fences, gates and decks — built straight and warrantied by one local crew.", "Cercas de madera, vinilo y aluminio, portones y decks — rectos y garantizados por un mismo equipo local.", "Cercas de madeira, vinil e alumínio, portões e decks — retos e garantidos por uma única equipe local."],
+        brandLine: ["Built <em>straight.</em>", "Hecho <em>derecho.</em>", "Feito <em>reto.</em>"]
+      },
+
+      /* ---------------- POOL (mantenimiento de albercas) ---------------- */
+      pool: {
+        demo: "Crystal Blue Pool Care", ic: "waves",
+        title: ["Pool Service & Repair", "Mantenimiento y Reparación de Albercas", "Manutenção e Reparo de Piscinas"],
+        plural: ["pool companies", "empresas de albercas", "empresas de piscina"],
+        img: ["1509577330292-0532d33c053e", "1780851473034-b4e1038ac26e", "1557459325-b6733cbeae9c"],
+        heroTitle: ["Crystal-clear water, <em>every</em> week.", "Agua cristalina <em>cada</em> semana.", "Água cristalina <em>toda</em> semana."],
+        lead: ["{n} keeps pools clean, balanced and running {z} — weekly service, green-to-clean rescues, pumps, filters and heaters, with a photo report after every visit.",
+               "{n} mantiene las albercas limpias, balanceadas y funcionando {z} — servicio semanal, rescate de agua verde, bombas, filtros y calentadores, con reporte en foto después de cada visita.",
+               "{n} mantém piscinas limpas, equilibradas e funcionando {z} — serviço semanal, resgate de água verde, bombas, filtros e aquecedores, com relatório em foto após cada visita."],
+        m: [[10, PLUS, YRS], [450, PLUS, ["Pools on weekly route", "Albercas en ruta semanal", "Piscinas na rota semanal"]], [72, HR, ["Green-to-clean rescue", "Rescate de agua verde", "Resgate de água verde"]]],
+        workTitle: ["Water you'll want to <em>jump into</em>", "Agua a la que <em>querrás echarte</em>", "Água que dá <em>vontade de pular</em>"],
+        tabs: { a: ["Weekly Service", "Servicio Semanal", "Serviço Semanal"], b: ["Repairs", "Reparaciones", "Reparos"], c: ["Pools We Care For", "Albercas que Cuidamos", "Piscinas que Cuidamos"] },
+        gal: [
+          ["a", "1742353980377-b8e42932c590", ["Robotic floor cleaning", "Limpieza con robot", "Limpeza com robô"]],
+          ["b", "1621245700087-a8617f91cdbe", ["Rails & hardware", "Barandales y herrajes", "Corrimãos e ferragens"]],
+          ["c", "1613152184920-bc1c4ab7fd1d", ["Backyard pool", "Alberca residencial", "Piscina residencial"]],
+          ["a", "1614667288602-9ac6e37318a7", ["Tile line & drain check", "Revisión de azulejo y drenaje", "Revisão de azulejo e ralo"]],
+          ["b", "1784407379809-79d04ed0bfff", ["Ladder & deck service", "Servicio de escalera y deck", "Manutenção de escada e deck"]],
+          ["c", "1782203601219-c772fac676dc", ["Garden pool & patio", "Alberca y patio", "Piscina e pátio"]]
+        ],
+        baTitle: ["From swamp to <em>sparkling</em>", "De pantano a <em>cristalina</em>", "De pântano a <em>cristalina</em>"],
+        baText: ["Drag to compare. A green-to-clean rescue: debris removal, shock treatment, filter clean and water balance — swim-ready in about 72 hours.",
+                 "Arrastra para comparar. Un rescate de agua verde: retiro de basura, tratamiento de choque, limpieza de filtro y balance del agua — lista para nadar en unas 72 horas.",
+                 "Arraste para comparar. Um resgate de água verde: retirada de sujeira, tratamento de choque, limpeza do filtro e equilíbrio da água — pronta para nadar em cerca de 72 horas."],
+        baF1: "72 h", baF1l: ["Green to clean", "De verde a limpia", "De verde a limpa"], baF2: "52", baF2l: ["Visits a year", "Visitas al año", "Visitas por ano"], baF3: "1", baF3l: ["Photo report per visit", "Reporte con foto por visita", "Relatório com foto por visita"],
+        p1t: ["What does your pool need?", "¿Qué necesita tu alberca?", "Do que sua piscina precisa?"],
+        p2t: ["Tell us the details", "Cuéntanos los detalles", "Conte os detalhes"],
+        p2s: ["Weekly plans are billed monthly — no long contracts.", "Los planes semanales se cobran por mes — sin contratos largos.", "Os planos semanais são cobrados por mês — sem contratos longos."],
+        trust2: ["Photo report after every visit", "Reporte con foto en cada visita", "Relatório com foto em cada visita"],
+        qL3: ["Free water test on the first visit", "Prueba de agua gratis en la primera visita", "Teste de água grátis na primeira visita"],
+        ask: ["When can you start service?", "¿Cuándo pueden empezar el servicio?", "Quando vocês podem começar o serviço?"],
+        s: [
+          ["weekly", "waves", "mes", ["Weekly Pool Service", "Servicio Semanal", "Serviço Semanal"], ["Chemicals included", "Químicos incluidos", "Produtos inclusos"], 140, 220, 140, 1, 12, 3, 1],
+          ["green", "drop", "un", ["Green-to-Clean Rescue", "Rescate de Agua Verde", "Resgate de Água Verde"], ["Swim-ready in ~72 h", "Lista en ~72 h", "Pronta em ~72 h"], 350, 750, 350, 1, 2, 1, 1],
+          ["heater", "flame", "un", ["Pool Heater Install", "Instalación de Calentador", "Instalação de Aquecedor"], ["Gas or heat pump", "Gas o bomba de calor", "Gás ou bomba de calor"], 3200, 5500, 3200, 1, 2, 1, 1],
+          ["pump", "zap", "un", ["Pump & Filter Replacement", "Cambio de Bomba y Filtro", "Troca de Bomba e Filtro"], ["Variable-speed, energy saving", "Velocidad variable, ahorra luz", "Velocidade variável, economiza energia"], 900, 2200, 900, 1, 2, 1, 1],
+          ["leak", "search", "un", ["Leak Detection & Repair", "Detección y Reparación de Fugas", "Detecção e Reparo de Vazamentos"], ["Pressure & dye testing", "Prueba de presión y tinte", "Teste de pressão e corante"], 300, 900, 300, 1, 3, 1, 1],
+          ["acid", "sparkle", "un", ["Acid Wash & Tile Cleaning", "Lavado Ácido y Azulejo", "Lavagem Ácida e Azulejos"], ["Removes stains & scale", "Quita manchas y sarro", "Remove manchas e calcário"], 450, 900, 450, 1, 2, 1, 1]
+        ],
+        faq: [
+          [["What's included in weekly service?", "¿Qué incluye el servicio semanal?", "O que inclui o serviço semanal?"],
+           ["Skimming, brushing, vacuuming, emptying baskets, water testing and all balancing chemicals — plus a photo report.", "Retiro de hojas, cepillado, aspirado, vaciado de canastas, prueba del agua y todos los químicos de balance — más un reporte con foto.", "Peneira, escovação, aspiração, esvaziamento dos cestos, teste da água e todos os produtos de equilíbrio — mais um relatório com foto."]],
+          [["How fast can you fix a green pool?", "¿Qué tan rápido arreglan una alberca verde?", "Em quanto tempo resolvem uma piscina verde?"],
+           ["Most green pools are swim-ready in 48–72 hours, depending on how far the algae has gone.", "La mayoría quedan listas para nadar en 48 a 72 horas, según qué tan avanzada esté el alga.", "A maioria fica pronta em 48 a 72 horas, dependendo do nível de algas."]],
+          [["Do I need to be home?", "¿Tengo que estar en casa?", "Preciso estar em casa?"],
+           ["No. Just leave the gate unlocked or share the code — you get a photo report when we're done.", "No. Solo deja el portón abierto o compártenos el código — te llega un reporte con foto al terminar.", "Não. Basta deixar o portão aberto ou passar o código — você recebe um relatório com foto ao final."]],
+          [["Is there a contract?", "¿Hay contrato forzoso?", "Existe contrato de fidelidade?"],
+           ["No long-term contracts. Service is month to month and you can pause it in winter.", "Sin contratos largos. El servicio es mes a mes y puedes pausarlo en invierno.", "Sem contratos longos. O serviço é mês a mês e dá para pausar no inverno."]]
+        ],
+        rev: [
+          ["Derek W.", ["Our pool was swamp green before a party. They had it crystal clear in two days.", "Nuestra alberca estaba verde antes de una fiesta. En dos días la dejaron cristalina.", "Nossa piscina estava verde antes de uma festa. Em dois dias ficou cristalina."]],
+          ["Monica F.", ["Love the photo report after every visit. The water has never been this balanced.", "Me encanta el reporte con foto después de cada visita. El agua nunca había estado tan balanceada.", "Adoro o relatório com foto após cada visita. A água nunca esteve tão equilibrada."]],
+          ["Ray C.", ["They swapped our old pump for a variable-speed one and our power bill dropped.", "Cambiaron nuestra bomba vieja por una de velocidad variable y bajó el recibo de luz.", "Trocaram nossa bomba velha por uma de velocidade variável e a conta de luz caiu."]]
+        ],
+        footTitle: ["More swimming, <em>less work.</em>", "Más nadar, <em>menos trabajo.</em>", "Mais mergulho, <em>menos trabalho.</em>"],
+        footBlurb: ["Weekly pool service, green-pool rescues and equipment repair — by one licensed local team.", "Servicio semanal de albercas, rescate de agua verde y reparación de equipo — por un mismo equipo local con licencia.", "Manutenção semanal de piscinas, resgate de água verde e reparo de equipamentos — por uma única equipe local licenciada."],
+        brandLine: ["Always <em>swim-ready.</em>", "Siempre lista para <em>nadar.</em>", "Sempre pronta para <em>nadar.</em>"]
+      },
+
+      /* ---------------- JUNK (retiro de basura y escombro) ---------------- */
+      junk: {
+        demo: "Haul Away Junk Co.", ic: "truck",
+        title: ["Junk Removal & Hauling", "Retiro de Basura y Escombro", "Remoção de Entulho e Móveis"],
+        plural: ["junk removal companies", "empresas de retiro de basura", "empresas de remoção de entulho"],
+        img: ["1781425009053-2baffa997d8c", "1709831917664-804b57448953", "1727823065187-7b11ee08c1d8"],
+        heroTitle: ["Point to it. <em>We haul it.</em>", "Tú señalas. <em>Nosotros lo llevamos.</em>", "Você aponta. <em>Nós levamos.</em>"],
+        lead: ["{n} removes furniture, appliances, yard waste and construction debris {z} — upfront pricing by truck load, same-day pickup and as much as possible donated or recycled.",
+               "{n} retira muebles, electrodomésticos, ramas y escombro {z} — precio fijo por carga de camión, recolección el mismo día y lo más posible donado o reciclado.",
+               "{n} remove móveis, eletrodomésticos, galhos e entulho de obra {z} — preço fixo por carga de caminhão, coleta no mesmo dia e o máximo possível doado ou reciclado."],
+        m: [[9, PLUS, YRS], [7000, PLUS, ["Loads hauled", "Cargas retiradas", "Cargas retiradas"]], [60, PCT, ["Recycled or donated", "Reciclado o donado", "Reciclado ou doado"]]],
+        booking: ["Same-day pickups open", "Recolección hoy disponible", "Coleta no mesmo dia"],
+        workTitle: ["Clear space, <em>clear mind</em>", "Espacio libre, <em>mente tranquila</em>", "Espaço livre, <em>mente tranquila</em>"],
+        tabs: { a: ["Garages", "Cocheras", "Garagens"], b: ["Furniture & Appliances", "Muebles y Aparatos", "Móveis e Aparelhos"], c: ["Debris", "Escombro", "Entulho"] },
+        gal: [
+          ["a", "1635108198854-26645ffe6714", ["Garage cleanout", "Limpieza de cochera", "Limpeza de garagem"]],
+          ["b", "1560843300-ce9370f96b56", ["Old sofa pickup", "Retiro de sillón viejo", "Retirada de sofá velho"]],
+          ["c", "1785900976828-9d67c8b24134", ["Scrap metal & tub", "Chatarra y tina", "Sucata e banheira"]],
+          ["a", "1694889649834-91ff242d1763", ["Garage, ready for the car", "Cochera lista para el auto", "Garagem pronta para o carro"]],
+          ["b", "1519668106955-a24e5f67f8c5", ["Appliance haul-away", "Retiro de electrodomésticos", "Retirada de eletrodomésticos"]],
+          ["c", "1704756082548-af7c773aa0ef", ["Renovation debris", "Escombro de remodelación", "Entulho de reforma"]]
+        ],
+        baTitle: ["From packed to <em>parked</em>", "De atascada a <em>despejada</em>", "De lotada a <em>liberada</em>"],
+        baText: ["Drag to compare. A full garage cleanout — sorted, loaded and swept in one afternoon, with usable items donated.",
+                 "Arrastra para comparar. Limpieza total de cochera — clasificado, cargado y barrido en una tarde, con lo útil donado.",
+                 "Arraste para comparar. Limpeza completa de garagem — separado, carregado e varrido em uma tarde, com o que presta doado."],
+        baF1: "3 h", baF1l: START, baF2: ["1 load", "1 camión", "1 carga"], baF2l: ["Hauled away", "Retirado", "Retirado"], baF3: "60%", baF3l: ["Donated or recycled", "Donado o reciclado", "Doado ou reciclado"],
+        p1t: ["What are we hauling?", "¿Qué nos llevamos?", "O que vamos levar?"],
+        p2t: ["How much is there?", "¿Cuánto hay?", "Quanto tem?"],
+        p2s: ["Pick the closest truck size — we confirm the price on-site before loading.", "Elige el tamaño de camión más parecido — confirmamos el precio en sitio antes de cargar.", "Escolha o tamanho de caminhão mais parecido — confirmamos o preço no local antes de carregar."],
+        trust2: ["Price confirmed before loading", "Precio confirmado antes de cargar", "Preço confirmado antes de carregar"],
+        qL3: ["Same-day pickup when available", "Recolección el mismo día si hay espacio", "Coleta no mesmo dia quando possível"],
+        resNote: ["Final price is confirmed on-site before we load anything. Heavy materials like concrete or dirt can move the number.", "El precio final se confirma en sitio antes de cargar. Materiales pesados como concreto o tierra pueden moverlo.", "O preço final é confirmado no local antes de carregar. Materiais pesados como concreto ou terra podem alterar o valor."],
+        ask: ["Can you pick it up today?", "¿Pueden recogerlo hoy?", "Vocês podem retirar hoje?"],
+        h1: ["Mon–Sat · 7am – 7pm", "Lun–Sáb · 7am – 7pm", "Seg–Sáb · 7h – 19h"], h2: ["Sun · 9am – 3pm", "Dom · 9am – 3pm", "Dom · 9h – 15h"], h3: ["Same-day pickups", "Recolección el mismo día", "Coleta no mesmo dia"],
+        s: [
+          ["load", "truck", "truck", ["Junk Removal (by load)", "Retiro de Basura (por carga)", "Remoção de Entulho (por carga)"], ["Anything non-hazardous", "Todo lo no peligroso", "Tudo que não é perigoso"], 140, 190, 120, 1, 8, 2, 1],
+          ["furniture", "sofa", "un", ["Furniture & Appliances", "Muebles y Electrodomésticos", "Móveis e Eletrodomésticos"], ["Priced per item", "Precio por pieza", "Preço por item"], 75, 150, 120, 1, 10, 2, 1],
+          ["garage", "home", "truck", ["Garage / Attic Cleanout", "Limpieza de Cochera / Ático", "Limpeza de Garagem / Sótão"], ["Sort, haul & sweep", "Clasificar, retirar y barrer", "Separar, retirar e varrer"], 150, 210, 250, 1, 8, 4, 1],
+          ["debris", "hammer", "truck", ["Construction Debris", "Escombro de Construcción", "Entulho de Obra"], ["Drywall, wood, tile", "Tablaroca, madera, azulejo", "Drywall, madeira, azulejo"], 170, 240, 200, 1, 8, 4, 1],
+          ["hottub", "waves", "un", ["Hot Tub / Shed Removal", "Retiro de Jacuzzi / Bodega", "Remoção de Ofurô / Depósito"], ["Demo & haul included", "Incluye demolición y retiro", "Demolição e retirada inclusas"], 350, 700, 350, 1, 2, 1, 1],
+          ["estate", "box", "truck", ["Estate Cleanout", "Vaciado de Casa Completa", "Esvaziamento de Casa"], ["Whole home, done in a day", "Toda la casa en un día", "Casa inteira em um dia"], 150, 200, 600, 4, 16, 8, 1]
+        ],
+        faq: [
+          [["What won't you take?", "¿Qué no se llevan?", "O que vocês não levam?"],
+           ["Hazardous materials like paint, chemicals, oil and asbestos. Almost everything else goes.", "Materiales peligrosos como pintura, químicos, aceite o asbesto. Casi todo lo demás sí.", "Materiais perigosos como tinta, produtos químicos, óleo e amianto. Quase todo o resto sim."]],
+          [["Do I need to move things outside?", "¿Tengo que sacar las cosas?", "Preciso levar as coisas para fora?"],
+           ["No. Point to it and our crew carries it out from anywhere — basement, attic or backyard.", "No. Tú señalas y el equipo lo saca de donde esté — sótano, ático o patio.", "Não. Você aponta e a equipe tira de onde estiver — porão, sótão ou quintal."]],
+          [["How is the price calculated?", "¿Cómo se calcula el precio?", "Como o preço é calculado?"],
+           ["By how much space your items take in our truck, from a quarter load to a full truck. You approve the price before we load.", "Por el espacio que ocupan tus cosas en el camión, desde un cuarto hasta un camión completo. Apruebas el precio antes de cargar.", "Pelo espaço que os itens ocupam no caminhão, de um quarto até a carga completa. Você aprova o preço antes de carregarmos."]],
+          [["Where does my stuff go?", "¿A dónde va todo?", "Para onde vão as coisas?"],
+           ["We donate usable items to local charities and recycle metal, wood and electronics whenever possible.", "Donamos lo que sirve a organizaciones locales y reciclamos metal, madera y electrónicos siempre que se puede.", "Doamos o que presta para instituições locais e reciclamos metal, madeira e eletrônicos sempre que possível."]]
+        ],
+        rev: [
+          ["Chris D.", ["Called at 9am, the garage was empty by 2pm. Fair price and a super friendly crew.", "Llamé a las 9am y a las 2pm la cochera estaba vacía. Precio justo y un equipo muy amable.", "Liguei às 9h e às 14h a garagem estava vazia. Preço justo e equipe muito simpática."]],
+          ["Laura N.", ["They cleared out my mom's whole house in one day and donated most of it. So grateful.", "Vaciaron la casa de mi mamá en un día y donaron casi todo. Muy agradecida.", "Esvaziaram a casa da minha mãe em um dia e doaram quase tudo. Muito grata."]],
+          ["Pedro M.", ["Took all the debris from our remodel. Fast, clean and no surprises on the bill.", "Se llevaron todo el escombro de la remodelación. Rápidos, limpios y sin sorpresas en el cobro.", "Levaram todo o entulho da reforma. Rápidos, limpos e sem surpresas na cobrança."]]
+        ],
+        footTitle: ["Get your space <em>back today.</em>", "Recupera tu espacio <em>hoy mismo.</em>", "Recupere seu espaço <em>hoje.</em>"],
+        footBlurb: ["Junk removal, cleanouts and debris hauling — loaded, hauled and recycled by one local crew.", "Retiro de basura, vaciados y escombro — cargado, retirado y reciclado por un mismo equipo local.", "Remoção de entulho, esvaziamentos e caçambas — carregado, retirado e reciclado por uma única equipe local."],
+        brandLine: ["Gone <em>today.</em>", "Fuera <em>hoy.</em>", "Fora <em>hoje.</em>"]
+      },
+
+      /* ---------------- PEST (control de plagas y termitas) ---------------- */
+      pest: {
+        demo: "ShieldGuard Pest Control", ic: "bug",
+        title: ["Pest Control & Termites", "Control de Plagas y Termitas", "Controle de Pragas e Cupins"],
+        plural: ["pest control companies", "empresas de control de plagas", "empresas de controle de pragas"],
+        img: ["1747659629851-a92bd71149f6", "1773466045020-387b4f6a6867", "1580587771525-78b9dba3b914"],
+        heroTitle: ["A home that's <em>yours</em> again.", "Una casa que vuelve a ser <em>tuya</em>.", "Uma casa que volta a ser <em>sua</em>."],
+        lead: ["{n} stops ants, roaches, termites, rodents and mosquitoes for homes {z} — pet-safe treatments, licensed technicians and free re-treatment if pests come back.",
+               "{n} elimina hormigas, cucarachas, termitas, roedores y mosquitos en casas {z} — tratamientos seguros para mascotas, técnicos con licencia y re-tratamiento gratis si regresan.",
+               "{n} acaba com formigas, baratas, cupins, roedores e mosquitos em casas {z} — tratamentos seguros para pets, técnicos licenciados e reaplicação grátis se as pragas voltarem."],
+        m: [[20, PLUS, YRS], [15000, PLUS, ["Homes protected", "Casas protegidas", "Casas protegidas"]], [90, DIA, ["Re-treat guarantee", "Garantía de re-tratamiento", "Garantia de reaplicação"]]],
+        workTitle: ["Protection you <em>don't think about</em>", "Protección en la que <em>no tienes que pensar</em>", "Proteção em que você <em>não precisa pensar</em>"],
+        tabs: { a: ["Home Protection", "Protección del Hogar", "Proteção da Casa"], b: ["Termites", "Termitas", "Cupins"], c: ["Rodents & Mosquitoes", "Roedores y Mosquitos", "Roedores e Mosquitos"] },
+        gal: [
+          ["a", "1610951720081-dd190b210ba9", ["Ant colony treatment", "Tratamiento de hormigas", "Tratamento de formigas"]],
+          ["b", "1562123404-528b41e573a0", ["Termite damage inspection", "Inspección de daño por termitas", "Inspeção de dano por cupins"]],
+          ["c", "1540366244940-9dce0a570312", ["Rodent exclusion", "Control de roedores", "Controle de roedores"]],
+          ["a", "1568605114967-8130f3a36994", ["Year-round home barrier", "Barrera todo el año", "Barreira o ano todo"]],
+          ["b", "1640193385153-17e5adc43748", ["Wood protection", "Protección de madera", "Proteção da madeira"]],
+          ["c", "1707943768453-7850f916ebde", ["Mosquito yard treatment", "Tratamiento contra mosquitos", "Tratamento contra mosquitos"]]
+        ],
+        baTitle: ["From infested to <em>protected</em>", "De infestada a <em>protegida</em>", "De infestada a <em>protegida</em>"],
+        baText: ["Drag to compare. Inspection, targeted treatment inside and out, and a perimeter barrier that keeps working for 90 days.",
+                 "Arrastra para comparar. Inspección, tratamiento dirigido por dentro y por fuera, y una barrera perimetral que sigue funcionando 90 días.",
+                 "Arraste para comparar. Inspeção, tratamento direcionado por dentro e por fora, e uma barreira perimetral que continua agindo por 90 dias."],
+        baF1: ["1 visit", "1 visita", "1 visita"], baF1l: ["To start working", "Para empezar a actuar", "Para começar a agir"], baF2: ["90 days", "90 días", "90 dias"], baF2l: ["Perimeter barrier", "Barrera perimetral", "Barreira perimetral"], baF3: "100%", baF3l: ["Pet & kid safe", "Seguro para niños y mascotas", "Seguro para crianças e pets"],
+        p1t: ["What's bugging you?", "¿Qué plaga tienes?", "Qual praga você tem?"],
+        p2t: ["Tell us about your property", "Cuéntanos de tu propiedad", "Conte sobre o seu imóvel"],
+        p2s: ["An approximate home size is fine — the free inspection confirms everything.", "Un tamaño aproximado de la casa está bien — la inspección gratis confirma todo.", "Um tamanho aproximado está ótimo — a inspeção grátis confirma tudo."],
+        trust2: ["Pet & kid safe products", "Productos seguros para mascotas", "Produtos seguros para pets"],
+        qL3: ["Free inspection before any treatment", "Inspección gratis antes de tratar", "Inspeção grátis antes de tratar"],
+        ask: ["When can you come inspect?", "¿Cuándo pueden venir a inspeccionar?", "Quando podem vir inspecionar?"],
+        s: [
+          ["general", "bug", "sqft", ["General Pest Control", "Control General de Plagas", "Controle Geral de Pragas"], ["Ants, roaches, spiders", "Hormigas, cucarachas, arañas", "Formigas, baratas, aranhas"], 0.06, 0.11, 150, 800, 6000, 2000, 100],
+          ["termite", "search", "sqft", ["Termite Treatment", "Tratamiento de Termitas", "Tratamento de Cupins"], ["Liquid barrier or bait", "Barrera líquida o cebos", "Barreira líquida ou iscas"], 0.6, 1.4, 800, 800, 6000, 2000, 100],
+          ["rodent", "shield", "sqft", ["Rodent Control & Exclusion", "Control de Roedores", "Controle de Roedores"], ["Seal entry points", "Sellado de entradas", "Vedação de entradas"], 0.12, 0.25, 300, 800, 6000, 2000, 100],
+          ["mosquito", "leaf", "mes", ["Mosquito Yard Treatment", "Tratamiento contra Mosquitos", "Tratamento contra Mosquitos"], ["Monthly, all season", "Mensual, toda la temporada", "Mensal, a temporada toda"], 60, 110, 60, 1, 12, 6, 1],
+          ["bedbug", "bed", "room", ["Bed Bug Heat Treatment", "Tratamiento de Chinches", "Tratamento de Percevejos"], ["Chemical-free heat", "Calor sin químicos", "Calor sem produtos químicos"], 300, 600, 600, 1, 6, 2, 1],
+          ["plan", "cal", "visit", ["Quarterly Protection Plan", "Plan de Protección Trimestral", "Plano de Proteção Trimestral"], ["Inside & out, every 3 months", "Dentro y fuera, cada 3 meses", "Dentro e fora, a cada 3 meses"], 110, 170, 110, 1, 4, 4, 1]
+        ],
+        faq: [
+          [["Are your treatments safe for kids and pets?", "¿Los tratamientos son seguros para niños y mascotas?", "Os tratamentos são seguros para crianças e pets?"],
+           ["Yes. We use EPA-registered, low-impact products and tell you exactly when it's safe to return to treated areas.", "Sí. Usamos productos de bajo impacto registrados ante la EPA y te decimos exactamente cuándo puedes volver a las áreas tratadas.", "Sim. Usamos produtos de baixo impacto registrados na EPA e avisamos exatamente quando é seguro voltar às áreas tratadas."]],
+          [["What if the pests come back?", "¿Y si regresan las plagas?", "E se as pragas voltarem?"],
+           ["We come back and re-treat for free between scheduled visits.", "Regresamos y volvemos a tratar gratis entre visitas programadas.", "Voltamos e reaplicamos grátis entre as visitas programadas."]],
+          [["Do I need to leave the house?", "¿Tengo que salirme de la casa?", "Preciso sair de casa?"],
+           ["For general pest control, no. For some termite and bed bug treatments, we'll give you a short, clear plan.", "Para control general, no. Para algunos tratamientos de termitas y chinches te damos un plan corto y claro.", "Para controle geral, não. Para alguns tratamentos de cupins e percevejos passamos um plano curto e claro."]],
+          [["How often should I treat my home?", "¿Cada cuánto debo fumigar?", "Com que frequência devo dedetizar?"],
+           ["Every 3 months keeps a strong barrier year-round, which is why most clients choose the quarterly plan.", "Cada 3 meses mantiene una barrera fuerte todo el año; por eso la mayoría elige el plan trimestral.", "A cada 3 meses mantém uma barreira forte o ano todo; por isso a maioria escolhe o plano trimestral."]]
+        ],
+        rev: [
+          ["Karen J.", ["Roaches gone after one visit, and they came back free when a few showed up again.", "Las cucarachas desaparecieron con una visita y regresaron gratis cuando aparecieron unas pocas.", "As baratas sumiram com uma visita e eles voltaram grátis quando apareceram algumas."]],
+          ["Mike O.", ["Found termites the last company missed and treated the whole house. Very thorough.", "Encontraron termitas que la compañía anterior no vio y trataron toda la casa. Muy minuciosos.", "Encontraram cupins que a empresa anterior não viu e trataram a casa toda. Muito cuidadosos."]],
+          ["Lucia R.", ["We can finally use the backyard at night without mosquitoes. Safe for our dog too.", "Por fin podemos usar el patio en la noche sin mosquitos. Y seguro para nuestro perro.", "Finalmente dá para usar o quintal à noite sem mosquitos. E seguro para o nosso cachorro."]]
+        ],
+        footTitle: ["Sleep easy. <em>Pest-free.</em>", "Duerme tranquilo. <em>Sin plagas.</em>", "Durma tranquilo. <em>Sem pragas.</em>"],
+        footBlurb: ["General pest control, termites, rodents and mosquitoes — handled by licensed local technicians.", "Control de plagas, termitas, roedores y mosquitos — a cargo de técnicos locales con licencia.", "Controle de pragas, cupins, roedores e mosquitos — feito por técnicos locais licenciados."],
+        brandLine: ["Pest-free <em>living.</em>", "Vivir sin <em>plagas.</em>", "Viver sem <em>pragas.</em>"]
+      },
+
+      /* ---------------- DETAILING (auto detailing a domicilio) ---------------- */
+      detailing: {
+        demo: "Gloss Lab Mobile Detailing", ic: "car",
+        title: ["Mobile Auto Detailing & Ceramic Coating", "Detallado de Autos a Domicilio y Cerámico", "Estética Automotiva a Domicílio e Vitrificação"],
+        plural: ["detailers", "detallistas de autos", "estéticas automotivas"],
+        img: ["1780558852670-3f49298ecc1f", "1770935883781-a2f5a52b69da", "1567808291548-fc3ee04dbcf0"],
+        heroTitle: ["Showroom shine, <em>in your driveway.</em>", "Brillo de agencia, <em>en tu cochera.</em>", "Brilho de concessionária, <em>na sua garagem.</em>"],
+        lead: ["{n} brings full interior and exterior detailing, paint correction and ceramic coating {z} — 100% mobile, with our own water and power, so you never leave home.",
+               "{n} lleva detallado completo por dentro y por fuera, corrección de pintura y recubrimiento cerámico {z} — 100% a domicilio, con agua y luz propias, sin que salgas de casa.",
+               "{n} leva estética completa por dentro e por fora, correção de pintura e vitrificação {z} — 100% a domicílio, com água e energia próprias, sem você sair de casa."],
+        m: [[7, PLUS, YRS], [5000, PLUS, ["Cars detailed", "Autos detallados", "Carros detalhados"]], [100, PCT, ["Mobile: water & power included", "A domicilio: agua y luz incluidas", "A domicílio: água e energia inclusas"]]],
+        booking: ["Booking this week", "Agenda abierta esta semana", "Agenda aberta esta semana"],
+        workTitle: ["Every surface, <em>like new</em>", "Cada superficie, <em>como nueva</em>", "Cada superfície, <em>como nova</em>"],
+        tabs: { a: ["Exterior & Ceramic", "Exterior y Cerámico", "Externo e Vitrificação"], b: ["Interior", "Interior", "Interno"], c: ["On Location", "A Domicilio", "A Domicílio"] },
+        gal: [
+          ["a", "1632823469850-2f77dd9c7f93", ["Hand wax & polish", "Encerado a mano", "Enceramento à mão"]],
+          ["b", "1771491237209-b89bc7290588", ["Dashboard deep clean", "Limpieza profunda del tablero", "Limpeza profunda do painel"]],
+          ["c", "1694678505383-676d78ea3b96", ["Hand wash at your home", "Lavado a mano en tu casa", "Lavagem à mão na sua casa"]],
+          ["a", "1633014041037-f5446fb4ce99", ["Foam pre-wash", "Prelavado con espuma", "Pré-lavagem com espuma"]],
+          ["b", "1605437241278-c1806d14a4d9", ["Leather seats restored", "Asientos de piel restaurados", "Bancos de couro restaurados"]],
+          ["c", "1708805282683-50a060eba80f", ["Wheels & tires", "Rines y llantas", "Rodas e pneus"]]
+        ],
+        baTitle: ["From road grime to <em>mirror finish</em>", "De lodo a <em>acabado espejo</em>", "De barro a <em>acabamento espelhado</em>"],
+        baText: ["Drag to compare. Foam wash, clay bar, one-step polish and ceramic coating — done in your driveway in one afternoon.",
+                 "Arrastra para comparar. Lavado con espuma, barra de arcilla, pulido de un paso y recubrimiento cerámico — en tu cochera en una tarde.",
+                 "Arraste para comparar. Lavagem com espuma, clay bar, polimento de uma etapa e vitrificação — na sua garagem em uma tarde."],
+        baF1: "4 h", baF1l: ["Full detail", "Detallado completo", "Estética completa"], baF2: ["2 yrs", "2 años", "2 anos"], baF2l: ["Ceramic protection", "Protección cerámica", "Proteção cerâmica"], baF3: "0", baF3l: ["Trips to a shop", "Vueltas al taller", "Idas à oficina"],
+        p1t: ["What does your vehicle need?", "¿Qué necesita tu vehículo?", "Do que seu veículo precisa?"],
+        p2t: ["What are you driving?", "¿Qué vehículo tienes?", "Qual é o seu veículo?"],
+        p2s: ["Bigger vehicles take more time and product — pick the closest size.", "Los vehículos grandes llevan más tiempo y producto — elige el tamaño más parecido.", "Veículos maiores levam mais tempo e produto — escolha o tamanho mais parecido."],
+        urgency: ["When should we come by?", "¿Cuándo pasamos?", "Quando passamos aí?"], urgN: URG_CITA,
+        trust1: ["Insured & certified", "Asegurados y certificados", "Com seguro e certificados"], trust2: ["100% mobile: water & power included", "100% a domicilio: agua y luz incluidas", "100% a domicílio: água e energia inclusas"],
+        qL3: ["We come to your home or office", "Vamos a tu casa u oficina", "Vamos à sua casa ou escritório"],
+        resNote: ["Final price is confirmed when we see the vehicle. Pet hair, heavy stains and paint condition can move the number.", "El precio final se confirma al ver el vehículo. Pelo de mascota, manchas fuertes y el estado de la pintura pueden moverlo.", "O preço final é confirmado ao ver o veículo. Pelos de pet, manchas fortes e o estado da pintura podem alterar o valor."],
+        ask: ["What's your next opening?", "¿Cuál es su próximo espacio disponible?", "Qual é o próximo horário disponível?"],
+        h1: ["Mon–Sat · 8am – 6pm", "Lun–Sáb · 8am – 6pm", "Seg–Sáb · 8h – 18h"], h2: ["Sun · 9am – 3pm", "Dom · 9am – 3pm", "Dom · 9h – 15h"], h3: ["We come to you", "Vamos a tu domicilio", "Vamos até você"],
+        s: [
+          ["interior", "sofa", "veh", ["Interior Detail", "Detallado Interior", "Estética Interna"], ["Shampoo, steam & leather", "Lavado, vapor y piel", "Lavagem, vapor e couro"], 140, 220, 140, 1, 3, 1, 1],
+          ["exterior", "car", "veh", ["Exterior Wash & Wax", "Lavado y Encerado Exterior", "Lavagem e Enceramento"], ["Hand wash, clay & wax", "Lavado a mano, arcilla y cera", "Lavagem à mão, clay e cera"], 90, 160, 90, 1, 3, 1, 1],
+          ["full", "sparkle", "veh", ["Full Detail (In & Out)", "Detallado Completo", "Estética Completa"], ["Best value", "El más pedido", "O mais pedido"], 220, 350, 220, 1, 3, 1, 1],
+          ["ceramic", "shield", "veh", ["Ceramic Coating", "Recubrimiento Cerámico", "Vitrificação Cerâmica"], ["2–5 years of protection", "2 a 5 años de protección", "2 a 5 anos de proteção"], 650, 1300, 650, 1, 3, 1, 1],
+          ["correction", "sun", "veh", ["Paint Correction", "Corrección de Pintura", "Correção de Pintura"], ["Removes swirls & scratches", "Quita rayones y marcas", "Remove riscos e marcas"], 400, 900, 400, 1, 3, 1, 1],
+          ["headlights", "bulb", "un", ["Headlight Restoration", "Restauración de Faros", "Restauração de Faróis"], ["Clear & UV-sealed", "Transparentes y con sellador UV", "Transparentes e com selante UV"], 80, 150, 80, 1, 2, 1, 1]
+        ],
+        faq: [
+          [["Do you really need nothing from me?", "¿De verdad no necesitan nada de mí?", "Vocês realmente não precisam de nada meu?"],
+           ["Nothing. We bring our own water, power and products — just leave us the keys and a spot to park.", "Nada. Llevamos agua, luz y productos propios — solo déjanos las llaves y un lugar para estacionar.", "Nada. Levamos água, energia e produtos próprios — é só deixar a chave e um lugar para estacionar."]],
+          [["How long does ceramic coating last?", "¿Cuánto dura el recubrimiento cerámico?", "Quanto tempo dura a vitrificação?"],
+           ["2 to 5 years depending on the package. It repels water, dirt and UV and makes washing much easier.", "De 2 a 5 años según el paquete. Repele agua, polvo y rayos UV y hace que lavar sea mucho más fácil.", "De 2 a 5 anos, conforme o pacote. Repele água, sujeira e raios UV e facilita muito a lavagem."]],
+          [["How long does a full detail take?", "¿Cuánto tarda un detallado completo?", "Quanto tempo leva uma estética completa?"],
+           ["About 3 to 5 hours depending on size and condition. Ceramic coating takes most of a day.", "De 3 a 5 horas según el tamaño y el estado. El cerámico toma casi todo el día.", "De 3 a 5 horas, conforme o tamanho e o estado. A vitrificação leva quase o dia todo."]],
+          [["Can you get out pet hair and stains?", "¿Quitan pelo de mascota y manchas?", "Vocês tiram pelos de pet e manchas?"],
+           ["Yes — with extractors and steam. Extreme cases may add a small fee, always confirmed beforehand.", "Sí — con extractora y vapor. Casos extremos pueden llevar un cargo pequeño, siempre confirmado antes.", "Sim — com extratora e vapor. Casos extremos podem ter uma pequena taxa, sempre confirmada antes."]]
+        ],
+        rev: [
+          ["Jason K.", ["They detailed my truck in my driveway while I worked from home. Looks better than when I bought it.", "Detallaron mi camioneta en mi cochera mientras yo trabajaba en casa. Quedó mejor que cuando la compré.", "Fizeram a estética da minha picape na garagem enquanto eu trabalhava em casa. Ficou melhor que quando comprei."]],
+          ["Alejandra T.", ["The ceramic coating is amazing — rain just slides off. Super professional.", "El cerámico es increíble, el agua resbala sola. Súper profesionales.", "A vitrificação é incrível, a chuva escorre sozinha. Muito profissionais."]],
+          ["Brandon S.", ["They got every bit of dog hair out of my SUV. Worth every dollar.", "Sacaron todo el pelo de perro de mi SUV. Valió cada dólar.", "Tiraram todo o pelo de cachorro do meu SUV. Valeu cada dólar."]]
+        ],
+        footTitle: ["Love your car <em>again.</em>", "Vuelve a enamorarte <em>de tu auto.</em>", "Apaixone-se de novo <em>pelo seu carro.</em>"],
+        footBlurb: ["Mobile detailing, paint correction and ceramic coating — at your home or office, by one local team.", "Detallado a domicilio, corrección de pintura y cerámico — en tu casa u oficina, por un mismo equipo local.", "Estética a domicílio, correção de pintura e vitrificação — na sua casa ou escritório, por uma única equipe local."],
+        brandLine: ["Driven by <em>detail.</em>", "Pasión por el <em>detalle.</em>", "Paixão pelo <em>detalhe.</em>"]
+      },
+
+      /* ---------------- BARBERIA (barbershop & grooming lounge) ---------------- */
+      barberia: {
+        demo: "Kings & Co. Barbershop", ic: "scissors",
+        title: ["Barbershop & Grooming Lounge", "Barbería y Grooming Lounge", "Barbearia e Grooming Lounge"],
+        plural: ["barbershops", "barberías", "barbearias"],
+        img: ["1503951914875-452162b0f3f1", "1517832606299-7ae9b720a186", "1593702275687-f8b402bf1fb5"],
+        heroTitle: ["Sharp cuts. <em>No waiting.</em>", "Cortes impecables. <em>Sin esperar.</em>", "Cortes impecáveis. <em>Sem espera.</em>"],
+        lead: ["{n} delivers precision fades, beard sculpting and hot-towel shaves {z} — book your chair online and walk straight in.",
+               "{n} hace fades de precisión, diseño de barba y afeitado con toalla caliente {z} — aparta tu silla en línea y pasa directo.",
+               "{n} faz fades de precisão, design de barba e barba com toalha quente {z} — reserve sua cadeira online e entre direto."],
+        m: [[12, PLUS, YRS], [25000, PLUS, ["Cuts delivered", "Cortes realizados", "Cortes realizados"]], [5, MIN, ["Avg. wait with booking", "Espera promedio con cita", "Espera média com reserva"]]],
+        booking: ["Chairs open today", "Sillas disponibles hoy", "Cadeiras livres hoje"],
+        navBA: ["The Cut", "El Corte", "O Corte"],
+        workTitle: ["Fresh cuts, <em>sharp details</em>", "Cortes frescos, <em>detalles finos</em>", "Cortes novos, <em>detalhes afiados</em>"],
+        tabs: { a: ["Cuts & Fades", "Cortes y Fades", "Cortes e Fades"], b: ["Beard & Shave", "Barba y Afeitado", "Barba e Navalha"], c: ["The Shop", "La Barbería", "A Barbearia"] },
+        gal: [
+          ["a", "1647140655214-e4a2d914971f", ["Scissor-over-comb cut", "Corte con tijera", "Corte na tesoura"]],
+          ["b", "1599351431202-1e0f0137899a", ["Straight-razor line-up", "Contorno con navaja", "Acabamento na navalha"]],
+          ["c", "1585747860715-2ba37e788b70", ["Classic barber chair", "Silla clásica", "Cadeira clássica"]],
+          ["a", "1657105052497-f996284ffff8", ["Textured crop", "Corte texturizado", "Corte texturizado"]],
+          ["b", "1621605815971-fbc98d665033", ["Pro tools & products", "Herramientas y productos", "Ferramentas e produtos"]],
+          ["c", "1781768526571-ef9c333279c7", ["Our lounge", "Nuestro lounge", "Nosso lounge"]]
+        ],
+        baTitle: ["From overgrown to <em>fresh</em>", "De descuidado a <em>impecable</em>", "De descuidado a <em>impecável</em>"],
+        baText: ["Drag to compare. Skin fade, beard sculpt and hot-towel finish — 45 minutes in the chair.",
+                 "Arrastra para comparar. Skin fade, diseño de barba y toalla caliente — 45 minutos en la silla.",
+                 "Arraste para comparar. Skin fade, design de barba e toalha quente — 45 minutos na cadeira."],
+        baF1: "45 min", baF1l: ["Cut + beard", "Corte + barba", "Corte + barba"], baF2: "1", baF2l: ["Hot towel, every visit", "Toalla caliente siempre", "Toalha quente sempre"], baF3: "0", baF3l: ["Wait with booking", "Espera con cita", "Espera com reserva"],
+        p1t: ["What are you getting?", "¿Qué te vas a hacer?", "O que você vai fazer?"],
+        p2t: ["How many people?", "¿Cuántas personas?", "Quantas pessoas?"],
+        p2s: ["Bringing the crew or a groom's party? We save the chairs together.", "¿Vienes con amigos o es para una boda? Apartamos las sillas juntas.", "Vem com amigos ou é para um casamento? Reservamos as cadeiras juntas."],
+        urgency: ["When do you want to come in?", "¿Cuándo quieres venir?", "Quando você quer vir?"],
+        urgN: [["Flexible", "Flexible", "Flexível"], ["This week", "Esta semana", "Esta semana"], ["Today", "Hoy", "Hoje"]],
+        trust1: ["Licensed master barbers", "Barberos con licencia", "Barbeiros licenciados"], trust2: ["Online booking, no waiting", "Cita en línea, sin esperar", "Reserva online, sem espera"],
+        qL1: MENU, qL3: ["Hot towel included in every service", "Toalla caliente en cada servicio", "Toalha quente em todo serviço"],
+        resNote: ["Final price is confirmed at the chair. Designs, color and extras can move the number.", "El precio final se confirma en la silla. Diseños, color y extras pueden moverlo.", "O preço final é confirmado na cadeira. Desenhos, cor e extras podem alterar o valor."],
+        ask: ["What time can you fit me in?", "¿A qué hora tienen espacio?", "Que horário vocês têm livre?"],
+        h1: ["Mon–Fri · 9am – 8pm", "Lun–Vie · 9am – 8pm", "Seg–Sex · 9h – 20h"], h2: ["Sat · 8am – 6pm", "Sáb · 8am – 6pm", "Sáb · 8h – 18h"], h3: ["Sun · 10am – 3pm", "Dom · 10am – 3pm", "Dom · 10h – 15h"],
+        s: [
+          ["cut", "scissors", "per", ["Haircut & Fade", "Corte y Fade", "Corte e Fade"], ["Skin, taper or classic", "Skin, taper o clásico", "Skin, taper ou clássico"], 30, 45, 30, 1, 6, 1, 1],
+          ["beard", "user", "per", ["Beard Trim + Hot Towel", "Barba + Toalla Caliente", "Barba + Toalha Quente"], ["Sculpt & line-up", "Diseño y contorno", "Desenho e contorno"], 20, 35, 20, 1, 6, 1, 1],
+          ["combo", "sparkle", "per", ["Cut + Beard Combo", "Combo Corte + Barba", "Combo Corte + Barba"], ["Most popular", "El más pedido", "O mais pedido"], 45, 65, 45, 1, 6, 1, 1],
+          ["vip", "star", "per", ["VIP Grooming", "Grooming VIP", "Grooming VIP"], ["Cut, beard, facial & drink", "Corte, barba, facial y bebida", "Corte, barba, facial e bebida"], 70, 110, 70, 1, 6, 1, 1],
+          ["kids", "smile", "per", ["Kids Cut (12 & under)", "Corte de Niño (12 o menos)", "Corte Infantil (até 12)"], ["Patient & fun", "Con paciencia y diversión", "Com paciência e diversão"], 22, 30, 22, 1, 6, 1, 1],
+          ["event", "cal", "per", ["Wedding & Event Grooming", "Grooming para Bodas y Eventos", "Grooming para Casamentos"], ["We can come to you", "Podemos ir a tu evento", "Podemos ir até você"], 60, 90, 300, 2, 12, 5, 1]
+        ],
+        faq: [
+          [["Do you take walk-ins?", "¿Atienden sin cita?", "Vocês atendem sem hora marcada?"],
+           ["Yes, when a chair is open — but booking online guarantees your time with almost no wait.", "Sí, si hay silla libre — pero agendar en línea te garantiza tu horario casi sin esperar.", "Sim, se houver cadeira livre — mas reservar online garante seu horário quase sem espera."]],
+          [["What's included with a haircut?", "¿Qué incluye el corte?", "O que está incluído no corte?"],
+           ["Consultation, cut, line-up, hot towel and styling. Beard work is added as a combo.", "Consulta, corte, contorno, toalla caliente y peinado. La barba se agrega como combo.", "Consulta, corte, contorno, toalha quente e finalização. A barba entra como combo."]],
+          [["Do you cut kids' hair?", "¿Cortan a niños?", "Vocês cortam cabelo infantil?"],
+           ["Absolutely — kids 12 and under have their own price and we take our time.", "Claro — los niños de 12 años o menos tienen su propio precio y les dedicamos el tiempo necesario.", "Claro — crianças até 12 anos têm preço próprio e cortamos com calma."]],
+          [["Can you groom a whole wedding party?", "¿Pueden arreglar a todo el cortejo de una boda?", "Vocês atendem a turma do casamento?"],
+           ["Yes. We reserve chairs for the group or bring the barbers to your venue.", "Sí. Apartamos sillas para el grupo o llevamos a los barberos a tu evento.", "Sim. Reservamos cadeiras para o grupo ou levamos os barbeiros até o local."]]
+        ],
+        rev: [
+          ["Marcus T.", ["Cleanest fade in the city, and I never wait thanks to online booking.", "El fade más limpio de la ciudad y nunca espero gracias a la cita en línea.", "O fade mais limpo da cidade e nunca espero graças à reserva online."]],
+          ["Diego F.", ["The hot towel shave is worth it every single time. Great vibe too.", "El afeitado con toalla caliente vale la pena cada vez. Y el ambiente está buenísimo.", "A barba com toalha quente vale a pena toda vez. E o ambiente é ótimo."]],
+          ["Andre P.", ["They took care of all 8 groomsmen before my wedding. On time and looking sharp.", "Arreglaron a mis 8 padrinos antes de la boda. Puntuales y todos impecables.", "Cuidaram dos meus 8 padrinhos antes do casamento. Pontuais e todos impecáveis."]]
+        ],
+        footTitle: ["Look sharp. <em>Feel sharper.</em>", "Luce bien. <em>Siéntete mejor.</em>", "Fique bem. <em>Sinta-se melhor.</em>"],
+        footBlurb: ["Fades, beards and hot-towel shaves — by licensed local barbers, with online booking and no waiting.", "Fades, barbas y afeitado con toalla caliente — por barberos locales con licencia, con cita en línea y sin esperar.", "Fades, barbas e navalha com toalha quente — por barbeiros locais licenciados, com reserva online e sem espera."],
+        brandLine: ["Stay <em>sharp.</em>", "Siempre <em>impecable.</em>", "Sempre <em>impecável.</em>"]
+      },
+
+      /* ---------------- MUDANZAS (moving & packing) ---------------- */
+      mudanzas: {
+        demo: "Swift Move Co.", ic: "truck",
+        title: ["Moving & Packing Services", "Mudanzas y Servicio de Empaque", "Mudanças e Embalagem"],
+        plural: ["moving companies", "empresas de mudanzas", "empresas de mudança"],
+        img: ["1758523670991-ee93bc48d81d", "1766040923580-16ad32fae8b4", "1729811985748-9e248b1517d8"],
+        heroTitle: ["Your move, <em>handled.</em>", "Tu mudanza, <em>resuelta.</em>", "Sua mudança, <em>resolvida.</em>"],
+        lead: ["{n} packs, loads and moves homes and offices {z} — flat pricing by home size, no hidden fees for stairs or packing, and a careful, background-checked crew.",
+               "{n} empaca, carga y muda casas y oficinas {z} — precio fijo según el tamaño de tu casa, sin cargos ocultos por escaleras ni empaque, y un equipo cuidadoso y verificado.",
+               "{n} embala, carrega e muda casas e escritórios {z} — preço fixo pelo tamanho do imóvel, sem taxas escondidas por escadas ou embalagem, e uma equipe cuidadosa e verificada."],
+        m: [[14, PLUS, YRS], [6500, PLUS, ["Moves completed", "Mudanzas realizadas", "Mudanças realizadas"]], [100, PCT, ["Upfront flat pricing", "Precio fijo por adelantado", "Preço fixo antecipado"]]],
+        booking: ["Booking dates this month", "Fechas disponibles este mes", "Datas disponíveis este mês"],
+        workTitle: ["Every box, <em>accounted for</em>", "Cada caja, <em>en su lugar</em>", "Cada caixa, <em>no lugar certo</em>"],
+        tabs: { a: ["Packing", "Empaque", "Embalagem"], b: ["Loading & Transport", "Carga y Transporte", "Carga e Transporte"], c: ["Move-In Day", "Día de la Mudanza", "Dia da Mudança"] },
+        gal: [
+          ["a", "1600725935160-f67ee4f6084a", ["Room-by-room labeled packing", "Empaque por cuarto y etiquetado", "Embalagem por cômodo e etiquetada"]],
+          ["b", "1694715669993-ea0022b470f7", ["Careful unloading", "Descarga con cuidado", "Descarga com cuidado"]],
+          ["c", "1772724317350-520faccb15e6", ["Apartment move-in", "Mudanza a departamento", "Mudança para apartamento"]],
+          ["a", "1786396798391-8c3f330cf3a8", ["Unpacking service", "Servicio de desempaque", "Serviço de desembalagem"]],
+          ["b", "1742858492775-8f58f645aa12", ["Padded, secured truck", "Camión acolchado y asegurado", "Caminhão acolchoado e seguro"]],
+          ["c", "1758523671413-cd178a883d6a", ["Settled into the new home", "Instalados en la casa nueva", "Instalados na casa nova"]]
+        ],
+        baEyebrow: ["Move day", "Día de mudanza", "Dia da mudança"],
+        baTitle: ["From boxes to <em>home</em>", "De cajas a <em>hogar</em>", "De caixas a <em>lar</em>"],
+        baText: ["Drag to compare. A 3-bedroom move: packed, loaded, moved and set up — furniture placed and beds assembled the same day.",
+                 "Arrastra para comparar. Una mudanza de 3 recámaras: empacada, cargada, trasladada e instalada — muebles acomodados y camas armadas el mismo día.",
+                 "Arraste para comparar. Uma mudança de 3 quartos: embalada, carregada, transportada e montada — móveis no lugar e camas montadas no mesmo dia."],
+        baF1: ["1 day", "1 día", "1 dia"], baF1l: ["Door to door", "De puerta a puerta", "De porta a porta"], baF2: "$0", baF2l: ["Stairs or packing fees", "Cargos por escaleras o empaque", "Taxas por escadas ou embalagem"], baF3: "100%", baF3l: ["Insured cargo", "Carga asegurada", "Carga com seguro"],
+        p1t: ["What kind of move?", "¿Qué tipo de mudanza?", "Que tipo de mudança?"],
+        p2t: ["How big is your home?", "¿Qué tan grande es tu casa?", "Qual é o tamanho do seu imóvel?"],
+        p2s: ["Pick the closest size — we confirm with a free video walkthrough.", "Elige el tamaño más parecido — confirmamos con un recorrido gratis por videollamada.", "Escolha o tamanho mais parecido — confirmamos com uma visita grátis por vídeo."],
+        urgency: ["When is your move?", "¿Cuándo es tu mudanza?", "Quando é a sua mudança?"],
+        urgN: [["Flexible date", "Fecha flexible", "Data flexível"], ["Within 30 days", "En 30 días", "Em 30 dias"], ["This week", "Esta semana", "Esta semana"]],
+        trust1: ["Licensed & insured movers", "Mudanceros con licencia y seguro", "Equipe licenciada e com seguro"], trust2: ["No hidden fees", "Sin cargos ocultos", "Sem taxas escondidas"],
+        qL3: ["Free video walkthrough to lock the price", "Recorrido gratis por video para fijar el precio", "Visita grátis por vídeo para fechar o preço"],
+        resNote: ["Final price is confirmed after a free video walkthrough. Long carries or specialty items like pianos are quoted upfront.", "El precio final se confirma tras un recorrido gratis por video. Distancias largas a pie o piezas especiales como pianos se cotizan por adelantado.", "O preço final é confirmado após uma visita grátis por vídeo. Percursos longos a pé ou itens especiais como pianos são orçados antes."],
+        ask: ["Do you have availability on my date?", "¿Tienen disponibilidad para mi fecha?", "Vocês têm disponibilidade na minha data?"],
+        h1: ["Mon–Sat · 7am – 7pm", "Lun–Sáb · 7am – 7pm", "Seg–Sáb · 7h – 19h"], h2: ["Sun · By appointment", "Dom · Con cita", "Dom · Com agendamento"], h3: ["Quotes 7 days a week", "Cotizaciones los 7 días", "Orçamentos 7 dias por semana"],
+        s: [
+          ["local", "truck", "br", ["Local Move", "Mudanza Local", "Mudança Local"], ["Same city, flat price", "Misma ciudad, precio fijo", "Mesma cidade, preço fixo"], 450, 750, 400, 1, 5, 3, 1],
+          ["long", "pin", "br", ["Long-Distance Move", "Mudanza Foránea", "Mudança Interestadual"], ["Out of state, door to door", "Fuera del estado, puerta a puerta", "Outro estado, porta a porta"], 1800, 3500, 1500, 1, 5, 3, 1],
+          ["packing", "box", "br", ["Packing & Unpacking", "Empaque y Desempaque", "Embalagem e Desembalagem"], ["Boxes & materials included", "Cajas y material incluidos", "Caixas e material inclusos"], 250, 450, 250, 1, 5, 3, 1],
+          ["labor", "user", "br", ["Loading / Unloading Only", "Solo Carga / Descarga", "Só Carga / Descarga"], ["Your truck or container", "Tu camión o contenedor", "Seu caminhão ou contêiner"], 200, 380, 200, 1, 5, 3, 1],
+          ["office", "building", "sqft", ["Office Move", "Mudanza de Oficina", "Mudança de Escritório"], ["After hours, zero downtime", "Fuera de horario, sin parar", "Fora do horário, sem parar"], 1.2, 2.5, 1500, 500, 10000, 2000, 100],
+          ["piano", "music", "un", ["Piano & Specialty Items", "Pianos y Piezas Especiales", "Pianos e Itens Especiais"], ["Safes, art, pool tables", "Cajas fuertes, arte, mesas de billar", "Cofres, arte, mesas de sinuca"], 300, 700, 300, 1, 3, 1, 1]
+        ],
+        faq: [
+          [["Are there extra fees for stairs or packing?", "¿Cobran extra por escaleras o empaque?", "Vocês cobram a mais por escadas ou embalagem?"],
+           ["No hidden fees. Stairs, elevators and standard packing materials are included in your flat price.", "Sin cargos ocultos. Escaleras, elevadores y el material de empaque estándar van incluidos en tu precio fijo.", "Sem taxas escondidas. Escadas, elevadores e o material de embalagem padrão estão incluídos no preço fixo."]],
+          [["Is my stuff insured?", "¿Mis cosas van aseguradas?", "Minhas coisas têm seguro?"],
+           ["Yes. Every move includes basic coverage, and full-value protection is available.", "Sí. Cada mudanza incluye cobertura básica y hay protección de valor total disponible.", "Sim. Toda mudança inclui cobertura básica e há proteção de valor total disponível."]],
+          [["How far ahead should I book?", "¿Con cuánto tiempo debo reservar?", "Com quanta antecedência devo reservar?"],
+           ["2–4 weeks is ideal, especially at the end of the month. Last-minute moves are possible when we have a crew free.", "De 2 a 4 semanas es lo ideal, sobre todo a fin de mes. Las mudanzas de último minuto son posibles si hay equipo libre.", "De 2 a 4 semanas é o ideal, principalmente no fim do mês. Mudanças de última hora são possíveis se houver equipe livre."]],
+          [["Do you take apart and reassemble furniture?", "¿Desarman y arman los muebles?", "Vocês desmontam e montam os móveis?"],
+           ["Yes — beds, tables and most furniture are taken apart, wrapped and put back together at no extra cost.", "Sí — camas, mesas y la mayoría de los muebles se desarman, se protegen y se vuelven a armar sin costo extra.", "Sim — camas, mesas e a maioria dos móveis são desmontados, protegidos e montados de novo sem custo extra."]]
+        ],
+        rev: [
+          ["Jessica R.", ["The quote was exactly what we paid — no surprise fees for our third-floor walk-up.", "La cotización fue exactamente lo que pagamos, sin cargos sorpresa por nuestro tercer piso sin elevador.", "O orçamento foi exatamente o que pagamos, sem taxas surpresa pelo nosso terceiro andar sem elevador."]],
+          ["Omar S.", ["They packed our whole 3-bedroom in a day and nothing broke. Beds were set up that night.", "Empacaron toda nuestra casa de 3 recámaras en un día y nada se rompió. Las camas quedaron armadas esa noche.", "Embalaram nossa casa de 3 quartos em um dia e nada quebrou. As camas ficaram montadas na mesma noite."]],
+          ["Beth A.", ["Fast, careful and really kind with my elderly mom's move. Highly recommend.", "Rápidos, cuidadosos y muy amables con la mudanza de mi mamá. Muy recomendados.", "Rápidos, cuidadosos e muito gentis com a mudança da minha mãe. Recomendo muito."]]
+        ],
+        footTitle: ["Let's get you <em>moved in.</em>", "Vamos a <em>mudarte.</em>", "Vamos fazer sua <em>mudança.</em>"],
+        footBlurb: ["Local and long-distance moves, packing and specialty items — flat priced and handled by one local crew.", "Mudanzas locales y foráneas, empaque y piezas especiales — con precio fijo y a cargo de un mismo equipo local.", "Mudanças locais e interestaduais, embalagem e itens especiais — com preço fixo e feitas por uma única equipe local."],
+        brandLine: ["Moved with <em>care.</em>", "Mudanza con <em>cuidado.</em>", "Mudança com <em>cuidado.</em>"]
+      }
+    });
+
+    /* =====================================================
+       5c) INSIGNIAS DE ÉLITE (Top 5 de EE. UU. por giro)
+       sello: garantía específica (debajo de la portada y en el cotizador)
+       incluye: 3 puntos que se muestran junto al precio en el paso 3
+       ===================================================== */
+    const RAPIDO60 = ["60-Minute Response & Flat-Rate Pricing, No Surprises", "Respuesta en 60 Minutos y Precio Fijo sin Sorpresas", "Resposta em 60 Minutos e Preço Fixo sem Surpresas"];
+    const VIP = ["First-Visit VIP Bonus & Certified Specialists", "Bono VIP de Primera Visita y Especialistas Certificadas", "Bônus VIP na Primeira Visita e Especialistas Certificadas"];
+    const PRECIO_FIJO = ["Flat price approved before any work", "Precio fijo aprobado antes de empezar", "Preço fixo aprovado antes de começar"];
+    const ELITE = {
+      landscaping: { sello: ["100% HOA-Approved Designs", "Diseños 100% Aprobados por HOA", "Projetos 100% Aprovados pela HOA"],
+        incluye: [["Free 3D design & HOA paperwork", "Diseño 3D gratis y trámite con tu HOA", "Projeto 3D grátis e papelada da HOA"], ["Daily site cleanup & haul-away", "Limpieza y retiro de escombro diario", "Limpeza e retirada de entulho diária"], ["5-year workmanship warranty", "5 años de garantía en mano de obra", "5 anos de garantia na mão de obra"]] },
+      roofing: { sello: ["100% Insurance-Claim Assistance & 21-Point Inspection", "Asistencia 100% con tu Seguro e Inspección de 21 Puntos", "Assistência 100% com o Seguro e Inspeção de 21 Pontos"],
+        incluye: [["21-point inspection with photo report", "Inspección de 21 puntos con reporte en fotos", "Inspeção de 21 pontos com relatório em fotos"], ["We meet your insurance adjuster on-site", "Nos reunimos con tu ajustador en sitio", "Encontramos o perito do seguro no local"], ["Magnetic nail sweep & full cleanup", "Barrido magnético de clavos y limpieza total", "Varredura magnética de pregos e limpeza total"]] },
+      spa: { sello: VIP,
+        incluye: [["Free skin analysis before treatment", "Análisis de piel gratis antes del tratamiento", "Análise de pele grátis antes do tratamento"], ["Medical-grade products only", "Solo productos de grado médico", "Somente produtos de grau médico"], ["Personalized aftercare plan", "Plan de cuidados personalizado", "Plano de cuidados personalizado"]] },
+      painting: { sello: ["3-Year Warranty & Full Furniture and Floor Protection", "Garantía de 3 Años y Protección Total de Muebles y Pisos", "Garantia de 3 Anos e Proteção Total de Móveis e Pisos"],
+        incluye: [["Surface prep, patching & primer", "Preparación, resanes y primer", "Preparo, massa e primer"], ["2 coats of premium low-VOC paint", "2 manos de pintura premium sin olor", "2 demãos de tinta premium sem cheiro"], ["Daily cleanup & final walkthrough", "Limpieza diaria y revisión final contigo", "Limpeza diária e vistoria final com você"]] },
+      cleaning: { sello: ["48-Point Checklist & 20% OFF Bi-Weekly Plans", "Checklist de 48 Puntos y 20% OFF en Plan Quincenal", "Checklist de 48 Pontos e 20% OFF no Plano Quinzenal"],
+        incluye: [["48-point, room-by-room checklist", "Checklist de 48 puntos cuarto por cuarto", "Checklist de 48 pontos cômodo por cômodo"], ["Eco-friendly supplies & equipment", "Productos ecológicos y equipo incluidos", "Produtos ecológicos e equipamento inclusos"], ["Free re-clean within 24 hours", "Re-limpieza gratis dentro de 24 horas", "Nova limpeza grátis em até 24 horas"]] },
+      plumbing: { sello: RAPIDO60,
+        incluye: [["Camera or pressure diagnosis", "Diagnóstico con cámara o presión", "Diagnóstico com câmera ou pressão"], PRECIO_FIJO, ["2-year parts & labor warranty", "2 años de garantía en piezas y mano de obra", "2 anos de garantia em peças e mão de obra"]] },
+      hvac: { sello: RAPIDO60,
+        incluye: [["Free load calculation & system check", "Cálculo de carga y revisión gratis", "Cálculo de carga e revisão grátis"], PRECIO_FIJO, ["10-year parts & labor warranty", "10 años de garantía en piezas y mano de obra", "10 anos de garantia em peças e mão de obra"]] },
+      remodeling: { sello: ["Free 3D Design & Fixed-Price Contract", "Diseño 3D Gratis y Precio Fijo por Contrato", "Projeto 3D Grátis e Preço Fixo em Contrato"],
+        incluye: [["3D design before we build", "Diseño 3D antes de construir", "Projeto 3D antes da obra"], ["Permits & inspections handled", "Permisos e inspecciones incluidos", "Licenças e vistorias inclusas"], ["Dust control & daily cleanup", "Control de polvo y limpieza diaria", "Controle de poeira e limpeza diária"]] },
+      bakery: { sello: ["Baked Fresh the Same Day & Free Wedding Tastings", "Horneado el Mismo Día y Degustación Gratis para Bodas", "Assado no Mesmo Dia e Degustação Grátis para Casamentos"],
+        incluye: [["Made from scratch the same day", "Hecho desde cero el mismo día", "Feito do zero no mesmo dia"], ["Custom design & flavor consultation", "Diseño y sabores a tu gusto", "Design e sabores do seu jeito"], ["Gift-ready packaging", "Empaque listo para regalar", "Embalagem pronta para presente"]] },
+      lashes: { sello: VIP,
+        incluye: [["Lash mapping for your eye shape", "Diseño según la forma de tu ojo", "Mapeamento para o formato do seu olho"], ["Medical-grade, low-fume adhesive", "Adhesivo de grado médico sin vapores", "Adesivo de grau médico sem vapores"], ["Aftercare kit & cleansing brush", "Kit de cuidados y cepillo de limpieza", "Kit de cuidados e escovinha de limpeza"]] },
+      concrete: { sello: ["5-Year No-Crack Warranty on Reinforced Concrete", "Garantía de 5 Años contra Grietas en Concreto Reforzado", "Garantia de 5 Anos contra Rachaduras em Concreto Reforçado"],
+        incluye: [["Demolition & haul-away of old concrete", "Demolición y retiro del concreto viejo", "Demolição e retirada do concreto velho"], ["Compacted base & steel reinforcement", "Base compactada y refuerzo de acero", "Base compactada e reforço de aço"], ["Control joints & sealer finish", "Juntas de control y sellador", "Juntas de dilatação e selante"]] },
+      fencing: { sello: ["Permits & Property-Line Check Included", "Trámite de Permisos y Línea de Propiedad Incluidos", "Licenças e Conferência do Limite do Terreno Inclusas"],
+        incluye: [["Permit, HOA & 811 utility marking", "Permiso, HOA y marcado de instalaciones 811", "Licença, HOA e marcação de redes 811"], ["Posts set in concrete", "Postes anclados en concreto", "Postes fixados em concreto"], ["Old fence removal & cleanup", "Retiro de la cerca vieja y limpieza", "Retirada da cerca velha e limpeza"]] },
+      pool: { sello: ["Crystal-Clear Water Guaranteed or the Next Visit Is Free", "Agua Cristalina Garantizada o la Siguiente Visita es Gratis", "Água Cristalina Garantida ou a Próxima Visita é Grátis"],
+        incluye: [["All balancing chemicals included", "Todos los químicos de balance incluidos", "Todos os produtos de equilíbrio inclusos"], ["Brushing, skimming, vacuum & baskets", "Cepillado, hojas, aspirado y canastas", "Escovação, peneira, aspiração e cestos"], ["Photo report after every visit", "Reporte con foto después de cada visita", "Relatório com foto após cada visita"]] },
+      junk: { sello: ["Flat Price per Load & 60% Recycled or Donated", "Precio Fijo por Carga y 60% Reciclado o Donado", "Preço Fixo por Carga e 60% Reciclado ou Doado"],
+        incluye: [["All lifting & loading by our crew", "Nosotros cargamos todo", "Nossa equipe carrega tudo"], ["Sweep-up after removal", "Barrido al terminar", "Varrição ao final"], ["Donation & recycling drop-off", "Entrega a donación y reciclaje", "Entrega para doação e reciclagem"]] },
+      pest: { sello: ["Free Re-Treatment Guarantee & Pet-Safe Products", "Garantía de Re-Tratamiento Gratis y Productos Seguros para Mascotas", "Garantia de Reaplicação Grátis e Produtos Seguros para Pets"],
+        incluye: [["Full inspection inside & out", "Inspección completa por dentro y por fuera", "Inspeção completa por dentro e por fora"], ["Targeted, pet-safe treatment", "Tratamiento dirigido y seguro para mascotas", "Tratamento direcionado e seguro para pets"], ["Free re-treat if pests return", "Re-tratamiento gratis si regresan", "Reaplicação grátis se as pragas voltarem"]] },
+      detailing: { sello: ["100% Mobile: We Bring Our Own Water and Power", "100% a Domicilio: Llevamos Agua y Luz Propias", "100% a Domicílio: Levamos Água e Energia Próprias"],
+        incluye: [["Water, power & products included", "Agua, luz y productos incluidos", "Água, energia e produtos inclusos"], ["Hand wash with pH-neutral soap", "Lavado a mano con jabón pH neutro", "Lavagem à mão com sabão de pH neutro"], ["Before & after photo report", "Reporte con fotos de antes y después", "Relatório com fotos de antes e depois"]] },
+      barberia: { sello: ["Hot Towel with Every Service & No-Wait Booking", "Toalla Caliente en Cada Servicio y Citas sin Espera", "Toalha Quente em Todo Serviço e Reserva sem Espera"],
+        incluye: [["Style consultation", "Consulta de estilo", "Consulta de estilo"], ["Hot towel & straight-razor line-up", "Toalla caliente y contorno con navaja", "Toalha quente e acabamento na navalha"], ["Wash & style finish", "Lavado y peinado final", "Lavagem e finalização"]] },
+      mudanzas: { sello: ["No Hidden Fees for Stairs or Packing", "Sin Cargos Ocultos por Escaleras ni Empaque", "Sem Taxas Escondidas por Escadas ou Embalagem"],
+        incluye: [["Furniture wrapping & padding", "Protección y emplayado de muebles", "Proteção e embalagem dos móveis"], ["Disassembly & reassembly", "Desarmado y armado de muebles", "Desmontagem e montagem"], ["Basic cargo insurance included", "Seguro básico de carga incluido", "Seguro básico da carga incluso"]] }
+    };
+    for (const [k, v] of Object.entries(ELITE)) Object.assign(GIROS[k], v);
     const G = GIROS[GIRO];
     const NEGOCIO = CLIENTE || G.demo;
 
@@ -1525,7 +2214,26 @@
       zone:  { k: ["Zones", "Zonas", "Zonas"], lbl: ["Rooms or zones", "Cuartos o zonas", "Cômodos ou zonas"], u: [["zone", "zones"], ["zona", "zonas"], ["zona", "zonas"]] },
       vent:  { k: ["Vents", "Rejillas", "Saídas"], lbl: ["Number of vents", "Número de rejillas", "Número de saídas de ar"], u: [["vent", "vents"], ["rejilla", "rejillas"], ["saída", "saídas"]] },
       wk:    { k: ["Weeks", "Semanas", "Semanas"], lbl: ["Number of weeks", "Número de semanas", "Número de semanas"], u: [["week", "weeks"], ["semana", "semanas"], ["semana", "semanas"]] },
-      door:  { k: ["Doors", "Puertas", "Portas"], lbl: ["Cabinet doors", "Puertas de gabinete", "Portas de armário"], u: [["door", "doors"], ["puerta", "puertas"], ["porta", "portas"]] }
+      door:  { k: ["Doors", "Puertas", "Portas"], lbl: ["Cabinet doors", "Puertas de gabinete", "Portas de armário"], u: [["door", "doors"], ["puerta", "puertas"], ["porta", "portas"]] },
+      per:   { k: ["People", "Personas", "Pessoas"], lbl: ["How many people?", "¿Cuántas personas?", "Quantas pessoas?"], u: [["person", "people"], ["persona", "personas"], ["pessoa", "pessoas"]] },
+      mes:   { k: ["Months", "Meses", "Meses"], lbl: ["How many months?", "¿Cuántos meses?", "Quantos meses?"], u: [["month", "months"], ["mes", "meses"], ["mês", "meses"]] },
+      visit: { k: ["Visits", "Visitas", "Visitas"], lbl: ["Number of visits", "Número de visitas", "Número de visitas"], u: [["visit", "visits"], ["visita", "visitas"], ["visita", "visitas"]] },
+      // Carga de camión en cuartos: 1 = ¼ de camión · 4 = camión completo · 8 = 2 camiones
+      truck: { k: ["Truck load", "Carga de camión", "Carga do caminhão"], lbl: ["How much is there?", "¿Cuánto hay?", "Quanto tem?"], u: [["load", "loads"], ["carga", "cargas"], ["carga", "cargas"]],
+               txt: (n, li) => {
+                 const ent = Math.floor(n / 4), fr = ["", "¼", "½", "¾"][n % 4];
+                 if (n < 4) return [`${fr} truck`, `${fr} de camión`, `${fr} de caminhão`][li];
+                 if (n === 4) return ["Full truck", "Camión completo", "Caminhão completo"][li];
+                 const num = `${ent}${fr}`;
+                 return [`${num} trucks`, `${num} camiones`, `${num} caminhões`][li];
+               } },
+      // Unidades por tamaño: cada opción tiene su etiqueta y su multiplicador de precio
+      br:    { k: ["Home size", "Tamaño", "Tamanho"], lbl: ["Home size", "Tamaño de tu casa", "Tamanho do imóvel"], u: [["", ""], ["", ""], ["", ""]],
+               lab: [["Studio", "1 bedroom", "2 bedrooms", "3 bedrooms", "4+ bedrooms"], ["Estudio", "1 recámara", "2 recámaras", "3 recámaras", "4+ recámaras"], ["Studio", "1 quarto", "2 quartos", "3 quartos", "4+ quartos"]],
+               mult: [0.7, 1, 1.5, 2.1, 2.9] },
+      veh:   { k: ["Vehicle", "Vehículo", "Veículo"], lbl: ["Vehicle size", "Tamaño del vehículo", "Tamanho do veículo"], u: [["", ""], ["", ""], ["", ""]],
+               lab: [["Sedan / Coupe", "SUV / Crossover", "Pick-up / 3-row"], ["Sedán / Coupé", "SUV / Crossover", "Pick-up / 3 filas"], ["Sedã / Cupê", "SUV / Crossover", "Picape / 3 fileiras"]],
+               mult: [1, 1.25, 1.5] }
     };
     const SERVICIOS = G.s.map(([id, icn, u, n, s, low, high, piso, min, max, def, step]) => ({ id, ic: icn, u, n, s, low, high, piso, min, max, def, step }));
     const URGENCIA = [
@@ -1554,7 +2262,7 @@
         trust1: "Licensed & insured", trust2: "Free on-site visit", city: c => c ? `Serving ${c}` : "Serving your area",
         booking: "Booking new projects", workEyebrow: "Selected work", fAll: "All", ourWork: "Our work",
         baEyebrow: "The transformation", before: "Before", after: "After", drag: "← Drag to compare →", baAria: "Before and after comparison",
-        revEyebrow: "Reviews", revTitle: "What our clients <em>say</em>", revSrc: "Google review",
+        selloK: "Our guarantee", incK: "Every job includes", revEyebrow: "Reviews", revTitle: "What our clients <em>say</em>", revSrc: "Google review",
         revSample: "Sample reviews — they're replaced with your real Google reviews when the site goes live.",
         qEyebrow: "Instant quote", qTitle: "Your estimate in <em>30 seconds</em>",
         qText: "No forms, no waiting for a callback. Pick a service, adjust the details and see a real price range based on recent local work.",
@@ -1601,7 +2309,7 @@
         trust1: "Con licencia y seguro", trust2: "Visita sin costo", city: c => c ? `Servimos en ${c}` : "Servimos en tu zona",
         booking: "Agenda abierta", workEyebrow: "Trabajos selectos", fAll: "Todos", ourWork: "Nuestro trabajo",
         baEyebrow: "La transformación", before: "Antes", after: "Después", drag: "← Arrastra para comparar →", baAria: "Comparación antes y después",
-        revEyebrow: "Reseñas", revTitle: "Lo que dicen <em>nuestros clientes</em>", revSrc: "Reseña de Google",
+        selloK: "Nuestra garantía", incK: "Cada trabajo incluye", revEyebrow: "Reseñas", revTitle: "Lo que dicen <em>nuestros clientes</em>", revSrc: "Reseña de Google",
         revSample: "Reseñas de ejemplo — se reemplazan con tus reseñas reales de Google al publicar el sitio.",
         qEyebrow: "Cotizador instantáneo", qTitle: "Tu estimado en <em>30 segundos</em>",
         qText: "Sin formularios ni esperar a que te llamen. Elige un servicio, ajusta los detalles y ve un rango de precio real basado en trabajos recientes de la zona.",
@@ -1647,7 +2355,7 @@
         trust1: "Licenciados e com seguro", trust2: "Visita sem custo", city: c => c ? `Atendemos ${c}` : "Atendemos sua região",
         booking: "Agenda aberta", workEyebrow: "Trabalhos selecionados", fAll: "Todos", ourWork: "Nosso trabalho",
         baEyebrow: "A transformação", before: "Antes", after: "Depois", drag: "← Arraste para comparar →", baAria: "Comparação antes e depois",
-        revEyebrow: "Avaliações", revTitle: "O que dizem <em>nossos clientes</em>", revSrc: "Avaliação do Google",
+        selloK: "Nossa garantia", incK: "Todo serviço inclui", revEyebrow: "Avaliações", revTitle: "O que dizem <em>nossos clientes</em>", revSrc: "Avaliação do Google",
         revSample: "Avaliações de exemplo — são trocadas pelas suas avaliações reais do Google quando o site for publicado.",
         qEyebrow: "Orçamento instantâneo", qTitle: "Seu orçamento em <em>30 segundos</em>",
         qText: "Sem formulários nem esperar retorno. Escolha um serviço, ajuste os detalhes e veja uma faixa de preço real baseada em trabalhos recentes da região.",
@@ -1801,17 +2509,26 @@
     urgBox.innerHTML = URGENCIA.map(u => opcion(u, "urg")).join("");
     const svcSel = () => SERVICIOS.find(s => s.id === Q.svc);
     const redondear = n => { const p = n < 500 ? 5 : n < 2000 ? 25 : n < 10000 ? 100 : 500; return Math.round(n / p) * p; };
-    const calc = (s, q, k) => [redondear(Math.max(s.piso, s.low * q * k)), redondear(Math.max(s.piso * 1.4, s.high * q * k))];
+    // cantidad que multiplica el precio: el número del slider, o el multiplicador de su tamaño (recámaras, vehículo)
+    const factor = (s, q) => { const M = UNITS[s.u].mult; return M ? M[q - 1] ?? M[M.length - 1] : q; };
+    const calc = (s, q, k) => { const f = factor(s, q); return [redondear(Math.max(s.piso, s.low * f * k)), redondear(Math.max(s.piso * 1.4, s.high * f * k))]; };
     const calcular = () => { const s = svcSel(); return s ? calc(s, Q.sqft, URGENCIA.find(u => u.id === Q.urg).k) : null; };
     const rangoTxt = r => r ? `${money(r[0])} – ${money(r[1])}` : "—";
     const unidad = (s, n) => L(UNITS[s.u].u)[+n === 1 ? 0 : 1];
-    const qtyTxt = (s, n) => `${fmt(n)} ${unidad(s, n)}`;
+    const conEtiqueta = (s) => !!(UNITS[s.u].lab || UNITS[s.u].txt);   // se muestra como texto (½ camión, SUV, 2 recámaras…)
+    const qtyTxt = (s, n) => {
+      const U = UNITS[s.u];
+      if (U.lab) return L(U.lab)[n - 1] ?? L(U.lab)[L(U.lab).length - 1];
+      if (U.txt) return U.txt(+n, LI());
+      return `${fmt(n)} ${unidad(s, n)}`;
+    };
     const pintarRange = () => {
       const s = svcSel();
       const p = (range.value - range.min) / (range.max - range.min || 1) * 100;
       range.style.setProperty("--p", p + "%");
-      $("#sqftNum").textContent = fmt(+range.value);
-      if (s) $("#sqftU").textContent = unidad(s, +range.value);
+      if (s && conEtiqueta(s)) { $("#sqftNum").textContent = qtyTxt(s, +range.value); $("#sqftU").textContent = ""; }
+      else { $("#sqftNum").textContent = fmt(+range.value); if (s) $("#sqftU").textContent = unidad(s, +range.value); }
+      $(".sqft-val").classList.toggle("txt", !!(s && conEtiqueta(s)));
       $("#liveVal").textContent = rangoTxt(calcular());
       $$(".chip").forEach(c => c.classList.toggle("on", +c.dataset.v === +range.value));
     };
@@ -1823,9 +2540,14 @@
       range.setAttribute("aria-label", L(UNITS[s.u].lbl));
       $("#qtyLbl").textContent = L(UNITS[s.u].lbl);
       $("#rMin").textContent = qtyTxt(s, s.min); $("#rMax").textContent = qtyTxt(s, s.max);
-      const pre = [...new Set([s.min + (s.max - s.min) * .12, s.def, s.min + (s.max - s.min) * .55]
+      let pre;
+      if (conEtiqueta(s)) {   // tamaños con nombre: un botón por opción (máx. 5)
+        const todos = []; for (let v = s.min; v <= s.max; v += s.step) todos.push(v);
+        pre = todos.length <= 5 ? todos : [...new Set([0, .25, .5, .75, 1].map(f => todos[Math.round(f * (todos.length - 1))]))];
+      } else pre = [...new Set([s.min + (s.max - s.min) * .12, s.def, s.min + (s.max - s.min) * .55]
         .map(v => Math.min(s.max, Math.max(s.min, Math.round(v / s.step) * s.step))))].sort((a, b) => a - b);
-      $("#presets").innerHTML = pre.map((v, i) => `<button type="button" class="chip" data-v="${v}">${pre.length === 3 ? t.presets[i] + " · " : ""}${esc(qtyTxt(s, v))}</button>`).join("");
+      const conNombre = pre.length === 3 && !conEtiqueta(s);
+      $("#presets").innerHTML = pre.map((v, i) => `<button type="button" class="chip" data-v="${v}">${conNombre ? t.presets[i] + " · " : ""}${esc(qtyTxt(s, v))}</button>`).join("");
       $$(".chip").forEach(c => c.addEventListener("click", () => { range.value = Q.sqft = +c.dataset.v; pintarRange(); }));
       $("#svcName").textContent = L(s.n);
       pintarRange();
@@ -1986,6 +2708,9 @@
       $$("#urg .opt").forEach((o, i) => { o.querySelector("[data-n]").textContent = L(URGENCIA[i].n); o.querySelector("[data-s]").textContent = L(URGENCIA[i].s); });
       $$("[data-wa]").forEach(a => a.href = `https://wa.me/${TEL}?text=${encodeURIComponent(t.waHello)}`);
       heroImg.alt = `${NEGOCIO} — ${L(G.title)}`;
+      // insignias de élite: sello de garantía y qué incluye cada trabajo
+      $$("[data-sello]").forEach(el => el.textContent = L(G.sello) || "");
+      $("#incluye").innerHTML = (G.incluye || []).map(x => `<li>${ic("check")}<span>${esc(L(x))}</span></li>`).join("");
       pintarResenas();
       // vista previa
       $("[data-owner-txt]").textContent = t.ownerBar(NEGOCIO);
