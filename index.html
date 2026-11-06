@@ -327,7 +327,7 @@
     // (si el link trae &tel=, el cotizador usa ese número: así el dueño se lo autoprueba en su celular)
     const WHATSAPP_DEMO = "13055550123";
     // Tu WhatsApp para el botón "Activar mi web ($80/mes)" del cintillo
-    const MI_WHATSAPP = "529841828426";
+    const MI_WHATSAPP = "13059269442";
     // Radar: avisa a tu panel cuando un prospecto abre su página (debe ser igual a RADAR_TOPIC en server.js)
     const RADAR_TOPIC = "vc-radar-8h3kq7z2mw5x";
 
@@ -1967,7 +1967,12 @@
 
     // ====== RADAR: avisa a tu panel que el prospecto abrió su web (una vez por visita) ======
     // No avisa en tu computadora (localhost), en la captura del robot ni en la página final del cliente (&vista=...).
-    if (clienteURL && !VISTA && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) {
+    // Tus propios clics tampoco: un link con &notrack=1 (o &admin=1) marca este navegador como tuyo para siempre.
+    const qsAdmin = new URLSearchParams(location.search);
+    const NOTRACK = qsAdmin.get("notrack") === "1" || qsAdmin.get("admin") === "1";
+    if (NOTRACK) { try { localStorage.setItem("es_admin", "1"); } catch (e) {} }
+    const esAdmin = () => { if (NOTRACK) return true; try { return localStorage.getItem("es_admin") === "1"; } catch (e) { return false; } };
+    if (clienteURL && !VISTA && !esAdmin() && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) {
       let nueva = true;
       try { const k = "vc_radar" + location.search; nueva = !sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); } catch (e) {}
       if (nueva) fetch(`https://ntfy.sh/${RADAR_TOPIC}`, { method: "POST", body: JSON.stringify({ t: TEL_DUENO, c: NEGOCIO, g: GIRO_ID }), keepalive: true }).catch(() => {});

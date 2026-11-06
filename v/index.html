@@ -2045,10 +2045,14 @@
     } else $$(".rv").forEach(el => el.classList.add("in"));
 
     /* ---------- radar: avisa a tu panel que el prospecto abrió su web o tocó la barra del dueño (una vez por visita cada uno) ---------- */
+    // Tus propios clics nunca cuentan: un link con &notrack=1 (o &admin=1) marca este navegador como tuyo para siempre
+    const NOTRACK = P.get("notrack") === "1" || P.get("admin") === "1";
+    if (NOTRACK) { try { localStorage.setItem("es_admin", "1"); } catch (x) {} }
+    const esAdmin = () => { if (NOTRACK) return true; try { return localStorage.getItem("es_admin") === "1"; } catch (x) { return false; } };
     const RADAR_ON = CLIENTE && PREVIEW && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname);
     const ID = clean(P.get("id"), 80);
     const avisarRadar = e => {
-      if (!RADAR_ON) return;
+      if (!RADAR_ON || esAdmin()) return;   // se revisa justo antes de cada envío a ntfy
       let nueva = true;
       try { const k = "vc_radar_" + e + location.search; nueva = !sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); } catch (x) {}
       if (nueva) fetch(`https://ntfy.sh/${CONFIG.radarTopic}`, { method: "POST", body: JSON.stringify({ t: TEL_DUENO, c: NEGOCIO, g: GIRO, id: ID, e }), keepalive: true }).catch(() => {});
