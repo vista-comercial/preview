@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#F6F5F0" />
-  <title>Outdoor Living Studio</title>
-  <meta name="description" content="Garden rooms, hardscaping and landscape lighting. Instant online estimate." />
+  <title>Website Preview</title>
+  <meta name="description" content="Local services, real prices and an instant online estimate." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23112A20'/%3E%3Cpath d='M16 7c5 3 7 7 5 12-1 3-3 5-5 6-2-1-4-3-5-6-2-5 0-9 5-12z' fill='%23D9A05B'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     /* =========================================================
-       PLANTILLA MAESTRA · Negocios de EE. UU. (editorial orgánico)
+       PLANTILLA MAESTRA UNIVERSAL · 9 giros de EE. UU. (editorial orgánico)
        Paleta: hueso #F6F5F0 · verde bosque #112A20 · ocre #D9A05B
        ========================================================= */
     :root {
@@ -22,16 +22,19 @@
       --ochre: #D9A05B; --ochre-2: #C88B44; --ochre-soft: rgba(217,160,91,.14);
       --ink: #15201B; --muted: #5B655F; --muted-d: rgba(246,245,240,.66);
       --line: rgba(17,42,32,.11); --line-2: rgba(17,42,32,.18); --line-d: rgba(246,245,240,.14);
+      --bad: #B5452E; --good: #1E7A4C;
       --serif: "Instrument Serif", "Playfair Display", Georgia, serif;
       --sans: "Plus Jakarta Sans", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
       --r-sm: 12px; --r: 18px; --r-lg: 24px; --r-xl: 32px;
       --shadow: 0 1px 2px rgba(17,42,32,.05), 0 18px 40px -22px rgba(17,42,32,.35);
       --ease: cubic-bezier(.22,.8,.24,1);
+      --obh: 0px; --abh: 0px;
       color-scheme: light;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { overflow-x: hidden; scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+    html { overflow-x: hidden; scroll-behavior: smooth; scroll-padding-top: calc(96px + var(--obh)); -webkit-text-size-adjust: 100%; }
     body { margin: 0; background: var(--bone); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body.pre { padding-bottom: var(--abh); }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; color: inherit; }
@@ -45,7 +48,7 @@
     /* ---------- tipografía ---------- */
     .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -.01em; }
     h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.015em; }
-    h1 em, h2 em, .brand-xl em { font-style: italic; color: var(--forest-2); }
+    h1 em, h2 em, h3 em, .brand-xl em { font-style: italic; color: var(--forest-2); }
     .dark h2 em, .dark .brand-xl em { color: var(--ochre); }
     .h2 { font-size: clamp(40px, 6.2vw, 76px); }
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
@@ -79,28 +82,31 @@
            width: min(1120px, 100% - 24px); height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 8px 0 10px; border-radius: 999px;
            background: rgba(246,245,240,.68); border: 1px solid rgba(17,42,32,.1);
            backdrop-filter: blur(18px) saturate(170%); -webkit-backdrop-filter: blur(18px) saturate(170%);
-           box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 12px 32px -18px rgba(17,42,32,.35); transition: background .3s, box-shadow .3s; }
+           box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 12px 32px -18px rgba(17,42,32,.35); transition: background .3s, box-shadow .3s, top .3s; }
+    body.pre .nav { top: calc(var(--obh) + 10px); }
     .nav.scrolled { background: rgba(246,245,240,.82); }
     .logo { display: flex; align-items: center; gap: 10px; min-width: 0; margin-right: auto; }
-    .logo-mark { width: 42px; height: 42px; border-radius: 50%; background: var(--forest); display: grid; place-items: center; flex-shrink: 0; }
-    .logo-mark svg { width: 20px; height: 20px; }
+    .logo-mark { width: 42px; height: 42px; border-radius: 50%; background: var(--forest); color: var(--ochre); display: grid; place-items: center; flex-shrink: 0; }
+    .logo-mark .ic { width: 21px; height: 21px; stroke-width: 1.8; }
     .logo b { min-width: 0; font: 400 22px/1 var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }
     .nav-links { display: none; gap: 4px; font-size: 14px; font-weight: 600; color: var(--muted); }
     .nav-links a { padding: 8px 14px; border-radius: 999px; transition: background .2s, color .2s; }
     .nav-links a:hover { background: rgba(17,42,32,.06); color: var(--forest); }
-    .lang { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; height: 40px; padding: 4px; border-radius: 999px; background: rgba(17,42,32,.07);
+    .lang { position: relative; display: inline-grid; grid-template-columns: repeat(3, 1fr); height: 40px; padding: 4px; border-radius: 999px; background: rgba(17,42,32,.07);
             font: 800 12px/1 var(--sans); letter-spacing: .06em; flex-shrink: 0; }
-    .lang span { position: relative; z-index: 1; display: grid; place-items: center; width: 40px; color: var(--muted); transition: color .3s; }
-    .lang::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 4px; width: 40px; border-radius: 999px; background: #fff;
+    .lang button { position: relative; z-index: 1; display: grid; place-items: center; width: 38px; color: var(--muted); font: inherit; letter-spacing: inherit; transition: color .3s; }
+    .lang button[aria-pressed="true"] { color: var(--forest); }
+    .lang::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 4px; width: 38px; border-radius: 999px; background: #fff;
                     box-shadow: 0 1px 3px rgba(17,42,32,.18); transition: transform .35s var(--ease); }
-    .lang[aria-checked="true"]::before { transform: translateX(40px); }
-    .lang[aria-checked="false"] span:first-child, .lang[aria-checked="true"] span:last-child { color: var(--forest); }
+    .lang[data-i="1"]::before { transform: translateX(38px); }
+    .lang[data-i="2"]::before { transform: translateX(76px); }
     .call { height: 46px; padding: 0 18px 0 14px; font-size: 14px; }
     .call .txt { display: none; }
     .call { width: 46px; padding: 0; }
 
     /* ---------- portada ---------- */
     .hero { padding: 120px 0 clamp(64px, 9vw, 110px); position: relative; overflow: hidden; }
+    body.pre .hero { padding-top: calc(120px + var(--obh)); }
     .hero::before { content: ""; position: absolute; inset: auto -20% 30% auto; width: 620px; height: 620px; border-radius: 50%;
                     background: radial-gradient(closest-side, rgba(217,160,91,.18), transparent); pointer-events: none; }
     .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; align-items: center; }
@@ -110,7 +116,7 @@
     .g-badge b { color: var(--ink); font-weight: 800; }
     .stars { display: inline-flex; gap: 1px; color: #F4B400; }
     .stars svg { width: 13px; height: 13px; fill: currentColor; }
-    .g-badge .vf { display: inline-flex; align-items: center; gap: 4px; color: #1E7A4C; font-weight: 700; }
+    .stars .off { opacity: .25; }
     .hero h1 { font-size: clamp(54px, 9.4vw, 116px); line-height: .94; margin: 26px 0 24px; letter-spacing: -.025em; }
     .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
     .trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; font-size: 13.5px; font-weight: 600; color: var(--muted); }
@@ -123,14 +129,14 @@
     .chip-float { position: absolute; top: 18px; right: 18px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
                   background: rgba(17,42,32,.45); color: #fff; border: 1px solid rgba(255,255,255,.2); font-size: 12.5px; font-weight: 700;
                   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    .pulse { width: 8px; height: 8px; border-radius: 50%; background: #7BE0A5; box-shadow: 0 0 0 0 rgba(123,224,165,.7); animation: pulse 2s infinite; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: #7BE0A5; box-shadow: 0 0 0 0 rgba(123,224,165,.7); animation: pulse 2s infinite; flex-shrink: 0; }
     @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(123,224,165,0); } 100% { box-shadow: 0 0 0 0 rgba(123,224,165,0); } }
     .metrics { position: relative; margin: -70px 14px 0; z-index: 2; border-radius: var(--r-lg); padding: 20px 8px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
                background: rgba(17,42,32,.9); color: var(--bone); border: 1px solid rgba(255,255,255,.1);
                backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 24px 48px -24px rgba(11,29,22,.7); }
     .metrics > div { padding: 2px 12px; text-align: center; }
     .metrics > div + div { border-left: 1px solid var(--line-d); }
-    .metrics strong { display: block; font: 400 clamp(34px, 4.4vw, 48px)/1 var(--serif); color: var(--ochre); }
+    .metrics strong { display: block; font: 400 clamp(34px, 4.4vw, 48px)/1 var(--serif); color: var(--ochre); white-space: nowrap; }
     .metrics span { display: block; margin-top: 6px; font-size: 11.5px; font-weight: 600; letter-spacing: .04em; color: var(--muted-d); line-height: 1.3; }
 
     /* ---------- galería bento ---------- */
@@ -186,6 +192,42 @@
     .facts div { padding: 20px 14px 0 0; }
     .facts strong { display: block; font: 400 clamp(28px, 3.4vw, 40px)/1 var(--serif); color: var(--bone); }
     .facts span { display: block; margin-top: 8px; font-size: 12.5px; color: var(--muted-d); font-weight: 600; }
+
+    /* ---------- reseñas ---------- */
+    .rev-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .rev { position: relative; margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px 22px 20px;
+           display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow); min-width: 0; }
+    .rev .q { position: absolute; top: 18px; right: 18px; width: 34px; height: 34px; color: rgba(217,160,91,.4); }
+    .rev .stars svg { width: 15px; height: 15px; }
+    .rev blockquote { margin: 0; font: 400 clamp(20px, 2vw, 23px)/1.32 var(--serif); color: var(--ink); overflow-wrap: anywhere; }
+    .rev figcaption { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); min-width: 0; }
+    .rev .av { width: 40px; height: 40px; border-radius: 50%; background: var(--forest); color: var(--ochre); display: grid; place-items: center; font: 400 20px/1 var(--serif); flex-shrink: 0; }
+    .rev figcaption b { display: block; font-size: 14.5px; }
+    .rev figcaption small { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); font-weight: 600; }
+    .rev-note { display: flex; gap: 8px; align-items: flex-start; margin: 18px 0 0; font-size: 13px; color: var(--muted); font-weight: 600; }
+    .rev-note .ic { color: var(--ochre-2); margin-top: 2px; }
+
+    /* ---------- ficha vs competencia (solo vista previa) ---------- */
+    .audit { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(20px, 3.4vw, 36px);
+             box-shadow: 0 1px 0 #fff inset, 0 30px 60px -44px rgba(17,42,32,.45); margin-bottom: clamp(48px, 7vw, 88px); }
+    .audit-t { font-size: clamp(30px, 4.4vw, 48px); margin: 14px 0 24px; overflow-wrap: anywhere; }
+    .audit-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: stretch; }
+    .ac { border-radius: var(--r-lg); padding: 18px; border: 1px solid; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+    .ac.me { background: #FFF5F1; border-color: rgba(181,69,46,.22); }
+    .ac.them { background: #F0F7F2; border-color: rgba(30,122,76,.22); }
+    .ac-lbl { font-size: 11.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .ac-name { display: block; font: 400 26px/1.1 var(--serif); margin-top: 6px; overflow-wrap: anywhere; }
+    .ac-rate { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
+    .ac-rate b { color: var(--ink); font-weight: 800; }
+    .ac ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 14px; font-weight: 700; }
+    .ac li { display: flex; gap: 8px; align-items: center; }
+    .ac li .ic { width: 18px; height: 18px; }
+    .ac .bad { color: var(--bad); } .ac .good { color: var(--good); }
+    .ac-s { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .vs { justify-self: center; align-self: center; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--forest); color: var(--ochre);
+          font: italic 400 18px/1 var(--serif); margin: -22px 0; position: relative; z-index: 1; box-shadow: 0 0 0 6px #fff; }
+    .audit-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 24px; margin-top: 22px; padding-top: 20px; border-top: 1px dashed var(--line-2); }
+    .audit-foot p { margin: 0; max-width: 56ch; font-weight: 600; font-size: 15px; }
 
     /* ---------- cotizador (estilo Lovable) ---------- */
     .q-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: start; }
@@ -261,6 +303,7 @@
     .inp { width: 100%; height: 50px; padding: 0 16px; border-radius: 14px; border: 1px solid var(--line-2); background: #fff; font-size: 15px; transition: border-color .2s, box-shadow .2s; }
     .inp:focus { outline: none; border-color: var(--forest-2); box-shadow: 0 0 0 4px rgba(26,58,44,.1); }
     .send { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .send.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .send a { height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-radius: 14px; font-size: 12.5px; font-weight: 800;
               border: 1px solid var(--line-2); background: #fff; color: var(--forest); transition: .2s var(--ease); }
     .send a .ic, .send a .wa-svg { width: 19px; height: 19px; }
@@ -303,21 +346,94 @@
     .foot-brand { grid-column: 1 / -1; }
     .foot-cols > div:nth-child(2) { grid-column: 1 / -1; }
     .foot-brand .logo b { color: var(--bone); }
-    .foot-brand .logo-mark { background: var(--ochre); }
+    .foot-brand .logo-mark { background: var(--ochre); color: var(--forest); }
     .foot-brand p { margin-top: 16px; max-width: 36ch; }
     .brand-xl { display: block; width: max-content; white-space: nowrap; text-align: center; font: 400 15vw/1 var(--serif); letter-spacing: -.035em; color: var(--bone); margin: 0 auto; padding: 8px 0 .06em;
            background: linear-gradient(180deg, var(--bone) 40%, rgba(246,245,240,.25)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .brand-xl em { -webkit-text-fill-color: var(--ochre); }
     .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding: 26px 0 calc(26px + env(safe-area-inset-bottom)); font-size: 12.5px; color: var(--muted-d); border-top: 1px solid var(--line-d); margin-top: 28px; }
 
-    /* ---------- aviso de muestra (se oculta con &vista=final) ---------- */
-    .demo { position: fixed; z-index: 70; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translate(-50%, 140%); width: max-content; max-width: calc(100% - 24px);
-            display: flex; align-items: center; gap: 10px; padding: 7px 7px 7px 16px; border-radius: 999px; background: var(--forest-3); color: var(--bone); font-size: 13px; font-weight: 600;
-            box-shadow: 0 18px 40px -12px rgba(0,0,0,.5); transition: transform .6s var(--ease); }
-    .demo.on { transform: translate(-50%, 0); }
-    .demo span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-    .demo a { height: 36px; padding: 0 14px; border-radius: 999px; background: var(--ochre); color: var(--forest-3); display: inline-flex; align-items: center; gap: 6px; font-weight: 800; flex-shrink: 0; }
-    .demo button { width: 30px; height: 30px; border-radius: 50%; color: var(--muted-d); flex-shrink: 0; display: grid; place-items: center; }
+    /* =========================================================
+       ELEMENTOS DE VISTA PREVIA (no salen con &vista=final)
+       ========================================================= */
+    /* barra superior para el dueño */
+    .owner { position: fixed; z-index: 75; top: 0; left: 0; right: 0; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+             padding: calc(8px + env(safe-area-inset-top)) 14px 8px; background: linear-gradient(90deg, var(--ochre), #EBC08A, var(--ochre)); background-size: 200% 100%;
+             color: var(--forest-3); font: 700 13.5px/1.3 var(--sans); text-align: center; border-bottom: 1px solid rgba(17,42,32,.14); animation: shimmer 7s linear infinite; }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+    .owner:hover .owner-go { background: var(--forest-3); }
+    .owner-t { min-width: 0; text-wrap: balance; }
+    .owner-go { display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; height: 28px; padding: 0 12px; border-radius: 999px; background: var(--forest); color: var(--bone); font-size: 12px; font-weight: 800; transition: background .2s; }
+    .owner-go .ic { width: 14px; height: 14px; }
+
+    /* ventana "así te llega un pedido" */
+    .ov { position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; padding: 16px; overflow-y: auto; background: rgba(11,29,22,.62);
+          backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0; transition: opacity .35s var(--ease); }
+    .ov.on { opacity: 1; }
+    .ov-box { position: relative; margin: auto; width: min(420px, 100%); background: var(--paper); border-radius: var(--r-xl); padding: 26px 18px 18px; text-align: center;
+              box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); transform: translateY(24px) scale(.97); transition: transform .55s var(--ease); }
+    .ov.on .ov-box { transform: none; }
+    .ov-x { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--bone); color: var(--forest); }
+    .ov-k { margin: 0; font-size: 11.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre-2); }
+    .ov-box h3 { font-size: clamp(28px, 6vw, 34px); margin: 8px 18px 8px; }
+    .ov-s { margin: 0 auto 18px; font-size: 14px; color: var(--muted); max-width: 36ch; }
+    .phone { position: relative; border-radius: 26px; overflow: hidden; background: #EFE7DD; border: 6px solid var(--forest-3); text-align: left; box-shadow: 0 20px 40px -24px rgba(0,0,0,.5); }
+    .ph-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--forest); color: var(--bone); }
+    .ph-head > div { min-width: 0; }
+    .ph-av { width: 36px; height: 36px; border-radius: 50%; background: var(--ochre); color: var(--forest-3); display: grid; place-items: center; font: 400 19px/1 var(--serif); flex-shrink: 0; }
+    .ph-head b { display: block; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ph-head small { font-size: 11.5px; color: var(--muted-d); }
+    .ph-chat { padding: 16px 12px 18px; min-height: 320px; display: flex; flex-direction: column; gap: 10px;
+               background-image: radial-gradient(rgba(17,42,32,.06) 1px, transparent 1px); background-size: 14px 14px; }
+    .ph-typing { align-self: flex-start; display: none; gap: 4px; padding: 13px 14px; background: #fff; border-radius: 4px 16px 16px 16px; box-shadow: 0 1px 1px rgba(0,0,0,.08); }
+    .ph-typing i { width: 7px; height: 7px; border-radius: 50%; background: #9AA59F; animation: dot 1s infinite; }
+    .ph-typing i:nth-child(2) { animation-delay: .15s; } .ph-typing i:nth-child(3) { animation-delay: .3s; }
+    @keyframes dot { 0%, 60%, 100% { transform: none; opacity: .5; } 30% { transform: translateY(-4px); opacity: 1; } }
+    .phone.s2 .ph-typing { display: inline-flex; }
+    .phone.s3 .ph-typing { display: none; }
+    .ph-msg { align-self: flex-start; max-width: 94%; display: none; background: #fff; border-radius: 4px 16px 16px 16px; padding: 10px 12px 6px; font-size: 13.5px; line-height: 1.45;
+              color: #111B21; box-shadow: 0 1px 1px rgba(0,0,0,.08); overflow-wrap: anywhere; }
+    .ph-msg [data-txt] { white-space: pre-line; }
+    .phone.s3 .ph-msg { display: block; animation: pop .45s var(--ease); }
+    @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } }
+    .ph-from { font-size: 12px; font-weight: 800; color: var(--ochre-2); margin-bottom: 4px; }
+    .ph-time { display: block; text-align: right; font-size: 10.5px; color: #667781; margin-top: 4px; }
+    .ph-ready { align-self: center; display: none; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 16px; background: var(--good); color: #fff; font-size: 13px; font-weight: 700;
+                text-align: center; box-shadow: 0 8px 20px -10px rgba(30,122,76,.8); }
+    .ph-ready .ic { width: 16px; height: 16px; stroke-width: 2.6; }
+    .phone.s4 .ph-ready { display: inline-flex; animation: pop .5s var(--ease); }
+    .ph-notif { position: absolute; z-index: 3; top: 8px; left: 8px; right: 8px; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 16px;
+                background: rgba(255,255,255,.97); box-shadow: 0 12px 28px -10px rgba(0,0,0,.4); transform: translateY(-150%); transition: transform .5s var(--ease); font-size: 12.5px; color: #111B21; }
+    .phone.s1 .ph-notif { transform: none; }
+    .phone.s3 .ph-notif { transform: translateY(-150%); }
+    .ph-app { width: 30px; height: 30px; border-radius: 8px; background: #25D366; color: #fff; display: grid; place-items: center; flex-shrink: 0; }
+    .ph-notif div { min-width: 0; flex: 1; }
+    .ph-notif b { display: block; font-size: 12px; }
+    .ph-notif span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ph-notif small { color: #667781; align-self: flex-start; }
+    .ov-cta { display: grid; gap: 8px; margin-top: 16px; }
+    .ov-cta .btn { width: 100%; white-space: normal; text-align: center; line-height: 1.2; }
+
+    /* barra inferior fija "Activar" */
+    .act { position: fixed; z-index: 70; left: 0; right: 0; bottom: 0; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(11,29,22,.94);
+           border-top: 1px solid rgba(246,245,240,.12); backdrop-filter: blur(16px) saturate(160%); -webkit-backdrop-filter: blur(16px) saturate(160%);
+           box-shadow: 0 -18px 40px -20px rgba(0,0,0,.5); transform: translateY(110%); transition: transform .6s var(--ease); }
+    .act.on { transform: none; }
+    .act-in { width: min(1120px, 100%); margin: 0 auto; display: flex; align-items: center; gap: 8px; }
+    .act-tag { display: none; align-items: center; gap: 10px; color: var(--muted-d); font-size: 13px; font-weight: 600; min-width: 0; margin-right: auto; }
+    .act-tag span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .act-main { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 8px 16px; border-radius: 16px;
+                background: var(--ochre); color: var(--forest-3); box-shadow: 0 10px 24px -10px rgba(200,139,68,.8); transition: transform .25s var(--ease), background .25s; text-align: left; }
+    .act-main:hover { background: #E1AC6C; }
+    .act-main:active { transform: scale(.98); }
+    .act-main .wa-svg { width: 24px; height: 24px; }
+    .act-main span { min-width: 0; }
+    .act-main b { display: block; font: 800 15px/1.15 var(--sans); }
+    .act-main small { display: block; font-size: 12px; font-weight: 700; opacity: .78; margin-top: 2px; }
+    .act-card { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 54px; padding: 6px 12px; border-radius: 16px;
+                border: 1px solid var(--line-d); color: var(--bone); background: rgba(246,245,240,.06); font-size: 11.5px; font-weight: 800; text-align: center; transition: background .2s; }
+    .act-card:hover { background: rgba(246,245,240,.14); }
+    .act-card .ic { width: 20px; height: 20px; }
 
     /* ---------- aparición al hacer scroll ---------- */
     .js .rv { opacity: 0; transform: translateY(22px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
@@ -338,6 +454,12 @@
       .faq-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .faq-col + .faq-col { border-top: 1px solid var(--line-2); }
       .ba { aspect-ratio: 16 / 11; }
+      .rev-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .audit-grid { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+      .vs { margin: 0 -22px; }
+      .act-tag { display: flex; }
+      .act-main { flex: 0 1 auto; }
+      .act-card { flex-direction: row; gap: 8px; padding: 0 18px; font-size: 14px; }
     }
     @media (min-width: 980px) {
       .nav { padding-left: 12px; }
@@ -345,20 +467,24 @@
       .logo { margin-right: 0; }
       .nav-links { margin-left: auto; }
       .hero { padding-top: 150px; }
+      body.pre .hero { padding-top: calc(150px + var(--obh)); }
       .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 64px; }
       .ba-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; }
       .q-grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 64px; }
-      .q-aside { position: sticky; top: 110px; }
+      .q-aside { position: sticky; top: calc(110px + var(--obh)); }
     }
     @media (max-width: 400px) {
       .logo b { font-size: 19px; }
-      .lang span { width: 34px; } .lang::before { width: 34px; } .lang[aria-checked="true"]::before { transform: translateX(34px); }
+      .lang button { width: 32px; } .lang::before { width: 32px; }
+      .lang[data-i="1"]::before { transform: translateX(32px); } .lang[data-i="2"]::before { transform: translateX(64px); }
       .hero .cta .btn { width: 100%; }
       .urg { grid-template-columns: 1fr; }
       .urg .opt { flex-direction: row; align-items: center; }
       .metrics span { font-size: 10.5px; }
       .step-dot span { display: none; }
       .steps { justify-items: center; }
+      .owner { font-size: 12.5px; }
+      .act-main b { font-size: 14px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
@@ -367,10 +493,16 @@
 </head>
 <body>
 
+  <!-- ================= VISTA PREVIA · BARRA PARA EL DUEÑO ================= -->
+  <button class="owner" id="owner" type="button" hidden aria-haspopup="dialog">
+    <span class="owner-t" data-owner-txt></span>
+    <span class="owner-go"><span data-i18n="ownerGo"></span><i data-ic="arrow"></i></span>
+  </button>
+
   <!-- ================= BARRA FLOTANTE ================= -->
   <header class="nav" id="nav">
     <a href="#top" class="logo" aria-label="Home">
-      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c5.2 3.1 7.4 7.6 5.3 12.6-1 2.6-2.9 4.6-5.3 6.4-2.4-1.8-4.3-3.8-5.3-6.4C4.6 10.1 6.8 5.6 12 2.5z" fill="#D9A05B"/><path d="M12 7v14" stroke="#112A20" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="logo-mark" data-logo></span>
       <b data-name></b>
     </a>
     <nav class="nav-links" aria-label="Main">
@@ -379,7 +511,9 @@
       <a href="#quote" data-i18n="navQuote"></a>
       <a href="#faq" data-i18n="navFaq"></a>
     </nav>
-    <button class="lang" id="lang" type="button" role="switch" aria-checked="false" aria-label="English / Español"><span>EN</span><span>ES</span></button>
+    <div class="lang" id="lang" role="group" aria-label="Language / Idioma / Idioma" data-i="0">
+      <button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="es" aria-pressed="false">ES</button><button type="button" data-l="pt" aria-pressed="false">PT</button>
+    </div>
     <a class="btn btn-primary call" data-tel><i data-ic="phone"></i><span class="txt" data-i18n="call"></span></a>
   </header>
 
@@ -388,7 +522,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <a class="g-badge rv" id="gBadge" target="_blank" rel="noopener">
+          <a class="g-badge rv" data-gmaps target="_blank" rel="noopener">
             <span class="g"><svg viewBox="0 0 48 48" width="16" height="16" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></span>
             <b data-rating></b><span class="stars" data-stars></span><span data-reviews-txt></span>
           </a>
@@ -406,14 +540,10 @@
         </div>
         <div class="hero-visual rv d2">
           <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=70" alt="" fetchpriority="high" width="1100" height="1265" />
+            <img id="heroImg" alt="" fetchpriority="high" width="1100" height="1265" />
             <span class="chip-float"><span class="pulse"></span><span data-i18n="booking"></span></span>
           </div>
-          <div class="metrics">
-            <div><strong data-count="15" data-suffix="+">15+</strong><span data-i18n="mYears"></span></div>
-            <div><strong data-count="850" data-suffix="+">850+</strong><span data-i18n="mProjects"></span></div>
-            <div><strong data-count="5" data-suffix="-yr" data-suffix-es="&nbsp;años">5-yr</strong><span data-i18n="mWarranty"></span></div>
-          </div>
+          <div class="metrics" id="metrics"></div>
         </div>
       </div>
     </section>
@@ -423,12 +553,7 @@
       <div class="wrap">
         <div class="sec-head">
           <div><span class="eyebrow rv" data-i18n="workEyebrow"></span><h2 class="h2 rv d1" data-i18n-html="workTitle"></h2></div>
-          <div class="tabs rv d2" role="tablist" id="tabs">
-            <button class="tab" role="tab" data-f="all" aria-selected="true"><span data-i18n="fAll"></span><small></small></button>
-            <button class="tab" role="tab" data-f="garden" aria-selected="false"><span data-i18n="fGarden"></span><small></small></button>
-            <button class="tab" role="tab" data-f="hard" aria-selected="false"><span data-i18n="fHard"></span><small></small></button>
-            <button class="tab" role="tab" data-f="dark" aria-selected="false"><span data-i18n="fDark"></span><small></small></button>
-          </div>
+          <div class="tabs rv d2" role="tablist" id="tabs"></div>
         </div>
         <div class="bento" id="bento"></div>
       </div>
@@ -448,8 +573,8 @@
           </div>
         </div>
         <div class="ba rv d1" id="ba">
-          <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1300&q=70" alt="" loading="lazy" draggable="false" />
-          <img class="before" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1300&q=70" alt="" loading="lazy" draggable="false" />
+          <img id="baAfter" alt="" loading="lazy" draggable="false" />
+          <img class="before" id="baBefore" alt="" loading="lazy" draggable="false" />
           <span class="line"></span>
           <span class="knob" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-i18n-aria="baAria"><i data-ic="lr"></i></span>
           <span class="lbl l" data-i18n="before"></span><span class="lbl r" data-i18n="after"></span>
@@ -458,8 +583,50 @@
       </div>
     </section>
 
+    <!-- ================= RESEÑAS ================= -->
+    <section class="sec" id="reviews" style="padding-bottom:clamp(24px,4vw,48px)">
+      <div class="wrap">
+        <div class="sec-head">
+          <div><span class="eyebrow rv" data-i18n="revEyebrow"></span><h2 class="h2 rv d1" data-i18n-html="revTitle"></h2></div>
+          <a class="g-badge rv d2" data-gmaps target="_blank" rel="noopener">
+            <span class="g"><svg viewBox="0 0 48 48" width="16" height="16" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></span>
+            <b data-rating></b><span class="stars" data-stars></span><span data-reviews-txt></span>
+          </a>
+        </div>
+        <div class="rev-grid" id="revGrid"></div>
+        <p class="rev-note" id="revNote" hidden><i data-ic="info"></i><span data-i18n="revSample"></span></p>
+      </div>
+    </section>
+
     <!-- ================= COTIZADOR ================= -->
     <section class="sec" id="quote">
+      <!-- Vista previa: estado de la ficha frente a la competencia -->
+      <div class="wrap" id="auditWrap" hidden>
+        <div class="audit rv">
+          <span class="eyebrow" data-i18n="audEyebrow"></span>
+          <h3 class="audit-t" id="audT"></h3>
+          <div class="audit-grid">
+            <div class="ac me">
+              <div><span class="ac-lbl" data-i18n="audYou"></span><b class="ac-name" data-name></b>
+                <span class="ac-rate"><span class="stars" data-stars></span><b data-rating></b><span id="audRev"></span></span></div>
+              <ul><li class="bad"><i data-ic="alert"></i><span data-i18n="audNoWeb"></span></li><li class="bad"><i data-ic="x"></i><span data-i18n="audNoQuote"></span></li></ul>
+              <p class="ac-s" data-i18n="audNoWebS"></p>
+            </div>
+            <span class="vs" aria-hidden="true">vs</span>
+            <div class="ac them">
+              <div><span class="ac-lbl" data-i18n="audThem"></span><b class="ac-name" id="compName"></b>
+                <span class="ac-rate" id="compRate" hidden><span class="stars" data-stars></span><b id="compRating"></b><span id="compRev"></span></span></div>
+              <ul><li class="good"><i data-ic="globe"></i><span data-i18n="audWeb"></span></li><li class="good"><i data-ic="check"></i><span data-i18n="audQuote"></span></li></ul>
+              <p class="ac-s" data-i18n="audThemS"></p>
+            </div>
+          </div>
+          <div class="audit-foot">
+            <p data-i18n="audFoot"></p>
+            <a href="#q" class="btn btn-primary"><span data-i18n="audTry"></span><i data-ic="arrow" class="arr"></i></a>
+          </div>
+        </div>
+      </div>
+
       <div class="wrap q-grid">
         <div class="q-aside">
           <span class="eyebrow rv" data-i18n="qEyebrow"></span>
@@ -490,9 +657,9 @@
             <!-- Paso 2 -->
             <div class="pane" data-pane="2">
               <h3 data-i18n="p2t"></h3><p class="sub" data-i18n="p2s"></p>
-              <div class="field-lbl"><span data-i18n="area"></span><span id="svcName" style="text-transform:none;letter-spacing:0;color:var(--forest)"></span></div>
-              <div class="sqft-val"><span id="sqftNum">500</span><small>sq ft</small></div>
-              <input type="range" class="range" id="sqft" min="100" max="3000" step="50" value="500" data-i18n-aria="area" />
+              <div class="field-lbl"><span id="qtyLbl"></span><span id="svcName" style="text-transform:none;letter-spacing:0;color:var(--forest)"></span></div>
+              <div class="sqft-val"><span id="sqftNum">1</span><small id="sqftU"></small></div>
+              <input type="range" class="range" id="sqft" min="1" max="10" step="1" value="1" />
               <div class="r-ends"><span id="rMin"></span><span id="rMax"></span></div>
               <div class="presets" id="presets"></div>
               <div class="field-lbl"><span data-i18n="urgency"></span></div>
@@ -509,7 +676,7 @@
               <p class="note" data-i18n="resNote"></p>
               <label class="sr" for="qName" data-i18n="nameLbl"></label>
               <input class="inp" id="qName" autocomplete="name" data-i18n-ph="namePh" />
-              <div class="send">
+              <div class="send" id="send">
                 <a class="main" id="sendWa" target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg>WhatsApp</a>
                 <a id="sendSms"><i data-ic="msg"></i>SMS</a>
                 <a id="sendMail"><i data-ic="mail"></i><span data-i18n="email"></span></a>
@@ -518,7 +685,7 @@
           </div>
           <div class="q-foot">
             <button class="link-btn" id="qBack" type="button" hidden><i data-ic="back"></i><span data-i18n="back"></span></button>
-            <span id="qHint" style="font-size:13px;color:var(--muted);font-weight:600" data-i18n="hint1"></span>
+            <span id="qHint" style="font-size:13px;color:var(--muted);font-weight:600"></span>
             <button class="btn btn-primary" id="qNext" type="button" disabled><span data-i18n="next"></span><i data-ic="arrow" class="arr"></i></button>
             <button class="link-btn" id="qReset" type="button" hidden><i data-ic="reset"></i><span data-i18n="reset"></span></button>
           </div>
@@ -550,7 +717,7 @@
       </div>
       <div class="foot-cols">
         <div class="foot-brand">
-          <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c5.2 3.1 7.4 7.6 5.3 12.6-1 2.6-2.9 4.6-5.3 6.4-2.4-1.8-4.3-3.8-5.3-6.4C4.6 10.1 6.8 5.6 12 2.5z" fill="#112A20"/></svg></span><b data-name></b></a>
+          <a href="#top" class="logo"><span class="logo-mark" data-logo></span><b data-name></b></a>
           <p data-i18n="footBlurb"></p>
         </div>
         <div><h4 data-i18n="fContact"></h4><ul>
@@ -569,46 +736,143 @@
     <div class="wrap legal"><span>© <span id="yr"></span> <span data-name></span>. <span data-i18n="rights"></span></span><span data-city-foot></span></div>
   </footer>
 
-  <div class="demo" id="demo" hidden>
-    <span data-demo-txt></span>
-    <a id="demoBtn" target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg><span data-i18n="activate"></span></a>
-    <button type="button" id="demoX" aria-label="Close"><i data-ic="x"></i></button>
+  <!-- ================= VISTA PREVIA · EJEMPLO DE PEDIDO RECIBIDO ================= -->
+  <div class="ov" id="ov" hidden role="dialog" aria-modal="true" aria-labelledby="ovT">
+    <div class="ov-box">
+      <button class="ov-x" id="ovX" type="button" data-i18n-aria="ovClose"><i data-ic="x"></i></button>
+      <p class="ov-k" data-i18n="ovKicker"></p>
+      <h3 id="ovT" data-i18n="ovTitle"></h3>
+      <p class="ov-s" data-i18n="ovSub"></p>
+      <div class="phone" id="phone">
+        <div class="ph-notif"><span class="ph-app"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg></span><div><b>WhatsApp</b><span id="phNotif"></span></div><small data-i18n="ovNow"></small></div>
+        <div class="ph-head"><span class="ph-av" id="phAv"></span><div><b data-name></b><small data-i18n="ovBiz"></small></div></div>
+        <div class="ph-chat">
+          <div class="ph-typing" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="ph-msg"><div class="ph-from" id="phFrom"></div><div data-txt id="phTxt"></div><span class="ph-time" data-i18n="ovTime"></span></div>
+          <div class="ph-ready"><i data-ic="check"></i><span id="phReady"></span></div>
+        </div>
+      </div>
+      <div class="ov-cta">
+        <a class="btn btn-primary" data-activar target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg><span data-i18n="ovCta"></span></a>
+        <button class="btn btn-ghost" id="ovClose" type="button" data-i18n="ovClose"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= VISTA PREVIA · BARRA INFERIOR "ACTIVAR" ================= -->
+  <div class="act" id="act" hidden>
+    <div class="act-in">
+      <span class="act-tag"><span class="pulse"></span><span data-act-tag></span></span>
+      <a class="act-main" data-activar target="_blank" rel="noopener"><svg class="wa-svg" viewBox="0 0 24 24" aria-hidden="true"><path data-wa-path/></svg><span><b data-i18n="actMain"></b><small data-i18n="actSub"></small></span></a>
+      <a class="act-card" id="actCard" target="_blank" rel="noopener" hidden><i data-ic="card"></i><span data-i18n="actCard"></span></a>
+    </div>
   </div>
 
   <script>
-  (() => {
+  (async () => {
     "use strict";
     document.documentElement.classList.add("js");
 
     /* =====================================================
-       1) DATOS DEL NEGOCIO — se llenan desde el link:
-       ?cliente=Nombre&tel=3055550123&rating=4.9&reviews=84&ciudad=Miami&email=info@x.com&lang=es&vista=final
+       1) CONFIGURACIÓN
+       Link de ejemplo:
+       ?giro=roofing&cliente=Nombre&tel=3055550123&rating=4.9&reviews=84&ciudad=Miami&email=info@x.com
+        &competidor=Otro+Negocio&crating=4.8&creviews=210&lang=es|en|pt&vista=final
+       Fotos:   &portada=URL &antes=URL &despues=URL &fotos=URL1,URL2,URL3
+       Reseñas: &r1=Nombre|Texto|5 &r2=... &r3=...
+       Archivo del cliente: &datos=clientes/mi-cliente.json  (o &id=mi-cliente → clientes/mi-cliente.json)
+       Prioridad: parámetros del link > archivo JSON > textos de respaldo del giro.
        ===================================================== */
     const CONFIG = {
-      nombre: "Evergreen & Stone",
-      telDemo: "13055550123",          // si el link no trae &tel=
-      emailDemo: "hello@evergreenstone.com",
-      miWhatsapp: "529841828426",      // botón "Activar" del aviso de muestra
+      telDemo: "13055550123",          // si no llega &tel=
+      miWhatsapp: "13059269442",       // botón "Activar este sitio web hoy"
       radarTopic: "vc-radar-8h3kq7z2mw5x", // igual que RADAR_TOPIC en servidor-whatsapp/server.js
-      giro: "landscaping"
+      giro: "landscaping"              // giro por defecto
     };
+    // Pega aquí tu link de pago de Stripe (https://buy.stripe.com/...). Vacío = el botón de tarjeta no aparece.
+    const STRIPE_URL = "";
+
     const P = new URLSearchParams(location.search);
-    const clean = (v, n) => String(v || "").replace(/[<>"]/g, "").trim().slice(0, n);
-    const CLIENTE = clean(P.get("cliente"), 60);
-    const NEGOCIO = CLIENTE || CONFIG.nombre;
-    const telURL = (P.get("tel") || "").replace(/\D/g, "");
+    const clean = (v, n) => String(v ?? "").replace(/[<>"]/g, "").trim().slice(0, n);
+
+    // Archivo JSON local del cliente (solo rutas relativas del mismo sitio)
+    const rutaJSON = (() => {
+      const d = P.get("datos") || "", id = P.get("id") || "";
+      const r = d || (id ? `clientes/${id}.json` : "");
+      return /^[\w-]+(\/[\w-]+)*\.json$/i.test(r) ? r : "";
+    })();
+    let J = {};
+    if (rutaJSON) {
+      try {
+        const ctl = new AbortController(), tm = setTimeout(() => ctl.abort(), 3000);
+        const r = await fetch(rutaJSON, { signal: ctl.signal, cache: "no-cache" });
+        clearTimeout(tm);
+        if (r.ok) { const j = await r.json(); if (j && typeof j === "object" && !Array.isArray(j)) J = j; }
+      } catch (e) { /* sin archivo: se usan los textos de respaldo */ }
+    }
+    const val = (k, alt) => {
+      const v = P.get(k);
+      if (v != null && v.trim() !== "") return v;
+      for (const key of [k, alt]) if (key && J[key] != null && typeof J[key] !== "object") return String(J[key]);
+      return "";
+    };
+
+    /* ===================== 2) GIRO ===================== */
+    const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z]/g, "");
+    const ALIAS = {
+      landscaping: "landscaping", landscape: "landscaping", landscaper: "landscaping", lawn: "landscaping", lawncare: "landscaping", jardineria: "landscaping", jardin: "landscaping", paisajismo: "landscaping",
+      roofing: "roofing", roofer: "roofing", roof: "roofing", techos: "roofing", techo: "roofing", techado: "roofing",
+      spa: "spa", medspa: "spa", aesthetics: "spa", aesthetic: "spa", esthetics: "spa", estetica: "spa", skincare: "spa", facial: "spa",
+      painting: "painting", painter: "painting", painters: "painting", pintura: "painting", pintor: "painting", pintores: "painting",
+      cleaning: "cleaning", cleaners: "cleaning", housecleaning: "cleaning", maid: "cleaning", limpieza: "cleaning", limpiezas: "cleaning",
+      plumbing: "plumbing", plumber: "plumbing", plomeria: "plumbing", plomero: "plumbing", fontaneria: "plumbing",
+      hvac: "hvac", ac: "hvac", heating: "hvac", airconditioning: "hvac", aire: "hvac", aireacondicionado: "hvac", climas: "hvac",
+      remodeling: "remodeling", remodel: "remodeling", remodelacion: "remodeling", renovation: "remodeling", construccion: "remodeling", contractor: "remodeling",
+      bakery: "bakery", cafe: "bakery", coffee: "bakery", coffeeshop: "bakery", panaderia: "bakery", pasteleria: "bakery", reposteria: "bakery", cafeteria: "bakery",
+      // giros anteriores del robot (leads.json)
+      comida: "bakery", restaurante: "bakery", restaurant: "bakery", taqueria: "bakery", food: "bakery",
+      tecnicos: "hvac", tecnico: "hvac",
+      servicios: "cleaning"
+    };
+    const GIRO = ALIAS[norm(val("giro"))] || CONFIG.giro;
+
+    /* ===================== 3) DATOS DEL NEGOCIO ===================== */
+    const CLIENTE = clean(val("cliente", "nombre"), 60);
+    const telURL = val("tel").replace(/\D/g, "");
     const TEL_DUENO = telURL.length === 10 ? "1" + telURL : telURL.length >= 11 && telURL.length <= 15 ? telURL : "";
     const TEL = TEL_DUENO || CONFIG.telDemo;
-    const RATING = (() => { const r = parseFloat(String(P.get("rating") || "").replace(",", ".")); return r > 0 && r <= 5 ? r.toFixed(1) : "4.9"; })();
-    const RESENAS = (() => { const n = parseInt(P.get("reviews"), 10); return n > 0 ? n : 128; })();
-    const CIUDAD = clean(P.get("ciudad"), 50);
-    const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(P.get("email") || "") ? P.get("email").trim() : CONFIG.emailDemo;
-    const VISTA = P.get("vista") || "";
-    let LANG = (P.get("lang") || "").toLowerCase() === "es" ? "es" : "en";
-    const telBonito = t => t.length === 11 && t[0] === "1" ? `(${t.slice(1, 4)}) ${t.slice(4, 7)}-${t.slice(7)}` : "+" + t;
-    const money = n => "$" + Math.round(n).toLocaleString("en-US");
+    const nota = v => { const r = parseFloat(String(v || "").replace(",", ".")); return r > 0 && r <= 5 ? r.toFixed(1) : ""; };
+    const entero = v => { const n = parseInt(String(v || "").replace(/\D/g, ""), 10); return n > 0 ? n : 0; };
+    const RATING = nota(val("rating", "calificacion")) || "4.9";
+    const RESENAS = entero(val("reviews", "resenas_total")) || 128;
+    const CIUDAD = clean(val("ciudad"), 50);
+    const mail = val("email").trim();
+    const EMAIL = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(mail) ? mail : "";
+    const COMP = clean(val("competidor"), 60);
+    const C_RATING = nota(val("crating"));
+    const C_REV = entero(val("creviews"));
+    const VISTA = val("vista");
+    const PREVIEW = !VISTA;   // &vista=final apaga todo lo de la vista previa
+    const langIni = val("lang").toLowerCase();
+    let LANG = ["en", "es", "pt"].includes(langIni) ? langIni : "en";
 
-    /* ===================== 2) ÍCONOS ===================== */
+    // Fotos (links https o rutas locales de imágenes)
+    const imgOK = u => {
+      u = String(u || "").trim();
+      return /^https:\/\/[^\s"'<>()\\]+$/i.test(u) || /^[\w-]+(\/[\w-]+)*\.(jpe?g|png|webp|avif)$/i.test(u) ? u : "";
+    };
+    const fotosURL = (P.get("fotos") || "").split(",").map(u => ({ u })).filter(f => f.u.trim());
+    const fotosJ = Array.isArray(J.fotos) ? J.fotos.map(f => typeof f === "string" ? { u: f } : { u: f && (f.url || f.u), t: f && (f.titulo || f.t) }) : [];
+    const FOTOS = (fotosURL.length ? fotosURL : fotosJ).map(f => ({ u: imgOK(f.u), t: typeof f.t === "string" ? clean(f.t, 60) : "" })).filter(f => f.u).slice(0, 12);
+
+    // Reseñas (link: &r1=Nombre|Texto|5 · JSON: "resenas": [{ "nombre", "texto", "estrellas" }])
+    const resURL = [1, 2, 3].map(i => P.get("r" + i)).filter(Boolean).map(s => { const [n, t, e] = s.split("|"); return { n, t, e }; });
+    const resJ = Array.isArray(J.resenas) ? J.resenas.filter(r => r && typeof r === "object").map(r => ({ n: r.nombre || r.name, t: r.texto || r.text, e: r.estrellas || r.stars })) : [];
+    const RES = (resURL.length ? resURL : resJ)
+      .map(r => ({ n: clean(r.n, 40), t: String(r.t || "").replace(/\s+/g, " ").trim().slice(0, 420), e: Math.max(1, Math.min(5, Math.round(+r.e || 5))) }))
+      .filter(r => r.n && r.t).slice(0, 3);
+
+    /* ===================== 4) ÍCONOS ===================== */
     const ICON = {
       phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
       arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
@@ -631,171 +895,864 @@
       drop: '<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>',
       leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
       cal: '<path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
-      zap: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>'
+      zap: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+      roof: '<path d="m2 12 10-8 10 8"/><path d="M5 10v10h14V10"/><path d="M16 6V3h3v5.5"/><path d="M10 20v-5h4v5"/>',
+      layers: '<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/>',
+      building: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/>',
+      gutter: '<path d="M2 6h20l-2 5H4z"/><path d="M17 11v6a2 2 0 0 1-2 2h-1"/><path d="M12 19.5v2"/>',
+      sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
+      brush: '<rect x="2" y="3" width="16" height="6" rx="2"/><path d="M18 6h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-8v2"/><rect x="10" y="14" width="4" height="8" rx="1"/>',
+      bed: '<path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/>',
+      fence: '<path d="M4 3 2 5v15h4V5z"/><path d="m12 3-2 2v15h4V5z"/><path d="m20 3-2 2v15h4V5z"/><path d="M6 8h4M6 15h4M14 8h4M14 15h4"/>',
+      sparkle: '<path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="m19 15 .7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/><path d="M5 3v4M3 5h4"/>',
+      broom: '<path d="m13 11 8-8"/><path d="M14.5 12.5c.8.8.9 2.1.2 3L10 22l-8-8 6.4-4.7c.9-.7 2.2-.6 3 .2z"/><path d="m6.5 10.5 7 7"/>',
+      box: '<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/>',
+      hammer: '<path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/>',
+      wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+      bath: '<path d="M2 12h20v3a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="M17 19v2M7 19v2"/><path d="M5 12V5.5A2.5 2.5 0 0 1 7.5 3c.6 0 1.2.2 1.6.6L10 4.5"/><path d="m10 4-2 2"/>',
+      search: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+      snow: '<path d="M12 2v20M2 12h20"/><path d="m4.9 4.9 14.2 14.2M19.1 4.9 4.9 19.1"/><path d="m9 3 3 2 3-2M9 21l3-2 3 2M3 9l2 3-2 3M21 9l-2 3 2 3"/>',
+      wind: '<path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>',
+      thermo: '<path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>',
+      pot: '<path d="M2 12h20"/><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="m4 8 16-4"/><path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"/>',
+      cake: '<path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3M12 8v3M17 8v3"/><path d="M7 4h.01M12 4h.01M17 4h.01"/>',
+      gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+      bread: '<path d="M5 20a2 2 0 0 1-2-2v-6.5C1.8 10.6 1 9.2 1 7.5 1 5 3.5 3 7 3h10c3.5 0 6 2 6 4.5 0 1.7-.8 3.1-2 4V18a2 2 0 0 1-2 2z"/><path d="m9 8 1 3M14 8l-1 3"/>',
+      cup: '<path d="M10 2v2M14 2v2M6 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/>',
+      flower: '<circle cx="12" cy="12" r="3"/><path d="M12 9a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM15 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0zM12 15a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM9 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>',
+      syringe: '<path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3a1 1 0 0 1-1.4 0l-2.6-2.6a1 1 0 0 1 0-1.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>',
+      smile: '<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/>',
+      quote: '<path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>',
+      alert: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/>',
+      globe: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>',
+      card: '<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/>',
+      info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>'
     };
-    const ic = n => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n] || ""}</svg>`;
+    const ic = (n, extra = "") => `<svg class="ic${extra ? " " + extra : ""}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n] || ""}</svg>`;
     const WA_D = "M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.42 9.42M20.06 3.98A11.3 11.3 0 0 0 12.05.67C5.8.67.7 5.76.7 12.02c0 2 .52 3.95 1.52 5.67L.6 23.33l5.77-1.51a11.3 11.3 0 0 0 5.67 1.45h.01c6.25 0 11.34-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.02";
 
-    /* ===================== 3) TEXTOS EN/ES ===================== */
+    /* =====================================================
+       5) LOS 9 GIROS
+       Cada texto va en [inglés, español, portugués].
+       s (servicios): [id, ícono, unidad, nombre, detalle, USD bajo, USD alto, mínimo del trabajo, slider mín, máx, inicial, paso]
+         → precio = máx(mínimo, unidad × bajo) – máx(mínimo × 1.4, unidad × alto)
+       gal (galería): [filtro a|b|c, foto de Unsplash, título]
+       ===================================================== */
+    const PLUS = ["+", "+", "+"], YR = ["-yr", " años", " anos"], PCT = ["%", "%", "%"], MIN = ["-min", " min", " min"], AM = ["am", "am", "h"];
+    const YRS = ["Years of experience", "Años de experiencia", "Anos de experiência"];
+    const PRJ = ["Projects completed", "Proyectos terminados", "Projetos concluídos"];
+    const WAR = ["Workmanship warranty", "De garantía en mano de obra", "De garantia na mão de obra"];
+    const START = ["Start to finish", "De inicio a fin", "Do início ao fim"];
+    const SQFT = ["Square feet", "Pies cuadrados", "Pés quadrados"];
+    const EMERG = ["Emergencies · 24/7", "Emergencias · 24/7", "Emergências · 24h"];
+
+    const GIROS = {
+      /* ---------------- LANDSCAPING ---------------- */
+      landscaping: {
+        demo: "Evergreen & Stone", ic: "leaf",
+        title: ["Garden Rooms, Hardscaping & Lighting", "Garden Rooms, Hardscaping e Iluminación", "Garden Rooms, Paisagismo e Iluminação"],
+        plural: ["landscapers", "jardineros", "paisagistas"],
+        img: ["1600585154340-be6161a56a0c", "1416879595882-3373a0480b5b", "1598902108854-10e335adac99"],
+        heroTitle: ["Outdoor living, <em>beautifully</em> grounded.", "Exteriores para vivir, <em>hechos</em> para durar.", "Áreas externas para viver, <em>feitas</em> para durar."],
+        lead: ["{n} designs and builds garden rooms, stone patios and landscape lighting for homes {z} — with one crew, one price and zero surprises.",
+               "{n} diseña y construye garden rooms, patios de piedra e iluminación de jardín para casas {z} — un solo equipo, un solo precio y cero sorpresas.",
+               "{n} projeta e constrói garden rooms, pátios de pedra e iluminação de jardim para casas {z} — uma só equipe, um só preço e zero surpresas."],
+        m: [[15, PLUS, YRS], [850, PLUS, PRJ], [5, YR, WAR]],
+        workTitle: ["Spaces made to be <em>lived in</em>", "Espacios hechos para <em>vivirse</em>", "Espaços feitos para <em>viver</em>"],
+        tabs: { a: ["Garden Rooms", "Garden Rooms", "Garden Rooms"], b: ["Hardscaping", "Hardscaping", "Pisos e Muros"], c: ["After Dark", "De Noche", "À Noite"] },
+        gal: [
+          ["a", "1585320806297-9794b3e4eeae", ["Rose garden walk", "Paseo de rosales", "Caminho de roseiras"]],
+          ["c", "1600585154363-67eb9e2e2099", ["Uplit oak & facade", "Roble iluminado", "Carvalho iluminado"]],
+          ["b", "1600047509807-ba8f99d2cdde", ["Floating stone steps", "Escalones flotantes", "Degraus flutuantes"]],
+          ["a", "1600566753190-17f0baa2a6c3", ["Modern garden studio", "Estudio de jardín", "Estúdio de jardim"]],
+          ["b", "1613490493576-7fde63acd811", ["Travertine pool deck", "Terraza de travertino", "Deck de travertino"]],
+          ["c", "1416331108676-a22ccb276e35", ["Courtyard at dusk", "Patio al atardecer", "Pátio ao entardecer"]],
+          ["a", "1598902108854-10e335adac99", ["Native woodland bed", "Jardín nativo", "Jardim nativo"]],
+          ["b", "1512917774080-9991f1c4c750", ["Limestone terrace", "Terraza de piedra caliza", "Terraço de calcário"]],
+          ["c", "1599809275671-b5942cabc7a2", ["Firelit spa & patio", "Spa y patio con fuego", "Spa e pátio com fogo"]],
+          ["a", "1591825729269-caeb344f6df2", ["Cedar garden room", "Garden room de cedro", "Garden room de cedro"]],
+          ["b", "1628744448840-55bdb2497bd4", ["Paver driveway", "Entrada de adoquín", "Entrada de pavers"]],
+          ["c", "1600585154526-990dced4db0d", ["Facade wash lighting", "Iluminación de fachada", "Iluminação de fachada"]]
+        ],
+        baTitle: ["From bare dirt to <em>backyard retreat</em>", "De tierra vacía a <em>tu refugio</em>", "Da terra vazia ao <em>seu refúgio</em>"],
+        baText: ["Drag the handle to compare. Same backyard, five weeks apart: grading, drainage, native planting and a stone path that ties it all together.",
+                 "Arrastra el control para comparar. El mismo patio con cinco semanas de diferencia: nivelación, drenaje, plantas nativas y un camino de piedra que lo une todo.",
+                 "Arraste para comparar. O mesmo quintal com cinco semanas de diferença: nivelamento, drenagem, plantas nativas e um caminho de pedra que une tudo."],
+        baF1: ["5 wks", "5 sem", "5 sem"], baF1l: START, baF2: "1,200", baF2l: SQFT, baF3: "62", baF3l: ["Plants installed", "Plantas sembradas", "Plantas plantadas"],
+        p1t: ["What are we building?", "¿Qué vamos a construir?", "O que vamos construir?"],
+        p2t: ["How big is the space?", "¿Qué tan grande es el espacio?", "Qual é o tamanho do espaço?"],
+        p2s: ["An approximate size is fine — we measure on-site for free.", "Un tamaño aproximado está bien — medimos gratis en tu casa.", "Um tamanho aproximado está ótimo — medimos no local sem custo."],
+        s: [
+          ["garden", "home", "sqft", ["Garden Room", "Garden Room", "Garden Room"], ["Studio, office or guest suite", "Estudio, oficina o cuarto", "Estúdio, escritório ou quarto"], 130, 200, 12000, 80, 600, 200, 10],
+          ["hard", "bricks", "sqft", ["Patio & Hardscaping", "Patio y Hardscaping", "Pátio e Hardscaping"], ["Pavers, walls & steps", "Adoquín, muros y escalones", "Pavers, muros e degraus"], 20, 34, 3500, 100, 3000, 500, 50],
+          ["design", "sprout", "sqft", ["Landscape Design", "Diseño de Jardín", "Projeto de Paisagismo"], ["Planting, beds & mulch", "Plantas, camas y mulch", "Plantas, canteiros e cobertura"], 9, 16, 2500, 200, 6000, 1200, 50],
+          ["light", "bulb", "sqft", ["Outdoor Lighting", "Iluminación Exterior", "Iluminação Externa"], ["After-dark design", "Diseño nocturno", "Projeto noturno"], 4, 7, 1800, 200, 6000, 1500, 50],
+          ["fire", "flame", "sqft", ["Outdoor Kitchen & Fire", "Cocina y Fogatero", "Cozinha Externa e Fogueira"], ["Grills, bars & fire pits", "Asadores, barras y fogateros", "Churrasqueiras, bares e fire pits"], 170, 280, 6000, 40, 400, 120, 10],
+          ["lawn", "drop", "sqft", ["Sod & Irrigation", "Pasto y Riego", "Grama e Irrigação"], ["New lawn + smart sprinklers", "Pasto nuevo + riego", "Grama nova + irrigação"], 3, 5, 1500, 500, 10000, 2500, 100]
+        ],
+        faq: [
+          [["Is the on-site visit really free?", "¿La visita a domicilio de verdad es gratis?", "A visita no local é mesmo grátis?"],
+           ["Yes. We walk the space with you, take measurements and confirm your price — no cost and no obligation.", "Sí. Recorremos el espacio contigo, tomamos medidas y confirmamos tu precio, sin costo ni compromiso.", "Sim. Percorremos o espaço com você, tiramos medidas e confirmamos seu preço, sem custo e sem compromisso."]],
+          [["Do I need a permit for a garden room or patio?", "¿Necesito permiso para un garden room o patio?", "Preciso de licença para um garden room ou pátio?"],
+           ["Often, yes. We handle the drawings, permits and HOA approvals for you as part of the project.", "Muchas veces sí. Nosotros nos encargamos de planos, permisos y aprobación de la HOA como parte del proyecto.", "Muitas vezes, sim. Cuidamos dos desenhos, licenças e aprovação da HOA como parte do projeto."]],
+          [["How long does a typical project take?", "¿Cuánto tarda un proyecto normal?", "Quanto tempo leva um projeto típico?"],
+           ["Lighting takes 1–3 days, patios 1–3 weeks and garden rooms 4–8 weeks. You get a written timeline before we start.", "La iluminación toma 1 a 3 días, los patios 1 a 3 semanas y los garden rooms 4 a 8 semanas. Te damos el calendario por escrito antes de empezar.", "Iluminação leva de 1 a 3 dias, pátios de 1 a 3 semanas e garden rooms de 4 a 8 semanas. Você recebe o cronograma por escrito antes de começarmos."]],
+          [["What does the warranty cover?", "¿Qué cubre la garantía?", "O que a garantia cobre?"],
+           ["Five years on workmanship and hardscape installation, plus one year on plants we install.", "Cinco años en mano de obra e instalación de hardscape, más un año en las plantas que sembramos.", "Cinco anos na mão de obra e instalação de hardscape, mais um ano nas plantas que plantamos."]]
+        ],
+        rev: [
+          ["Rachel T.", ["They turned our muddy backyard into the place we spend every evening. On time, on budget and spotless when they left.", "Convirtieron nuestro patio lleno de lodo en el lugar donde pasamos todas las tardes. A tiempo, dentro del presupuesto y todo limpio al irse.", "Transformaram nosso quintal cheio de lama no lugar onde passamos todas as noites. No prazo, no orçamento e tudo limpo ao sair."]],
+          ["Marco D.", ["The lighting design is unreal. Neighbors keep stopping to ask who did it.", "El diseño de iluminación es increíble. Los vecinos no dejan de preguntar quién lo hizo.", "O projeto de iluminação é incrível. Os vizinhos sempre param para perguntar quem fez."]],
+          ["Linda K.", ["Clear quote, no surprises, and the crew treated our home with respect. Highly recommend.", "Cotización clara, sin sorpresas y el equipo trató nuestra casa con respeto. Muy recomendados.", "Orçamento claro, sem surpresas, e a equipe tratou nossa casa com respeito. Recomendo muito."]]
+        ],
+        footTitle: ["Let's build something <em>worth coming home to.</em>", "Construyamos algo que <em>dé gusto volver a casa.</em>", "Vamos construir algo que <em>dê gosto voltar para casa.</em>"],
+        footBlurb: ["Garden rooms, hardscaping and landscape lighting — designed, built and warrantied by one local team.", "Garden rooms, hardscaping e iluminación de jardín — diseñados, construidos y garantizados por un mismo equipo local.", "Garden rooms, hardscaping e iluminação de jardim — projetados, construídos e garantidos por uma única equipe local."],
+        brandLine: ["Rooted in <em>craft.</em>", "Raíz y <em>oficio.</em>", "Raiz e <em>ofício.</em>"]
+      },
+
+      /* ---------------- ROOFING ---------------- */
+      roofing: {
+        demo: "Summit Roofing Co.", ic: "roof",
+        title: ["Roof Replacement, Repairs & Gutters", "Techos, Reparaciones y Canaletas", "Telhados, Reparos e Calhas"],
+        plural: ["roofers", "techadores", "empresas de telhado"],
+        img: ["1632759145351-1d592919f522", "1680538993803-9f469c206395", "1673645652590-9d21295bf4ac"],
+        heroTitle: ["A roof you'll <em>never</em> think about again.", "Un techo en el que <em>no</em> volverás a pensar.", "Um telhado em que você <em>nunca</em> mais vai pensar."],
+        lead: ["{n} replaces, repairs and protects roofs for homes {z} — free inspections, insurance-claim help and a written warranty on every job.",
+               "{n} cambia, repara y protege techos de casas {z} — inspección gratis, ayuda con tu seguro y garantía por escrito en cada trabajo.",
+               "{n} troca, conserta e protege telhados de casas {z} — inspeção grátis, ajuda com o seguro e garantia por escrito em cada serviço."],
+        m: [[20, PLUS, YRS], [1200, PLUS, ["Roofs installed", "Techos instalados", "Telhados instalados"]], [10, YR, WAR]],
+        workTitle: ["Roofs built to <em>take the storm</em>", "Techos hechos para <em>aguantar tormentas</em>", "Telhados feitos para <em>aguentar tempestades</em>"],
+        tabs: { a: ["Shingle", "Shingle", "Shingle"], b: ["Metal & Tile", "Metal y Teja", "Metal e Telha"], c: ["Repairs", "Reparaciones", "Reparos"] },
+        gal: [
+          ["a", "1643225523483-e2c434191bba", ["Architectural shingles", "Shingle arquitectónico", "Shingle arquitetônico"]],
+          ["b", "1780445392484-5fb7d5610708", ["Standing-seam metal", "Techo de metal", "Telhado de metal"]],
+          ["c", "1633759593085-1eaeb724fc88", ["Tear-off & inspection", "Retiro e inspección", "Remoção e inspeção"]],
+          ["a", "1635424824849-1b09bdcc55b1", ["New roof install", "Instalación de techo nuevo", "Instalação de telhado novo"]],
+          ["b", "1763665814538-8ba04597286c", ["Tile roof install", "Instalación de teja", "Instalação de telhas"]],
+          ["c", "1726589004565-bedfba94d3a2", ["Storm damage repair", "Reparación por tormenta", "Reparo pós-tempestade"]]
+        ],
+        baTitle: ["From worn out to <em>storm-ready</em>", "De desgastado a <em>listo para tormentas</em>", "De desgastado a <em>pronto para tempestades</em>"],
+        baText: ["Drag to compare. Moss, cracked tiles and soft decking replaced with a sealed, ventilated roof system — finished in two days.",
+                 "Arrastra para comparar. Moho, tejas rotas y madera débil reemplazados por un sistema sellado y ventilado — listo en dos días.",
+                 "Arraste para comparar. Musgo, telhas quebradas e madeira fraca trocados por um sistema vedado e ventilado — pronto em dois dias."],
+        baF1: ["2 days", "2 días", "2 dias"], baF1l: ["Full replacement", "Cambio completo", "Troca completa"], baF2: "2,400", baF2l: SQFT, baF3: "130 mph", baF3l: ["Wind rating", "Resistencia al viento", "Resistência ao vento"],
+        p1t: ["What does your roof need?", "¿Qué necesita tu techo?", "Do que seu telhado precisa?"],
+        p2t: ["How big is the job?", "¿Qué tan grande es el trabajo?", "Qual é o tamanho do serviço?"],
+        p2s: ["A rough number is fine — we measure by satellite and on-site for free.", "Un número aproximado está bien — medimos por satélite y en sitio gratis.", "Um número aproximado está ótimo — medimos por satélite e no local sem custo."],
+        trust2: ["Free roof inspection", "Inspección de techo gratis", "Inspeção de telhado grátis"],
+        qL3: ["Free inspection to lock the price", "Inspección gratis para fijar el precio", "Inspeção grátis para fechar o preço"],
+        s: [
+          ["shingle", "roof", "sqft", ["Shingle Roof Replacement", "Cambio de Techo de Shingle", "Troca de Telhado Shingle"], ["Tear-off + new architectural shingles", "Retiro + shingle arquitectónico nuevo", "Remoção + shingle arquitetônico novo"], 4.5, 7.5, 8000, 800, 5000, 2000, 50],
+          ["metal", "layers", "sqft", ["Metal Roof", "Techo de Metal", "Telhado de Metal"], ["Standing seam, 50-year life", "Engargolado, dura 50 años", "Junta elevada, dura 50 anos"], 10, 16, 15000, 800, 5000, 2000, 50],
+          ["flat", "building", "sqft", ["Flat Roof (TPO)", "Techo Plano (TPO)", "Telhado Plano (TPO)"], ["Commercial & low-slope", "Comercial y poca pendiente", "Comercial e baixa inclinação"], 6, 11, 5000, 500, 10000, 2000, 100],
+          ["repair", "wrench", "sqft", ["Roof Repair & Leaks", "Reparación y Goteras", "Reparo e Goteiras"], ["Patches, flashing & storm damage", "Parches, flashing y daño por tormenta", "Remendos, rufos e danos de tempestade"], 12, 25, 450, 20, 600, 100, 10],
+          ["gutter", "gutter", "ft", ["Gutters & Guards", "Canaletas y Protectores", "Calhas e Protetores"], ["Seamless aluminum", "Aluminio sin uniones", "Alumínio sem emendas"], 9, 18, 900, 50, 400, 150, 10],
+          ["sky", "sun", "un", ["Skylights", "Tragaluces", "Claraboias"], ["Install or replace", "Instalación o cambio", "Instalação ou troca"], 1200, 2800, 1200, 1, 6, 1, 1]
+        ],
+        faq: [
+          [["Will insurance cover my roof?", "¿El seguro cubre mi techo?", "O seguro cobre meu telhado?"],
+           ["If the damage came from a storm, often yes. We document everything with photos and meet your adjuster on-site.", "Si el daño fue por una tormenta, muchas veces sí. Documentamos todo con fotos y nos reunimos con tu ajustador en sitio.", "Se o dano veio de uma tempestade, muitas vezes sim. Documentamos tudo com fotos e encontramos seu perito no local."]],
+          [["How long does a replacement take?", "¿Cuánto tarda un cambio de techo?", "Quanto tempo leva uma troca de telhado?"],
+           ["Most homes are done in 1–3 days. We protect your landscaping and run a magnetic sweep for nails before we leave.", "La mayoría de las casas quedan en 1 a 3 días. Protegemos tu jardín y pasamos un imán para recoger clavos antes de irnos.", "A maioria das casas fica pronta em 1 a 3 dias. Protegemos seu jardim e passamos um ímã para recolher pregos antes de sair."]],
+          [["Repair or full replacement?", "¿Reparar o cambiar todo el techo?", "Consertar ou trocar o telhado todo?"],
+           ["If your roof is under 15 years old and the damage is local, a repair usually makes sense. We show you photos and give you both prices.", "Si tu techo tiene menos de 15 años y el daño es localizado, casi siempre conviene reparar. Te mostramos fotos y te damos ambos precios.", "Se seu telhado tem menos de 15 anos e o dano é localizado, geralmente vale consertar. Mostramos fotos e passamos os dois preços."]],
+          [["Are you licensed and insured?", "¿Tienen licencia y seguro?", "Vocês têm licença e seguro?"],
+           ["Yes — licensed, insured and manufacturer-certified, with a 10-year workmanship warranty on every replacement.", "Sí — con licencia, seguro y certificación del fabricante, más 10 años de garantía en mano de obra en cada cambio de techo.", "Sim — com licença, seguro e certificação do fabricante, mais 10 anos de garantia na mão de obra em cada troca."]]
+        ],
+        rev: [
+          ["Kevin S.", ["After the hail storm they handled everything with our insurance. New roof in two days and the yard was cleaner than before.", "Después del granizo se encargaron de todo con nuestro seguro. Techo nuevo en dos días y el jardín quedó más limpio que antes.", "Depois do granizo cuidaram de tudo com o nosso seguro. Telhado novo em dois dias e o quintal ficou mais limpo que antes."]],
+          ["Maria L.", ["Honest crew. They could have sold me a full roof but fixed the leak for a fraction of the price.", "Equipo honesto. Podían venderme un techo completo pero arreglaron la gotera por una fracción del precio.", "Equipe honesta. Podiam me vender um telhado inteiro, mas consertaram a goteira por uma fração do preço."]],
+          ["James P.", ["Showed up when they said, explained every step with photos and the price matched the estimate.", "Llegaron cuando dijeron, explicaron cada paso con fotos y el precio fue el del estimado.", "Chegaram quando disseram, explicaram cada etapa com fotos e o preço bateu com o orçamento."]]
+        ],
+        footTitle: ["Sleep easy under <em>a roof done right.</em>", "Duerme tranquilo bajo <em>un techo bien hecho.</em>", "Durma tranquilo sob <em>um telhado bem feito.</em>"],
+        footBlurb: ["Roof replacement, repairs, gutters and skylights — installed and warrantied by one local crew.", "Cambio de techo, reparaciones, canaletas y tragaluces — instalados y garantizados por un mismo equipo local.", "Troca de telhado, reparos, calhas e claraboias — instalados e garantidos por uma única equipe local."],
+        brandLine: ["Built to <em>last.</em>", "Hecho para <em>durar.</em>", "Feito para <em>durar.</em>"]
+      },
+
+      /* ---------------- AESTHETICS / SPA ---------------- */
+      spa: {
+        demo: "Lumière Med Spa", ic: "flower",
+        title: ["Med Spa · Facials, Injectables & Laser", "Spa y Estética · Faciales, Inyectables y Láser", "Spa e Estética · Faciais, Injetáveis e Laser"],
+        plural: ["med spas", "spas y clínicas de estética", "clínicas de estética"],
+        img: ["1570172619644-dfd03ed5d881", "1616394584738-fc6e612e71b9", "1643684391140-c5056cfd3436"],
+        heroTitle: ["Your skin, <em>glowing</em> again.", "Tu piel, <em>radiante</em> otra vez.", "Sua pele, <em>radiante</em> de novo."],
+        lead: ["{n} offers facials, injectables, laser and massage {z} — licensed specialists, medical-grade products and a plan made just for your skin.",
+               "{n} ofrece faciales, inyectables, láser y masajes {z} — especialistas con licencia, productos de grado médico y un plan hecho para tu piel.",
+               "{n} oferece faciais, injetáveis, laser e massagens {z} — especialistas licenciadas, produtos de grau médico e um plano feito para a sua pele."],
+        m: [[10, PLUS, YRS], [5000, PLUS, ["Treatments performed", "Tratamientos realizados", "Tratamentos realizados"]], [12, PLUS, ["Licensed specialists", "Especialistas con licencia", "Especialistas licenciadas"]]],
+        booking: ["Appointments this week", "Citas esta semana", "Horários esta semana"],
+        workTitle: ["A calm space to <em>feel like you</em>", "Un espacio para <em>sentirte tú</em>", "Um espaço para <em>se sentir você</em>"],
+        tabs: { a: ["Facials", "Faciales", "Faciais"], b: ["Body & Massage", "Cuerpo y Masaje", "Corpo e Massagem"], c: ["Our Studio", "Nuestro Spa", "Nosso Espaço"] },
+        gal: [
+          ["a", "1761718210089-ba3bb5ccb54f", ["Signature facial", "Facial de la casa", "Facial exclusivo"]],
+          ["b", "1559185590-879c66a55254", ["Relaxing massage", "Masaje relajante", "Massagem relaxante"]],
+          ["c", "1559185590-fcf099ac62c5", ["Treatment suites", "Cabinas de tratamiento", "Salas de tratamento"]],
+          ["a", "1731514771613-991a02407132", ["Hydrating mask", "Mascarilla hidratante", "Máscara hidratante"]],
+          ["b", "1559185590-d545a0c5a1dc", ["Expert team", "Equipo experto", "Equipe especializada"]],
+          ["c", "1782159981479-5e90597f284a", ["Glow treatment", "Tratamiento iluminador", "Tratamento iluminador"]]
+        ],
+        baEyebrow: ["Real results", "Resultados reales", "Resultados reais"],
+        baTitle: ["From tired skin to <em>healthy glow</em>", "De piel cansada a <em>brillo saludable</em>", "De pele cansada a <em>brilho saudável</em>"],
+        baText: ["Drag to compare. A deep-cleansing facial with exfoliation, extraction and hydration — 60 minutes, zero downtime.",
+                 "Arrastra para comparar. Un facial de limpieza profunda con exfoliación, extracción e hidratación — 60 minutos y sin tiempo de recuperación.",
+                 "Arraste para comparar. Um facial de limpeza profunda com esfoliação, extração e hidratação — 60 minutos e sem tempo de recuperação."],
+        baF1: "60 min", baF1l: ["Per session", "Por sesión", "Por sessão"], baF2: "0", baF2l: ["Downtime", "Recuperación", "Recuperação"], baF3: "100%", baF3l: ["Personalized plan", "Plan personalizado", "Plano personalizado"],
+        p1t: ["Which treatment?", "¿Qué tratamiento?", "Qual tratamento?"],
+        p2t: ["How many sessions?", "¿Cuántas sesiones?", "Quantas sessões?"],
+        p2s: ["Packages save money — we recommend the right plan in your free consultation.", "Los paquetes ahorran dinero — te recomendamos el plan ideal en tu consulta gratis.", "Pacotes economizam — recomendamos o plano ideal na sua consulta grátis."],
+        urgency: ["When would you like to come in?", "¿Cuándo te gustaría venir?", "Quando você gostaria de vir?"],
+        urgN: [["Flexible", "Flexible", "Flexível"], ["This week", "Esta semana", "Esta semana"], ["Today or tomorrow", "Hoy o mañana", "Hoje ou amanhã"]],
+        trust1: ["Licensed specialists", "Especialistas con licencia", "Especialistas licenciadas"],
+        trust2: ["Free skin consultation", "Consulta de piel gratis", "Consulta de pele grátis"],
+        qL1: ["Prices from our real menu", "Precios de nuestro menú real", "Preços do nosso cardápio real"],
+        qL3: ["Free consultation before any treatment", "Consulta gratis antes de cualquier tratamiento", "Consulta grátis antes de qualquer tratamento"],
+        resNote: ["Final price is confirmed in your free consultation. Package discounts and add-ons can move the number.", "El precio final se confirma en tu consulta gratis. Los descuentos por paquete y los extras pueden moverlo.", "O preço final é confirmado na sua consulta grátis. Descontos de pacote e extras podem alterar o valor."],
+        ask: ["What's your next available appointment?", "¿Cuál es su próxima cita disponible?", "Qual é o próximo horário disponível?"],
+        h1: ["Tue–Fri · 10am – 7pm", "Mar–Vie · 10am – 7pm", "Ter–Sex · 10h – 19h"], h2: ["Sat · 9am – 5pm", "Sáb · 9am – 5pm", "Sáb · 9h – 17h"], h3: ["Sun–Mon · Closed", "Dom–Lun · Cerrado", "Dom–Seg · Fechado"],
+        s: [
+          ["facial", "flower", "ses", ["Signature Facial", "Facial de la Casa", "Facial Exclusivo"], ["Cleanse, exfoliate & hydrate", "Limpieza, exfoliación e hidratación", "Limpeza, esfoliação e hidratação"], 110, 180, 110, 1, 6, 1, 1],
+          ["hydra", "drop", "ses", ["HydraFacial", "HydraFacial", "HydraFacial"], ["Deep pore cleansing", "Limpieza profunda de poros", "Limpeza profunda dos poros"], 180, 300, 180, 1, 6, 1, 1],
+          ["tox", "syringe", "un", ["Botox & Fillers", "Bótox y Rellenos", "Botox e Preenchimentos"], ["Priced per unit", "Precio por unidad", "Preço por unidade"], 12, 18, 150, 10, 80, 30, 2],
+          ["laser", "zap", "ses", ["Laser Hair Removal", "Depilación Láser", "Depilação a Laser"], ["Per area, per session", "Por zona, por sesión", "Por área, por sessão"], 150, 350, 150, 1, 8, 6, 1],
+          ["massage", "leaf", "ses", ["Massage Therapy", "Masajes", "Massagem"], ["60-minute session", "Sesión de 60 minutos", "Sessão de 60 minutos"], 90, 150, 90, 1, 10, 1, 1],
+          ["lash", "smile", "ses", ["Lashes & Brows", "Pestañas y Cejas", "Cílios e Sobrancelhas"], ["Extensions, lifts & tints", "Extensiones, lifting y tinte", "Extensões, lifting e tintura"], 80, 220, 80, 1, 4, 1, 1]
+        ],
+        faq: [
+          [["Is the consultation really free?", "¿La consulta de verdad es gratis?", "A consulta é mesmo grátis?"],
+           ["Yes. We look at your skin, talk about your goals and recommend a plan — no cost and no pressure.", "Sí. Revisamos tu piel, platicamos de tus metas y te recomendamos un plan — sin costo y sin presión.", "Sim. Avaliamos sua pele, conversamos sobre seus objetivos e recomendamos um plano — sem custo e sem pressão."]],
+          [["Who performs the treatments?", "¿Quién hace los tratamientos?", "Quem faz os tratamentos?"],
+           ["Licensed estheticians and, for injectables, licensed medical providers.", "Esteticistas con licencia y, para inyectables, personal médico con licencia.", "Esteticistas licenciadas e, para injetáveis, profissionais de saúde licenciados."]],
+          [["Is there downtime?", "¿Hay tiempo de recuperación?", "Existe tempo de recuperação?"],
+           ["Most facials and massages have none. Laser and injectables may cause mild redness for a day — we tell you exactly what to expect.", "La mayoría de faciales y masajes no tienen. El láser y los inyectables pueden dejar un poco de enrojecimiento por un día — te decimos exactamente qué esperar.", "A maioria dos faciais e massagens não tem. Laser e injetáveis podem causar leve vermelhidão por um dia — explicamos exatamente o que esperar."]],
+          [["Do you offer packages or memberships?", "¿Tienen paquetes o membresías?", "Vocês têm pacotes ou planos?"],
+           ["Yes. Packages and monthly memberships lower the price per session.", "Sí. Los paquetes y membresías mensuales bajan el precio por sesión.", "Sim. Pacotes e planos mensais reduzem o preço por sessão."]]
+        ],
+        rev: [
+          ["Valeria M.", ["My skin has never looked this good. They explained everything and never pushed extra services.", "Mi piel nunca se había visto tan bien. Me explicaron todo y nunca me presionaron con servicios extra.", "Minha pele nunca esteve tão bonita. Explicaram tudo e nunca empurraram serviços extras."]],
+          ["Hannah L.", ["The most relaxing massage I've had in years. Beautiful, spotless studio.", "El masaje más relajante que he tenido en años. Un spa precioso y súper limpio.", "A massagem mais relaxante que tive em anos. Espaço lindo e impecável."]],
+          ["Isabel C.", ["The laser package was worth it — results after just three sessions. Booking by WhatsApp is so easy.", "El paquete de láser valió la pena — resultados con solo tres sesiones. Agendar por WhatsApp es facilísimo.", "O pacote de laser valeu a pena — resultado com só três sessões. Agendar pelo WhatsApp é muito fácil."]]
+        ],
+        footTitle: ["Take an hour <em>just for you.</em>", "Regálate una hora <em>solo para ti.</em>", "Reserve uma hora <em>só para você.</em>"],
+        footBlurb: ["Facials, injectables, laser and massage — personalized care by licensed local specialists.", "Faciales, inyectables, láser y masajes — atención personalizada por especialistas locales con licencia.", "Faciais, injetáveis, laser e massagens — atendimento personalizado por especialistas locais licenciadas."],
+        brandLine: ["Glow <em>daily.</em>", "Brilla <em>cada día.</em>", "Brilhe <em>todo dia.</em>"]
+      },
+
+      /* ---------------- PAINTING ---------------- */
+      painting: {
+        demo: "Brush & Co. Painting", ic: "brush",
+        title: ["Interior & Exterior Painting", "Pintura Interior y Exterior", "Pintura Interna e Externa"],
+        plural: ["painters", "pintores", "pintores"],
+        img: ["1742900280861-32bed068938b", "1649174586114-a6444e5bbeba", "1505691938895-1758d7feb511"],
+        heroTitle: ["Fresh color, <em>flawless</em> lines.", "Color nuevo, <em>acabado</em> perfecto.", "Cor nova, <em>acabamento</em> perfeito."],
+        lead: ["{n} paints interiors, exteriors and cabinets for homes {z} — careful prep, premium paint and a crew that leaves your home cleaner than they found it.",
+               "{n} pinta interiores, exteriores y gabinetes de casas {z} — buena preparación, pintura premium y un equipo que deja tu casa más limpia de como la encontró.",
+               "{n} pinta interiores, fachadas e armários de casas {z} — preparo caprichado, tinta premium e uma equipe que deixa sua casa mais limpa do que encontrou."],
+        m: [[12, PLUS, YRS], [900, PLUS, ["Homes painted", "Casas pintadas", "Casas pintadas"]], [3, YR, WAR]],
+        workTitle: ["Color that <em>changes the room</em>", "Color que <em>cambia el espacio</em>", "Cor que <em>muda o ambiente</em>"],
+        tabs: { a: ["Interior", "Interior", "Interna"], b: ["Exterior", "Exterior", "Externa"], c: ["Prep & Color", "Preparación y Color", "Preparo e Cor"] },
+        gal: [
+          ["a", "1717281234297-3def5ae3eee1", ["Living room repaint", "Repintado de sala", "Repintura da sala"]],
+          ["b", "1574359411659-15573a27fd0c", ["Two-story exterior", "Exterior de dos pisos", "Fachada de dois andares"]],
+          ["c", "1525909002-1b05e0c869d8", ["Custom color match", "Igualación de color", "Cor sob medida"]],
+          ["a", "1679939153545-95201a01fe5d", ["Calm bedroom tones", "Recámara en tonos suaves", "Quarto em tons suaves"]],
+          ["b", "1734475318787-b2b737296469", ["Trim & window detail", "Detalle de marcos y ventanas", "Detalhe de molduras e janelas"]],
+          ["c", "1599619585752-c3edb42a414c", ["Premium low-VOC paint", "Pintura premium sin olor", "Tinta premium sem cheiro"]]
+        ],
+        baTitle: ["From peeling walls to <em>like-new</em>", "De paredes descarapeladas a <em>como nuevas</em>", "De paredes descascando a <em>como novas</em>"],
+        baText: ["Drag to compare. Scraping, patching, primer and two coats of premium paint — the same room, three days apart.",
+                 "Arrastra para comparar. Raspado, resanado, primer y dos manos de pintura premium — el mismo cuarto con tres días de diferencia.",
+                 "Arraste para comparar. Raspagem, massa, primer e duas demãos de tinta premium — o mesmo cômodo com três dias de diferença."],
+        baF1: ["3 days", "3 días", "3 dias"], baF1l: START, baF2: "2", baF2l: ["Coats of paint", "Manos de pintura", "Demãos de tinta"], baF3: "0", baF3l: ["Mess left behind", "Desorden al terminar", "Bagunça no final"],
+        p1t: ["What are we painting?", "¿Qué vamos a pintar?", "O que vamos pintar?"],
+        p2t: ["How big is the project?", "¿Qué tan grande es el proyecto?", "Qual é o tamanho do projeto?"],
+        p2s: ["An approximate number is fine — we confirm it during a free visit.", "Un número aproximado está bien — lo confirmamos en una visita gratis.", "Um número aproximado está ótimo — confirmamos numa visita grátis."],
+        s: [
+          ["int", "brush", "sqft", ["Interior Painting", "Pintura Interior", "Pintura Interna"], ["Walls, ceilings & trim", "Paredes, techos y marcos", "Paredes, tetos e rodapés"], 2, 4.5, 600, 200, 5000, 1500, 50],
+          ["ext", "home", "sqft", ["Exterior Painting", "Pintura Exterior", "Pintura Externa"], ["Siding, trim & doors", "Fachada, marcos y puertas", "Fachada, molduras e portas"], 1.5, 4, 2500, 800, 6000, 2000, 50],
+          ["room", "bed", "room", ["Single Room", "Un Solo Cuarto", "Um Só Cômodo"], ["Quick refresh, 1–2 days", "Renovación rápida, 1–2 días", "Renovação rápida, 1–2 dias"], 400, 900, 400, 1, 10, 2, 1],
+          ["cab", "layers", "door", ["Cabinet Refinishing", "Pintura de Gabinetes", "Pintura de Armários"], ["Kitchen & bath cabinets", "Gabinetes de cocina y baño", "Armários de cozinha e banheiro"], 90, 180, 1500, 10, 60, 25, 1],
+          ["deck", "fence", "sqft", ["Deck & Fence Stain", "Tinte de Deck y Cerca", "Verniz de Deck e Cerca"], ["Clean, seal & protect", "Limpieza, sellado y protección", "Limpeza, selagem e proteção"], 2, 5, 600, 100, 2000, 400, 50],
+          ["com", "building", "sqft", ["Commercial Painting", "Pintura Comercial", "Pintura Comercial"], ["Offices, stores & rentals", "Oficinas, locales y rentas", "Escritórios, lojas e imóveis"], 1.5, 3.5, 2000, 500, 20000, 3000, 100]
+        ],
+        faq: [
+          [["Do I need to move my furniture?", "¿Tengo que mover mis muebles?", "Preciso tirar os móveis?"],
+           ["No. We move, cover and put everything back. Floors and fixtures are protected before the first brushstroke.", "No. Nosotros movemos, cubrimos y regresamos todo a su lugar. Protegemos pisos y accesorios antes de la primera brochada.", "Não. Nós movemos, cobrimos e colocamos tudo de volta. Protegemos pisos e acessórios antes da primeira pincelada."]],
+          [["What paint do you use?", "¿Qué pintura usan?", "Que tinta vocês usam?"],
+           ["Premium low-VOC paints from top brands — durable, washable and almost odor-free.", "Pinturas premium bajas en VOC de las mejores marcas — duraderas, lavables y casi sin olor.", "Tintas premium com baixo VOC das melhores marcas — duráveis, laváveis e quase sem cheiro."]],
+          [["Can you help me choose colors?", "¿Me ayudan a elegir colores?", "Vocês me ajudam a escolher as cores?"],
+           ["Yes. We bring swatches and paint test patches on your walls so you see the color in your own light.", "Sí. Llevamos muestras y pintamos parches de prueba en tus paredes para que veas el color con tu propia luz.", "Sim. Levamos amostras e pintamos áreas de teste nas suas paredes para você ver a cor na sua própria luz."]],
+          [["Is your work guaranteed?", "¿Su trabajo tiene garantía?", "O trabalho tem garantia?"],
+           ["Every job includes a 3-year warranty against peeling, blistering and flaking.", "Cada trabajo incluye 3 años de garantía contra descarapelado, ampollas y desprendimiento.", "Cada serviço inclui 3 anos de garantia contra descascamento, bolhas e desplacamento."]]
+        ],
+        rev: [
+          ["Ashley R.", ["Perfectly straight lines and not a single drop on the floor. Our living room looks brand new.", "Líneas perfectas y ni una gota en el piso. Nuestra sala parece nueva.", "Linhas perfeitas e nem uma gota no chão. Nossa sala parece nova."]],
+          ["David M.", ["They painted the whole exterior in three days and helped us pick a color we love.", "Pintaron todo el exterior en tres días y nos ayudaron a elegir un color que nos encanta.", "Pintaram toda a fachada em três dias e nos ajudaram a escolher uma cor que amamos."]],
+          ["Sofia G.", ["Fair price, on time and very respectful with our home and kids. Already booked them for the kitchen cabinets.", "Precio justo, puntuales y muy respetuosos con nuestra casa y los niños. Ya los contratamos para los gabinetes.", "Preço justo, pontuais e muito respeitosos com nossa casa e as crianças. Já contratamos para os armários."]]
+        ],
+        footTitle: ["Let's give your home <em>a fresh start.</em>", "Démosle a tu casa <em>un nuevo comienzo.</em>", "Vamos dar à sua casa <em>um novo começo.</em>"],
+        footBlurb: ["Interior, exterior and cabinet painting — prepped, painted and warrantied by one local team.", "Pintura interior, exterior y de gabinetes — preparada, pintada y garantizada por un mismo equipo local.", "Pintura interna, externa e de armários — preparada, pintada e garantida por uma única equipe local."],
+        brandLine: ["Color with <em>care.</em>", "Color con <em>cuidado.</em>", "Cor com <em>cuidado.</em>"]
+      },
+
+      /* ---------------- CLEANING ---------------- */
+      cleaning: {
+        demo: "Sparkle Home Cleaning", ic: "sparkle",
+        title: ["House & Office Cleaning", "Limpieza de Casas y Oficinas", "Limpeza de Casas e Escritórios"],
+        plural: ["cleaning companies", "empresas de limpieza", "empresas de limpeza"],
+        img: ["1758273238415-01ec03d9ef27", "1764976962935-79fa640eb979", "1583847268964-b28dc8f51f92"],
+        heroTitle: ["Come home to <em>spotless.</em>", "Llega a casa y todo <em>reluce.</em>", "Chegue em casa e tudo <em>brilha.</em>"],
+        lead: ["{n} cleans homes, apartments and offices {z} — trusted, background-checked cleaners, eco-friendly products and a 100% satisfaction guarantee.",
+               "{n} limpia casas, departamentos y oficinas {z} — personal de confianza con antecedentes revisados, productos ecológicos y garantía de satisfacción del 100%.",
+               "{n} limpa casas, apartamentos e escritórios {z} — profissionais de confiança com antecedentes verificados, produtos ecológicos e garantia de satisfação de 100%."],
+        m: [[8, PLUS, YRS], [3500, PLUS, ["Homes cleaned", "Casas limpias", "Casas limpas"]], [100, PCT, ["Satisfaction guarantee", "Garantía de satisfacción", "Garantia de satisfação"]]],
+        workTitle: ["Clean you can <em>see and feel</em>", "Limpieza que <em>se ve y se siente</em>", "Limpeza que <em>se vê e se sente</em>"],
+        tabs: { a: ["Homes", "Casas", "Casas"], b: ["Kitchens & Baths", "Cocinas y Baños", "Cozinhas e Banheiros"], c: ["Deep Clean", "Limpieza Profunda", "Limpeza Pesada"] },
+        gal: [
+          ["a", "1686178827149-6d55c72d81df", ["Upholstery & vacuuming", "Tapicería y aspirado", "Estofados e aspiração"]],
+          ["b", "1773579305267-8d75e0af5be4", ["Kitchen reset", "Cocina impecable", "Cozinha impecável"]],
+          ["c", "1742483359033-13315b247c74", ["Carpet deep clean", "Lavado profundo de alfombra", "Limpeza profunda de carpete"]],
+          ["a", "1646980241033-cd7abda2ee88", ["Whole-home service", "Servicio de toda la casa", "Serviço da casa toda"]],
+          ["b", "1585421514284-efb74c2b69ba", ["Disinfected surfaces", "Superficies desinfectadas", "Superfícies desinfetadas"]],
+          ["c", "1740657254989-42fe9c3b8cce", ["Floor scrubbing", "Tallado de pisos", "Esfregação de pisos"]]
+        ],
+        baTitle: ["From chaos to <em>calm</em>", "Del caos a la <em>calma</em>", "Do caos à <em>calma</em>"],
+        baText: ["Drag to compare. A move-out deep clean: decluttering, scrubbing and sanitizing every surface — done in a single day.",
+                 "Arrastra para comparar. Una limpieza profunda de mudanza: despejar, tallar y desinfectar cada superficie — en un solo día.",
+                 "Arraste para comparar. Uma limpeza pesada de mudança: organizar, esfregar e higienizar cada superfície — em um só dia."],
+        baF1: ["1 day", "1 día", "1 dia"], baF1l: START, baF2: "4", baF2l: ["Cleaners on site", "Personas en el equipo", "Profissionais na equipe"], baF3: "100%", baF3l: ["Surfaces sanitized", "Superficies desinfectadas", "Superfícies higienizadas"],
+        p1t: ["What kind of cleaning?", "¿Qué tipo de limpieza?", "Que tipo de limpeza?"],
+        p2t: ["How big is the place?", "¿Qué tan grande es el lugar?", "Qual é o tamanho do lugar?"],
+        p2s: ["An approximate size is fine — most homes are 1,000 to 2,500 sq ft.", "Un tamaño aproximado está bien — la mayoría de las casas mide de 1,000 a 2,500 sq ft.", "Um tamanho aproximado está ótimo — a maioria das casas tem de 1.000 a 2.500 sq ft."],
+        trust1: ["Insured & background-checked", "Asegurados y con antecedentes revisados", "Com seguro e antecedentes verificados"],
+        trust2: ["Eco-friendly products", "Productos ecológicos", "Produtos ecológicos"],
+        qL3: ["Not happy? We re-clean for free", "¿No quedaste feliz? Volvemos gratis", "Não ficou satisfeito? Voltamos grátis"],
+        resNote: ["Final price is confirmed after a quick walkthrough or video call. Pets, clutter and add-ons can move the number.", "El precio final se confirma tras un recorrido rápido o videollamada. Mascotas, desorden y extras pueden moverlo.", "O preço final é confirmado após uma visita rápida ou videochamada. Pets, bagunça e extras podem alterar o valor."],
+        ask: ["When is your next opening?", "¿Cuándo tienen disponibilidad?", "Quando vocês têm disponibilidade?"],
+        h1: ["Mon–Sat · 8am – 6pm", "Lun–Sáb · 8am – 6pm", "Seg–Sáb · 8h – 18h"], h2: ["Sun · By appointment", "Dom · Con cita", "Dom · Com agendamento"], h3: ["Same-week openings", "Espacios la misma semana", "Vagas na mesma semana"],
+        s: [
+          ["std", "sparkle", "sqft", ["Standard Cleaning", "Limpieza Regular", "Limpeza Padrão"], ["Weekly or bi-weekly", "Semanal o quincenal", "Semanal ou quinzenal"], 0.1, 0.17, 120, 500, 5000, 1500, 50],
+          ["deep", "broom", "sqft", ["Deep Cleaning", "Limpieza Profunda", "Limpeza Pesada"], ["Top-to-bottom detail", "A detalle, de arriba a abajo", "Detalhada, de cima a baixo"], 0.2, 0.35, 250, 500, 5000, 1500, 50],
+          ["move", "box", "sqft", ["Move-In / Move-Out", "Mudanza (Entrada/Salida)", "Mudança (Entrada/Saída)"], ["Empty-home deep clean", "Casa vacía, limpieza total", "Casa vazia, limpeza total"], 0.25, 0.45, 300, 500, 5000, 1500, 50],
+          ["office", "building", "sqft", ["Office Cleaning", "Limpieza de Oficinas", "Limpeza de Escritórios"], ["After-hours, any size", "Fuera de horario, cualquier tamaño", "Fora do horário, qualquer tamanho"], 0.08, 0.2, 200, 500, 20000, 2500, 100],
+          ["post", "hammer", "sqft", ["Post-Construction", "Post-Construcción", "Pós-Obra"], ["Dust & debris removal", "Retiro de polvo y escombro", "Remoção de pó e entulho"], 0.3, 0.6, 400, 500, 6000, 1500, 50],
+          ["carpet", "drop", "room", ["Carpet & Upholstery", "Alfombras y Tapicería", "Carpetes e Estofados"], ["Steam cleaning", "Lavado a vapor", "Lavagem a vapor"], 45, 90, 150, 1, 12, 3, 1]
+        ],
+        faq: [
+          [["Do I need to be home?", "¿Tengo que estar en casa?", "Preciso estar em casa?"],
+           ["No. Many clients give us a key or door code. Our cleaners are insured and background-checked.", "No. Muchos clientes nos dan llave o código. Nuestro personal está asegurado y con antecedentes revisados.", "Não. Muitos clientes nos dão a chave ou o código. Nossa equipe tem seguro e antecedentes verificados."]],
+          [["Do you bring your own supplies?", "¿Llevan sus propios productos?", "Vocês levam os produtos?"],
+           ["Yes — all supplies and equipment, including eco-friendly, pet-safe products. Just tell us if you prefer something specific.", "Sí — todos los productos y equipo, incluyendo productos ecológicos y seguros para mascotas. Solo dinos si prefieres algo en especial.", "Sim — todos os produtos e equipamentos, incluindo produtos ecológicos e seguros para pets. É só avisar se preferir algo específico."]],
+          [["What if I'm not happy with the cleaning?", "¿Y si no quedo contento con la limpieza?", "E se eu não ficar satisfeito com a limpeza?"],
+           ["Tell us within 24 hours and we come back to re-clean the area for free.", "Avísanos dentro de las primeras 24 horas y regresamos a limpiar esa área gratis.", "Avise em até 24 horas e voltamos para limpar a área de novo, grátis."]],
+          [["Do you offer recurring discounts?", "¿Tienen descuento por servicio recurrente?", "Vocês têm desconto para serviço recorrente?"],
+           ["Yes. Weekly and bi-weekly plans get a lower rate than one-time cleanings.", "Sí. Los planes semanales y quincenales tienen mejor precio que una limpieza de una sola vez.", "Sim. Planos semanais e quinzenais têm preço melhor que uma limpeza avulsa."]]
+        ],
+        rev: [
+          ["Nicole B.", ["I came home to a house that smelled amazing and looked better than the day we moved in.", "Llegué a una casa que olía increíble y se veía mejor que el día que nos mudamos.", "Cheguei em uma casa com um cheiro incrível e mais bonita do que no dia da mudança."]],
+          ["Carlos V.", ["Our office has never been this clean. Reliable every single week.", "Nuestra oficina nunca había estado tan limpia. Cumplidos cada semana.", "Nosso escritório nunca esteve tão limpo. Pontuais toda semana."]],
+          ["Emily W.", ["The move-out clean got us our full deposit back. Worth every penny.", "La limpieza de mudanza nos ayudó a recuperar todo el depósito. Valió cada centavo.", "A limpeza de mudança garantiu nosso depósito de volta. Valeu cada centavo."]]
+        ],
+        footTitle: ["Get your weekends <em>back.</em>", "Recupera tus <em>fines de semana.</em>", "Recupere seus <em>fins de semana.</em>"],
+        footBlurb: ["Home, office and move-out cleaning — done by a trusted local team you'll want to keep.", "Limpieza de casas, oficinas y mudanzas — por un equipo local de confianza que vas a querer conservar.", "Limpeza de casas, escritórios e mudanças — por uma equipe local de confiança que você vai querer manter."],
+        brandLine: ["Simply <em>spotless.</em>", "Simplemente <em>impecable.</em>", "Simplesmente <em>impecável.</em>"]
+      },
+
+      /* ---------------- PLUMBING ---------------- */
+      plumbing: {
+        demo: "BlueLine Plumbing", ic: "wrench",
+        title: ["Plumbing Repairs, Water Heaters & Drains", "Plomería, Calentadores y Drenajes", "Encanamento, Aquecedores e Ralos"],
+        plural: ["plumbers", "plomeros", "encanadores"],
+        img: ["1749532125405-70950966b0e5", "1676210133055-eab6ef033ce3", "1584622650111-993a426fbf0a"],
+        heroTitle: ["Plumbing fixed <em>right,</em> the first time.", "Plomería bien hecha <em>a la primera.</em>", "Encanamento resolvido <em>de primeira.</em>"],
+        lead: ["{n} handles leaks, drains, water heaters and repipes for homes {z} — upfront pricing, clean work and fast response when it can't wait.",
+               "{n} resuelve fugas, drenajes, calentadores y cambio de tubería en casas {z} — precio claro desde el inicio, trabajo limpio y respuesta rápida cuando no puede esperar.",
+               "{n} resolve vazamentos, ralos, aquecedores e troca de tubulação em casas {z} — preço claro desde o início, trabalho limpo e resposta rápida quando não dá para esperar."],
+        m: [[18, PLUS, YRS], [4000, PLUS, ["Jobs completed", "Trabajos realizados", "Serviços realizados"]], [60, MIN, ["Avg. emergency response", "Respuesta a emergencias", "Resposta a emergências"]]],
+        workTitle: ["Clean work, <em>no surprises</em>", "Trabajo limpio, <em>sin sorpresas</em>", "Trabalho limpo, <em>sem surpresas</em>"],
+        tabs: { a: ["Repairs", "Reparaciones", "Reparos"], b: ["Water Heaters", "Calentadores", "Aquecedores"], c: ["Fixtures", "Accesorios", "Louças e Metais"] },
+        gal: [
+          ["a", "1676210134188-4c05dd172f89", ["Leak repair", "Reparación de fuga", "Reparo de vazamento"]],
+          ["b", "1676210134190-3f2c0d5cf58d", ["Water heater service", "Servicio de calentador", "Manutenção de aquecedor"]],
+          ["c", "1542013936693-884638332954", ["New faucet install", "Instalación de llave nueva", "Instalação de torneira nova"]],
+          ["a", "1676210134050-6f12c6898395", ["Toilet repair", "Reparación de inodoro", "Conserto de vaso sanitário"]],
+          ["b", "1761758674188-2b8e4c89c5e2", ["Valves & pressure", "Válvulas y presión", "Válvulas e pressão"]],
+          ["c", "1521207418485-99c705420785", ["Kitchen sink", "Fregadero de cocina", "Pia de cozinha"]]
+        ],
+        baTitle: ["From leaking to <em>like new</em>", "De fugas a <em>como nuevo</em>", "De vazamento a <em>novo em folha</em>"],
+        baText: ["Drag to compare. Corroded pipes replaced, new shut-off valves and a full bathroom refresh — water back on the same day.",
+                 "Arrastra para comparar. Tubería corroída cambiada, llaves de paso nuevas y un baño renovado — con agua el mismo día.",
+                 "Arraste para comparar. Canos corroídos trocados, registros novos e um banheiro renovado — com água no mesmo dia."],
+        baF1: ["Same day", "Mismo día", "Mesmo dia"], baF1l: ["Water back on", "Agua de regreso", "Água de volta"], baF2: "0", baF2l: ["Hidden fees", "Cargos ocultos", "Taxas escondidas"], baF3: ["2 yrs", "2 años", "2 anos"], baF3l: ["Parts & labor", "Piezas y mano de obra", "Peças e mão de obra"],
+        p1t: ["What's going on?", "¿Qué está pasando?", "O que está acontecendo?"],
+        p2t: ["Tell us the size of the job", "Cuéntanos el tamaño del trabajo", "Conte o tamanho do serviço"],
+        p2s: ["An approximate number is fine — we confirm everything before we start.", "Un número aproximado está bien — confirmamos todo antes de empezar.", "Um número aproximado está ótimo — confirmamos tudo antes de começar."],
+        trust2: ["Upfront pricing", "Precio claro por adelantado", "Preço claro antecipado"],
+        qL3: ["Price confirmed before any work starts", "Precio confirmado antes de empezar", "Preço confirmado antes de começar"],
+        resNote: ["Final price is confirmed on-site before any work starts. Wall access and parts can move the number.", "El precio final se confirma en sitio antes de empezar. El acceso dentro de paredes y las piezas pueden moverlo.", "O preço final é confirmado no local antes de começar. Acesso por paredes e peças podem alterar o valor."],
+        ask: ["When can you send a plumber?", "¿Cuándo pueden mandar un plomero?", "Quando podem mandar um encanador?"],
+        h3: EMERG,
+        s: [
+          ["leak", "drop", "un", ["Leak Repair", "Reparación de Fugas", "Reparo de Vazamentos"], ["Pipes, valves & fittings", "Tubos, llaves y conexiones", "Canos, registros e conexões"], 175, 450, 175, 1, 5, 1, 1],
+          ["drain", "wrench", "un", ["Drain Cleaning", "Destape de Drenajes", "Desentupimento"], ["Sinks, tubs & main line", "Lavabos, tinas y línea principal", "Pias, banheiras e rede principal"], 150, 350, 150, 1, 6, 1, 1],
+          ["heater", "flame", "un", ["Water Heater", "Calentador de Agua", "Aquecedor de Água"], ["Tank or tankless install", "Instalación con o sin tanque", "Instalação com ou sem tanque"], 1500, 4500, 1500, 1, 3, 1, 1],
+          ["fixture", "bath", "un", ["Fixture Install", "Instalación de Accesorios", "Instalação de Louças"], ["Toilets, faucets & sinks", "Inodoros, llaves y lavabos", "Vasos, torneiras e pias"], 200, 550, 200, 1, 10, 2, 1],
+          ["repipe", "layers", "sqft", ["Whole-Home Repipe", "Cambio de Tubería", "Troca de Tubulação"], ["PEX or copper", "PEX o cobre", "PEX ou cobre"], 2.5, 5.5, 4000, 800, 5000, 1800, 50],
+          ["sewer", "search", "ft", ["Sewer Line Repair", "Reparación de Drenaje", "Reparo de Esgoto"], ["Camera inspection included", "Incluye inspección con cámara", "Inclui inspeção com câmera"], 80, 200, 1500, 10, 150, 30, 5]
+        ],
+        faq: [
+          [["Do you handle emergencies?", "¿Atienden emergencias?", "Vocês atendem emergências?"],
+           ["Yes. For burst pipes, major leaks or no hot water, message us any time — emergencies go first.", "Sí. Para tubos reventados, fugas grandes o sin agua caliente, escríbenos a cualquier hora — las emergencias van primero.", "Sim. Para cano estourado, vazamento grande ou falta de água quente, chame a qualquer hora — emergências vêm primeiro."]],
+          [["Do you charge a trip fee?", "¿Cobran por la visita?", "Vocês cobram pela visita?"],
+           ["The diagnostic visit is credited toward the repair when you go ahead with the work.", "La visita de diagnóstico se descuenta de la reparación si decides hacer el trabajo.", "A visita de diagnóstico é descontada do reparo se você fechar o serviço."]],
+          [["Tank or tankless water heater?", "¿Calentador de tanque o de paso?", "Aquecedor com tanque ou sem tanque?"],
+           ["Tankless costs more upfront but saves energy and never runs out of hot water. We price both options for your home.", "El de paso cuesta más al inicio pero ahorra energía y nunca se acaba el agua caliente. Te cotizamos ambas opciones para tu casa.", "O sem tanque custa mais no início, mas economiza energia e a água quente nunca acaba. Orçamos as duas opções para sua casa."]],
+          [["Are you licensed and insured?", "¿Tienen licencia y seguro?", "Vocês têm licença e seguro?"],
+           ["Yes — licensed plumbers, fully insured, with a 2-year warranty on parts and labor.", "Sí — plomeros con licencia, totalmente asegurados y con 2 años de garantía en piezas y mano de obra.", "Sim — encanadores licenciados, com seguro total e 2 anos de garantia em peças e mão de obra."]]
+        ],
+        rev: [
+          ["Brian H.", ["Our water heater died on a Sunday and they had a new one running by the afternoon. Clear price, no upsell.", "El calentador se descompuso un domingo y en la tarde ya teníamos uno nuevo. Precio claro, sin venderme de más.", "O aquecedor parou num domingo e à tarde já tínhamos um novo funcionando. Preço claro, sem empurrar nada."]],
+          ["Patricia N.", ["Found a hidden leak two other companies missed. Very clean and respectful.", "Encontraron una fuga escondida que otras dos compañías no vieron. Muy limpios y respetuosos.", "Acharam um vazamento escondido que outras duas empresas não viram. Muito limpos e respeitosos."]],
+          ["Luis A.", ["Fair price and they explained everything before starting. My go-to plumber now.", "Precio justo y explicaron todo antes de empezar. Ahora son mis plomeros de confianza.", "Preço justo e explicaram tudo antes de começar. Agora são meus encanadores de confiança."]]
+        ],
+        footTitle: ["Fast help when <em>water can't wait.</em>", "Ayuda rápida cuando <em>el agua no espera.</em>", "Ajuda rápida quando <em>a água não pode esperar.</em>"],
+        footBlurb: ["Leaks, drains, water heaters and repipes — fixed right by one licensed local team.", "Fugas, drenajes, calentadores y tuberías — resueltos por un mismo equipo local con licencia.", "Vazamentos, ralos, aquecedores e tubulações — resolvidos por uma única equipe local licenciada."],
+        brandLine: ["Done <em>right.</em>", "Bien <em>hecho.</em>", "Bem <em>feito.</em>"]
+      },
+
+      /* ---------------- HVAC ---------------- */
+      hvac: {
+        demo: "Polar Air HVAC", ic: "snow",
+        title: ["AC, Heating & Heat Pumps", "Aire Acondicionado y Calefacción", "Ar-Condicionado e Aquecimento"],
+        plural: ["HVAC companies", "compañías de aire acondicionado", "empresas de ar-condicionado"],
+        img: ["1776860155275-eee24bfb1dee", "1718203862467-c33159fdc504", "1776860150305-108ed577d7d4"],
+        heroTitle: ["Perfect comfort, <em>every</em> season.", "Confort perfecto en <em>cada</em> temporada.", "Conforto perfeito em <em>todas</em> as estações."],
+        lead: ["{n} installs, repairs and maintains AC, heat pumps and furnaces for homes {z} — honest diagnostics, financing options and same-day service.",
+               "{n} instala, repara y da mantenimiento a aires acondicionados, bombas de calor y calefacción en casas {z} — diagnóstico honesto, opciones de financiamiento y servicio el mismo día.",
+               "{n} instala, conserta e faz manutenção de ar-condicionado, bombas de calor e aquecedores em casas {z} — diagnóstico honesto, opções de financiamento e atendimento no mesmo dia."],
+        m: [[15, PLUS, YRS], [2500, PLUS, ["Systems installed", "Equipos instalados", "Sistemas instalados"]], [10, YR, ["Parts & labor warranty", "De garantía en piezas y mano de obra", "De garantia em peças e mão de obra"]]],
+        workTitle: ["Systems that run <em>quiet and efficient</em>", "Equipos <em>silenciosos y eficientes</em>", "Sistemas <em>silenciosos e eficientes</em>"],
+        tabs: { a: ["Central AC", "Aire Central", "Ar Central"], b: ["Mini-Splits", "Minisplits", "Splits"], c: ["Commercial", "Comercial", "Comercial"] },
+        gal: [
+          ["a", "1700124113583-81aa99ea2aa2", ["Condenser replacement", "Cambio de condensador", "Troca de condensadora"]],
+          ["b", "1761330440311-16e160cad236", ["Living room mini-split", "Minisplit en sala", "Split na sala"]],
+          ["c", "1776860154052-d91c90b25c59", ["Multi-unit install", "Instalación de varios equipos", "Instalação de várias unidades"]],
+          ["a", "1681042803902-f79c240d8f03", ["Rooftop unit", "Equipo en azotea", "Unidade no telhado"]],
+          ["b", "1762341123870-d706f257a12e", ["Smart temperature control", "Control inteligente de temperatura", "Controle inteligente de temperatura"]],
+          ["c", "1667983453881-4992fe86ab1b", ["Building systems", "Sistemas para edificios", "Sistemas para prédios"]]
+        ],
+        baTitle: ["From worn out to <em>high-efficiency</em>", "De viejo a <em>alta eficiencia</em>", "De velho a <em>alta eficiência</em>"],
+        baText: ["Drag to compare. A 15-year-old unit swapped for a quiet, high-efficiency heat pump that cools and heats — installed in one day.",
+                 "Arrastra para comparar. Un equipo de 15 años cambiado por una bomba de calor silenciosa de alta eficiencia que enfría y calienta — instalada en un día.",
+                 "Arraste para comparar. Um aparelho de 15 anos trocado por uma bomba de calor silenciosa e de alta eficiência que esfria e aquece — instalada em um dia."],
+        baF1: ["1 day", "1 día", "1 dia"], baF1l: ["Install time", "Instalación", "Instalação"], baF2: "40%", baF2l: ["Lower energy bills", "Menos en el recibo de luz", "Menos na conta de luz"], baF3: "18", baF3l: ["SEER2 rating", "Eficiencia SEER2", "Eficiência SEER2"],
+        p1t: ["What do you need?", "¿Qué necesitas?", "Do que você precisa?"],
+        p2t: ["Tell us about your home", "Cuéntanos de tu casa", "Conte sobre sua casa"],
+        p2s: ["An approximate size is fine — we do a free load calculation on-site.", "Un tamaño aproximado está bien — hacemos el cálculo de carga gratis en tu casa.", "Um tamanho aproximado está ótimo — fazemos o cálculo de carga grátis no local."],
+        trust2: ["Same-day service", "Servicio el mismo día", "Atendimento no mesmo dia"],
+        qL3: ["Free in-home estimate for new systems", "Estimado gratis en casa para equipos nuevos", "Orçamento grátis em casa para sistemas novos"],
+        ask: ["When can a technician come out?", "¿Cuándo puede venir un técnico?", "Quando um técnico pode vir?"],
+        h3: EMERG,
+        s: [
+          ["ac", "snow", "sqft", ["AC Replacement", "Cambio de Aire Central", "Troca de Ar Central"], ["New central air system", "Sistema central nuevo", "Sistema central novo"], 3.5, 7, 4500, 800, 5000, 1800, 50],
+          ["hp", "wind", "sqft", ["Heat Pump", "Bomba de Calor", "Bomba de Calor"], ["Cools & heats, high efficiency", "Enfría y calienta, alta eficiencia", "Esfria e aquece, alta eficiência"], 4.5, 8.5, 6000, 800, 5000, 1800, 50],
+          ["split", "home", "zone", ["Ductless Mini-Split", "Minisplit sin Ductos", "Split sem Dutos"], ["Per room or zone", "Por cuarto o zona", "Por cômodo ou zona"], 3000, 5500, 3000, 1, 6, 2, 1],
+          ["furnace", "flame", "un", ["Furnace Install", "Instalación de Calefactor", "Instalação de Aquecedor"], ["Gas or electric", "Gas o eléctrico", "Gás ou elétrico"], 3500, 7500, 3500, 1, 2, 1, 1],
+          ["tune", "wrench", "un", ["Tune-Up & Repair", "Mantenimiento y Reparación", "Manutenção e Reparo"], ["Per system", "Por equipo", "Por sistema"], 89, 189, 89, 1, 4, 1, 1],
+          ["duct", "thermo", "vent", ["Duct Cleaning", "Limpieza de Ductos", "Limpeza de Dutos"], ["Cleaner air, better flow", "Aire más limpio y mejor flujo", "Ar mais limpo e melhor fluxo"], 25, 45, 300, 5, 40, 15, 1]
+        ],
+        faq: [
+          [["Repair or replace my AC?", "¿Reparar o cambiar mi aire?", "Consertar ou trocar meu ar?"],
+           ["If your system is over 12–15 years old or the repair costs more than a third of a new unit, replacing usually saves money. We show you both numbers.", "Si tu equipo tiene más de 12 a 15 años o la reparación cuesta más de un tercio de uno nuevo, casi siempre conviene cambiarlo. Te mostramos ambos números.", "Se seu sistema tem mais de 12 a 15 anos ou o conserto custa mais de um terço de um novo, trocar geralmente compensa. Mostramos os dois valores."]],
+          [["Do you offer financing?", "¿Tienen financiamiento?", "Vocês oferecem financiamento?"],
+           ["Yes. Monthly payment plans are available on new systems, subject to approval.", "Sí. Hay planes de pagos mensuales para equipos nuevos, sujetos a aprobación.", "Sim. Há planos de pagamento mensal para sistemas novos, sujeitos a aprovação."]],
+          [["How often should I service my system?", "¿Cada cuánto le doy mantenimiento?", "Com que frequência devo fazer manutenção?"],
+           ["Twice a year — AC in spring and heating in fall. It keeps the warranty valid and catches small problems early.", "Dos veces al año — el aire en primavera y la calefacción en otoño. Mantiene válida la garantía y detecta fallas a tiempo.", "Duas vezes por ano — o ar na primavera e o aquecimento no outono. Mantém a garantia válida e detecta problemas cedo."]],
+          [["Are there rebates for heat pumps?", "¿Hay reembolsos por bombas de calor?", "Existem incentivos para bombas de calor?"],
+           ["Often, yes. Tax credits and local utility rebates can apply — we help you with the paperwork.", "Muchas veces sí. Pueden aplicar créditos fiscales y reembolsos de la compañía de luz — te ayudamos con el papeleo.", "Muitas vezes, sim. Créditos fiscais e incentivos da companhia de energia podem se aplicar — ajudamos com a papelada."]]
+        ],
+        rev: [
+          ["Jennifer C.", ["Our AC quit in July and they had us cool again the same evening. Honest and on time.", "El aire se descompuso en julio y esa misma noche ya estábamos frescos. Honestos y puntuales.", "O ar quebrou em julho e na mesma noite já estávamos refrescados. Honestos e pontuais."]],
+          ["Robert F.", ["The new heat pump is so quiet we forget it's on, and our power bill dropped right away.", "La bomba de calor nueva es tan silenciosa que olvidamos que está prendida, y el recibo de luz bajó de inmediato.", "A bomba de calor nova é tão silenciosa que esquecemos que está ligada, e a conta de luz caiu na hora."]],
+          ["Ana P.", ["They explained every option without pressure. Great service from the call to the install.", "Nos explicaron cada opción sin presionar. Excelente servicio desde la llamada hasta la instalación.", "Explicaram cada opção sem pressão. Ótimo atendimento da ligação à instalação."]]
+        ],
+        footTitle: ["Stay cool. <em>Stay warm.</em>", "Fresco en verano, <em>cálido en invierno.</em>", "Fresco no verão, <em>quentinho no inverno.</em>"],
+        footBlurb: ["AC, heat pumps, furnaces and ductwork — installed, serviced and warrantied by one local team.", "Aire acondicionado, bombas de calor, calefacción y ductos — instalados, mantenidos y garantizados por un mismo equipo local.", "Ar-condicionado, bombas de calor, aquecedores e dutos — instalados, mantidos e garantidos por uma única equipe local."],
+        brandLine: ["Always <em>comfortable.</em>", "Siempre <em>a gusto.</em>", "Sempre <em>confortável.</em>"]
+      },
+
+      /* ---------------- REMODELING ---------------- */
+      remodeling: {
+        demo: "Cornerstone Remodeling", ic: "hammer",
+        title: ["Kitchen, Bath & Home Remodeling", "Remodelación de Cocinas, Baños y Casas", "Reforma de Cozinhas, Banheiros e Casas"],
+        plural: ["remodelers", "remodeladores", "empresas de reforma"],
+        img: ["1785535573585-8f962fa3cda5", "1779170396908-b361760c56e0", "1565183928294-7063f23ce0f8"],
+        heroTitle: ["The home you want, <em>without</em> moving.", "La casa que quieres, <em>sin</em> mudarte.", "A casa que você quer, <em>sem</em> se mudar."],
+        lead: ["{n} remodels kitchens, bathrooms and whole homes {z} — design, permits and construction under one contract, with a fixed timeline.",
+               "{n} remodela cocinas, baños y casas completas {z} — diseño, permisos y obra en un solo contrato, con fechas fijas.",
+               "{n} reforma cozinhas, banheiros e casas inteiras {z} — projeto, licenças e obra em um só contrato, com prazo fixo."],
+        m: [[20, PLUS, YRS], [600, PLUS, ["Remodels completed", "Remodelaciones terminadas", "Reformas concluídas"]], [5, YR, WAR]],
+        workTitle: ["Rooms rebuilt <em>around you</em>", "Espacios hechos <em>a tu medida</em>", "Ambientes feitos <em>do seu jeito</em>"],
+        tabs: { a: ["Kitchens", "Cocinas", "Cozinhas"], b: ["Bathrooms", "Baños", "Banheiros"], c: ["In Progress", "En Obra", "Em Obra"] },
+        gal: [
+          ["a", "1609347744403-2306e8a9ae27", ["Open-concept kitchen", "Cocina abierta", "Cozinha integrada"]],
+          ["b", "1781344334947-60c704bafd51", ["Spa-style primary bath", "Baño principal tipo spa", "Banheiro estilo spa"]],
+          ["c", "1517581177682-a085bb7ffb15", ["Interior framing", "Estructura interior", "Estrutura interna"]],
+          ["a", "1682888813913-e13f18692019", ["Marble island", "Isla de mármol", "Ilha de mármore"]],
+          ["b", "1760546120487-ccb54df9838c", ["Walk-in glass shower", "Regadera de cristal", "Box de vidro"]],
+          ["c", "1768321918210-a775e4c88f08", ["New plumbing & electrical", "Plomería y electricidad nuevas", "Hidráulica e elétrica novas"]]
+        ],
+        baTitle: ["From dated to <em>dream kitchen</em>", "De anticuada a <em>cocina de ensueño</em>", "De antiquada a <em>cozinha dos sonhos</em>"],
+        baText: ["Drag to compare. Same footprint, new layout: custom cabinets, quartz counters, new lighting and an island for the whole family.",
+                 "Arrastra para comparar. Mismo espacio, nueva distribución: gabinetes a la medida, cubiertas de cuarzo, iluminación nueva y una isla para toda la familia.",
+                 "Arraste para comparar. Mesmo espaço, novo layout: armários sob medida, bancadas de quartzo, iluminação nova e uma ilha para toda a família."],
+        baF1: ["6 wks", "6 sem", "6 sem"], baF1l: START, baF2: "1", baF2l: ["Contract, one team", "Contrato, un equipo", "Contrato, uma equipe"], baF3: "3D", baF3l: ["Design before we build", "Diseño antes de construir", "Projeto antes da obra"],
+        p1t: ["What are we remodeling?", "¿Qué vamos a remodelar?", "O que vamos reformar?"],
+        p2t: ["How big is the space?", "¿Qué tan grande es el espacio?", "Qual é o tamanho do espaço?"],
+        p2s: ["An approximate size is fine — we measure everything during a free design visit.", "Un tamaño aproximado está bien — medimos todo en una visita de diseño gratis.", "Um tamanho aproximado está ótimo — medimos tudo numa visita de projeto grátis."],
+        trust2: ["Free design consultation", "Consulta de diseño gratis", "Consulta de projeto grátis"],
+        qL3: ["Free design visit to lock the price", "Visita de diseño gratis para fijar el precio", "Visita de projeto grátis para fechar o preço"],
+        s: [
+          ["kitchen", "pot", "sqft", ["Kitchen Remodel", "Remodelación de Cocina", "Reforma de Cozinha"], ["Cabinets, counters & layout", "Gabinetes, cubiertas y distribución", "Armários, bancadas e layout"], 150, 350, 25000, 80, 400, 180, 10],
+          ["bath", "bath", "sqft", ["Bathroom Remodel", "Remodelación de Baño", "Reforma de Banheiro"], ["Showers, tile & vanities", "Regaderas, azulejo y muebles", "Box, azulejos e gabinetes"], 250, 550, 12000, 30, 150, 60, 5],
+          ["base", "home", "sqft", ["Basement Finishing", "Acabado de Sótano", "Acabamento de Porão"], ["Living space, office or suite", "Sala, oficina o suite", "Sala, escritório ou suíte"], 35, 75, 20000, 300, 2000, 800, 50],
+          ["floor", "layers", "sqft", ["Flooring", "Pisos", "Pisos"], ["Hardwood, LVP & tile", "Madera, vinil y azulejo", "Madeira, vinílico e porcelanato"], 6, 14, 1500, 100, 3000, 600, 50],
+          ["add", "building", "sqft", ["Room Addition", "Ampliación", "Ampliação"], ["Extra bedroom or living space", "Recámara o espacio extra", "Quarto ou espaço extra"], 200, 400, 40000, 100, 800, 300, 10],
+          ["dry", "hammer", "sqft", ["Drywall & Repairs", "Tablaroca y Reparaciones", "Drywall e Reparos"], ["Patches, walls & ceilings", "Resanes, muros y techos", "Remendos, paredes e tetos"], 3, 7, 400, 50, 2000, 300, 50]
+        ],
+        faq: [
+          [["Do you handle permits?", "¿Ustedes tramitan los permisos?", "Vocês cuidam das licenças?"],
+           ["Yes. Drawings, permits and inspections are included in your contract — you don't deal with the city.", "Sí. Planos, permisos e inspecciones vienen incluidos en tu contrato — tú no tratas con la ciudad.", "Sim. Projetos, licenças e vistorias estão incluídos no contrato — você não precisa lidar com a prefeitura."]],
+          [["Can I live at home during the remodel?", "¿Puedo vivir en casa durante la obra?", "Posso morar em casa durante a reforma?"],
+           ["Usually yes. We seal off the work area, control dust and clean up every day.", "Casi siempre sí. Aislamos el área de trabajo, controlamos el polvo y limpiamos todos los días.", "Geralmente sim. Isolamos a área da obra, controlamos a poeira e limpamos todos os dias."]],
+          [["How long does a kitchen or bath take?", "¿Cuánto tarda una cocina o un baño?", "Quanto tempo leva uma cozinha ou banheiro?"],
+           ["Bathrooms take 3–5 weeks and kitchens 6–10 weeks. You get a written schedule before demolition starts.", "Los baños toman de 3 a 5 semanas y las cocinas de 6 a 10. Te damos el calendario por escrito antes de demoler.", "Banheiros levam de 3 a 5 semanas e cozinhas de 6 a 10. Você recebe o cronograma por escrito antes da demolição."]],
+          [["How do payments work?", "¿Cómo son los pagos?", "Como funcionam os pagamentos?"],
+           ["A small deposit to start, then payments tied to finished milestones. You never pay ahead of the work.", "Un anticipo pequeño para empezar y luego pagos por etapas terminadas. Nunca pagas por adelantado al avance.", "Um pequeno sinal para começar e depois pagamentos por etapa concluída. Você nunca paga antes do trabalho feito."]]
+        ],
+        rev: [
+          ["Michelle T.", ["Our kitchen came out better than the 3D design. They finished a week early and stayed on budget.", "Nuestra cocina quedó mejor que el diseño 3D. Terminaron una semana antes y dentro del presupuesto.", "Nossa cozinha ficou melhor que o projeto 3D. Terminaram uma semana antes e dentro do orçamento."]],
+          ["Daniel O.", ["Clean job site every day and clear updates by text. The bathroom feels like a hotel now.", "Obra limpia todos los días y avisos claros por mensaje. El baño ahora parece de hotel.", "Obra limpa todo dia e atualizações claras por mensagem. O banheiro agora parece de hotel."]],
+          ["Gabriela S.", ["They handled permits and inspections so we didn't have to. Highly recommend for any remodel.", "Se encargaron de permisos e inspecciones para que nosotros no tuviéramos que hacerlo. Muy recomendados.", "Cuidaram das licenças e vistorias para nós. Recomendo muito para qualquer reforma."]]
+        ],
+        footTitle: ["Let's build the home <em>you've been picturing.</em>", "Construyamos la casa <em>que has imaginado.</em>", "Vamos construir a casa <em>que você imaginou.</em>"],
+        footBlurb: ["Kitchens, bathrooms, basements and additions — designed, permitted and built by one local team.", "Cocinas, baños, sótanos y ampliaciones — diseñados, con permisos y construidos por un mismo equipo local.", "Cozinhas, banheiros, porões e ampliações — projetados, licenciados e construídos por uma única equipe local."],
+        brandLine: ["Built <em>around you.</em>", "Hecho <em>a tu medida.</em>", "Feito <em>do seu jeito.</em>"]
+      },
+
+      /* ---------------- BAKERY / CAFE ---------------- */
+      bakery: {
+        demo: "Golden Crumb Bakery", ic: "cake",
+        title: ["Bakery & Café · Custom Cakes", "Panadería y Café · Pasteles a la Medida", "Padaria e Café · Bolos Sob Encomenda"],
+        plural: ["bakeries", "panaderías", "padarias"],
+        img: ["1568254183919-78a4f43a2877", "1517686469429-8bdb88b9f907", "1608198093002-ad4e005484ec"],
+        heroTitle: ["Baked fresh, <em>every</em> morning.", "Recién horneado <em>cada</em> mañana.", "Assado na hora, <em>toda</em> manhã."],
+        lead: ["{n} bakes breads, pastries and custom cakes {z} — made from scratch every morning, with coffee to match and orders ready when you need them.",
+               "{n} hornea panes, postres y pasteles a la medida {z} — hechos desde cero cada mañana, con café para acompañar y pedidos listos cuando los necesitas.",
+               "{n} faz pães, doces e bolos sob encomenda {z} — feitos do zero toda manhã, com café para acompanhar e pedidos prontos quando você precisa."],
+        m: [[10, PLUS, ["Years baking", "Años horneando", "Anos de forno"]], [300, PLUS, ["Custom cakes a year", "Pasteles a la medida al año", "Bolos sob encomenda por ano"]], [4, AM, ["Baking starts daily", "Empezamos a hornear", "Começamos a assar"]]],
+        booking: ["Taking orders today", "Recibiendo pedidos hoy", "Aceitando pedidos hoje"],
+        navBA: ["Fresh Daily", "Recién Hecho", "Feito na Hora"],
+        workTitle: ["Made by hand, <em>made to share</em>", "Hecho a mano, <em>hecho para compartir</em>", "Feito à mão, <em>feito para compartilhar</em>"],
+        tabs: { a: ["Breads & Pastries", "Pan y Postres", "Pães e Doces"], b: ["Cakes", "Pasteles", "Bolos"], c: ["Coffee", "Café", "Café"] },
+        gal: [
+          ["a", "1555507036-ab1f4038808a", ["Butter croissants", "Croissants de mantequilla", "Croissants de manteiga"]],
+          ["b", "1621303837174-89787a7d4729", ["Celebration cake", "Pastel de celebración", "Bolo de festa"]],
+          ["c", "1541167760496-1628856ab772", ["Latte art", "Arte latte", "Latte art"]],
+          ["a", "1534432182912-63863115e106", ["Morning pastry case", "Vitrina de la mañana", "Vitrine da manhã"]],
+          ["b", "1563729784474-d77dbb933a9e", ["Cupcakes by the dozen", "Cupcakes por docena", "Cupcakes por dúzia"]],
+          ["c", "1554118811-1e0d58224f24", ["Our café", "Nuestro café", "Nosso café"]]
+        ],
+        baEyebrow: ["From scratch", "Desde cero", "Do zero"],
+        baTitle: ["From dough to <em>golden crust</em>", "De la masa a la <em>corteza dorada</em>", "Da massa à <em>casca dourada</em>"],
+        baText: ["Drag to compare. Flour, water, salt and time — every loaf is shaped by hand and baked before sunrise.",
+                 "Arrastra para comparar. Harina, agua, sal y tiempo — cada pan se forma a mano y se hornea antes del amanecer.",
+                 "Arraste para comparar. Farinha, água, sal e tempo — cada pão é modelado à mão e assado antes do amanhecer."],
+        before: ["Dough", "Masa", "Massa"], after: ["Fresh-baked", "Horneado", "Assado"],
+        baF1: "24 h", baF1l: ["Slow fermentation", "Fermentación lenta", "Fermentação lenta"], baF2: "0", baF2l: ["Preservatives", "Conservadores", "Conservantes"], baF3: "40+", baF3l: ["Items baked daily", "Productos al día", "Itens por dia"],
+        p1t: ["What can we bake for you?", "¿Qué te horneamos?", "O que podemos assar para você?"],
+        p2t: ["How much do you need?", "¿Cuánto necesitas?", "Quanto você precisa?"],
+        p2s: ["An approximate number is fine — we confirm details and flavors with you.", "Un número aproximado está bien — confirmamos detalles y sabores contigo.", "Um número aproximado está ótimo — confirmamos detalhes e sabores com você."],
+        urgency: ["When do you need it?", "¿Para cuándo lo necesitas?", "Para quando você precisa?"],
+        urgN: [["Flexible", "Flexible", "Flexível"], ["Within 2 weeks", "En 2 semanas", "Em 2 semanas"], ["Rush · 48 h", "Urgente · 48 h", "Urgente · 48 h"]],
+        trust1: ["Made from scratch", "Hecho desde cero", "Feito do zero"],
+        trust2: ["Pickup or local delivery", "Para recoger o a domicilio", "Retirada ou entrega local"],
+        qL1: ["Prices based on our real menu", "Precios basados en nuestro menú real", "Preços baseados no nosso cardápio real"],
+        qL3: ["Free tasting for wedding cakes", "Degustación gratis para pasteles de boda", "Degustação grátis para bolos de casamento"],
+        resNote: ["Final price is confirmed once we review flavors, design and delivery. Custom decorations can move the number.", "El precio final se confirma al revisar sabores, diseño y entrega. Las decoraciones especiales pueden moverlo.", "O preço final é confirmado ao revisar sabores, design e entrega. Decorações especiais podem alterar o valor."],
+        ask: ["Can you confirm availability for my date?", "¿Me confirman disponibilidad para mi fecha?", "Podem confirmar a disponibilidade para minha data?"],
+        h1: ["Mon–Fri · 6:30am – 6pm", "Lun–Vie · 6:30am – 6pm", "Seg–Sex · 6h30 – 18h"], h2: ["Sat · 7am – 4pm", "Sáb · 7am – 4pm", "Sáb · 7h – 16h"], h3: ["Sun · 7am – 1pm", "Dom · 7am – 1pm", "Dom · 7h – 13h"],
+        s: [
+          ["cake", "cake", "srv", ["Custom Cake", "Pastel a la Medida", "Bolo Sob Encomenda"], ["Birthdays & celebrations", "Cumpleaños y celebraciones", "Aniversários e festas"], 4.5, 8, 65, 8, 150, 30, 2],
+          ["wedding", "gift", "srv", ["Wedding Cake", "Pastel de Boda", "Bolo de Casamento"], ["Tasting included", "Incluye degustación", "Degustação inclusa"], 6, 12, 350, 50, 300, 120, 10],
+          ["dozen", "sparkle", "doz", ["Cupcakes & Cookies", "Cupcakes y Galletas", "Cupcakes e Biscoitos"], ["By the dozen", "Por docena", "Por dúzia"], 30, 48, 30, 1, 20, 3, 1],
+          ["tray", "bread", "guest", ["Breakfast Platter", "Charola de Desayuno", "Bandeja de Café da Manhã"], ["Pastries for offices & events", "Pan dulce para oficinas y eventos", "Doces para escritórios e eventos"], 9, 16, 90, 10, 150, 25, 5],
+          ["coffee", "cup", "guest", ["Event Coffee Bar", "Barra de Café para Eventos", "Café para Eventos"], ["Barista + espresso drinks", "Barista + bebidas de espresso", "Barista + bebidas de espresso"], 8, 15, 250, 20, 200, 50, 5],
+          ["box", "box", "wk", ["Weekly Bread Box", "Caja Semanal de Pan", "Caixa Semanal de Pães"], ["Fresh loaves every week", "Pan fresco cada semana", "Pães frescos toda semana"], 25, 40, 25, 1, 12, 4, 1]
+        ],
+        faq: [
+          [["How far ahead should I order a cake?", "¿Con cuánto tiempo pido un pastel?", "Com quanta antecedência encomendo um bolo?"],
+           ["One week for custom cakes and 4–8 weeks for weddings. Rush orders in 48 hours are possible when we have space.", "Una semana para pasteles a la medida y de 4 a 8 semanas para bodas. Pedidos urgentes en 48 horas si tenemos espacio.", "Uma semana para bolos sob encomenda e de 4 a 8 semanas para casamentos. Pedidos urgentes em 48 horas quando há espaço."]],
+          [["Do you have gluten-free or vegan options?", "¿Tienen opciones sin gluten o veganas?", "Vocês têm opções sem glúten ou veganas?"],
+           ["Yes, several of our cakes and pastries can be made gluten-free or vegan. Tell us about any allergies when you order.", "Sí, varios de nuestros pasteles y postres se pueden hacer sin gluten o veganos. Avísanos de cualquier alergia al pedir.", "Sim, vários bolos e doces podem ser feitos sem glúten ou veganos. Conte sobre qualquer alergia ao fazer o pedido."]],
+          [["Do you deliver?", "¿Hacen entregas?", "Vocês fazem entrega?"],
+           ["Yes — local delivery for cakes, platters and events, or free pickup at the bakery.", "Sí — entrega local de pasteles, charolas y eventos, o recoges gratis en la panadería.", "Sim — entrega local de bolos, bandejas e eventos, ou retirada grátis na padaria."]],
+          [["Can I do a tasting?", "¿Puedo hacer una degustación?", "Posso fazer uma degustação?"],
+           ["Wedding cake orders include a free tasting of up to three flavors.", "Los pedidos de pastel de boda incluyen una degustación gratis de hasta tres sabores.", "Pedidos de bolo de casamento incluem uma degustação grátis de até três sabores."]]
+        ],
+        rev: [
+          ["Samantha J.", ["The birthday cake looked exactly like the photo and tasted even better. Everyone asked where it was from.", "El pastel de cumpleaños quedó igual a la foto y sabía aún mejor. Todos preguntaron de dónde era.", "O bolo de aniversário ficou igual à foto e estava ainda mais gostoso. Todo mundo perguntou de onde era."]],
+          ["Miguel R.", ["Best croissants in town and the coffee is just as good. My stop every morning.", "Los mejores croissants de la ciudad y el café igual de bueno. Mi parada de cada mañana.", "Os melhores croissants da cidade e o café é igualmente bom. Minha parada de toda manhã."]],
+          ["Laura E.", ["We ordered a breakfast platter for our office and it disappeared in minutes. So easy to order.", "Pedimos una charola de desayuno para la oficina y desapareció en minutos. Muy fácil de pedir.", "Pedimos uma bandeja de café da manhã para o escritório e sumiu em minutos. Muito fácil de pedir."]]
+        ],
+        footTitle: ["Let's make your day <em>a little sweeter.</em>", "Hagamos tu día <em>un poco más dulce.</em>", "Vamos deixar seu dia <em>mais doce.</em>"],
+        footBlurb: ["Fresh breads, pastries, custom cakes and coffee — baked from scratch by a local family bakery.", "Pan fresco, postres, pasteles a la medida y café — horneados desde cero por una panadería familiar local.", "Pães frescos, doces, bolos sob encomenda e café — feitos do zero por uma padaria familiar local."],
+        brandLine: ["Baked with <em>love.</em>", "Horneado con <em>amor.</em>", "Feito com <em>amor.</em>"]
+      }
+    };
+    const G = GIROS[GIRO];
+    const NEGOCIO = CLIENTE || G.demo;
+
+    // Unidades del cotizador: k = etiqueta corta · lbl = título del campo · u = [singular, plural] por idioma
+    const UNITS = {
+      sqft:  { k: ["Area", "Área", "Área"], lbl: ["Approximate area", "Área aproximada", "Área aproximada"], u: [["sq ft", "sq ft"], ["sq ft", "sq ft"], ["sq ft", "sq ft"]] },
+      ft:    { k: ["Length", "Longitud", "Comprimento"], lbl: ["Approximate length", "Longitud aproximada", "Comprimento aproximado"], u: [["linear ft", "linear ft"], ["pie lineal", "pies lineales"], ["pé linear", "pés lineares"]] },
+      un:    { k: ["Quantity", "Cantidad", "Quantidade"], lbl: ["How many?", "¿Cuántos?", "Quantos?"], u: [["unit", "units"], ["unidad", "unidades"], ["unidade", "unidades"]] },
+      ses:   { k: ["Sessions", "Sesiones", "Sessões"], lbl: ["Number of sessions", "Número de sesiones", "Número de sessões"], u: [["session", "sessions"], ["sesión", "sesiones"], ["sessão", "sessões"]] },
+      srv:   { k: ["Servings", "Porciones", "Porções"], lbl: ["Servings", "Porciones", "Porções"], u: [["serving", "servings"], ["porción", "porciones"], ["porção", "porções"]] },
+      guest: { k: ["Guests", "Invitados", "Convidados"], lbl: ["Number of guests", "Número de invitados", "Número de convidados"], u: [["guest", "guests"], ["invitado", "invitados"], ["convidado", "convidados"]] },
+      doz:   { k: ["Dozens", "Docenas", "Dúzias"], lbl: ["How many dozen?", "¿Cuántas docenas?", "Quantas dúzias?"], u: [["dozen", "dozen"], ["docena", "docenas"], ["dúzia", "dúzias"]] },
+      room:  { k: ["Rooms", "Cuartos", "Cômodos"], lbl: ["Number of rooms", "Número de cuartos", "Número de cômodos"], u: [["room", "rooms"], ["cuarto", "cuartos"], ["cômodo", "cômodos"]] },
+      zone:  { k: ["Zones", "Zonas", "Zonas"], lbl: ["Rooms or zones", "Cuartos o zonas", "Cômodos ou zonas"], u: [["zone", "zones"], ["zona", "zonas"], ["zona", "zonas"]] },
+      vent:  { k: ["Vents", "Rejillas", "Saídas"], lbl: ["Number of vents", "Número de rejillas", "Número de saídas de ar"], u: [["vent", "vents"], ["rejilla", "rejillas"], ["saída", "saídas"]] },
+      wk:    { k: ["Weeks", "Semanas", "Semanas"], lbl: ["Number of weeks", "Número de semanas", "Número de semanas"], u: [["week", "weeks"], ["semana", "semanas"], ["semana", "semanas"]] },
+      door:  { k: ["Doors", "Puertas", "Portas"], lbl: ["Cabinet doors", "Puertas de gabinete", "Portas de armário"], u: [["door", "doors"], ["puerta", "puertas"], ["porta", "portas"]] }
+    };
+    const SERVICIOS = G.s.map(([id, icn, u, n, s, low, high, piso, min, max, def, step]) => ({ id, ic: icn, u, n, s, low, high, piso, min, max, def, step }));
+    const URGENCIA = [
+      { id: "flex", ic: "leaf", n: ["Flexible", "Flexible", "Flexível"], s: ["Best price", "Mejor precio", "Melhor preço"], k: 1 },
+      { id: "soon", ic: "cal",  n: ["Within 30 days", "En 30 días", "Em 30 dias"], s: ["Standard", "Normal", "Normal"], k: 1.06 },
+      { id: "asap", ic: "zap",  n: ["ASAP", "Lo antes posible", "O quanto antes"], s: ["Priority", "Prioritario", "Prioritário"], k: 1.15 }
+    ];
+    if (G.urgN) G.urgN.forEach((n, i) => URGENCIA[i].n = n);
+
+    // Preguntas que aplican a todos los giros (se suman a las 4 del giro)
+    const FAQ_COMUN = [
+      [["How accurate is the instant quote?", "¿Qué tan exacto es el cotizador?", "Quão preciso é o orçamento instantâneo?"],
+       ["It's based on recent local prices, so most final quotes land inside the range. We confirm the exact number before any work starts.", "Está basado en precios recientes de la zona, así que casi siempre el precio final queda dentro del rango. Confirmamos el número exacto antes de empezar.", "É baseado em preços recentes da região, então quase sempre o valor final fica dentro da faixa. Confirmamos o número exato antes de começar."]],
+      [["How do I book?", "¿Cómo agendo?", "Como faço para agendar?"],
+       ["Send your estimate by WhatsApp, text or email in one tap. We reply with available dates — usually the same day.", "Envía tu estimado por WhatsApp, SMS o correo con un toque. Te respondemos con fechas disponibles, casi siempre el mismo día.", "Envie seu orçamento por WhatsApp, SMS ou e-mail com um toque. Respondemos com as datas disponíveis, quase sempre no mesmo dia."]]
+    ];
+    const FAQ = [...G.faq, ...FAQ_COMUN];
+
+    /* ===================== 6) TEXTOS GENERALES EN/ES/PT ===================== */
     const T = {
       en: {
         navWork: "Work", navBA: "Before & After", navQuote: "Instant Quote", navFaq: "FAQ", call: "Call now",
-        reviewsTxt: n => `${n} verified Google reviews`,
-        heroTitle: "Outdoor living, <em>beautifully</em> grounded.",
-        lead: (n, c) => `${n} designs and builds garden rooms, stone patios and landscape lighting for homes ${c ? "in " + c : "across the area"} — with one crew, one price and zero surprises.`,
+        reviewsTxt: n => `${n} Google reviews`,
+        zona: c => c ? "in " + c : "across the area",
         ctaQuote: "Get My Instant Quote", ctaWa: "WhatsApp or Call",
         trust1: "Licensed & insured", trust2: "Free on-site visit", city: c => c ? `Serving ${c}` : "Serving your area",
-        booking: "Booking new projects", mYears: "Years of experience", mProjects: "Projects completed", mWarranty: "Workmanship warranty",
-        workEyebrow: "Selected work", workTitle: "Spaces made to be <em>lived in</em>",
-        fAll: "All", fGarden: "Garden Rooms", fHard: "Hardscaping", fDark: "After Dark",
-        baEyebrow: "The transformation", baTitle: "From bare dirt to <em>backyard retreat</em>",
-        baText: "Drag the handle to compare. Same backyard, five weeks apart: grading, drainage, native planting and a stone path that ties it all together.",
-        baF1: "5 wks", baF1l: "Start to finish", baF2: "1,200", baF2l: "Square feet", baF3: "62", baF3l: "Plants installed",
-        before: "Before", after: "After", drag: "← Drag to compare →", baAria: "Before and after comparison",
+        booking: "Booking new projects", workEyebrow: "Selected work", fAll: "All", ourWork: "Our work",
+        baEyebrow: "The transformation", before: "Before", after: "After", drag: "← Drag to compare →", baAria: "Before and after comparison",
+        revEyebrow: "Reviews", revTitle: "What our clients <em>say</em>", revSrc: "Google review",
+        revSample: "Sample reviews — they're replaced with your real Google reviews when the site goes live.",
         qEyebrow: "Instant quote", qTitle: "Your estimate in <em>30 seconds</em>",
-        qText: "No forms, no waiting for a callback. Pick a service, set the size and see a real price range based on our recent projects.",
+        qText: "No forms, no waiting for a callback. Pick a service, adjust the details and see a real price range based on recent local work.",
         qL1: "Ranges based on real local projects", qL2: "Send it to us in one tap", qL3: "Free on-site visit to lock the price",
-        s1: "Service", s2: "Size & timing", s3: "Estimate",
-        p1t: "What are we building?", p1s: "Choose the project that fits best. You can change it anytime.",
-        p2t: "How big is the space?", p2s: "An approximate size is fine — we measure on-site for free.",
-        area: "Approximate area", urgency: "When do you want to start?", liveLbl: "Live estimate",
-        presets: ["Small", "Medium", "Large"],
+        s1: "Service", s2: "Details", s3: "Estimate",
+        p1t: "What do you need?", p1s: "Choose the option that fits best. You can change it anytime.",
+        p2t: "Tell us the size", p2s: "An approximate number is fine — we confirm it with you.",
+        urgency: "When do you want to start?", liveLbl: "Live estimate", presets: ["Small", "Medium", "Large"],
         resK: "Estimated investment", resNote: "Final price is confirmed after a free on-site visit. Materials and site access can move the number.",
         nameLbl: "Your name", namePh: "Your name (optional)", email: "Email",
-        sumSvc: "Service", sumArea: "Area", sumTime: "Timing",
-        back: "Back", next: "Continue", see: "See my estimate", reset: "Start over",
-        hint1: "Step 1 of 3", hint2: "Step 2 of 3",
-        msg: (o) => `Hi ${NEGOCIO}! I'd like a quote from your website.\n\n• Service: ${o.svc}\n• Approx. area: ${o.area}\n• Timing: ${o.time}\n• Estimated range: ${o.range}${o.name ? `\n\nName: ${o.name}` : ""}\n\nWhen can you come take a look?`,
+        sumSvc: "Service", sumTime: "Timing",
+        back: "Back", next: "Continue", see: "See my estimate", reset: "Start over", hint1: "Step 1 of 3",
+        ask: "When can you come take a look?",
+        msg: o => `Hi ${NEGOCIO}! I'd like a quote from your website.\n\n• Service: ${o.svc}\n• ${o.k}: ${o.area}\n• Timing: ${o.time}\n• Estimated range: ${o.range}${o.name ? `\n\nName: ${o.name}` : ""}\n\n${o.ask}`,
         mailSubj: "Quote request from your website",
         faqEyebrow: "FAQ", faqTitle: "Good questions, <em>straight answers</em>", faqAsk: "Ask us on WhatsApp",
-        footTitle: "Let's build something <em>worth coming home to.</em>",
-        footBlurb: "Garden rooms, hardscaping and landscape lighting — designed, built and warrantied by one local team.",
+        footTitle: "Let's get your project <em>started.</em>", footBlurb: "Local, licensed and insured — one team from the first call to the final walkthrough.",
         fContact: "Contact", fHours: "Hours", fExplore: "Explore",
         h1: "Mon–Fri · 7am – 6pm", h2: "Sat · 8am – 2pm", h3: "Sun · Closed",
-        brandLine: "Rooted in <em>craft.</em>", rights: "All rights reserved.",
-        demoTxt: n => `Website preview for ${n}`, activate: "Activate",
-        demoMsg: n => `Hi, I saw the demo website for ${n} and I want to activate it`,
-        waHello: `Hi ${NEGOCIO}! I saw your website and I'd like more information.`
+        brandLine: "Local <em>pride.</em>", rights: "All rights reserved.",
+        waHello: `Hi ${NEGOCIO}! I saw your website and I'd like more information.`,
+        // vista previa (solo la ve el dueño)
+        ownerBar: n => `👷‍♂️ Are you the owner of ${n}? Tap here to see a sample request you'd receive`, ownerGo: "See it",
+        ovKicker: "Owner preview", ovTitle: "This is how a new request reaches you",
+        ovSub: "A customer used the quote tool on your website at 9:41 pm. It lands straight in your WhatsApp with the price already calculated.",
+        ovNotif: r => `New request from your website · ${r}`, ovBiz: "WhatsApp Business", ovNow: "now", ovTime: "9:41 PM ✓✓",
+        ovReady: r => `Customer ready to book · ${r}`, ovFrom: "Website customer", sample: "Jessica M.",
+        ovCta: "I want requests like this", ovClose: "Close",
+        audEyebrow: "Your Google listing check-up", audTitle: n => `How customers see <em>${n}</em> today`,
+        audYou: "Your listing", audRev: n => `· ${n} reviews`, audNoWeb: "No website linked", audNoQuote: "No online quote or booking",
+        audNoWebS: "Customers see your stars but can't view your work or get a price — so they tap the next result.",
+        audThem: "Competitor in your city", audComp: (pl, c) => c ? `Top-ranked ${pl} in ${c}` : `Top-ranked ${pl} near you`,
+        audWeb: "Website linked", audQuote: "Online quote & booking 24/7",
+        audThemS: "Shows up with photos, prices and a way to book — so customers call them first.",
+        audFoot: "This page links your listing and adds a 24/7 quote tool, so the next customer picks you.", audTry: "Try it below",
+        actMain: "Activate this website today", actSub: "(You pay once you see it published)", actCard: "Pay by card",
+        actMsg: n => `Hi, I saw the website preview for ${n} and I want to activate it`, actTag: n => `Website preview for ${n}`
       },
       es: {
         navWork: "Proyectos", navBA: "Antes y Después", navQuote: "Cotizador", navFaq: "Preguntas", call: "Llamar",
-        reviewsTxt: n => `${n} reseñas verificadas en Google`,
-        heroTitle: "Exteriores para vivir, <em>hechos</em> para durar.",
-        lead: (n, c) => `${n} diseña y construye garden rooms, patios de piedra e iluminación de jardín para casas ${c ? "en " + c : "de toda la zona"} — un solo equipo, un solo precio y cero sorpresas.`,
+        reviewsTxt: n => `${n} reseñas en Google`,
+        zona: c => c ? "en " + c : "en toda la zona",
         ctaQuote: "Ir al Cotizador Instantáneo", ctaWa: "WhatsApp o Llamada",
         trust1: "Con licencia y seguro", trust2: "Visita sin costo", city: c => c ? `Servimos en ${c}` : "Servimos en tu zona",
-        booking: "Agenda abierta", mYears: "Años de experiencia", mProjects: "Proyectos terminados", mWarranty: "De garantía en mano de obra",
-        workEyebrow: "Proyectos selectos", workTitle: "Espacios hechos para <em>vivirse</em>",
-        fAll: "Todos", fGarden: "Garden Rooms", fHard: "Hardscaping", fDark: "De Noche",
-        baEyebrow: "La transformación", baTitle: "De tierra vacía a <em>tu refugio</em>",
-        baText: "Arrastra el control para comparar. El mismo patio con cinco semanas de diferencia: nivelación, drenaje, plantas nativas y un camino de piedra que lo une todo.",
-        baF1: "5 sem", baF1l: "De inicio a fin", baF2: "1,200", baF2l: "Pies cuadrados", baF3: "62", baF3l: "Plantas sembradas",
-        before: "Antes", after: "Después", drag: "← Arrastra para comparar →", baAria: "Comparación antes y después",
+        booking: "Agenda abierta", workEyebrow: "Trabajos selectos", fAll: "Todos", ourWork: "Nuestro trabajo",
+        baEyebrow: "La transformación", before: "Antes", after: "Después", drag: "← Arrastra para comparar →", baAria: "Comparación antes y después",
+        revEyebrow: "Reseñas", revTitle: "Lo que dicen <em>nuestros clientes</em>", revSrc: "Reseña de Google",
+        revSample: "Reseñas de ejemplo — se reemplazan con tus reseñas reales de Google al publicar el sitio.",
         qEyebrow: "Cotizador instantáneo", qTitle: "Tu estimado en <em>30 segundos</em>",
-        qText: "Sin formularios ni esperar a que te llamen. Elige un servicio, ajusta el tamaño y ve un rango de precio real basado en nuestros proyectos recientes.",
-        qL1: "Rangos basados en proyectos reales de la zona", qL2: "Nos lo envías con un toque", qL3: "Visita gratis para fijar el precio",
-        s1: "Servicio", s2: "Tamaño y fecha", s3: "Estimado",
-        p1t: "¿Qué vamos a construir?", p1s: "Elige el proyecto que más se parezca. Puedes cambiarlo cuando quieras.",
-        p2t: "¿Qué tan grande es el espacio?", p2s: "Un tamaño aproximado está bien — medimos gratis en tu casa.",
-        area: "Área aproximada", urgency: "¿Cuándo quieres empezar?", liveLbl: "Estimado en vivo",
-        presets: ["Chico", "Mediano", "Grande"],
-        resK: "Inversión estimada", resNote: "El precio final se confirma después de una visita gratis. Los materiales y el acceso al terreno pueden moverlo.",
+        qText: "Sin formularios ni esperar a que te llamen. Elige un servicio, ajusta los detalles y ve un rango de precio real basado en trabajos recientes de la zona.",
+        qL1: "Rangos basados en trabajos reales de la zona", qL2: "Nos lo envías con un toque", qL3: "Visita gratis para fijar el precio",
+        s1: "Servicio", s2: "Detalles", s3: "Estimado",
+        p1t: "¿Qué necesitas?", p1s: "Elige la opción que más se parezca. Puedes cambiarla cuando quieras.",
+        p2t: "Cuéntanos el tamaño", p2s: "Un número aproximado está bien — lo confirmamos contigo.",
+        urgency: "¿Cuándo quieres empezar?", liveLbl: "Estimado en vivo", presets: ["Chico", "Mediano", "Grande"],
+        resK: "Inversión estimada", resNote: "El precio final se confirma después de una visita gratis. Los materiales y el acceso al lugar pueden moverlo.",
         nameLbl: "Tu nombre", namePh: "Tu nombre (opcional)", email: "Correo",
-        sumSvc: "Servicio", sumArea: "Área", sumTime: "Fecha",
-        back: "Atrás", next: "Continuar", see: "Ver mi estimado", reset: "Empezar de nuevo",
-        hint1: "Paso 1 de 3", hint2: "Paso 2 de 3",
-        msg: (o) => `¡Hola ${NEGOCIO}! Quiero una cotización desde su página web.\n\n• Servicio: ${o.svc}\n• Área aprox.: ${o.area}\n• Fecha: ${o.time}\n• Rango estimado: ${o.range}${o.name ? `\n\nNombre: ${o.name}` : ""}\n\n¿Cuándo pueden venir a verlo?`,
+        sumSvc: "Servicio", sumTime: "Fecha",
+        back: "Atrás", next: "Continuar", see: "Ver mi estimado", reset: "Empezar de nuevo", hint1: "Paso 1 de 3",
+        ask: "¿Cuándo pueden venir a verlo?",
+        msg: o => `¡Hola ${NEGOCIO}! Quiero una cotización desde su página web.\n\n• Servicio: ${o.svc}\n• ${o.k}: ${o.area}\n• Fecha: ${o.time}\n• Rango estimado: ${o.range}${o.name ? `\n\nNombre: ${o.name}` : ""}\n\n${o.ask}`,
         mailSubj: "Solicitud de cotización desde su página web",
         faqEyebrow: "Preguntas frecuentes", faqTitle: "Buenas preguntas, <em>respuestas claras</em>", faqAsk: "Pregúntanos por WhatsApp",
-        footTitle: "Construyamos algo que <em>dé gusto volver a casa.</em>",
-        footBlurb: "Garden rooms, hardscaping e iluminación de jardín — diseñados, construidos y garantizados por un mismo equipo local.",
+        footTitle: "Empecemos tu <em>proyecto.</em>", footBlurb: "Locales, con licencia y seguro — un mismo equipo desde la primera llamada hasta la entrega.",
         fContact: "Contacto", fHours: "Horario", fExplore: "Explorar",
         h1: "Lun–Vie · 7am – 6pm", h2: "Sáb · 8am – 2pm", h3: "Dom · Cerrado",
-        brandLine: "Raíz y <em>oficio.</em>", rights: "Todos los derechos reservados.",
-        demoTxt: n => `Vista previa de la web de ${n}`, activate: "Activar",
-        demoMsg: n => `Hola, vi la muestra web de ${n} y quiero activarla`,
-        waHello: `¡Hola ${NEGOCIO}! Vi su página web y quiero más información.`
+        brandLine: "Orgullo <em>local.</em>", rights: "Todos los derechos reservados.",
+        waHello: `¡Hola ${NEGOCIO}! Vi su página web y quiero más información.`,
+        ownerBar: n => `👷‍♂️ ¿Eres el dueño de ${n}? Toca aquí para ver un ejemplo de pedido recibido`, ownerGo: "Ver ejemplo",
+        ovKicker: "Solo para el dueño", ovTitle: "Así te llega un pedido nuevo",
+        ovSub: "Un cliente usó el cotizador de tu página a las 9:41 pm. Te llega directo a WhatsApp, con el precio ya calculado.",
+        ovNotif: r => `Nuevo pedido desde tu web · ${r}`, ovBiz: "WhatsApp Business", ovNow: "ahora", ovTime: "9:41 p. m. ✓✓",
+        ovReady: r => `Cliente listo para agendar · ${r}`, ovFrom: "Cliente de tu web", sample: "María G.",
+        ovCta: "Quiero recibir pedidos así", ovClose: "Cerrar",
+        audEyebrow: "Diagnóstico de tu ficha de Google", audTitle: n => `Así ven hoy tus clientes a <em>${n}</em>`,
+        audYou: "Tu ficha", audRev: n => `· ${n} reseñas`, audNoWeb: "Sin sitio web vinculado", audNoQuote: "Sin cotizador ni citas en línea",
+        audNoWebS: "Los clientes ven tus estrellas, pero no pueden ver tu trabajo ni cotizar — y tocan el siguiente resultado.",
+        audThem: "Competencia en tu ciudad", audComp: (pl, c) => c ? `Líder entre ${pl} de ${c}` : `Líder entre ${pl} de tu zona`,
+        audWeb: "Sitio web vinculado", audQuote: "Cotizador y citas 24/7",
+        audThemS: "Aparecen con fotos, precios y una forma de agendar — por eso los clientes les llaman primero.",
+        audFoot: "Esta página vincula tu ficha y suma un cotizador 24/7, para que el próximo cliente te elija a ti.", audTry: "Pruébalo abajo",
+        actMain: "Activar este sitio web hoy", actSub: "(Pagas al verlo publicado)", actCard: "Pagar con tarjeta",
+        actMsg: n => `Hola, vi la muestra web de ${n} y quiero activarla`, actTag: n => `Vista previa de la web de ${n}`
+      },
+      pt: {
+        navWork: "Trabalhos", navBA: "Antes e Depois", navQuote: "Orçamento", navFaq: "Dúvidas", call: "Ligar",
+        reviewsTxt: n => `${n} avaliações no Google`,
+        zona: c => c ? "em " + c : "em toda a região",
+        ctaQuote: "Fazer Orçamento Instantâneo", ctaWa: "WhatsApp ou Ligação",
+        trust1: "Licenciados e com seguro", trust2: "Visita sem custo", city: c => c ? `Atendemos ${c}` : "Atendemos sua região",
+        booking: "Agenda aberta", workEyebrow: "Trabalhos selecionados", fAll: "Todos", ourWork: "Nosso trabalho",
+        baEyebrow: "A transformação", before: "Antes", after: "Depois", drag: "← Arraste para comparar →", baAria: "Comparação antes e depois",
+        revEyebrow: "Avaliações", revTitle: "O que dizem <em>nossos clientes</em>", revSrc: "Avaliação do Google",
+        revSample: "Avaliações de exemplo — são trocadas pelas suas avaliações reais do Google quando o site for publicado.",
+        qEyebrow: "Orçamento instantâneo", qTitle: "Seu orçamento em <em>30 segundos</em>",
+        qText: "Sem formulários nem esperar retorno. Escolha um serviço, ajuste os detalhes e veja uma faixa de preço real baseada em trabalhos recentes da região.",
+        qL1: "Faixas baseadas em trabalhos reais da região", qL2: "Envie para nós com um toque", qL3: "Visita grátis para fechar o preço",
+        s1: "Serviço", s2: "Detalhes", s3: "Orçamento",
+        p1t: "Do que você precisa?", p1s: "Escolha a opção mais parecida. Você pode mudar quando quiser.",
+        p2t: "Conte o tamanho", p2s: "Um número aproximado está ótimo — confirmamos com você.",
+        urgency: "Quando você quer começar?", liveLbl: "Orçamento ao vivo", presets: ["Pequeno", "Médio", "Grande"],
+        resK: "Investimento estimado", resNote: "O preço final é confirmado após uma visita grátis. Materiais e acesso ao local podem alterar o valor.",
+        nameLbl: "Seu nome", namePh: "Seu nome (opcional)", email: "E-mail",
+        sumSvc: "Serviço", sumTime: "Prazo",
+        back: "Voltar", next: "Continuar", see: "Ver meu orçamento", reset: "Começar de novo", hint1: "Passo 1 de 3",
+        ask: "Quando vocês podem vir dar uma olhada?",
+        msg: o => `Olá, ${NEGOCIO}! Quero um orçamento pelo site.\n\n• Serviço: ${o.svc}\n• ${o.k}: ${o.area}\n• Prazo: ${o.time}\n• Faixa estimada: ${o.range}${o.name ? `\n\nNome: ${o.name}` : ""}\n\n${o.ask}`,
+        mailSubj: "Pedido de orçamento pelo site",
+        faqEyebrow: "Perguntas frequentes", faqTitle: "Boas perguntas, <em>respostas claras</em>", faqAsk: "Pergunte pelo WhatsApp",
+        footTitle: "Vamos começar seu <em>projeto.</em>", footBlurb: "Locais, licenciados e com seguro — uma só equipe da primeira ligação à entrega.",
+        fContact: "Contato", fHours: "Horário", fExplore: "Explorar",
+        h1: "Seg–Sex · 7h – 18h", h2: "Sáb · 8h – 14h", h3: "Dom · Fechado",
+        brandLine: "Orgulho <em>local.</em>", rights: "Todos os direitos reservados.",
+        waHello: `Olá, ${NEGOCIO}! Vi o site de vocês e quero mais informações.`,
+        ownerBar: n => `👷‍♂️ Você é o dono de ${n}? Toque aqui para ver um exemplo de pedido recebido`, ownerGo: "Ver exemplo",
+        ovKicker: "Só para o dono", ovTitle: "Assim chega um pedido novo para você",
+        ovSub: "Um cliente usou o orçamento do seu site às 21h41. Chega direto no seu WhatsApp, com o preço já calculado.",
+        ovNotif: r => `Novo pedido pelo seu site · ${r}`, ovBiz: "WhatsApp Business", ovNow: "agora", ovTime: "21:41 ✓✓",
+        ovReady: r => `Cliente pronto para agendar · ${r}`, ovFrom: "Cliente do seu site", sample: "Ana P.",
+        ovCta: "Quero receber pedidos assim", ovClose: "Fechar",
+        audEyebrow: "Diagnóstico da sua ficha no Google", audTitle: n => `Como os clientes veem <em>${n}</em> hoje`,
+        audYou: "Sua ficha", audRev: n => `· ${n} avaliações`, audNoWeb: "Sem site vinculado", audNoQuote: "Sem orçamento nem agendamento online",
+        audNoWebS: "Os clientes veem suas estrelas, mas não conseguem ver seu trabalho nem pedir orçamento — e tocam no próximo resultado.",
+        audThem: "Concorrente na sua cidade", audComp: (pl, c) => c ? `Destaque entre ${pl} em ${c}` : `Destaque entre ${pl} da região`,
+        audWeb: "Site vinculado", audQuote: "Orçamento e agendamento 24h",
+        audThemS: "Aparecem com fotos, preços e uma forma de agendar — por isso os clientes ligam para eles primeiro.",
+        audFoot: "Esta página vincula sua ficha e adiciona um orçamento 24h, para que o próximo cliente escolha você.", audTry: "Experimente abaixo",
+        actMain: "Ativar este site hoje", actSub: "(Você paga ao vê-lo publicado)", actCard: "Pagar com cartão",
+        actMsg: n => `Olá, vi a amostra do site de ${n} e quero ativá-lo`, actTag: n => `Prévia do site de ${n}`
       }
     };
-
-    /* ===================== 4) GALERÍA ===================== */
-    const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=68`;
-    const GALERIA = [
-      { f: "garden", img: "1585320806297-9794b3e4eeae", t: ["Rose garden walk", "Paseo de rosales"] },
-      { f: "dark",   img: "1600585154363-67eb9e2e2099", t: ["Uplit oak & facade", "Roble iluminado"] },
-      { f: "hard",   img: "1600047509807-ba8f99d2cdde", t: ["Floating stone steps", "Escalones flotantes"] },
-      { f: "garden", img: "1600566753190-17f0baa2a6c3", t: ["Modern garden studio", "Estudio de jardín"] },
-      { f: "hard",   img: "1613490493576-7fde63acd811", t: ["Travertine pool deck", "Terraza de travertino"] },
-      { f: "dark",   img: "1416331108676-a22ccb276e35", t: ["Courtyard at dusk", "Patio al atardecer"] },
-      { f: "garden", img: "1598902108854-10e335adac99", t: ["Native woodland bed", "Jardín nativo"] },
-      { f: "hard",   img: "1512917774080-9991f1c4c750", t: ["Limestone terrace", "Terraza de piedra caliza"] },
-      { f: "dark",   img: "1599809275671-b5942cabc7a2", t: ["Firelit spa & patio", "Spa y patio con fuego"] },
-      { f: "garden", img: "1591825729269-caeb344f6df2", t: ["Cedar garden room", "Garden room de cedro"] },
-      { f: "hard",   img: "1628744448840-55bdb2497bd4", t: ["Paver driveway", "Entrada de adoquín"] },
-      { f: "dark",   img: "1600585154526-990dced4db0d", t: ["Facade wash lighting", "Iluminación de fachada"] }
-    ];
-    // Patrón bento: se reacomoda según las fotos visibles para que la cuadrícula siempre se vea asimétrica y llena
-    const PATRON = ["big", "tall", "", "", "", "tall", "big", ""];   // bloque A (grande a la izquierda) + bloque B (grande a la derecha)
-
-    /* ===================== 5) COTIZADOR ===================== */
-    // low/high = USD por pie cuadrado · piso = proyecto mínimo · min/max/def/step = rango del slider
-    const SERVICIOS = [
-      { id: "garden", ic: "home",   n: ["Garden Room", "Garden Room"],            s: ["Studio, office or guest suite", "Estudio, oficina o cuarto"], low: 130, high: 200, piso: 12000, min: 80,  max: 600,  def: 200,  step: 10 },
-      { id: "hard",   ic: "bricks", n: ["Patio & Hardscaping", "Patio y Hardscaping"], s: ["Pavers, walls & steps", "Adoquín, muros y escalones"], low: 20,  high: 34,  piso: 3500,  min: 100, max: 3000, def: 500,  step: 50 },
-      { id: "design", ic: "sprout", n: ["Landscape Design", "Diseño de Jardín"],    s: ["Planting, beds & mulch", "Plantas, camas y mulch"], low: 9,   high: 16,  piso: 2500,  min: 200, max: 6000, def: 1200, step: 50 },
-      { id: "light",  ic: "bulb",   n: ["Outdoor Lighting", "Iluminación Exterior"], s: ["After-dark design", "Diseño nocturno"], low: 4,   high: 7,   piso: 1800,  min: 200, max: 6000, def: 1500, step: 50 },
-      { id: "fire",   ic: "flame",  n: ["Outdoor Kitchen & Fire", "Cocina y Fogatero"], s: ["Grills, bars & fire pits", "Asadores, barras y fogateros"], low: 170, high: 280, piso: 6000, min: 40, max: 400, def: 120, step: 10 },
-      { id: "lawn",   ic: "drop",   n: ["Sod & Irrigation", "Pasto y Riego"],       s: ["New lawn + smart sprinklers", "Pasto nuevo + riego"], low: 3,   high: 5, piso: 1500, min: 500, max: 10000, def: 2500, step: 100 }
-    ];
-    const URGENCIA = [
-      { id: "flex", ic: "leaf", n: ["Flexible", "Flexible"], s: ["Best price", "Mejor precio"], k: 1 },
-      { id: "soon", ic: "cal",  n: ["Within 30 days", "En 30 días"], s: ["Standard", "Normal"], k: 1.06 },
-      { id: "asap", ic: "zap",  n: ["ASAP", "Lo antes posible"], s: ["Priority crew", "Equipo prioritario"], k: 1.15 }
-    ];
-
-    /* ===================== 6) PREGUNTAS ===================== */
-    const FAQ = [
-      [["Is the on-site visit really free?", "¿La visita a domicilio de verdad es gratis?"], ["Yes. We walk the space with you, take measurements and confirm your price — no cost and no obligation.", "Sí. Recorremos el espacio contigo, tomamos medidas y confirmamos tu precio, sin costo ni compromiso."]],
-      [["How accurate is the instant quote?", "¿Qué tan exacto es el cotizador?"], ["It's based on our recent local projects, so most final prices land inside the range. Access, soil and material choices can move it.", "Está basado en nuestros proyectos recientes de la zona, así que casi siempre el precio final queda dentro del rango. El acceso, el terreno y los materiales pueden moverlo."]],
-      [["Do I need a permit for a garden room or patio?", "¿Necesito permiso para un garden room o patio?"], ["Often, yes. We handle the drawings, permits and HOA approvals for you as part of the project.", "Muchas veces sí. Nosotros nos encargamos de planos, permisos y aprobación de la HOA como parte del proyecto."]],
-      [["How long does a typical project take?", "¿Cuánto tarda un proyecto normal?"], ["Lighting takes 1–3 days, patios 1–3 weeks and garden rooms 4–8 weeks. You get a written timeline before we start.", "La iluminación toma 1 a 3 días, los patios 1 a 3 semanas y los garden rooms 4 a 8 semanas. Te damos el calendario por escrito antes de empezar."]],
-      [["Are you licensed and insured?", "¿Tienen licencia y seguro?"], ["Yes — fully licensed and insured, and every crew member is our own employee. Certificates available on request.", "Sí, contamos con licencia y seguro, y todo el equipo es personal propio. Te mostramos los certificados si los pides."]],
-      [["What does the warranty cover?", "¿Qué cubre la garantía?"], ["Five years on workmanship and hardscape installation, plus one year on plants we install.", "Cinco años en mano de obra e instalación de hardscape, más un año en las plantas que sembramos."]]
-    ];
 
     /* ===================== 7) PINTAR ===================== */
     const $ = s => document.querySelector(s);
     const $$ = s => [...document.querySelectorAll(s)];
-    const L = a => Array.isArray(a) ? a[LANG === "en" ? 0 : 1] : a;
+    const LI = () => ({ en: 0, es: 1, pt: 2 })[LANG];
+    const L = a => Array.isArray(a) ? (a[LI()] ?? a[0]) : a;
+    const tx = k => G[k] != null ? L(G[k]) : T[LANG][k];   // texto del giro si existe, si no el general
     const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const telBonito = t => t.length === 11 && t[0] === "1" ? `(${t.slice(1, 4)}) ${t.slice(4, 7)}-${t.slice(7)}` : "+" + t;
+    const money = n => "$" + Math.round(n).toLocaleString("en-US");
+    const fmt = n => (+n).toLocaleString("en-US");
+    const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=68`;
+    const estrellas = (n = 5) => Array.from({ length: 5 }, (_, i) => ic("star", i < n ? "" : "off")).join("");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    $$("[data-ic]").forEach(el => { el.outerHTML = ic(el.dataset.ic).replace('class="ic"', `class="ic ${el.className}"`); });
+    $$("[data-ic]").forEach(el => { el.outerHTML = ic(el.dataset.ic, el.className); });
     $$("[data-wa-path]").forEach(p => p.setAttribute("d", WA_D));
+    $$("[data-logo]").forEach(el => el.innerHTML = ic(G.ic));
     $$("[data-name]").forEach(el => el.textContent = NEGOCIO);
     $$("[data-tel]").forEach(a => a.href = "tel:+" + TEL);
     $$("[data-tel-txt]").forEach(el => el.textContent = telBonito(TEL));
-    $$("[data-mail]").forEach(a => a.href = "mailto:" + EMAIL);
-    $$("[data-mail-txt]").forEach(el => el.textContent = EMAIL);
-    $("[data-rating]").textContent = RATING;
-    $("[data-stars]").innerHTML = ic("star").repeat(5);
-    $("#gBadge").href = "https://www.google.com/maps/search/" + encodeURIComponent(NEGOCIO + (CIUDAD ? " " + CIUDAD : ""));
+    if (EMAIL) {
+      $$("[data-mail]").forEach(a => a.href = "mailto:" + EMAIL);
+      $$("[data-mail-txt]").forEach(el => el.textContent = EMAIL);
+    } else {
+      $$("[data-mail]").forEach(a => a.closest("li").hidden = true);
+      $("#sendMail").hidden = true; $("#send").classList.add("two");
+    }
+    $$("[data-rating]").forEach(el => el.textContent = RATING);
+    $$("[data-stars]").forEach(el => el.innerHTML = estrellas(5));
+    $$("[data-gmaps]").forEach(a => a.href = "https://www.google.com/maps/search/" + encodeURIComponent(NEGOCIO + (CIUDAD ? " " + CIUDAD : "")));
     $("#yr").textContent = new Date().getFullYear();
 
-    // Galería
-    const bento = $("#bento");
-    bento.innerHTML = GALERIA.map((g, i) => `
+    // Portada y antes/después (fotos del cliente si llegan; si no, las del giro)
+    const heroImg = $("#heroImg");
+    heroImg.src = imgOK(val("portada")) || (FOTOS[0] && FOTOS[0].u) || U(G.img[0], 1100);
+    $("#baBefore").src = imgOK(val("antes")) || U(G.img[1], 1300);
+    $("#baAfter").src = imgOK(val("despues")) || U(G.img[2], 1300);
+
+    // Cifras de la portada
+    $("#metrics").innerHTML = G.m.map((m, i) => `<div><strong data-count="${m[0]}" data-m="${i}">${fmt(m[0])}</strong><span data-ml="${i}"></span></div>`).join("");
+    const sufijo = el => L(G.m[+el.dataset.m][1]);
+
+    /* ---------- galería ---------- */
+    const PROPIAS = FOTOS.length > 0;
+    const GAL = PROPIAS ? FOTOS.map(f => ({ f: "own", src: f.u, t: f.t })) : G.gal.map(([f, id, t]) => ({ f, src: U(id, 900), t }));
+    $("#bento").innerHTML = GAL.map((g, i) => `
       <figure class="tile rv" data-f="${g.f}">
-        <img src="${U(g.img, 900)}" alt="" loading="lazy" decoding="async" />
+        <img src="${esc(g.src)}" alt="" loading="lazy" decoding="async" />
         <span class="tag"><i></i><span data-tag="${g.f}"></span></span>
-        <figcaption><span data-cap="${i}"></span><span class="go">${ic("upr")}</span></figcaption>
+        <figcaption${g.t ? "" : " hidden"}><span data-cap="${i}"></span><span class="go">${ic("upr")}</span></figcaption>
       </figure>`).join("");
     const tiles = $$(".tile");
-    const acomodar = () => { let k = 0; tiles.forEach(t => { t.classList.remove("big", "wide", "tall"); if (!t.hidden) { const c = PATRON[k++ % PATRON.length]; if (c) t.classList.add(c); } }); };
+    // Patrón bento según cuántas fotos se ven, para que la cuadrícula siempre quede llena
+    const PAT = { 1: ["big"], 2: ["big", "big"], 3: ["big", "tall", "tall"], 4: ["big", "tall", "", ""], 5: ["big", "", "", "", ""], 6: ["big", "tall", "", "", "wide", "wide"] };
+    const acomodar = () => {
+      const vis = tiles.filter(t => !t.hidden);
+      tiles.forEach(t => t.classList.remove("big", "wide", "tall"));
+      for (let i = 0; i < vis.length; i += 6) { const n = Math.min(6, vis.length - i); PAT[n].forEach((c, j) => { if (c) vis[i + j].classList.add(c); }); }
+    };
     acomodar();
-    $$(".tab").forEach(tab => {
-      const f = tab.dataset.f;
-      tab.querySelector("small").textContent = f === "all" ? GALERIA.length : GALERIA.filter(g => g.f === f).length;
-      tab.addEventListener("click", () => {
+    const tabsBox = $("#tabs");
+    if (PROPIAS) tabsBox.hidden = true;
+    else {
+      tabsBox.innerHTML = ["all", "a", "b", "c"].map(f => `<button class="tab" role="tab" data-f="${f}" aria-selected="${f === "all"}"><span data-tab="${f}"></span><small>${f === "all" ? GAL.length : GAL.filter(g => g.f === f).length}</small></button>`).join("");
+      $$(".tab").forEach(tab => tab.addEventListener("click", () => {
+        const f = tab.dataset.f;
         if (tab.getAttribute("aria-selected") === "true") return;
         $$(".tab").forEach(t => t.setAttribute("aria-selected", t === tab));
         tiles.forEach(t => t.classList.add("out"));
@@ -804,10 +1761,26 @@
           acomodar();
           requestAnimationFrame(() => requestAnimationFrame(() => tiles.forEach(t => t.classList.remove("out"))));
         }, 260);
-      });
-    });
+      }));
+    }
 
-    // Preguntas frecuentes en dos columnas
+    /* ---------- reseñas (reales si llegan; las de ejemplo solo en la vista previa) ---------- */
+    const REALES = RES.length > 0;
+    const LISTA_RES = REALES ? RES : G.rev.map(([n, t]) => ({ n, t, e: 5 }));
+    if (!REALES && !PREVIEW) $("#reviews").hidden = true;
+    $("#revNote").hidden = REALES;
+    const pintarResenas = () => {
+      $("#revGrid").innerHTML = LISTA_RES.map((r, i) => `
+        <figure class="rev rv${i ? " d" + i : ""}">
+          ${ic("quote", "q")}
+          <span class="stars">${estrellas(r.e)}</span>
+          <blockquote>“${esc(L(r.t))}”</blockquote>
+          <figcaption><span class="av">${esc(r.n.charAt(0).toUpperCase())}</span><span><b>${esc(r.n)}</b><small>${esc(T[LANG].revSrc)}</small></span></figcaption>
+        </figure>`).join("");
+      if (window.__io) $$("#revGrid .rv").forEach(el => window.__io.observe(el)); else $$("#revGrid .rv").forEach(el => el.classList.add("in"));
+    };
+
+    /* ---------- preguntas frecuentes en dos columnas ---------- */
     const mitad = Math.ceil(FAQ.length / 2);
     $("#faqCols").innerHTML = [FAQ.slice(0, mitad), FAQ.slice(mitad)].map((col, c) => `<div class="faq-col">${col.map((q, j) => {
       const i = c * mitad + j;
@@ -820,37 +1793,39 @@
     }));
 
     /* ---------- cotizador ---------- */
-    const Q = { step: 1, svc: null, sqft: 500, urg: "soon" };
+    const Q = { step: 1, svc: null, sqft: 1, urg: "soon" };
     const svcBox = $("#svc"), urgBox = $("#urg"), range = $("#sqft");
-    const opcion = (o, grupo, extra = "") => `<button type="button" class="opt" role="radio" aria-checked="false" data-${grupo}="${o.id}">
-        <span class="oi">${ic(o.ic)}</span><span class="tick">${ic("check")}</span><b data-n></b><small data-s>${extra}</small></button>`;
+    const opcion = (o, grupo) => `<button type="button" class="opt" role="radio" aria-checked="false" data-${grupo}="${o.id}">
+        <span class="oi">${ic(o.ic)}</span><span class="tick">${ic("check")}</span><b data-n></b><small data-s></small></button>`;
     svcBox.innerHTML = SERVICIOS.map(s => opcion(s, "svc")).join("");
     urgBox.innerHTML = URGENCIA.map(u => opcion(u, "urg")).join("");
     const svcSel = () => SERVICIOS.find(s => s.id === Q.svc);
-    const redondear = n => n >= 10000 ? Math.round(n / 500) * 500 : Math.round(n / 100) * 100;
-    const calcular = () => {
-      const s = svcSel(); if (!s) return null;
-      const k = URGENCIA.find(u => u.id === Q.urg).k;
-      const lo = Math.max(s.piso, s.low * Q.sqft * k), hi = Math.max(s.piso * 1.4, s.high * Q.sqft * k);
-      return [redondear(lo), redondear(hi)];
-    };
+    const redondear = n => { const p = n < 500 ? 5 : n < 2000 ? 25 : n < 10000 ? 100 : 500; return Math.round(n / p) * p; };
+    const calc = (s, q, k) => [redondear(Math.max(s.piso, s.low * q * k)), redondear(Math.max(s.piso * 1.4, s.high * q * k))];
+    const calcular = () => { const s = svcSel(); return s ? calc(s, Q.sqft, URGENCIA.find(u => u.id === Q.urg).k) : null; };
     const rangoTxt = r => r ? `${money(r[0])} – ${money(r[1])}` : "—";
-    const fmtSq = n => n.toLocaleString("en-US");
+    const unidad = (s, n) => L(UNITS[s.u].u)[+n === 1 ? 0 : 1];
+    const qtyTxt = (s, n) => `${fmt(n)} ${unidad(s, n)}`;
     const pintarRange = () => {
-      const p = (range.value - range.min) / (range.max - range.min) * 100;
+      const s = svcSel();
+      const p = (range.value - range.min) / (range.max - range.min || 1) * 100;
       range.style.setProperty("--p", p + "%");
-      $("#sqftNum").textContent = fmtSq(+range.value);
+      $("#sqftNum").textContent = fmt(+range.value);
+      if (s) $("#sqftU").textContent = unidad(s, +range.value);
       $("#liveVal").textContent = rangoTxt(calcular());
       $$(".chip").forEach(c => c.classList.toggle("on", +c.dataset.v === +range.value));
     };
     const prepararPaso2 = () => {
-      const s = svcSel();
+      const s = svcSel(), t = T[LANG];
       range.min = s.min; range.max = s.max; range.step = s.step;
       if (Q.sqft < s.min || Q.sqft > s.max || Q._svcPrev !== s.id) Q.sqft = s.def;
       Q._svcPrev = s.id; range.value = Q.sqft;
-      $("#rMin").textContent = fmtSq(s.min) + " sq ft"; $("#rMax").textContent = fmtSq(s.max) + " sq ft";
-      const pre = [s.min + (s.max - s.min) * .12, s.def, s.min + (s.max - s.min) * .55].map(v => Math.round(v / s.step) * s.step);
-      $("#presets").innerHTML = pre.map((v, i) => `<button type="button" class="chip" data-v="${v}">${T[LANG].presets[i]} · ${fmtSq(v)}</button>`).join("");
+      range.setAttribute("aria-label", L(UNITS[s.u].lbl));
+      $("#qtyLbl").textContent = L(UNITS[s.u].lbl);
+      $("#rMin").textContent = qtyTxt(s, s.min); $("#rMax").textContent = qtyTxt(s, s.max);
+      const pre = [...new Set([s.min + (s.max - s.min) * .12, s.def, s.min + (s.max - s.min) * .55]
+        .map(v => Math.min(s.max, Math.max(s.min, Math.round(v / s.step) * s.step))))].sort((a, b) => a - b);
+      $("#presets").innerHTML = pre.map((v, i) => `<button type="button" class="chip" data-v="${v}">${pre.length === 3 ? t.presets[i] + " · " : ""}${esc(qtyTxt(s, v))}</button>`).join("");
       $$(".chip").forEach(c => c.addEventListener("click", () => { range.value = Q.sqft = +c.dataset.v; pintarRange(); }));
       $("#svcName").textContent = L(s.n);
       pintarRange();
@@ -858,21 +1833,21 @@
     let animPrecio;
     const pintarResultado = () => {
       const r = calcular(), s = svcSel(), u = URGENCIA.find(x => x.id === Q.urg), t = T[LANG];
-      $("#summary").innerHTML = `<li><span>${t.sumSvc}</span><b>${esc(L(s.n))}</b></li><li><span>${t.sumArea}</span><b>${fmtSq(Q.sqft)} sq ft</b></li><li><span>${t.sumTime}</span><b>${esc(L(u.n))}</b></li>`;
-      // número que sube en vivo
+      $("#summary").innerHTML = `<li><span>${t.sumSvc}</span><b>${esc(L(s.n))}</b></li><li><span>${esc(L(UNITS[s.u].k))}</span><b>${esc(qtyTxt(s, Q.sqft))}</b></li><li><span>${t.sumTime}</span><b>${esc(L(u.n))}</b></li>`;
       cancelAnimationFrame(animPrecio); const t0 = performance.now(), el = $("#price");
       const paso = now => { const k = Math.min(1, (now - t0) / 900), e = 1 - Math.pow(1 - k, 3);
         el.innerHTML = `${money(redondear(r[0] * e))}<span>–</span>${money(redondear(r[1] * e))}`; if (k < 1) animPrecio = requestAnimationFrame(paso); };
       animPrecio = requestAnimationFrame(paso);
       actualizarEnvio();
     };
+    const mensaje = (s, q, u, name) => T[LANG].msg({ svc: L(s.n), k: L(UNITS[s.u].k), area: qtyTxt(s, q), time: L(u.n), range: rangoTxt(calc(s, q, u.k)), name, ask: tx("ask") });
     const actualizarEnvio = () => {
       const s = svcSel(); if (!s) return;
       const u = URGENCIA.find(x => x.id === Q.urg), t = T[LANG];
-      const txt = t.msg({ svc: L(s.n), area: fmtSq(Q.sqft) + " sq ft", time: L(u.n), range: rangoTxt(calcular()), name: $("#qName").value.trim().slice(0, 60) });
+      const txt = mensaje(s, Q.sqft, u, $("#qName").value.trim().slice(0, 60));
       $("#sendWa").href = `https://wa.me/${TEL}?text=${encodeURIComponent(txt)}`;
       $("#sendSms").href = `sms:+${TEL}?&body=${encodeURIComponent(txt)}`;
-      $("#sendMail").href = `mailto:${EMAIL}?subject=${encodeURIComponent(t.mailSubj)}&body=${encodeURIComponent(txt)}`;
+      if (EMAIL) $("#sendMail").href = `mailto:${EMAIL}?subject=${encodeURIComponent(t.mailSubj)}&body=${encodeURIComponent(txt)}`;
     };
     const irA = n => {
       Q.step = n;
@@ -911,7 +1886,6 @@
     $("#qBack").addEventListener("click", () => irA(Q.step - 1));
     $("#qReset").addEventListener("click", () => { Q.svc = null; $$("#svc .opt").forEach(o => o.setAttribute("aria-checked", "false")); irA(1); });
     $("#qName").addEventListener("input", actualizarEnvio);
-    // flechas del teclado dentro de los grupos de radio
     [svcBox, urgBox].forEach(g => g.addEventListener("keydown", e => {
       const items = [...g.querySelectorAll(".opt")], i = items.indexOf(document.activeElement);
       if (i < 0 || !["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) return;
@@ -932,45 +1906,116 @@
       if (d !== undefined) { e.preventDefault(); ba.classList.add("used"); ponerPos(pos + d); }
     });
 
+    /* ---------- vista previa: ficha vs competencia ---------- */
+    if (PREVIEW) {
+      $("#auditWrap").hidden = false;
+      if (C_RATING) {
+        $("#compRate").hidden = false;
+        $("#compRating").textContent = C_RATING;
+        $("#compRate [data-stars]").innerHTML = estrellas(Math.round(+C_RATING));
+      }
+    }
+
+    /* ---------- vista previa: ejemplo de pedido recibido ---------- */
+    const ov = $("#ov"), phone = $("#phone");
+    let ovTimers = [], ovPrev = null, ovHide;
+    const pintarDemo = () => {
+      const t = T[LANG], s = SERVICIOS[0], u = URGENCIA[1], r = rangoTxt(calc(s, s.def, u.k));
+      $("#phAv").textContent = NEGOCIO.charAt(0).toUpperCase();
+      $("#phNotif").textContent = t.ovNotif(r);
+      $("#phFrom").textContent = `${t.sample} · ${t.ovFrom}`;
+      $("#phTxt").textContent = mensaje(s, s.def, u, t.sample);
+      $("#phReady").textContent = t.ovReady(r);
+    };
+    const abrirDemo = () => {
+      ovPrev = document.activeElement;
+      clearTimeout(ovHide);
+      pintarDemo();
+      ov.hidden = false; phone.className = "phone";
+      document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => requestAnimationFrame(() => ov.classList.add("on")));
+      ovTimers.forEach(clearTimeout);
+      ovTimers = [[450, "s1"], [1300, "s2"], [2800, "s3"], [3600, "s4"]].map(([ms, c]) => setTimeout(() => phone.classList.add(c), reduce ? 0 : ms));
+      setTimeout(() => $("#ovX").focus(), 60);
+    };
+    const cerrarDemo = () => {
+      if (ov.hidden) return;
+      ov.classList.remove("on"); ovTimers.forEach(clearTimeout);
+      document.body.style.overflow = "";
+      ovHide = setTimeout(() => { ov.hidden = true; }, 350);
+      if (ovPrev && ovPrev.focus) ovPrev.focus();
+    };
+    $("#owner").addEventListener("click", abrirDemo);
+    $("#ovX").addEventListener("click", cerrarDemo);
+    $("#ovClose").addEventListener("click", cerrarDemo);
+    ov.addEventListener("click", e => { if (e.target === ov) cerrarDemo(); });
+    addEventListener("keydown", e => { if (e.key === "Escape") cerrarDemo(); });
+
     /* ---------- idioma (cambia todo sin recargar) ---------- */
     const fitBig = () => {
       const el = $("#big"); el.style.fontSize = "100px";
       const w = el.scrollWidth, max = document.documentElement.clientWidth * .96;
       if (w) el.style.fontSize = Math.min(100 * max / w, 420) + "px";
     };
+    const medir = () => {
+      const r = document.documentElement.style;
+      r.setProperty("--obh", PREVIEW ? $("#owner").offsetHeight + "px" : "0px");
+      r.setProperty("--abh", PREVIEW ? $("#act").offsetHeight + "px" : "0px");
+    };
     const aplicarIdioma = () => {
       const t = T[LANG];
       document.documentElement.lang = LANG;
-      $("#lang").setAttribute("aria-checked", LANG === "es");
-      $$("[data-i18n]").forEach(el => { const v = t[el.dataset.i18n]; if (typeof v === "string") el.textContent = v; });
-      $$("[data-i18n-html]").forEach(el => el.innerHTML = t[el.dataset.i18nHtml]);
-      $$("[data-i18n-ph]").forEach(el => el.placeholder = t[el.dataset.i18nPh]);
-      $$("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t[el.dataset.i18nAria]));
-      $("[data-reviews-txt]").textContent = "· " + t.reviewsTxt(RESENAS.toLocaleString("en-US"));
-      $("[data-lead]").textContent = t.lead(NEGOCIO, CIUDAD);
+      $("#lang").dataset.i = LI();
+      $$("#lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === LANG));
+      $$("[data-i18n]").forEach(el => { const v = tx(el.dataset.i18n); if (typeof v === "string") el.textContent = v; });
+      $$("[data-i18n-html]").forEach(el => el.innerHTML = tx(el.dataset.i18nHtml));
+      $$("[data-i18n-ph]").forEach(el => el.placeholder = tx(el.dataset.i18nPh));
+      $$("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", tx(el.dataset.i18nAria)));
+      $$("[data-reviews-txt]").forEach(el => el.textContent = "· " + t.reviewsTxt(fmt(RESENAS)));
+      $("[data-lead]").textContent = L(G.lead).replace("{n}", NEGOCIO).replace("{z}", t.zona(CIUDAD));
       $("[data-city-txt]").textContent = t.city(CIUDAD);
       $("[data-city-foot]").textContent = t.city(CIUDAD);
-      $$("[data-tag]").forEach(el => el.textContent = t[{ garden: "fGarden", hard: "fHard", dark: "fDark" }[el.dataset.tag]]);
-      $$("[data-cap]").forEach(el => el.textContent = L(GALERIA[+el.dataset.cap].t));
+      $$("[data-ml]").forEach(el => el.textContent = L(G.m[+el.dataset.ml][2]));
+      $$("[data-count]").forEach(el => { if (!el.dataset.anim) el.innerHTML = fmt(el.dataset.count) + sufijo(el); });
+      $$("[data-tab]").forEach(el => el.textContent = el.dataset.tab === "all" ? t.fAll : L(G.tabs[el.dataset.tab]));
+      $$("[data-tag]").forEach(el => el.textContent = el.dataset.tag === "own" ? t.ourWork : L(G.tabs[el.dataset.tag]));
+      $$("[data-cap]").forEach(el => el.textContent = L(GAL[+el.dataset.cap].t) || "");
       $$("[data-q]").forEach(el => el.textContent = L(FAQ[+el.dataset.q][0]));
       $$("[data-a]").forEach(el => el.textContent = L(FAQ[+el.dataset.a][1]));
       $$("#svc .opt").forEach((o, i) => { o.querySelector("[data-n]").textContent = L(SERVICIOS[i].n); o.querySelector("[data-s]").textContent = L(SERVICIOS[i].s); });
       $$("#urg .opt").forEach((o, i) => { o.querySelector("[data-n]").textContent = L(URGENCIA[i].n); o.querySelector("[data-s]").textContent = L(URGENCIA[i].s); });
-      $$("[data-count]").forEach(el => { if (!el.dataset.anim) el.innerHTML = el.dataset.count + sufijo(el); });
       $$("[data-wa]").forEach(a => a.href = `https://wa.me/${TEL}?text=${encodeURIComponent(t.waHello)}`);
-      $("[data-demo-txt]").textContent = t.demoTxt(NEGOCIO);
-      $("#demoBtn").href = `https://wa.me/${CONFIG.miWhatsapp}?text=${encodeURIComponent(t.demoMsg(NEGOCIO))}`;
-      document.title = `${NEGOCIO} · ${LANG === "en" ? "Garden Rooms, Hardscaping & Lighting" : "Garden Rooms, Hardscaping e Iluminación"}`;
+      heroImg.alt = `${NEGOCIO} — ${L(G.title)}`;
+      pintarResenas();
+      // vista previa
+      $("[data-owner-txt]").textContent = t.ownerBar(NEGOCIO);
+      $("#audT").innerHTML = t.audTitle(esc(NEGOCIO));
+      $("#audRev").textContent = t.audRev(fmt(RESENAS));
+      $("#compName").textContent = COMP || t.audComp(L(G.plural), CIUDAD);
+      $("#compRev").textContent = C_REV ? t.audRev(fmt(C_REV)) : "";
+      $("[data-act-tag]").textContent = t.actTag(NEGOCIO);
+      $$("[data-activar]").forEach(a => a.href = `https://wa.me/${CONFIG.miWhatsapp}?text=${encodeURIComponent(t.actMsg(NEGOCIO))}`);
+      if (!ov.hidden) pintarDemo();
+      document.title = `${NEGOCIO} · ${L(G.title)}`;
       pintarBotones();
       if (Q.step === 2) prepararPaso2();
       if (Q.step === 3) pintarResultado();
-      fitBig();
+      fitBig(); medir();
     };
-    const sufijo = el => LANG === "es" && el.dataset.suffixEs ? el.dataset.suffixEs : el.dataset.suffix || "";
-    $("#lang").addEventListener("click", () => { LANG = LANG === "en" ? "es" : "en"; aplicarIdioma(); });
+    $$("#lang button").forEach(b => b.addEventListener("click", () => { if (b.dataset.l !== LANG) { LANG = b.dataset.l; aplicarIdioma(); } }));
+
+    /* ---------- vista previa: barra superior y barra inferior ---------- */
+    if (PREVIEW) {
+      document.body.classList.add("pre");
+      $("#owner").hidden = false;
+      const act = $("#act"); act.hidden = false;
+      if (/^https:\/\/\S+$/i.test(STRIPE_URL)) { const c = $("#actCard"); c.href = STRIPE_URL; c.hidden = false; }
+      setTimeout(() => act.classList.add("on"), reduce ? 0 : 1200);
+    }
+
     aplicarIdioma();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBig);
-    let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(fitBig, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitBig(); medir(); });
+    let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { fitBig(); medir(); }, 120); });
 
     /* ---------- barra al hacer scroll ---------- */
     const nav = $("#nav");
@@ -980,16 +2025,16 @@
     const contar = el => {
       el.dataset.anim = 1; const fin = +el.dataset.count, t0 = performance.now();
       const paso = now => { const k = Math.min(1, (now - t0) / 1400), e = 1 - Math.pow(1 - k, 3);
-        el.innerHTML = Math.round(fin * e).toLocaleString("en-US") + sufijo(el); if (k < 1) requestAnimationFrame(paso); else delete el.dataset.anim; };
+        el.innerHTML = fmt(Math.round(fin * e)) + sufijo(el); if (k < 1) requestAnimationFrame(paso); else delete el.dataset.anim; };
       requestAnimationFrame(paso);
     };
-    const pista = () => { if (ba.classList.contains("used") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const pista = () => { if (ba.classList.contains("used") || reduce) return;
       const t0 = performance.now();
       const paso = now => { if (ba.classList.contains("used")) return; const k = Math.min(1, (now - t0) / 1600);
         ponerPos(50 + Math.sin(k * Math.PI * 2) * 14 * (1 - k)); if (k < 1) requestAnimationFrame(paso); };
       requestAnimationFrame(paso); };
     if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver(es => es.forEach(e => {
+      const io = window.__io = new IntersectionObserver(es => es.forEach(e => {
         if (!e.isIntersecting) return;
         e.target.classList.add("in");
         if (e.target.classList.contains("metrics")) $$("[data-count]").forEach(contar);
@@ -999,19 +2044,17 @@
       $$(".rv, .metrics").forEach(el => io.observe(el));
     } else $$(".rv").forEach(el => el.classList.add("in"));
 
-    /* ---------- aviso de muestra (no sale con &vista=final) ---------- */
-    if (!VISTA) {
-      const demo = $("#demo"); demo.hidden = false;
-      setTimeout(() => demo.classList.add("on"), 2500);
-      $("#demoX").addEventListener("click", () => { demo.classList.remove("on"); setTimeout(() => demo.hidden = true, 600); });
-    }
-
-    /* ---------- radar: avisa a tu panel que el prospecto abrió su web (una vez por visita) ---------- */
-    if (CLIENTE && !VISTA && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) {
+    /* ---------- radar: avisa a tu panel que el prospecto abrió su web o tocó la barra del dueño (una vez por visita cada uno) ---------- */
+    const RADAR_ON = CLIENTE && PREVIEW && /^https?:$/.test(location.protocol) && !/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname);
+    const ID = clean(P.get("id"), 80);
+    const avisarRadar = e => {
+      if (!RADAR_ON) return;
       let nueva = true;
-      try { const k = "vc_radar" + location.search; nueva = !sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); } catch (e) {}
-      if (nueva) fetch(`https://ntfy.sh/${CONFIG.radarTopic}`, { method: "POST", body: JSON.stringify({ t: TEL_DUENO, c: NEGOCIO, g: CONFIG.giro }), keepalive: true }).catch(() => {});
-    }
+      try { const k = "vc_radar_" + e + location.search; nueva = !sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); } catch (x) {}
+      if (nueva) fetch(`https://ntfy.sh/${CONFIG.radarTopic}`, { method: "POST", body: JSON.stringify({ t: TEL_DUENO, c: NEGOCIO, g: GIRO, id: ID, e }), keepalive: true }).catch(() => {});
+    };
+    avisarRadar("abrio");
+    $("#owner").addEventListener("click", () => avisarRadar("dueno"));
   })();
   </script>
 </body>
