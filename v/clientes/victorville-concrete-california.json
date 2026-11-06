@@ -1,0 +1,40 @@
+{
+  "cliente": "Victorville Concrete",
+  "giro": "concrete",
+  "tel": "7606207624",
+  "rating": 4.9,
+  "reviews": 27,
+  "ciudad": "California",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeYmlo5S902zzT4ieQn2XzZvo7MzqEFE52ynU-dvi48FY-ArI4GL08rkneysB5Pgzz60EFOAiwL9F1yk_iK9rT9iBkAQ5C3CsRxAiNAVx9LElRqCgQfE-t86b8V08YLb2nsdZ3OSw=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfznUHmwiHckipsVAtaraAdFsSCMqHO0gFe7XGFso8D4SdVTY5_hFk8Xh9luG1z0mCITiIlVotV27JzZxi_5Na8dnPFerpaq4e7pmZprQsA0KcThyZ8jcmw23AEUj_23uMhG9anfX1T6hRY=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLePqZJGI9EPXgWfon_J81eISfuBpEXgpNd6iSqOmiTDakKcDZa9e-jiauCEDE4F72F7XXuh6pL4WwUS0dFEd4OevVPBuBtubzMAMEWV_1hAd6DBFhSWY94XdLIi6tsBuwBdCprJF0rs9xQ=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcmqYdrJwT5TkzpfOlkjzzOaVgt58cwVrmNcTTDaeA6DtRlJKu28wDlPeKXzoksjwI5S7Bw7Avu7PTIZb1dCbddIOm7b4FxHIBYodQM5hkhNiNcBaHOj1m_rTbienr2mqA8_zc02GsEMIWX=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcdy86s8RCba0QAsUuRo38Ci3CkwW_ZDexB-5o0YfTXmS21vmihfKtewYEzmSRiYdagMd68Ob6-gtV8s3K8Yi_zro2B2Emg-hMtP31KXXjSv7YrCy2TxuZNMJiCSyAkGcVzI4KCZPKzQEMi=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLe7EN9ks_mwVfFHKk1BTX6WCwj2briu85TMRJqg08QJiSlaozeQXb6u_JSh-2--ce6KDLYlLcJ3gC6-NFfKCQ-DekgDnjJGb2-vbBMu7s6o13NL06rYrshI8pa6HOfn4T4IoYv-E6YjfHc=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Nancy Lim",
+      "texto": "We worked with Don and his job was prompt and organized. He is reliable. His crew came in the early morning and texted us pictures to report the progress of the work!! Highly recommended👍…",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Arlene Jackson",
+      "texto": "Another job well done. This is the second time I have used them. Very happy with the outcome. Everyone was very nice and great communication. A few before and afters...",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Melissa Jacobs",
+      "texto": "Don and all of his crews are amazing and efficient. They do not play. They come and get the job done right. This is the second time we contracted them for a job and will continue to refer them to others.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Victorville+Concrete/data=!4m7!3m6!1s0x80c35deaa43a622b:0xc9ed06b16b2e79c0!8m2!3d34.4970274!4d-117.0060576!16s%2Fg%2F11ssqfythl!19sChIJK2I6pOpdw4ARwHkua7EG7ck?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 00:07",
+  "competidor": "Cristobal Concrete Construction",
+  "crating": 5.0,
+  "creviews": 184
+}
