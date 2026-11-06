@@ -1,0 +1,36 @@
+{
+  "cliente": "Concrete Driveway of Houston",
+  "giro": "concrete",
+  "tel": "7134373996",
+  "rating": 4.8,
+  "reviews": 26,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeZq-eZT963Y8scYaQlyFmPK_V0ilj7o-_0FRAC6Ue89dHb4fxN-8c_Xl9zeS2fqABpMSK51tJYKJHAmvMXrTBiANhQ8wqKrD-1n4dENkKB7IHjIaSU0fI8XVyJRmXoiEjARvnijw=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcs7qdw7JhDwp_c1nCzlJPN_fNG-IHQ3VGKWuwZSPQJ9JJpJ5UE6MCp5S5vrU4GWjC9_N8xaRg6gOxiZXj8aqlS9pqLu0fhu3wQWz3-aeggIlNApaWXR6kH8c4LpTOZLJwIM920_yVofu_O=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Chris Seveney",
+      "texto": "I have to say I have never had a service or renovation performed so expertly. I am immensely please with Kel overseeing the job. His team was great in all aspects. Kel kept me updated in every step of the job. David was very professional as well. He gave me a great deal of confidence when he presented your services.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Reed McDonald",
+      "texto": "Madewell Concrete just completed replacing my drive way at my home in Richmond Texas. I am super impressed how well the job went - all went very smoothly. Kel, the project manager, was very professional and kept me in the loop during the whole process. The completed drive way looks great and I can't wait to park my cars back on it in the coming days.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Patricia Crittendon",
+      "texto": "Madewell completely replaced my driveway and patio. The sales representative was informative, honest, and worked with me on the scope of the project. The project manager, Kelechi, was great! He thoroughly reviewed the project prior to the start. He was conscientious in overseeing the work by the installers and maintained communication with us throughout the process.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Concrete+Driveway+Co.+of+Houston/data=!4m7!3m6!1s0x8640bf27cc5d034f:0x6c9d655f5b80f52b!8m2!3d29.7600484!4d-95.3655461!16s%2Fg%2F11r269xm7b!19sChIJTwNdzCe_QIYRK_WAW19lnWw?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:34",
+  "competidor": "Artisan Concrete & SurfaceWorks",
+  "crating": 5.0,
+  "creviews": 117
+}

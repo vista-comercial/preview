@@ -1,0 +1,36 @@
+{
+  "cliente": "Bill Houston Concrete Construction",
+  "giro": "concrete",
+  "tel": "2814430874",
+  "rating": 4.8,
+  "reviews": 22,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdQheIB7X5KDNsYbwIZ0-YwQD4mmKbMg1Srr79a62I7lS2tHYucZGhKX9hsmT59r1L2gfdOyABRz8vuodBQLrCktVEdVDCDK0iMDp20PbtPXsGEIQl1Mt0zU9V6FvxEp82Yb5PE=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLf3ex4_zKijJUa6m2E_vS5T6Hw6_CRIoibVSFwqXoKA8Pi8FpQ1N0bv0oCVpuo8MxbwVIrRqF7QHz0Bf41GiwToo0KoAEF_XLCOqJL2CuIWFW_Xt0orwBDatX3zOnbvY6Inc1Ob4Q=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Ally Prasek",
+      "texto": "We had our concrete repaired by Bill Houston Concrete Construction, and they did an excellent job. Great communication, quality work, and everything turned out exactly how we wanted. Highly recommend!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Charlie Jones",
+      "texto": "I recently hired Houston Concrete Construction for a major project at my property, and I couldn’t be more impressed! From the very first contact, their team was professional, responsive, and genuinely helpful in walking me through the entire process.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Stori Sloan",
+      "texto": "We recently hired Houston Concrete for a project and could not be happier with the results. From the initial estimate to the final cleanup, the entire team was professional, punctual, and easy to work with. They communicated clearly throughout the process, showed up when they said they would, and delivered high-quality work that exceeded our expectations.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Bill+Houston+Concrete+Construction/data=!4m7!3m6!1s0x8640b5682b50c801:0x60c493a4ed4971a4!8m2!3d31.1689103!4d-100.0768425!16s%2Fg%2F1tfwqbqx!19sChIJAchQK2i1QIYRpHFJ7aSTxGA?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:34",
+  "competidor": "Artisan Concrete & SurfaceWorks",
+  "crating": 5.0,
+  "creviews": 117
+}

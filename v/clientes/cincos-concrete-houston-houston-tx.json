@@ -1,0 +1,36 @@
+{
+  "cliente": "Cincos Concrete Houston",
+  "giro": "concrete",
+  "tel": "8327424937",
+  "rating": 5.0,
+  "reviews": 23,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfbmRhF8fizxL_fQ-RwxvgCAAfeLXlfBU8om2ds6sckwVIw_uojbtL6Du1tkTJ6-J3RxoybePeCbLTxRk--2p8LCsuA5r0qcGP4LvKuppEJ0tbjzaeOG3XIy2BkaF3UOxLfCCNDrzbdAQs=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfNnjsL6B1vmkeB-4L78YH9hTwT8l7gBVoYlzxsx2oFzJtvS1cELKvvqcHKbreC7LknUL4Rswe5BiLKZW79TBcv3QTqANDNoXu7Qg2mxvWcPyOX6R7E_zjMF12fqQQK2YRd7ugt76Eig-df=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Oscar Aguilar",
+      "texto": "Un exelente trabajo 100% recomendado me iso un patio en la parte de atras de mi casa y fue algo rapido y muy bien trabajo dejaron muy limpio el lugar de trabajo se los recomiendo muy buen trabajo",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Maria Cristina Compassi",
+      "texto": "We love our new stamped patio from Cincos in crosby! The team was friendly, efficient, and the results look amazing. Would definitely hire them again!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Marissa Camba",
+      "texto": "Tony and his crew did a great job on my concrete patio. I’m so happy with the out come will recommend to anyone.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Cincos+Concrete+Houston/data=!4m7!3m6!1s0x8640bf3e8387e717:0x83e768818374f18c!8m2!3d29.7542895!4d-95.3654132!16s%2Fg%2F11z7fc8hlx!19sChIJF-eHgz6_QIYRjPF0g4Fo54M?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:34",
+  "competidor": "Artisan Concrete & SurfaceWorks",
+  "crating": 5.0,
+  "creviews": 117
+}
