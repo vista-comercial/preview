@@ -1,0 +1,36 @@
+{
+  "cliente": "Lash by Sulu",
+  "giro": "lashes",
+  "tel": "8326571074",
+  "rating": 4.8,
+  "reviews": 63,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfVezmIrNqu80CzUKDj15dyY8sDZ1tFz4Tpft8J1qDwZihyD8hk7EA4iNCfZCQSncXim2Y0H-Kw7wqd4JZYN1zXjnxyiH9Qp0HYlqNmpgTUh0JlMCciCZzHxOix4gSte03EVJ62No6sNAQ=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeFcCF5GW2bjvX5pnjiUx1Pxm9XCA-DycObYOqP8vl6kf4uAAovU6pkpt5243JR4oGgijIKZHKQoLIsEvxiI1TgyhbjdwAxCNlyJPoHrS_GEoxeSbhzXUuuoIN3cDPtML0j44z_=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Brittney Truvillion",
+      "texto": "I've been coming to Sulu lashes for about a year now and I love the work Jojo has done every time. She's detail-oriented, has never canceled or shown up late on me. She's absolutely professional!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Lydia Hernandez",
+      "texto": "Cholpon is amazing the best lash studio I’ve ever been too. I love my lashes every time i get them done! Appointments always run on time! If i have any questions she’s ready to answer! Definitely recommend! Getting ready for my refill and my lashes still look great!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Joy Simmons",
+      "texto": "I wish I could give 10 stars for the service that I’ve received. I’m a new customer, but my latest visit was the most amazing. My Tech suggested a new look and it was executed better than I ever could’ve imagined. I’ve been getting extensions for years, but didn’t fully understand what I was getting and the differences between the looks.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Lash+by+Sulu+%7C+Eyelash+Extensions+in+Houston,+TX/data=!4m7!3m6!1s0x8640bf101a66d2bf:0x8841bea7c54c4740!8m2!3d29.7344897!4d-95.4231886!16s%2Fg%2F11fl0fzg5b!19sChIJv9JmGhC_QIYRQEdMxae-QYg?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:40",
+  "competidor": "H Lash & Brows",
+  "crating": 5.0,
+  "creviews": 327
+}

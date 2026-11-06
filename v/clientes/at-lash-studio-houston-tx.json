@@ -1,0 +1,38 @@
+{
+  "cliente": "AT Lash Studio",
+  "giro": "lashes",
+  "tel": "8326143840",
+  "rating": 5.0,
+  "reviews": 32,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeSZfSVQqm9m8_nisTAzzmShh2gL0WOGPgS6QLZudIYez17Wnkvci6TlhxdOdnjXPGjhc78FEKEAwOBsxkP4DxpZiexwym60ACzAvQLnZF2Bn_T3GxpbuZIaYl7vu9Q-GOJzs9F9__aYws=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeEFF2iMYaJcdjIUi7qC3vHalV0tg0GT3vxmIDFgg4Puwq9M1IjLs5RiIgla72NxqQi87fIEFeugVX3qBgV2igH5PrIJ2GMJDRTNYTHTzfLSSEqSyt9uL9iQ26fdctusgFAjOjz=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipMWw5qer8c0mJyDTum8U_8lfr8OgTh3u1P0fX77=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLc47fTTVhKSeFo-k6tl7TkJ0lULcczqXRqllzmVpNHk7-1fxvP1CNpMgge2CccXYe4CmkmuocpX1v99Rp3A-n0Lx_KCrOkd9DgfSV05QMQza2NlwSJEucekUQI4B50NDR33IsPlqQkYe83-=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "anabella lira",
+      "texto": "Loveee, love my lashes every single time! Amy never disappoints 💅🏻 Highly recommend! Good parking, clean restrooms for use which is a plus. Also the room is always nice and cozy with some relaxing background music.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Emily Tran",
+      "texto": "I've been going to Amy for years. She's good at what she does. Y'all need to get your lashes done!!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Michelle T",
+      "texto": "I’ve been getting my eyelashes and eyebrow waxing done with Amy for four years now, and she never disappoints! She is always thorough, consistent, and incredibly skilled. She truly excels at creating beautiful classic and hybrid looks that suit my Asian eyes perfectly. I especially appreciate how gentle and efficient she is.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/AT+Lash+Studio/data=!4m7!3m6!1s0x8640c7897a91677d:0x1d386c4177944adb!8m2!3d29.7568098!4d-95.3472854!16s%2Fg%2F11jx_z8hl5!19sChIJfWeReonHQIYR20qUd0FsOB0?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:40",
+  "competidor": "H Lash & Brows",
+  "crating": 5.0,
+  "creviews": 327
+}

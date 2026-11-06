@@ -1,0 +1,37 @@
+{
+  "cliente": "Lily Beauty lash studio",
+  "giro": "lashes",
+  "tel": "7135983517",
+  "rating": 5.0,
+  "reviews": 70,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLceN8t8GysIzsaMsjtzQIcmCzulV68wZInntuxkV9X3JQfs-1sz7vW9y0LUbj0MQJdcBboTqu8IEa3QgiXfvchAr4eyOWwRyKA-T3V4oQ_HJTZ-IEaOTK4ci5IGqntLYrfrhwI1UopQLdo_=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdCcniS-r81WEd5x7igVKZ6GyTfd_lZwI-rsqHmcPapGgf1M3T13Aul6Drm8kMoxl2GJvloo7Cj0T8nqhP-yelED9oLG7-maR16wh-5O6F2XPd6tu19rVUyeQppfMmrMs5AaF-7HGe_1Jqd=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipOCqz-pBu316uigE80JR4_cMkwAcmtCG5NwPGO2=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Lindsay Ethridge",
+      "texto": "Lily was so professional and informative! She gave me exactly what I asked for, while still giving me professional feedback. The environment was relaxed and super clean! Will definitely be coming back!!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "luis l al",
+      "texto": "It’s my second time getting lash extensions with Lily, and my lashes have never looked so pretty! The application was smooth and quick. She was able to achieve the look I was hoping for. I am so happy with the results! 💕…",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Jocelyn Bonilla",
+      "texto": "Third visit and I am officially hooked! Lily is so talented, gentle, and precise with her work. The lashes feel completely weightless, look gorgeous every single time, and last amazingly well. If you’re looking for high-quality lash sets and a great experience, this is the place to go.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Lily+Beauty+lash+studio/data=!4m7!3m6!1s0x8640c1cfd20ded21:0x7881400e0e9c3098!8m2!3d29.7345157!4d-95.4249101!16s%2Fg%2F11vzf_3xlg!19sChIJIe0N0s_BQIYRmDCcDg5AgXg?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:40",
+  "competidor": "H Lash & Brows",
+  "crating": 5.0,
+  "creviews": 327
+}

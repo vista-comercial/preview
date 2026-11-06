@@ -1,0 +1,40 @@
+{
+  "cliente": "UniLash Studio",
+  "giro": "spa",
+  "tel": "3467709038",
+  "rating": 5.0,
+  "reviews": 84,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLc5rq4ATfW73ascAU31mNY4nwwdkM1wGR-ZGpvz8bDwcXtnQKJ2UyZDj96ZsWnLu1jmB2pmxrk6t1N31gOwtGkSm8e-WkixWrSqZO-nnauTlSs3IA8w9AomGnozXu1MAsxdi1eHlQ=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLf0cOrZlkXwtxIK7NObJw4hTqdmXJ8vb-ROGKwG_y7UyOIOrG6UjLv_Exvz8QHuz-uLYSui9cQ-5_JojBiheNxnonNpUPrWAKyFKlD7mkLHFrXPnJHaJJW40u_p5Tvqk-TCzp3J=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcQLfYO0dEMgvpEeRveBklnxXIgU9vpmhq9W7GKQD5CG6X0Nj6HcSU2SaPlO288RSw2RKpseiRoNo0bYAY6QOHEZ7oa1pjuqHqb6TR1gF57Sb9MdbfN9rmMEpy0xHE3xRJRQzLm=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfAcT9oneZLH2STTZa_xO9n2oZEZn18XRi6sJ6Y93CDiJiwiNfZgkW4mde2uRoTxgAykAj2W4vjsu24q9I_LCnFVTwf6bQgv_TcJuFI6JbC4lCqeqjb1ASJkZF-SWL43FJFhv1R=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfMJx44X_KKm3zXkvp6F6Ktz95p8MeUvHhZu6nc_kNcKviJehLLbvZuca5jPsR1y_WAAFYb5RosRstTkCgA-D-O4PZFGVUYZXv-DtA_VW1WHf3wfwI4XdtCdW8vszWifIGeFOzCNw=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfkAR00O-M1EtdNNgOptfDSvBPOwK3cceCEBFmiGaJBdQPk0F7zqRRBeZM1aatw1zVESFZ6-aySMQa2xY1prFMIcplpuJ0JiuDs8sxsJ9OyV2aZZQ5pqu6mjJWZKT9S4WbfTdoC=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Abigail Garcia",
+      "texto": "Great place! I loved Sandy. I got a hybrid set she was really sweet and Attentive. It didn’t take to long also. I really recommend this place. My mom loves it also.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Zarina Mohammed",
+      "texto": "Got my lashes done with Sandy at UniLash studio and she did an excellent job. She also waxed my eyebrows and was so gentle and thorough with everything.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Sea Yycmd",
+      "texto": "Absolutely loved my lashes! And the lady is really kind! The right place to get your lashes done!",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/UniLash+Studio/data=!4m7!3m6!1s0x8640c515548d35e3:0x77b720ceeb15068b!8m2!3d29.8196148!4d-95.5445491!16s%2Fg%2F11p76vpz_f!19sChIJ4zWNVBXFQIYRiwYV684gt3c?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:40",
+  "competidor": "H Lash & Brows",
+  "crating": 5.0,
+  "creviews": 327
+}

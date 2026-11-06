@@ -1,0 +1,36 @@
+{
+  "cliente": "Luxe Lash Studio",
+  "giro": "lashes",
+  "tel": "8327730705",
+  "rating": 4.5,
+  "reviews": 43,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdwBHvwpzXYUPM4tppcB0mMKgXLKbpa-0KgwXuW_Eblgm4mxwegfO6H5fm3RfgqaN_2XgGbCMzKNWv6FeSq82kmD4pI0BBLx09YUItTF3EuS-ZrLDh5kNtV1ECmqGWCwdzlqZfNXB8XfvQB=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdf-_65JemU4quZ1Dfcie_qY3ueoaIVcUduvJtVX6RCR1wfYUMeywVgBXz29oh-GaySven8Xs2Zb9kLOuyHADCRaHJ6EaX2Zphoc9HWXl-6iz8Nx5_AiPPWTzU_CZ3JjEjuCg8M=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Tess Avila Sebesta",
+      "texto": "Been going to Vanna for at least 5 years. Reliable, friendly, professional. Does better lashes than anyone I’ve been to (and I’ve been to a lot before I found her). Highly recommend",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Sunny gal",
+      "texto": "A little pricey but if you’ve been getting your lashes done for awhile and can tell the difference between quality HIGHLY recommend this place. For a multitude of reasons: 1.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Brenda Gutierrez",
+      "texto": "I’ve been seeing Vanna the owner for the past 8 plus years!!! She is truly the BEST. The quality of lashes & glue she uses is unmatched. Plus she takes her time and never rushes you. Perfection is her middle name. 🥰…",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Luxe+Lash+Studio/data=!4m7!3m6!1s0x8640c11d737fbf51:0xcf4a55adfa335634!8m2!3d29.7290969!4d-95.4532649!16s%2Fg%2F11ckc3c0j0!19sChIJUb9_cx3BQIYRNFYz-q1VSs8?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:40",
+  "competidor": "H Lash & Brows",
+  "crating": 5.0,
+  "creviews": 327
+}

@@ -1,0 +1,39 @@
+{
+  "cliente": "The Lash Studio by Sun",
+  "giro": "lashes",
+  "tel": "5756215492",
+  "rating": 5.0,
+  "reviews": 32,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfuCJKgvRaIvKa9LQv8kOs9K6KQmBnrV82evb1EsySjrAm0MgeQs4h-Mf_0b7ftUolXEeKkj8UhgxhiwXJrW4L0M7x3-pQQgBDOkCQdb9hLhCkJn_y-YE_6Y92AQKa2NwWKOGsL=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfHsdXhfo5VFFKOMgkICMD_FNd_vqIicetPFwp_cHtpl-Ze6k1Hga3tZ3ImR3Ec32GYtT6xkkBlWBRtXyZSMm7uDIWcXABrUDu1uvftVJwgvrn8dIye89roxlI2UctbsKOyNA6GNQ=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipOZ3qMwIn0sQEr6oWE_EjKIsXS_IcM7bOBfSBkl=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLc0fNq2HzpxuBIQm8xO2WBrkittOyga7iGmRYADWBSoGQ3CdF_2a_HSFHL1RrF5K5FnPpNXB7mcc5NPKFnETxRboLX_J6q228OnrwTmsyPlwBUNY18K1KaW2E1o13ZShVee3st5IoRuL2Pw=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeDh_gcMoUDvob8ttmwgaMQlaRxEzUeZeqIrIvL3FA7ZaOpTIqY0ZkN6Xun89QpYu_97PHO3mC3SLRS2eRpynyFyKsbWvgWo69dwR349RKCTFacQircu0b7nArhfTlxXTvIvnFq4A=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Sidney Schmitz",
+      "texto": "This was my first experience getting my eyelashes done and Sun killed it! She was so kind and very skilled every step of the way. I am so happy with how my eyelashes and eyebrows turned out!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "caterina",
+      "texto": "Sun did an unbelievable job with my lash lift & tint! I did not know my natural lashes could look like this! I wish I had this done my whole life. The experience was comfortable and professional. She walked me thru all the steps and really made me walk out feeling GORGEOUS.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Ana D",
+      "texto": "My dearest friend has seen Sun for years and highly recommended her. Sun was amazing from the moment we met: welcoming, warm, gentle, curious to understand my routine and expectations, informative about procedures and related maintenance, answered all my questions, and made recommendations to help me decide what to try.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/The+Lash+Studio+by+Sun/data=!4m7!3m6!1s0x8640c5014ce11a9d:0xf65de697d21241b1!8m2!3d29.7834174!4d-95.5451586!16s%2Fg%2F11vpgtd8xy!19sChIJnRrhTAHFQIYRsUES0pfmXfY?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-06 13:40",
+  "competidor": "H Lash & Brows",
+  "crating": 5.0,
+  "creviews": 327
+}
