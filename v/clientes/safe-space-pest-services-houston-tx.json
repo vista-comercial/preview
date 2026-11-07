@@ -1,0 +1,36 @@
+{
+  "cliente": "Safe Space Pest Services",
+  "giro": "pest",
+  "tel": "2812530165",
+  "rating": 5.0,
+  "reviews": 58,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLd-kydn_RAToVAbbWhWjiGtjUrHXPzkHg8G-jUSuH5EO2hi5KZgll-zd3znR86vDP0g24IXjcSrgPb1cNsLmq4TeVIjMwIYlrsJy-Fqqxm271kQwhpn2bPSsTGe_zvZyYUy2OF3gQ=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLd70ysBYSbguFyHQ51hn_bpbkIB7JtsB5TdznvoJ0hvKfAp_Cnkgsd26QSAfbFPhREVqNzI245tagVv5ehFYftG3RTy9w4h41xZDOMbDx3iaO4dklN05EyyDUMxBxlVVxp-9_tZJA=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Deborah",
+      "texto": "Very professional service and would remind to anyone who needs quick pest removal and follow up. We have a rodent problem at the house and they came it and cleaned it all up in a day!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Jamie Jen",
+      "texto": "Friendly, professional and on time. William did a small job at my place to take care of a few wasp nests but got it done quickly.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Kay P.",
+      "texto": "I am so grateful for Safe Space. I called that morning and by that afternoon William was here sealing cracks, gaps, walls and securing my sanity. His prices were exceptionally reasonable. I highly recommend Safe Space for any pest/animal issue. Thank you William!!!",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Safe+Space+Pest+Services/data=!4m7!3m6!1s0x8640970e0b4c6d9d:0x62d97d5fc6e11519!8m2!3d29.6233484!4d-95.2426115!16s%2Fg%2F11jxthdymt!19sChIJnW1MCw6XQIYRGRXhxl992WI?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

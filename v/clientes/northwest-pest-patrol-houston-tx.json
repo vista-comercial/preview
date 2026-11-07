@@ -1,0 +1,19 @@
+{
+  "cliente": "Northwest Pest Patrol",
+  "giro": "pest",
+  "tel": "2814697378",
+  "rating": 4.5,
+  "reviews": 40,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcRhLiVQyNTEqDwdNcJ3b-T8YCaNzlrTeB-gX7ltsiFZzjRWbMquGn2GtAmHwo7gv1RfF_74TIESVst47BbM6Lasm6E5nCUdYpJuYLvs2lgyAV-mNO5XOGDHM22y3nTSIna1lYH=w1200-h900-k-no"
+  ],
+  "resenas": [],
+  "maps": "https://www.google.com/maps/place/Northwest+Pest+Patrol/data=!4m7!3m6!1s0x8640cdf8fdfc85e9:0x2476f9e66f21b4b5!8m2!3d29.9577568!4d-95.5591276!16s%2Fg%2F1tdx4hyq!19sChIJ6YX8_fjNQIYRtbQhb-b5diQ?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

@@ -1,0 +1,37 @@
+{
+  "cliente": "Expert Pest Control",
+  "giro": "pest",
+  "tel": "8323346016",
+  "rating": 5.0,
+  "reviews": 59,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcSj4JzCCGhVcFm5Xft5IJr0NbV5yTkB3pU9I-eKVPDr-hysUfABQQBzm9YtqY2a0iDKrsEV-1-MqX3D6xDjtji3guVj2iPKxaG11OUaJ-QO8EBwEy04_17jNz_spWVXn7Fv-3P0gqpvgV1=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdrIdgU4QZxvzHZOHDprGNWwE_zMqK82MY6qTqa2CLLk4ctP99Onz_2ISaBJG1KKirkAQx7IyrxY8XROyzvQOzxR0X9_2RId-kuKHhQFTRgQblhGJr1qA16anV5nVKEC3LP0Dc6RdgcToAq=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipNCTHG0pnwTiUws8vZZWTBChSAddU7z6QRV-hC-=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Randy Henson",
+      "texto": "I had a great experience with Brad at Expert Pest Control. He was always quick to respond to my calls and texts and promptly came out whenever I needed service, even for the smallest questions.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Garrett Ratliff",
+      "texto": "Called Expert Pest Control for a rodent issue in my attic and had a really good experience. They responded quickly, explained what they found, and walked me through the treatment plan without trying to upsell me. The technician was professional, showed up on time, and made sure all my questions were answered.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Sasha ELASSI",
+      "texto": "I can’t say enough positive things about Brad and Expert pest control!! They were prompt in answering our call and coming out same day to inspect our attic and property for critters. Their communication, attention to detail and customer service is top tier. We will definitely be using them for all our future pest control needs!",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Expert+Pest+Control/data=!4m7!3m6!1s0xa9153e25cbf07601:0xa132aeff0eb1bbbf!8m2!3d29.9392131!4d-95.4503354!16s%2Fg%2F11wmpjr7_v!19sChIJAXbwyyU-FakRv7uxDv-uMqE?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

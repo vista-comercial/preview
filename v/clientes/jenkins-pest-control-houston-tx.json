@@ -1,0 +1,36 @@
+{
+  "cliente": "Jenkins Pest Control",
+  "giro": "pest",
+  "tel": "8327097378",
+  "rating": 4.8,
+  "reviews": 78,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcRATYB2CHDDnbw6L-fk-A-UwoA4XcTO9y31P61Th5pSpwqjpwb4I68oWk6owdmwa_5CdT3ptxsmFeljY6kFV07drJtyg3gKVGbOcPj-ralKiaZSSMZEl-c0y10Kv1lUcvuyVCnB3u98P6G=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcDA72maG3XXQd0cUw8hTHK0B1xpe6QN3DTCdCn1cnk4wSE92aqDLqwlhnWpTxDS-kUAlJ-wUflQ7rfwmBir2DDxAXd-1yxz3sKT5qWTrzzCSEmyhJUcpzqOBkADuJGNMmix0Le9xH1kOI8=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Sherry Sherman",
+      "texto": "Great company! Top tier services from both inspectors. Very Professional and they definitely fixed the pest control quickly!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Paula Haynes",
+      "texto": "Jarrett is amazing! He came to my house on short notice and gave me a reasonable quote for treating termite swarmers. He even sent a team member to come back out to ensure I was satisfied. Thank you again for helping to calm my nerves. Excellent service!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Jaqueline Resendiz",
+      "texto": "Jarrett and Jordan did a great service. I wasn’t looking for service they came to me while working on someone else property. That’s how attentive they are in what they do!! They did a fast and great job. I will definitely be calling them when needed. Would definitely recommend them!!!!",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Jenkins+Pest+Control/data=!4m7!3m6!1s0x8640ba2d42536f4f:0xde4614cac94ac3a1!8m2!3d29.8229589!4d-95.3006553!16s%2Fg%2F11c6w11ggj!19sChIJT29TQi26QIYRocNKycoURt4?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

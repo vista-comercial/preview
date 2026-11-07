@@ -1,0 +1,36 @@
+{
+  "cliente": "Arrow Exterminators",
+  "giro": "pest",
+  "tel": "7135295998",
+  "rating": 4.8,
+  "reviews": 51,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdAgiIdjyK63cGbu5-H_j84mnAvQbr_a5IYWmFRYiUyNtntwOhdbmO_tYMcBFWDYPJO7FzKOp2vIznrXNPBUjy0e-NDrQj411o9xAWRs-7gRF14Hz7qQ9lcTcQbo0Fo5e_jvf292Q=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdvwPypBsy3oOG7TgApqi68ielfLB5qEHPDG842bfITVwed4ISdByVpWmzokXxehRXqj51t5o1kOTTkEknK58XaQMDpuMZL_3vH-KLb8H9T1D2MjTgsURDiC00sZy_5mCeiaY6fCw=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Bri Bass",
+      "texto": "Wonderful company, thankful for Alexander. He has wonderful knowledge and great customer service. So thankful for him working with us and his trust worthiness.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Kimberly Byrd",
+      "texto": "So polite and easy to schedule with. They always listen and address needs. Even making special plans to help me tackle wasps!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Reese Coleman",
+      "texto": "Hands down this is the best pest control company that I have ever used. I would recommend to anyone.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Arrow+Exterminators/data=!4m7!3m6!1s0x8640c55c738da42d:0x142da2d1288a0fab!8m2!3d29.8581073!4d-95.5249587!16s%2Fg%2F11fsfnf988!19sChIJLaSNc1zFQIYRqw-KKNGiLRQ?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

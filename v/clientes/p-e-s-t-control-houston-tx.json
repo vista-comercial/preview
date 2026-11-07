@@ -1,0 +1,36 @@
+{
+  "cliente": "P.E.S.T. Control",
+  "giro": "pest",
+  "tel": "8328181370",
+  "rating": 5.0,
+  "reviews": 19,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLclojBMIzoheMEC9sBGiItp26hIENAqeWz3rQeDJftFgWae9nkazH6YGGVfJyjoqKdz45onlUnm-cQQ1_wUp9tp6faitK8JeiMB121qCDXBhCeAVrTJAE8UeDQHyXGNuWN-IqujAeSGtkk=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLevRYF957MC5LeTHn3klPp4DnPegptKVRHSXfKcUriPswi-o3_4lErBLraRi-3jpt11lG1M1ZUtUBry8rnr-dHipk0dB_gBrGNlTqH1qVsij-gqVEW7RSiQfFi8s1iH1s3UAvwL=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "jermonika jones",
+      "texto": "K was super professional and friendly. He was here within the hour I called him, he's very informative and thorough. Thanks again!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Anastasia Harris",
+      "texto": "Have been using Mr. Washington’s services for over 12 years and he keeps my home pest free. Has also taken care of the various wildlife that has gotten into my backyard without incident. Very knowledgeable and honest. Highly recommend!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Lynton",
+      "texto": "Very professional, organized, and effective! Amazing customer service!",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/P.E.S.T.+Control+Co./data=!4m7!3m6!1s0x8640a4f740ab3aa9:0x76b20a98e1e334dc!8m2!3d29.8131992!4d-95.1891812!16s%2Fg%2F11f3xxcc1t!19sChIJqTqrQPekQIYR3DTj4ZgKsnY?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

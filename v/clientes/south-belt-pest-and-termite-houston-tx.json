@@ -1,0 +1,36 @@
+{
+  "cliente": "South Belt Pest and Termite",
+  "giro": "pest",
+  "tel": "8327687378",
+  "rating": 4.8,
+  "reviews": 25,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLc_z7EmR8zFJdGJ3AokBZiz5Tk6Bw7ChcRJVR9zSUPBgwiTpPxydPx-UXmCcUTeKup00fXQrs0k2NksrZu_eN_WRc130fis9_Zppg9ggcYiFT8X380vpaEkW5ow8mdCYSWzpdiE=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcscOujvcm2qhOhFpkTPe3e57kUGlrj_LtgIVXV375mIYwhdrXEMlywM-1_NOL1JJBf2XJIINBNLBWBvdv8v_FHTg99UhnOYumXCfMNZaooy8aQD8vt9LW-FyO-EFEQfRM4IMo=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Michael Erdin",
+      "texto": "We had a large bee hive in our outdoor grill and needed it removed quickly. I called Adam and he came right away. He was very professional and did a very thorough job. I will definitely call Adam the next time I need pest control services.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "deonzia freeman",
+      "texto": "Adam was really thorough and professional. A really nice guy and easy to chit chat with. He made me feel comfortable about my pest control issues and will be my \"pest control guy\" from now on. You can't go wrong with this company. I strongly recommend them.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Travis Kirk",
+      "texto": "Adam is a really good dude. He was willing to work on a Saturday to get my home treated rather than schedule me weeks out. He is extremely knowledgeable and is very up front and honest with any questions I had. I highly recommend using him and his company for your pest control needs.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/South+Belt+Pest+and+Termite,+LLC/data=!4m7!3m6!1s0x8640ab210e2c222b:0xf1a18458cbd7be5!8m2!3d30.0225732!4d-95.1064321!16s%2Fg%2F11h8cgq1p_!19sChIJKyIsDiGrQIYR5Xu9jEUYGg8?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

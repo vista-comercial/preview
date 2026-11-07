@@ -1,0 +1,36 @@
+{
+  "cliente": "Houston Gulf Coast Exterminators",
+  "giro": "pest",
+  "tel": "2814497404",
+  "rating": 4.5,
+  "reviews": 76,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeVRK4u48gfc7rBHzgLHORPlmnV9uDaGOStMo-JzLITaXSnq0Xm9ZdizeRrnGQG7UQydyzL6N6ffB9rUt4Yq_IiiJV5sz39nT0rg84qPL3OR2IGVSIWElcQ1zOG94ZRrAjK2dSPHQ=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfNM1hWOVnGIGlSiJN5E5HvIsPWNq1tb2PlCNUctuUK02GAnU74by4qxcinsR6izgVpjvj9b0u87Feuq3Z6XKNL5pVZKBnWhV_c3auh2qJ14dWyg449_89rLdOrPDSzmv0YjPC7zySRNOI=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Rafia Akbar",
+      "texto": "Connor came and did the pest control in my house and he did a WONDERFUL and thorough job. I would definitely recommend this company if you want a reliable and trustworthy establishment to work with.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Henry Ho",
+      "texto": "Cyrus did a great and thorough job while explaining every aspect of the service in a detailed yet understandable way. He had a great customer service attitude and was extremely friendly to everyone including our senior pup. 10/10 recommend their services and 10/10 recommend Cyrus!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Pilar Oaxaca",
+      "texto": "Contacted Gulf Coast Pest Control regarding a noise in my attic. Conner and his team came over evaluated the issue and explained what needed to be done to solve my problem. He did not try to sell me anything that I did not need or make the issue bigger to over charge me. At my request he was kind enough to not go into too much detail of what my problem was to keep me from being freighted.",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Houston+Gulf+Coast+Exterminators/data=!4m7!3m6!1s0x8640d0077c1d0dad:0xfc6d21bc37d89c9b!8m2!3d29.8319708!4d-95.6621052!16s%2Fg%2F1hc6gnc34!19sChIJrQ0dfAfQQIYRm5zYN7whbfw?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}

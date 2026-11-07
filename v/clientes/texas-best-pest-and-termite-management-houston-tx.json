@@ -1,0 +1,23 @@
+{
+  "cliente": "Texas Best Pest & Termite Management",
+  "giro": "pest",
+  "tel": "8322938153",
+  "rating": 4.6,
+  "reviews": 33,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLf_ALdfyDNeGgiTSXA5Ltsp0vgg0Or0Pfh-Z2TG2gwuAAe7h52Q-0wg4j6K6LrzkMEtfIMbUZRxKvzgq3bpj3hvsrYSy-lx2D13vsssoBfJqwjcxP4QkaTvIMwt_TTmvgWVViXe=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcNI-O76lqQvECuRbqs1eBn-Eod4eyljY7LfUKg3hk_HXIAT7nodzjGzWUvLnYCLqtJWXPmHTmxxOOFFgjl8QgKCVylCAj14yQiAqmpet4Oalx9gv8MzJ1RI1Tb9AbG1SPVot8f=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeDQZVIahatPEUXXTbF9L5RM9UYueq3hGIgpwLvdACrEcAcOISgCpafxF9tbpO8YHTib-lnTI8Y6wvcby5KYNmAPeZzRYdZcko9bcc8BVAVacWE0jmhg-Ajx0hLPzJZx9wnueIR_A=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLeAzE2CN1VZWDw8Kr0_Fjb3IONIBA1Z16WUPFq7dcraQLe0J19jKnFrNBqi7UWDF-O27YDyyAL0bbAyuwO2DtgLlICHKzCaa6eWpzlL7BlFwaCwXikCg2Okfs9SS8xVILfYzY-v=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLchtuTv2TOqJqOw7yOlzNqwV62wClI6acp0OP2qptSjww2XdR0ORlHwKlbg8jvJaV0h5dsSQhLlFFslhK50vS7aLIPK4JhcrxWZt5COBGwbx5zIc8C7jgC7U5JF_0qYPxbuHyCL=w1200-h900-k-no"
+  ],
+  "resenas": [],
+  "maps": "https://www.google.com/maps/place/Texas+Best+Pest+%26+Termite+Management/data=!4m7!3m6!1s0x8640e3b8eacca38b:0x441a495262e0818!8m2!3d29.5079403!4d-95.7927478!16s%2Fg%2F11j02c1fcv!19sChIJi6PM6rjjQIYRGAguJpWkQQQ?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 12:45",
+  "competidor": "EnviroCon Pest Control",
+  "crating": 5.0,
+  "creviews": 2020
+}
