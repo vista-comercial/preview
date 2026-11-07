@@ -1,0 +1,37 @@
+{
+  "cliente": "The Total You Medical Spa",
+  "giro": "spa",
+  "tel": "7139401808",
+  "rating": 4.9,
+  "reviews": 59,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLekhV_uUq9VXAatmOh8_z8Ej0mA_WdPnwX_knu7lCOE9XRU-02on7mx1_phGJYaWIXxbbwJfUJ6O9Ao8KQ8bd3VIh2wYxJEe4SCYgEBtqUUwdoyb66R4moefo1jM00fNfbaKo-i4A=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcqghAD7WzuWKOCMZXrGE7a5CnQoCisYFFshyG9hxLX655X04zTK2J65cc6hvxD5V33XOFsyRwCkNB9QJ7DLkKyjSv291HMaJnTPBmOEZBLEwINjefeG1Hs3nH13sXYITc5ndrJU9Z0SutK=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipMMxmGmzT04F1Cxxe0OY9fhfv1dtwjStcRqkv3D=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Joshua",
+      "texto": "I just finished my massage, and the service here is fantastic! I stumbled on this hidden gem while traveling. Everything is amazing — both the massage and the atmosphere are top-notch. The staff are warm and very polite.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Devin Lockhart",
+      "texto": "I had Victoria for my massage and Kiki for my facial! Both women were incredibly kind, attentive, and professional! They made my first time at the spa feel cozy, welcoming, and above all, relaxing!!! Will definitely come back!!!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Paige Kehoe",
+      "texto": "Victoria is absolutely amazing, the BEST massage I’ve had in a long time. She pin pointed my knots and stress spots and gave them so much relief. Have never felt instant relief like that before!! Did the 90 minute deep tissue massage",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/The+Total+You+Medical+Spa/data=!4m7!3m6!1s0x8640c185f6e755c3:0x5fc0c957625b8c77!8m2!3d29.6995408!4d-95.399477!16s%2Fg%2F11t58bjvys!19sChIJw1Xn9oXBQIYRd4xbYlfJwF8?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 14:11",
+  "competidor": "Renove Medical Spa",
+  "crating": 5.0,
+  "creviews": 927
+}

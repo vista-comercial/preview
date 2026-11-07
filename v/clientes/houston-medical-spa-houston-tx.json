@@ -1,0 +1,35 @@
+{
+  "cliente": "Houston Medical Spa",
+  "giro": "spa",
+  "tel": "8327761537",
+  "rating": 4.7,
+  "reviews": 40,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfcfUP3QmrTjUOBnlB6voBrU2OnIx64Fnjz5W3XBvnk2q4g7hO50Y6DAW3qHCIley4wC467rQEGKKktBglWO0PxX7UXRvQ7ynSZGRm9BCJ8Q83R4KmLjeFRL7I1O93qPR_l=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Tuyet B",
+      "texto": "Great customer service! Felt very welcomed even at my consultation visit. Chris was very thorough and knowledgeable of the service and plan that fit best for my wants. Loved my experience! Highly recommend",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Misty Todd",
+      "texto": "Chris is a Botox gem! Professional, friendly, and incredibly talented. She nails the natural look every time, ensuring I leave feeling like the absolute best version of me. I simply can't recommend her highly enough!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "JP",
+      "texto": "Best experience ever! Chris did an amazing job. I felt so comfortable with the whole procedure. She talked me through everything and explained any questions that I had. I love my Botox results! I feel so confident and more beautiful. I will definitely be coming back as needed! I highly recommend. You’re in good hands in her care!!",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Houston+Medical+Spa/data=!4m7!3m6!1s0x8640c7df520821f3:0xf69fc952a414eee2!8m2!3d29.7767076!4d-95.4132382!16s%2Fg%2F11w2hzz28k!19sChIJ8yEIUt_HQIYR4u4UpFLJn_Y?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 14:11",
+  "competidor": "Renove Medical Spa",
+  "crating": 5.0,
+  "creviews": 927
+}

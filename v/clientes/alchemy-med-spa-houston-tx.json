@@ -1,0 +1,37 @@
+{
+  "cliente": "Alchemy Med Spa",
+  "giro": "spa",
+  "tel": "8327044395",
+  "rating": 4.5,
+  "reviews": 46,
+  "ciudad": "Houston TX",
+  "lang": "en",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLcJ3cupJ8_xd042Kt_oTQqU0sJbwFxP09EHLJUhf5zxd0w3WFWNt-mLgNoFF0sifYTvsrqCcHBFnQNcAF01FSK6Bqjznt-EA9MEZkIor7v8zjR588H1LTiasHFXf6kMDf55PBL7=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLfXY4ZO6PwbVDMWzxMNvtAilsBprp431e3rhwDJZy_u55CYHNqLD2_H2UQ3-CAfji1Sea4j6xJ1hRfkAEizbjsvf2_cCRfNbMft_C-68QmVEmKpiFgUn7F_g2jJip4XB61baxJh=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLdrILwvIlYlxxHzRzz_a0NTGJCu99yXYMNgllv68XfraNJ9awR_CHXb8RasiGRQo8O83zVP3-KJ9BX1zFQtu7DMfiTZafhSQ-gU69gFe0i_WcIpiqG_fXhyyF1kPmUd_oDpdsqW=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "Bissan Bazlamit",
+      "texto": "The best injector ive tried every single fancy big name med spa in houston and they did horrible work i always always end up going back to Heidi!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Morgan Smillie",
+      "texto": "Lorena was my laser specialist. She’s absolutely fabulous. All my hair on my face and neck disappeared after 5 treatments (and I’m Italian so that’s no easy feat!!!) her expertise and experience is unmatched. If you aren’t going to Lorena for laser you are missing out!",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Rox",
+      "texto": "Heidi and the receptionist are incredibly warm and inviting! I've been to other med spas where you feel mean girl vibes, but not here! Heidi is not only honest but also highly knowledgeable.There was a small issue on my end with my account, but Heidi quickly found a solution. Thank you, Heidi! Love my lips and can’t wait for my Botox to kick in",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Alchemy+Med+Spa/data=!4m7!3m6!1s0x8640c1c1964cf70d:0x42dfa5f98dec7797!8m2!3d29.7385591!4d-95.475884!16s%2Fg%2F11ht1y3s_3!19sChIJDfdMlsHBQIYRl3fsjfml30I?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 14:11",
+  "competidor": "Renove Medical Spa",
+  "crating": 5.0,
+  "creviews": 927
+}

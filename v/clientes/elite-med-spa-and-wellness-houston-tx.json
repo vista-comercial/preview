@@ -1,0 +1,38 @@
+{
+  "cliente": "Elite Med Spa and Wellness",
+  "giro": "spa",
+  "tel": "2283834176",
+  "rating": 5.0,
+  "reviews": 28,
+  "ciudad": "Houston TX",
+  "lang": "es",
+  "fotos": [
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLePbEGvwKcOCJxDDJqU9ULprQEPk9k2XwyZsuny4RwBv3RpgkCyZpYoH4X7aGa5LeDIAVNL9O8gBGcrpYvKWU-3N2f-x2WA90La8OIK-bXIsWBYOrWsLPN2j8-BuxvKwhEbw4ivPEU1SAiS=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLf4WQ_J4GaMvxDKudKgqR_lVwJb_93oEf4oOvOJUHF8k6Pz2EO9WyHs0H3y1taFdSgHl7xtJSt3P3-9o0HD1mq968B6Sj9bCvC5ycvPfhKAQuE5gDVnyv-HMF8AuxA2DTajcbzdBTrwkjGg=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipPcxlAnrP4SAp3pQeiQOAHf-Sk2_Dx7qz56sfyD=w1200-h900-k-no",
+    "https://lh3.googleusercontent.com/grass-cs/AABkmLebjf7X4Zpw-tJRus8CBQm1m4Bp9zqEFEe-xv6ZGicyYCIVCmse3K-4t6hZ0YkURJWUrLD-xBUD0JWnQBEQWkkaiCGyBLaqw6EdmOJuyQMgdxopIoHzDWv0blRUcIAlXZOweuMHT5fjW_mB=w1200-h900-k-no"
+  ],
+  "resenas": [
+    {
+      "nombre": "brandon poltronieri",
+      "texto": "Muy contento de haber ido a la clínica me trataron excelente con muy buenos profesionales a cargo Primera vez que me haga un tratamiento y estoy 100% contento con los resultados",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Norma Murcia Ramirez",
+      "texto": "Me encanta hacerme mis tratamientos faciales en este lugar son muy profesionales siempre me siento muy segura en manos de ellos y los resultados de mi piel siempre son los mejores . 100% recomendados",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Mely Vega",
+      "texto": "Visite esta clínica y me encantó el trato muy amables.. y todos los tratamientos que me hice excelente.. la recomiendo un 100 por ciento",
+      "estrellas": 5
+    }
+  ],
+  "maps": "https://www.google.com/maps/place/Elite+Med+Spa+and+Wellness/data=!4m7!3m6!1s0x8640d94175cd3edb:0xf394c8d77de6363e!8m2!3d29.8286396!4d-95.7028845!16s%2Fg%2F11z8khst28!19sChIJ2z7NdUHZQIYRPjbmfdfIlPM?authuser=0&hl=es&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1",
+  "origen": "robot_maps",
+  "actualizado": "2026-11-07 14:11",
+  "competidor": "Renove Medical Spa",
+  "crating": 5.0,
+  "creviews": 927
+}
